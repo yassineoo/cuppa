@@ -1,0 +1,11 @@
+{
+  "development": {
+    "username": "bouchra",
+    "password": "root",
+    "database": "prjtdw",
+    "host": "localhost",
+    "dialect": "mysql",
+    "port": 3306
+  
+  }
+}
