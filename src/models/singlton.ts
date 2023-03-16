@@ -11,14 +11,14 @@ const paiementModel = require('./paiement.js');
 const paysModel = require('./pays.js');
 const regionModel = require('./region.js');
 const communeModel = require('./commune.js');
-const willayaModel = require('./willaya.js');
+const willayaModel = require('./wilaya.js');
 
 const boissonsModel = require('./boisson.js');
 
 const panneModel = require('./panne.js');
 const detectionVolModel = require('./detection_vol.js');
 const annonceurModel = require('./annoceur.js');
-const annonceModel = require('./annoces.js');
+const annonceModel = require('./annoce.js');
 const reclamationModel = require('./reclamation.js');
 
 const preparerAvecModel = require('./preperer_avec.js');
