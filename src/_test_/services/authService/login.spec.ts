@@ -1,82 +1,84 @@
+import  Authentication from '../../../services/authService/auth';
+const   jwt =  require ('jsonwebtoken');
+import { Sequelize } from 'sequelize-typescript';
+import singleton from '../../../models/singleton';
+const bcrypt  =  require ('bcryptjs');
 
-
-import { Request, Response } from 'express';
-import { login } from '../../../middelware/auth';
-import jwtLogin from 'jsonwebtoken';
-import bcrypt from 'bcryptjs';
-
-import Singlton from '../../../models/singlton';
-// Initialize the models
-const sadm = Singlton.getSadm();
-
-
-
-const req: Partial<Request> = {
-	body: {
-		username: 'testuser',
-		password: 'testpassword',
-		role: 'SuperAdmin',
-	},
-};
-
-const res: Partial<Response> = {
-	status: jasmine.createSpy('status'),
-	json: jasmine.createSpy('json'),
-};
-
-describe('login', () => {
+const utilisateur = singleton.getUtilisateur();
+const role = singleton.getRole();
 
 
 
-	it('should return a JWT token if credentials are valid', async () => {
 
-		spyOn(sadm, 'findOne').and.returnValue({ id_adm: 'testuser', password: 'testpassword' });
-		spyOn(bcrypt, 'compare').and.returnValue(Promise.resolve(true));
-		spyOn(jwtLogin, 'sign').and.returnValue('testtoken');
-		await login(req as Request, res as Response);
+describe('Authentication',async () => {
+   
+  interface LoginData {
+	username: string;
+	password: string;
+	userRole: string;
+	email:String
+  } 
+  const mockJwtSecret = 'test-secret';
+  const mockUser = {
+    id_utilisateur: 1,
+    id_role: 1,
+    password_utilisateur: 'hashed-password',
+  };
+  const mockLoginData: LoginData = {
+    username: 'testuser',
+    password: 'testpassword',
+    userRole: 'admin',
+    email: 'testuser@example.com',
+  };
 
-		expect(bcrypt.compare).toHaveBeenCalledWith('testpassword', 'testpassword');
-		expect(sadm.findOne).toHaveBeenCalledWith({ where : {username:'testuser'}});
-		expect(jwtLogin.sign).toHaveBeenCalledWith({ id: 'testuser', role: 'SuperAdmin' }, 'secret', { expiresIn: '1d' });
-		expect(res.status).toHaveBeenCalledWith(200);
-		expect(res.json).toHaveBeenCalledWith({ token: 'testtoken' });
-	
-	});
 
-	it('should return an error if credentials are invalid', async () => {
+  describe('login', async() => {
+      it('should return a JWT token on successful login', async () => {
+      // Mock the Sequelize `findAll` method to return the mock user object
+      spyOn(utilisateur, 'findAll').and.returnValue(Promise.resolve([mockUser]));
 
-		spyOn(sadm, 'findOne').and.returnValue(null);
+      // Mock the `compare` method of the `bcrypt` library to always return `true`
+      spyOn(bcrypt, 'compare').and.returnValue(Promise.resolve(true));
 
-		await login(req as Request, res as Response);
+      // Mock the `sign` method of the `jsonwebtoken` library to return a mock token
+      spyOn(jwt, 'sign').and.returnValue('mock-token');
 
-		expect(res.status).toHaveBeenCalledWith(400);
-		expect(res.json).toHaveBeenCalledWith({ error: 'Invalid credentials' });
-	
-	});
-	it('should return an error if credentials are invalid (password is wrong)', async () => {
+      const token = await Authentication.login(mockLoginData);
 
-		spyOn(sadm, 'findOne').and.returnValue({ id_adm: 'testuser', password: 'theTruePassword' });
-		spyOn(bcrypt, 'compare').and.returnValue(Promise.resolve(false));
+      expect(token).toEqual('mock-token');
+      expect(utilisateur.findAll).toHaveBeenCalled();
+      expect(bcrypt.compare).toHaveBeenCalled();
+      expect(jwt.sign).toHaveBeenCalled();
+    });
 
-		await login(req as Request, res as Response);
+    it('should throw an error with "Invalid credentials:username" message if user does not exist', async () => {
+      // Mock the Sequelize `findAll` method to return an empty array
+      spyOn(utilisateur, 'findAll').and.returnValue(Promise.resolve(false));
 
-		expect(bcrypt.compare).toHaveBeenCalledWith('testpassword', 'theTruePassword');
-		expect(sadm.findOne).toHaveBeenCalledWith({ where : {username:'testuser'}});
-		expect(res.status).toHaveBeenCalledWith(401);
-		expect(res.json).toHaveBeenCalledWith({ error: 'Invalid credentials' });
-	
-	});
+      try {
+        await Authentication.login(mockLoginData);
+        fail('Expected an error to be thrown');
+      } catch (error) {
+        expect(error.message).toEqual('Invalid credentials:username');
+        expect(utilisateur.findAll).toHaveBeenCalled();
+      }
+    });
 
+    it('should throw an error with "Invalid credentials:password" message if password is incorrect', async () => {
+      // Mock the Sequelize `findAll` method to return the mock user object
+      spyOn(utilisateur, 'findAll').and.returnValue(Promise.resolve([mockUser]));
+
+      // Mock the `compare` method of the `bcrypt` library to always return `false`
+      spyOn(bcrypt, 'compare').and.returnValue(Promise.resolve(false));
+
+      try {
+        await Authentication.login(mockLoginData);
+        fail('Expected an error to be thrown');
+      } catch (error) {
+        expect(error.message).toEqual('Invalid credentials:password');
+        expect(utilisateur.findAll).toHaveBeenCalled();
+        expect(bcrypt.compare).toHaveBeenCalled();
+      }
+    });
+  });
 });
-
-
-
-
-
-
-
-
-
-
-
-

@@ -1,81 +1,51 @@
-import { Request, Response, NextFunction } from 'express';
-import jwt from 'jsonwebtoken';
-import { Authorization } from '../../../middelware/auth'  ;
+const  jwt  = require('jsonwebtoken');
+import  Authentication from '../../../services/authService/auth';
+interface User {
+  id: string;
+  role: string;
+  iat:number;
+  exp:number;
+}
 
-describe('Authorization function', () => {
 
-	let mockRequest: Partial<Request>;
-	let mockResponse: Partial<Response>;
-	let mockNext: jasmine.Spy;
-	const mockUser = {
-		id: '123',
-		role: 'Admin',
-	};
-	const mockToken = jwt.sign(mockUser, 'secret');
+describe('verifyToken', () => {
+  const jwtSecret = 'secret';
 
-	beforeEach(() => {
+  it('should return the decoded token if it is valid', async () => {
+    const token = jwt.sign({ id: 'user1',role:'userRole' }, jwtSecret, { expiresIn: '1h' });
+    const decodedToken = await Authentication.verifyToken(token);
+    expect(decodedToken?.id).toBe('user1');
+  });
 
-		mockRequest = {};
-		mockResponse = {
-			status: jasmine.createSpy('status'),
-			json: jasmine.createSpy('json'),
-		};
-		mockNext = jasmine.createSpy('next');
-		
-	
-	});
+  it('should throw an error if the token is expired', async () => {
+    const token = jwt.sign({ username: 'user1' }, jwtSecret, { expiresIn: '-1h' });
+    try {
+      await Authentication.verifyToken(token);
+      fail('Expected an error to be thrown');
+    } catch (error) {
+      expect(error.message).toBe('jwt expired');
+    }
+  });
 
-	it('should call next if the token is valid and the user has the allowed role', async () => {
+  it('should throw an error if the token is invalid', async () => {
+    const token = 'invalid_token';
+    try {
+      await Authentication.verifyToken(token);
+      fail('Expected an error to be thrown');
+    } catch (error) {
+      expect(error.message).toBe('jwt malformed');
+    }
+  });
 
-		spyOn(jwt, 'verify').and.returnValue(mockUser);
-		mockRequest.header = jasmine.createSpy('header').and.returnValue(`Bearer ${mockToken}`);
-		const allowedRoles = ['Admin'];
-
-		const middleware = Authorization(allowedRoles);
-		await middleware(mockRequest as Request, mockResponse as Response, mockNext as NextFunction);
-
-		expect(mockRequest.user).toEqual(mockUser);
-		expect(mockNext).toHaveBeenCalled();
-	
-	});
-
-	it('should return an error if the token is missing', async () => {
-
-		mockRequest.header = jasmine.createSpy('header').and.returnValue(null);
-		const allowedRoles = ['Admin'];
-
-		const middleware = Authorization(allowedRoles);
-		await middleware(mockRequest as Request, mockResponse as Response, mockNext as NextFunction);
-
-		expect(mockResponse.status).toHaveBeenCalledWith(401);
-		expect(mockResponse.json).toHaveBeenCalledWith({ error: 'Access denied. No token provided.' });
-	
-	});
-
-	it('should return an error if the token is invalid', async () => {
-
-		mockRequest.header = jasmine.createSpy('header').and.returnValue('Bearer invalid-token');
-		const allowedRoles = ['Admin'];
-
-		const middleware = Authorization(allowedRoles);
-		await middleware(mockRequest as Request, mockResponse as Response, mockNext as NextFunction);
-
-		expect(mockResponse.status).toHaveBeenCalledWith(500);
-		expect(mockResponse.json).toHaveBeenCalledWith({ error: 'Access denied. Invalid token.' });
-	
-	});
-
-	it('should return an error if the user does not have the allowed role', async () => {
-
-		mockRequest.header = jasmine.createSpy('header').and.returnValue(`Bearer ${mockToken}`);
-		const allowedRoles = ['SuperAdmin'];
-
-		const middleware = Authorization(allowedRoles);
-		await middleware(mockRequest as Request, mockResponse as Response, mockNext as NextFunction);
-
-		expect(mockResponse.status).toHaveBeenCalledWith(403);
-		expect(mockResponse.json).toHaveBeenCalledWith({ error: 'Access denied. You are not authorized to access this resource.' });
-	
-	});
-
+  it('should rethrow any error that occurs during token verification', async () => {
+    spyOn(jwt, 'verify').and.throwError('Something went wrong');
+    const token = jwt.sign({ username: 'user1' }, jwtSecret, { expiresIn: '1h' });
+    try {
+      await Authentication.verifyToken(token);
+      fail('Expected an error to be thrown');
+    } catch (error) {
+      expect(error.message).toBe('Something went wrong');
+    }
+  });
 });
+;
