@@ -52,25 +52,24 @@ class  Authentication {
 
 
 	static  login = async (loginData: LoginData): Promise<string> => {
+		console.log('----------------------------------------------');
 
 		const { username, password, userRole , email } = loginData;
 		
 		// Find user by username
-		const user = await utilisateur.findAll({
-			attributes: ['id_utilisateur', 'id_role','password_utilisateur'], // SELECT id_utilisateur, id_role
-			include: {
+		const user = await utilisateur.findOne({
+		  attributes: ['id_utilisateur', 'id_role','password_utilisateur'],
+		  include: [
+			{
 			  model: role,
-			  attributes: [], // Exclude all columns from the Role table except id_role
-			  where: { libell_role: userRole } // AND libell_role = userRole
-			},
-			where: Sequelize.and(
-			  Sequelize.or(
-				{ username: username }, // (username = username
-				{ email: email } // OR email = email)
-			  ),
-			  Sequelize.where(Sequelize.col('role.id_role'), '=', Sequelize.col('utilisateur.id_role')) // AND utilisateur.id_role = role.id_role
-			)
-		  });
+			  attributes: ['id_role', 'libelle_role']
+			}
+		  ],
+		  where: {
+			username_utilisateur: username
+		  }
+		})
+		  console.log(user);
 		  
 		if (!user) {
 

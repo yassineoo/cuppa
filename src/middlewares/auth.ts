@@ -57,4 +57,4 @@ const Authorization = (allowedRoles: string[]) => {
 };
 
 
-export {Authorization};
+export  default Authorization;

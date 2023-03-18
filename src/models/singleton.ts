@@ -87,7 +87,10 @@ private am_avoir_tache: any = null;
 
 	this.preparerAvec=preparerAvecModel(sequelize, Sequelize);
 	this.tache=tacheModel(sequelize, Sequelize);
+	this.utilisateur.belongsTo(this.role,{foreignKey: 'id_role'});
+	
 	}
+	
 
 	getProfil() {
 		return this.profil;

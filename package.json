@@ -9,8 +9,7 @@
           "test": "karma start karma.conf.js",
           "test-db-connection": "node build/models/index.js",
           "start": "node build/app.js",
-          "dev": "concurrently \"npx tsc -w\" \"nodemon -q build/app.js\"",
-          "devy": "nodemon --exec  ts-node ./src/app.ts"
+          "dev": "nodemon --exec  ts-node ./src/app.ts"
      },
      "type": "commonjs",
      "author": "",

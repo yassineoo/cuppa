@@ -1,5 +1,6 @@
-import { Request, Response, NextFunction } from 'express';
-const  Authentication= require('../auth');
+import { Request, Response } from 'express';
+import  Authentication from '../auth';
+
 
   
 interface LoginData {
@@ -26,18 +27,23 @@ declare global {
 class LoginController {
 
 
- static login = async (req: Request, res: Response,next:NextFunction) => {
+ static login = async (req: Request, res: Response) => {
     try {
       const loginData: LoginData = req.body;
+      console.log(' .............................done 1');
+      
       const token = await  Authentication.login(loginData);
-      next();
-    } catch (error:any) {
+      console.log(' .............................done ');
+      res.status(200).json(token)
+    } catch (error) {
       if (error.message === 'Invalid credentials:username') {
         res.status(401).json({ message: 'Invalid username or email' });
       } else if (error.message === 'Invalid credentials:password') {
         res.status(401).json({ message: 'Invalid password' });
       } else {
-        res.status(500).json({ message: 'Internal server error' });
+        console.log(error);
+        
+        res.status(500).json({ error});
       }
     }
   }
