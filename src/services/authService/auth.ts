@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/no-namespace */
-const   jwt =  require ('jsonwebtoken');
-import { Sequelize } from 'sequelize-typescript';
+import jwt from 'jsonwebtoken';
+import { Op } from 'sequelize';
 import singleton from '../../models/singleton';
-const bcrypt  =  require ('bcryptjs');
+import bcrypt from 'bcryptjs';
 interface User {
   id: string;
   role: string;
@@ -14,7 +14,7 @@ interface User {
 	username: string;
 	password: string;
 	userRole: string;
-	email:String
+	email:string
   }
 
 
@@ -27,69 +27,103 @@ class  Authentication {
 	private static jwtSecret = process.env.JWT_SECRET || 'secret';
 
 
-	static verifyToken = async (token: string):Promise<User | null> => {
+	/**
+ * Verify a JWT token and return the decoded user object if valid
+ * @param {string} token - The JWT token to verify
+ * @returns {Promise<User | null>} - A promise that resolves to the decoded user object if the token is valid, otherwise null
+ */
+	static verifyToken = async (token: string): Promise<User | null> => {
 
+		// eslint-disable-next-line no-useless-catch
 		try {
+
+			// Verify the token using the JWT secret
 			const decodedToken = await jwt.verify(token, this.jwtSecret) ;
-	
+
 			// Check if the token has expired
 			if (Date.now() >= decodedToken.exp * 1000) {
+
 				throw new Error('Token expired');
+			
 			}
 
-
-	
 			// Return the decoded user object if everything is valid
 			return decodedToken;
-	
+
 		} catch (error) {
-			// Return null if there's any error
+
+			// Throw any error that occurs during the token verification
 			throw error;
-		}
-	
-	}
-	
-
-
-	static  login = async (loginData: LoginData): Promise<string> => {
-		console.log('----------------------------------------------');
-
-		const { username, password, userRole , email } = loginData;
 		
-		// Find user by username
+		}
+
+	};
+
+	
+
+
+	/**
+ * Logs a user in and returns a JWT token.
+ * @async
+ * @function
+ * @param {Object} loginData - The login data object.
+ * @param {string} loginData.username - The user's username.
+ * @param {string} loginData.password - The user's password.
+ * @param {string} loginData.userRole - The user's role.
+ * @param {string} loginData.email - The user's email.
+ * @returns {Promise<string>} A Promise that resolves with a JWT token.
+ * @throws {Error} If the credentials are invalid.
+ */
+	static login = async (loginData: LoginData): Promise<string> => {
+
+		// Destructure loginData object
+		const { username, password, userRole, email } = loginData;
+
+		// Find user by username or email
 		const user = await utilisateur.findOne({
-		  attributes: ['id_utilisateur', 'id_role','password_utilisateur'],
-		  include: [
-			{
-			  model: role,
-			  attributes: ['id_role', 'libelle_role']
-			}
-		  ],
-		  where: {
-			username_utilisateur: username
-		  }
-		})
-		  console.log(user);
-		  
+			attributes: ['id_utilisateur', 'id_role', 'password_utilisateur'],
+			include: [
+				{
+					model: role,
+					attributes: ['id_role', 'libelle_role'],
+					where: { libelle_role: userRole },
+				},
+			],
+			where: {
+				[Op.or]: [
+					{ username_utilisateur: username },
+					{ email_utilisateur: email },
+				],
+			},
+		});
+
+		// Throw error if user not found
 		if (!user) {
 
-			throw new Error('Invalid credentials:username');
+			throw new Error('Invalid credentials: username or email');
 		
 		}
+
 		// Check password
-		const passwordMatch = await bcrypt.compare(password, user.password_utilisateur);
+		const passwordMatch = await bcrypt.compare(
+			password,
+			user.password_utilisateur
+		);
 		if (!passwordMatch) {
 
-			throw new Error('Invalid credentials:password');
+			throw new Error('Invalid credentials: password');
 		
 		}
 
 		// Create JWT
-		
-		const token = jwt.sign({ id: user.id, role: role }, this.jwtSecret, { expiresIn: '1d' });
+		const token = jwt.sign(
+			{ id: user.id_utilisateur, role: user.role },
+			this.jwtSecret,
+			{ expiresIn: '1d' }
+		);
 
 		return token;
-	
+
 	};
 
 

@@ -3,15 +3,15 @@
      "version": "1.0.0",
      "description": "try for projet 2CS",
      "main": "src/app.js",
-     "type": "module",
+     "type": "commonjs",
      "scripts": {
           "build": "tsc",
           "test": "karma start karma.conf.js",
           "test-db-connection": "node build/models/index.js",
           "start": "node build/app.js",
-          "dev": "nodemon --exec  ts-node ./src/app.ts"
+          "dev": "nodemon --exec  ts-node ./src/app.ts",
+          "lint": "eslint src --fix"
      },
-     "type": "commonjs",
      "author": "",
      "license": "ISC",
      "dependencies": {
@@ -33,7 +33,10 @@
           "@types/mysql": "^2.15.21",
           "@types/node": "^18.15.0",
           "@types/sequelize": "^4.28.14",
+          "@typescript-eslint/eslint-plugin": "^5.55.0",
+          "@typescript-eslint/parser": "^5.55.0",
           "concurrently": "^7.6.0",
+          "eslint": "^8.36.0",
           "jasmine": "^3.6.4",
           "jasmine-core": "^4.5.0",
           "jasmine-ts": "^0.4.0",

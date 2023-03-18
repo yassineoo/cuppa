@@ -43,13 +43,20 @@ const Authorization = (allowedRoles: string[]) => {
 		
 		} catch (error) {
 
-		    if (error.message === 'Token expired') {
-                res.status(401).json({ error: 'Token expired' });
-              } else if (error.name === 'JsonWebTokenError') {
-                res.status(401).json({ error: 'Invalid token' });
-              } else {
-                next(error);
-              }
+			if (error.message === 'Token expired') {
+
+				res.status(401).json({ error: 'Token expired' });
+			
+			} else if (error.name === 'JsonWebTokenError') {
+
+				res.status(401).json({ error: 'Invalid token' });
+			
+			} else {
+
+				next(error);
+			
+			}
+		
 		}
 	
 	};
