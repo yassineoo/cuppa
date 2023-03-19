@@ -50,7 +50,7 @@ class LoginController {
 		} catch (error) {
 
 			// Handle any errors that occur during the login process
-			if (error.message === 'Invalid credentials:username') {
+			if (error.message === 'Invalid credentials: username or email') {
 
 				res.status(401).json({ message: 'Invalid username or email' });
 			

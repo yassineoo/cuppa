@@ -29,6 +29,7 @@ import tacheModel from './tache';
 import utilisateurModel from './utilisateur';
 import roleModel from './role';
 import profilModel from './profil';
+import logsModel from './logs';
 
 
 class Models {
@@ -61,6 +62,7 @@ class Models {
 	private preparerAvec: any = null;
 	private tache: any = null;
 	private am_avoir_tache: any = null;
+	private logs: any = null;
 
 	constructor() {
 
@@ -90,6 +92,7 @@ class Models {
 
 		this.preparerAvec = preparerAvecModel(sequelize, Sequelize);
 		this.tache = tacheModel(sequelize, Sequelize);
+		this.logs = logsModel(sequelize, Sequelize);
 		this.utilisateur.belongsTo(this.role,{foreignKey: 'id_role'});
 	
 	}
@@ -224,6 +227,11 @@ class Models {
 	getTache() {
 
 		return this.tache;
+
+	}
+	getLogs() {
+
+		return this.logs;
 
 	}
 

@@ -66,7 +66,7 @@ describe('Authentication',async () => {
   		
   		} catch (error) {
 
-  			expect(error.message).toEqual('Invalid credentials:username');
+  			expect(error.message).toEqual('Invalid credentials: username or email');
   			expect(utilisateur.findAll).toHaveBeenCalled();
   		
   		}

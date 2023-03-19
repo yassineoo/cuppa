@@ -1,30 +1,35 @@
 const Sequelize = require('sequelize');
 module.exports = function(sequelize, DataTypes) {
-  return sequelize.define('tache', {
-    id_tache: {
-      type: DataTypes.INTEGER,
+  return sequelize.define('logs', {
+    id: {
+      autoIncrement: true,
+      type: DataTypes.INTEGER.UNSIGNED,
       allowNull: false,
       primaryKey: true
     },
-    etat_tache: {
-      type: DataTypes.STRING(50),
+    level: {
+      type: DataTypes.STRING(10),
       allowNull: false
     },
-    description_tache: {
-      type: DataTypes.STRING(50),
+    message: {
+      type: DataTypes.TEXT,
+      allowNull: false
+    },
+    metadata: {
+      type: DataTypes.TEXT,
       allowNull: true
     }
   }, {
     sequelize,
-    tableName: 'tache',
-    timestamps: false,
+    tableName: 'logs',
+    timestamps: true,
     indexes: [
       {
         name: "PRIMARY",
         unique: true,
         using: "BTREE",
         fields: [
-          { name: "id_tache" },
+          { name: "id" },
         ]
       },
     ]

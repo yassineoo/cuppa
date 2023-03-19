@@ -111,7 +111,7 @@ class  Authentication {
 		);
 		if (!passwordMatch) {
 
-			throw new Error('Invalid credentials: password');
+			throw new Error('Invalid credentials:password');
 		
 		}
 
