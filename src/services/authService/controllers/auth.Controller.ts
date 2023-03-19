@@ -45,23 +45,26 @@ class LoginController {
 			const token = await Authentication.login(loginData);
 
 			// Send the token back in the response
-			res.status(200).json(token);
+			res.status(200)
+			return res.json(token);
 		
 		} catch (error) {
 
 			// Handle any errors that occur during the login process
-			if (error.message === 'Invalid credentials:username') {
-
-				res.status(401).json({ message: 'Invalid username or email' });
+			if (error.message === 'Invalid credentials: username or email') {
+				res.status(401);
+				return res.json({ message: 'Invalid credentials: username or email' });
 			
 			} else if (error.message === 'Invalid credentials:password') {
 
-				res.status(401).json({ message: 'Invalid password' });
+				res.status(401);
+				return res.json({ message: 'Invalid password' });
 			
 			} else {
 
-				console.log(error);
-				res.status(500).json({ error });
+			//	console.log(error);
+				res.status(500)
+				res.json({ error:error.message });
 			
 			}
 		
