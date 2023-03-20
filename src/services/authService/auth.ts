@@ -6,6 +6,7 @@ import bcrypt from 'bcryptjs';
 interface User {
   id: string;
   role: string;
+  exp:number;
 }
 
 
@@ -38,8 +39,9 @@ class  Authentication {
 		try {
 
 			// Verify the token using the JWT secret
-			const decodedToken = await jwt.verify(token, this.jwtSecret) ;
-
+			const decodedToken = await jwt.verify(token, this.jwtSecret) as User ;
+			//console.log();
+			
 			// Check if the token has expired
 			if (Date.now() >= decodedToken.exp * 1000) {
 

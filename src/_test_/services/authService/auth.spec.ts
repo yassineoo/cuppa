@@ -22,7 +22,7 @@ describe('verifyToken', () => {
 			await Authentication.verifyToken(token);
 			fail('Expected an error to be thrown');
 		
-		} catch (error) {
+		} catch (error :any) {
 
 			expect(error.message).toBe('jwt expired');
 		
@@ -38,7 +38,7 @@ describe('verifyToken', () => {
 			await Authentication.verifyToken(token);
 			fail('Expected an error to be thrown');
 		
-		} catch (error) {
+		} catch (error :any) {
 
 			expect(error.message).toBe('jwt malformed');
 		
@@ -55,7 +55,7 @@ describe('verifyToken', () => {
 			await Authentication.verifyToken(token);
 			fail('Expected an error to be thrown');
 		
-		} catch (error) {
+		} catch (error :any) {
 
 			expect(error.message).toBe('Something went wrong');
 		

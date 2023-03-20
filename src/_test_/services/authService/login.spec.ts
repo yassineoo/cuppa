@@ -40,10 +40,10 @@ describe('Authentication',async () => {
   		spyOn(utilisateur, 'findAll').and.returnValue(Promise.resolve([mockUser]));
 
   		// Mock the `compare` method of the `bcrypt` library to always return `true`
-  		spyOn(bcrypt, 'compare').and.returnValue(Promise.resolve(true));
+  		spyOn(bcrypt, 'compare').and.returnValue(Promise.resolve(true) as any);
 
   		// Mock the `sign` method of the `jsonwebtoken` library to return a mock token
-  		spyOn(jwt, 'sign').and.returnValue('mock-token');
+  		spyOn(jwt, 'sign').and.returnValue('mock-token' as any);
 
   		const token = await Authentication.login(mockLoginData);
 
@@ -57,7 +57,7 @@ describe('Authentication',async () => {
   	it('should throw an error with "Invalid credentials:username" message if user does not exist', async () => {
 
   		// Mock the Sequelize `findAll` method to return an empty array
-  		spyOn(utilisateur, 'findAll').and.returnValue(Promise.resolve(false));
+  		spyOn(utilisateur, 'findAll').and.returnValue(Promise.resolve(false) as any);
 
   		try {
 
@@ -79,7 +79,7 @@ describe('Authentication',async () => {
   		spyOn(utilisateur, 'findAll').and.returnValue(Promise.resolve([mockUser]));
 
   		// Mock the `compare` method of the `bcrypt` library to always return `false`
-  		spyOn(bcrypt, 'compare').and.returnValue(Promise.resolve(false));
+  		spyOn(bcrypt, 'compare').and.returnValue(Promise.resolve(false) as any);
 
   		try {
 
