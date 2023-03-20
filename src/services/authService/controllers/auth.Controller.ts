@@ -45,7 +45,7 @@ class LoginController {
 			const token = await Authentication.login(loginData);
 
 			// Send the token back in the response
-			res.status(200)
+			res.status(200);
 			return res.json(token);
 		
 		} catch (error) {
@@ -62,8 +62,8 @@ class LoginController {
 			
 			} else {
 
-			//	console.log(error);
-				res.status(500)
+				//	console.log(error);
+				res.status(500);
 				res.json({ error:error.message });
 			
 			}

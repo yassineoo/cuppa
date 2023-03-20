@@ -1,51 +1,42 @@
+module.exports = function (config) {
+     config.set({
+          preprocessors: {
+               '**/*.ts': ['karma-typescript'],
+               'src/**/*.ts': ['coverage'],
+          },
 
-module.exports = function(config) {
-    config.set({
-      preprocessors: {
-        '**/*.ts': ['karma-typescript'],
-        "src/**/*.ts" : ['coverage']
-      },
+          mime: {
+               'text/x-typescript': ['ts', 'tsx', 'spec.ts', 'test.ts'],
+          },
 
-      frameworks: ['jasmine'],
+          files: ['src/_test_/**/*.ts'],
 
-      mime: {
-        'text/x-typescript': ['ts', 'tsx', 'spec.ts', 'test.ts']
-      },
+          frameworks: ['jasmine', 'karma-typescript'],
 
-      files: [
-        "src/_test_/**/*.ts"
-      ],
+          plugins: [
+               // other plugins here
+               require('karma-jasmine'),
+               require('karma-jasmine-html-reporter'),
+               require('karma-chrome-launcher'),
+               require('karma-typescript'),
+               require('karma-coverage'),
+          ],
 
-      frameworks: ['jasmine', 'karma-typescript'],
-    
-      plugins: [
-        // other plugins here
-        require('karma-jasmine'),
-        require('karma-jasmine-html-reporter'),
-        require('karma-chrome-launcher'),
-        require('karma-typescript'),
-        require('karma-coverage'),
+          karmaTypescriptConfig: {
+               tsconfig: './tsconfig.json',
+          },
 
-      ],
+          coverageReporter: {
+               type: 'html',
+               dir: 'src/coverage',
+          },
 
-      karmaTypescriptConfig: {
-        tsconfig: './tsconfig.json'
-      },
+          reporters: ['progress', 'coverage'],
 
+          colors: true,
 
-      coverageReporter : {
-        type : 'html',
-        dir : 'src/coverage'
-      },
+          port: 9876,
 
-      reporters: ['progress', 'coverage'],
-
-      colors : true,
-
-      port : 9876,
-
-      browsers: ['Chrome'], 
-      
-  
-    })
-  };
+          browsers: ['Chrome'],
+     });
+};
