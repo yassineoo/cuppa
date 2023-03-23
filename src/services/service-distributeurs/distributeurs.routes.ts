@@ -5,20 +5,44 @@ import distributeursController from "./distributeurs.controller";
 
 const distributeursRouter = express.Router();
 
-//Retrieve the list of les distributeurs 
-distributeursRouter.get("/distributeurs", authorize, distributeursController.getAll)
+/**
+@route GET distributeurs/
+@desc retrieve the list of distributeurs
+@access ADM, SADM, AC, AM
+*/
+distributeursRouter.get("/", authorize(['AM', 'ADM', 'SADM', 'AC']), distributeursController.getAll)
 
-//Retrieve le distributeur ayant l'identifiant id
-distributeursRouter.get("/distributeurs/:id", distributeursController.getById)
 
-//Add a new distributeur 
-distributeursRouter.post("/distributeurs", distributeursController.create)
+/**
+@route GET distributeur/:id
+@desc retrieve one distributeur
+@access ADM, SADM, AC, AM
+*/
+distributeursRouter.get("/:id",  authorize(['AM', 'ADM', 'SADM', 'AC']), distributeursController.getById)
 
-//Modify the information du distributeur ayant l'identifiant id
-distributeursRouter.put("/distributeurs/:id", distributeursController.updateById)
 
-//Delete le distributeur ayant l'identifiant id
-distributeursRouter.delete("/distributeurs/:id", distributeursController.deleteById)
+/**
+@route POST distributeurs/
+@desc create a new one
+@access SADM
+*/
+distributeursRouter.post("/",  authorize(['SADM']), distributeursController.create)
+
+
+/**
+@route PUT distributeurs/:id
+@desc update one distributeur
+@access ADM, SADM, AC, AM
+*/
+distributeursRouter.put("/:id",  authorize(['AM', 'ADM', 'SADM', 'AC']), distributeursController.updateById)
+
+
+/**
+@route delete distributeurs/
+@desc delete one distributeur
+@access SADM
+*/
+distributeursRouter.delete("/:id", authorize(['SADM']), distributeursController.deleteById)
 
 
 export default distributeursRouter 

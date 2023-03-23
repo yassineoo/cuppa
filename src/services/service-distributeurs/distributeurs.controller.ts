@@ -1,11 +1,24 @@
-import { Request, Response } from "express";
+import { Request, response, Response } from "express";
 import distributeursService from "./distributeurs.service";
+
+import distributeursLogic from "./distributeurs.logic";
+
+
 
 
 const distributeursController = {
     getAll : async(req : Request, res : Response) => {
         try {
-            const distributeurs = await distributeursService.getAll()
+            let distributeurs;
+            if(!req.user) {
+                //it's SADM
+                
+                distributeurs = await distributeursService.getAll()
+                
+            } else {
+                //console.log(req.user)
+                distributeurs = await distributeursLogic.getAllByClient(req.user.id)
+            }
             res.status(200).json(distributeurs)
         } catch (err : any){
             res.status(500).send('Internal server error')
@@ -13,13 +26,22 @@ const distributeursController = {
     },
     getById : async(req : Request, res : Response) => {
         try {
-            const distributeur = await distributeursService.getByID(Number(req.params.id))
+            let distributeur;    
+            if(!req.user) {
+                //return all 
+                distributeur = await distributeursService.getByID(req.params.id)
+                res.status(200).json(distributeur)
+            } else {
+                distributeur = await distributeursLogic.getOneByClient(req.params.id, req.user.id)
+ 
+            }
+
             if(!distributeur) {
                 res.status(404).send("Distributeur not found")
-            }
-            res.status(200).json(distributeur)
+            } res.status(200).json(distributeur)
+
         } catch (err : any){
-            console.log(err) //to be logged later 
+            console.log(err) 
             res.status(500).send('Internal server error')
         }
     },

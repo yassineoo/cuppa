@@ -13,7 +13,8 @@ module.exports = function(config) {
       },
 
       files: [
-        "src/_test_/**/*.ts"
+        "src/_test_/**/*.ts",
+        "src/**/*.ts"
       ],
 
       frameworks: ['jasmine', 'karma-typescript'],

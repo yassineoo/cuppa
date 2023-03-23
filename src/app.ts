@@ -13,7 +13,7 @@ app.get("/", (req : Request, res : Response) => {
     res.send("Hello here is the entry point")
 })
 
-app.use('/', distributeursRouter);
+app.use('/distributeurs', distributeursRouter);
 
 app.use((req : Request, res : Response) => {
     res.type('text/plain')
