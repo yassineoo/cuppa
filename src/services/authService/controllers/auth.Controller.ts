@@ -43,7 +43,8 @@ class LoginController {
 
 			// Attempt to login and retrieve a JWT token
 			const token = await Authentication.login(loginData);
-
+            console.log('it passed ----------');
+			
 			// Send the token back in the response
 			res.status(200);
 			return res.json(token);

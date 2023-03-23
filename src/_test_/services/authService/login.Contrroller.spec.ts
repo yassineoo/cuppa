@@ -2,21 +2,26 @@ import LoginController from '../../../services/authService/controllers/auth.cont
 import Authentication from '../../../services/authService/auth';
 import {Response,Request} from 'express';
 
-const req: Partial<Request> = {
-	body: {
-		username: 'testuser',
-		password: 'testpassword',
-		role: 'SuperAdmin',
-	},
-} ;
-
-const res: Partial<Response> = {
-	status: jasmine.createSpy('status'),
-	json: jasmine.createSpy('json'),
-} ;
+let  req: Partial<Request> ;
+let  res: Partial<Response> ;
 
 
 describe('login', () => {
+	beforeEach(() => {
+		req =  {
+			body: {
+				username: 'testuser',
+				password: 'testpassword',
+				role: 'SuperAdmin',
+			},
+		} ;
+		res = {
+			status: jasmine.createSpy('status'),
+			json: jasmine.createSpy('json')
+		};
+	});
+	
+
 	it('should return a JWT token on successful login', async () => {
    
 		spyOn(Authentication, 'login').and.returnValue(Promise.resolve('testtoken'));
