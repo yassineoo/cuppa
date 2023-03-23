@@ -14,9 +14,9 @@ const loggingService = new LoggingService();
 // exemple of test 
 loggingService.log(
 	'info',
-	 'Hello distributed log files!',
+	'Hello distributed log files!',
 	{date:'someRandom'}
-  );
+);
   
 
 dotenv.config();
