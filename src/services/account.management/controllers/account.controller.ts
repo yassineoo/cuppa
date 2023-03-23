@@ -25,12 +25,14 @@ const createAccount = async (req: Request, res: Response) => {
 		// call the servise function to create the account
 		const result = await AccountManagmentService.createAccount(req.body,role,createrId,createrRole);
 		// send the response back to the client
-		res.status(200).json({ success: true, data: result });
+		res.status(200);
+		return res.json({ success: true, data: result });
 	
 	} catch (err:any) {
-
+		
 		console.error(`Error creating account: ${err.message}`);
-		res.status(500).json({ success: false, error: err.message });
+		res.status(500);
+		return res.json({ success: false, error: err.message });
 	
 	}
 

@@ -1,8 +1,8 @@
 
-const Singlton = require('./../../../models/singlton');
+import Models from './../../../models/singlton'
 
 // Initialize the models
-const user = Singlton.getUtilisateur();
+const user = Models.getUtilisateur();
 
 
 class AccountManagmentService {
@@ -12,6 +12,7 @@ class AccountManagmentService {
    * @description delete an account in the database of the corresponding role
    * @param user {string} role of the user who deleted the account
    * @param id {string} id of the user whose account is going to be deleted
+   * @param role {string} role of the user whose account is going to be deleted
    * @returns {object} Return object with only the whitelisted keys
    */
 
@@ -21,17 +22,17 @@ class AccountManagmentService {
 		if (user ===  'sadm') {
 
             if (role === 'adm') {
-				accountModel = Singlton.getUtilisateur();
-				const account = await accountModel.findOne({ where: { id_utilisateur:id } });
+				accountModel = Models.getUtilisateur();
+				let account = await accountModel.findOne({ where: { id_utilisateur:id } });
 
 		        if (!account) {
 			    throw new Error(`Account with id ${id} not found`);
 		        }
-
-		         await account.destroy();
-
-		       return { message: `Account with id ${id} deleted successfully` };
-			} else {
+				
+		        await account.destroy();
+			
+		        return { message: `Account with id ${id} deleted successfully` };;
+			} else {	
 				throw new Error(`You are not authorized to delete this account`);
 			} 
 
@@ -40,8 +41,8 @@ class AccountManagmentService {
 
             if (role === 'am' || role === 'ac' || role === 'decideur') {
 
-				accountModel = Singlton.getUtilisateur();
-				const account = await accountModel.findOne({ where: { id_utilisateur:id } });
+				accountModel = Models.getUtilisateur();
+				let account = await accountModel.findOne({ where: { id_utilisateur:id } });
 
 				if (!account) {
 					throw new Error(`Account with id ${id} not found`);
@@ -72,49 +73,44 @@ class AccountManagmentService {
    * @returns {object} Return object with only the whitelisted keys
    */
 
-	static async modifyAccount(id: string, body: any, role: string, modifierId: string, modifierRole: string) {
+	static async modifyAccount(id: string, body: any, role: string, modifierRole: string) {
 
-		let accountModel;
+		let accountModel = Models.getUtilisateur();
 
 		if (modifierRole ===  'adm') {
 
                 if (role === 'am' || role === 'ac' || role === 'decideur') {
-
-				accountModel = Singlton.getUtilisateur();
-				let account = await accountModel.findOne({ where: { id_utilisateur:id } });
-
+			
+				let account = await user.findOne({ where: { id_utilisateur:id } });
 				if (!account) {
 					throw new Error(`Account with id ${id} not found`);
 				}
 		
-				// Update account properties
-		                account = { ...account, ...body };
-		                // Save changes to database
-	                 	await account.save();
-          
-	                    	return account.toJSON();
+				let updatedUser = { ...account.toJSON(), ...body };
+				// Save changes to database
+				await account.update(updatedUser);
+                return account.toJSON();
 
 			} else {
 				throw new Error(`You are not authorized to modify this account`);
 			}
+			
 
 		} else if(modifierRole ===  'am') {
 
 			if (role === 'am') {
 
-				accountModel = Singlton.getUtilisateur();
+				accountModel = Models.getUtilisateur();
 				let account = await accountModel.findOne({ where: { id_utilisateur:id } });
 
 				if (!account) {
 					throw new Error(`Account with id ${id} not found`);
 				}
-		
-				// Update account properties
-		                account = { ...account, ...body };
-		                // Save changes to database
-	                 	await account.save();
-          
-	                    	return account.toJSON();
+
+				let updatedUser = { ...account.toJSON(), ...body };
+				// Save changes to database
+				await account.update(updatedUser);
+                return account.toJSON();
 
 			} else {
 				throw new Error(`You are not authorized to modify this account`);
@@ -124,7 +120,7 @@ class AccountManagmentService {
 
 			if (role === 'ac') {
 
-				accountModel = Singlton.getUtilisateur();
+				accountModel = Models.getUtilisateur();
 				let account = await accountModel.findOne({ where: { id_utilisateur:id } });
 
 				if (!account) {
@@ -132,11 +128,10 @@ class AccountManagmentService {
 				}
 		
 				// Update account properties
-		                account = { ...account, ...body };
-		                // Save changes to database
-	                 	await account.save();
-          
-	                    	return account.toJSON();
+		        let updatedUser = { ...account.toJSON(), ...body };
+				// Save changes to database
+				await account.update(updatedUser);
+                return account.toJSON();
 
 			} else {
 				throw new Error(`You are not authorized to modify this account`);
@@ -146,19 +141,17 @@ class AccountManagmentService {
 
 			if (role === 'decideur') {
 
-				accountModel = Singlton.getUtilisateur();
+				accountModel = Models.getUtilisateur();
 				let account = await accountModel.findOne({ where: { id_utilisateur:id } });
 
 				if (!account) {
 					throw new Error(`Account with id ${id} not found`);
 				}
 		
-				// Update account properties
-		                account = { ...account, ...body };
-		                // Save changes to database
-	                 	await account.save();
-          
-	                    	return account.toJSON();
+				let updatedUser = { ...account.toJSON(), ...body };
+				// Save changes to database
+				await account.update(updatedUser);
+                return account.toJSON();
 
 			} else {
 				throw new Error(`You are not authorized to modify this account`);
@@ -223,11 +216,12 @@ class AccountManagmentService {
 
 			let accountModel;
 
+
 			if (createrRole ===  'adm') {
 	
 					if (role === 'am' || role === 'ac' || role === 'decideur') {
 	
-					accountModel = Singlton.getUtilisateur();
+					accountModel = Models.getUtilisateur();
 					let account = await accountModel.findOne({ where: { id_utilisateur:createrId } });
 	
 					if (!account) {
@@ -235,16 +229,18 @@ class AccountManagmentService {
 					}
 			
 					await user.create({...body});
+					return { message: `Account created successfully` };
 	
 				} else {
 					throw new Error(`You are not authorized to create this account`);
 				}
 	
 			} else if (createrRole ===  'sadm'){
+
 	
 				if (role === 'adm') {
 	
-					accountModel = Singlton.getUtilisateur();
+					accountModel = Models.getUtilisateur();
 					let account = await accountModel.findOne({ where: { id_utilisateur:createrId } });
 	
 					if (!account) {
@@ -252,6 +248,7 @@ class AccountManagmentService {
 					}
 			
 					await user.create({...body});
+			        return { message: `Account created successfully` };
 	
 				} else {
 					throw new Error(`You are not authorized to create this account`);
