@@ -2,6 +2,8 @@ import models from '../../models/sequelize';
 import distributeursService from '../../services/service-distributeurs/distributeurs.service';
 import distributeursLogic from '../../services/service-distributeurs/distributeurs.logic';
 import axios from 'axios';
+import { create } from 'domain';
+import exp from 'constants';
 
 
 describe('Service de gestion de distributeurs', () => {
@@ -119,6 +121,67 @@ describe('Service de gestion de distributeurs', () => {
         })
 
     
+    })
+
+
+    describe("Creer une nouvelle ressource de type distributeur",() => {
+        let Mock
+        beforeEach(()=> {
+            const exist : string = "1245"
+            Mock = spyOn(models.distributeur, 'create').and.callFake((info : any) => {
+                if(info.numero_serie_distributeur == exist || !info.numero_serie_distributeur) {
+                    return Promise.resolve(null)
+                } else {
+                    return Promise.resolve({
+                        id_distributeur : info.id_distributeur,
+                        numero_serie_distributeur : info.numero_serie_distributeur
+                      });
+                }
+            })
+
+        })
+
+        afterEach(()=> {
+            models.distributeur.create.calls.reset()
+        })
+
+
+
+        it("crée un nouveau distributeur et retourne l'objet",async () => {
+            const info = {
+                id_distributeur : '-2',
+                numero_serie_distributeur : '1246'
+            }
+            const result = await distributeursService.add(info)
+            expect(models.distributeur.create).toHaveBeenCalledWith(info);
+            expect(result).toBeDefined();
+            expect(result).toEqual(info)
+        })
+
+        
+        it("retourne null si le numero de serie est déjà utilisé",async () => {
+            const info = {
+                id_distributeur : '-8',
+                numero_serie_distributeur : '1245'
+            }
+            const result = await distributeursService.add(info)
+            expect(models.distributeur.create).toHaveBeenCalledWith(info);
+            expect(result).toBeDefined();
+            expect(result).toEqual(null)
+
+        })
+
+        it("retourne null si aucun numero de serie est fourni",async () => {
+             const info = {
+                id_distributeur : '-8',
+                numero_serie_distributeur : ''
+            }
+            const result = await distributeursService.add(info)
+            expect(models.distributeur.create).toHaveBeenCalledWith(info);
+            expect(result).toBeDefined();
+            expect(result).toEqual(null)
+
+        })
     })
 
     }

@@ -25,11 +25,12 @@ const distributeursService = {
         
     },
 
-    add :async (info : any) : Promise<DistributeurModel[]>=> {
+    add :async (info : any) : Promise<DistributeurModel>=> {
         const distributeur : DistributeurModel = await models.distributeur.create(info)
         //log the new distributeur
         //console.log(`id: ${distributeur.id_distributeur}, serie: ${distributeur.numero_serie_distributeur}`)
         return distributeur
+        
     }, 
     update : async (info : any, id : Number) : Promise<DistributeurModel[]>=> {
         
