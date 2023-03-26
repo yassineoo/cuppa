@@ -3,12 +3,13 @@ module.exports = function(sequelize, DataTypes) {
   return sequelize.define('panne', {
     id_panne: {
       type: DataTypes.STRING(50),
+      autoIncrement: true,
       allowNull: false,
       primaryKey: true
     },
     objet_panne: {
       type: DataTypes.STRING(50),
-      allowNull: false
+      allowNull:true
     },
     date_panne: {
       type: DataTypes.DATEONLY,
@@ -24,14 +25,14 @@ module.exports = function(sequelize, DataTypes) {
     },
     etat_panne: {
       type: DataTypes.STRING(50),
-      allowNull: false
+      allowNull: true
     },
     id_role: {
       type: DataTypes.INTEGER,
-      allowNull: false,
+      allowNull: true,
       references: {
         model: 'role',
-        key: 'id_role'
+        key: 'id_role',
       }
     },
     id_distributeur: {
