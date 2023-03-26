@@ -43,7 +43,22 @@ const distributeursLogic= {
             return []
         }
         
-    }
+    },
+
+    delete : async(id : string) => {
+        const distributeur : DistributeurModel = await distributeursService.getByID(id)
+        if(!distributeur) {
+            throw new Error(`Distributeur with id ${id} does not exist.`);
+        } else {
+             //un distributeur peut être supprimé seulement s'il n'est pas affecté à aucun client
+            if(!distributeur.id_client) {
+                distributeursService.delete(distributeur)
+            } else {
+                throw new Error(`Failed deletion : Distributeur ${id} already belongs to a client`);
+            }
+        }
+       
+    } 
 }
 
 

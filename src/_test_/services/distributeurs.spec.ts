@@ -184,6 +184,44 @@ describe('Service de gestion de distributeurs', () => {
         })
     })
 
+
+    describe("Supprimer un distributeur portant l'identifiant id",() => {
+
+
+        it("Supprime un distributeur s'il exist - method : distributeurLogic.Delete",async () => {
+            const id : string = '5'
+
+            const distributeur = {id_distributeur : id, numero_serie_distributeur : '3498UR45', id_client : ""}
+
+            spyOn(distributeursService, 'getByID').and.returnValue(Promise.resolve(distributeur));
+            spyOn(distributeursService, 'delete').and.returnValue(Promise.resolve());
+
+            await distributeursLogic.delete(id);
+            
+            expect(distributeursService.getByID).toHaveBeenCalledWith(id);
+            expect(distributeursService.delete).toHaveBeenCalledWith(distributeur);
+        })
+
+        it("Lance une erreur si le distributeur n'existe pas- method : distributeurLogic.Delete",async () => {
+
+            const id : string = "-5"
+            spyOn(distributeursService, 'getByID').and.returnValue(Promise.resolve(null))
+
+            await expectAsync(distributeursLogic.delete(id)).toBeRejectedWithError(`Distributeur with id ${id} does not exist.`)
+            
+        })
+
+        it("Lance une erreur si le distributeur est déjà affecté à un client - method : distributeurLogic.Delete",async () => {
+            const id : string = '5'
+
+            const distributeur = {id_distributeur : id, numero_serie_distributeur : '3498UR45', id_client : "client_34"}
+
+            spyOn(distributeursService, "getByID").and.returnValue(Promise.resolve(distributeur))
+            await expectAsync(distributeursLogic.delete(id)).toBeRejectedWithError(`Failed deletion : Distributeur ${id} already belongs to a client`);
+        })
+
+    })
+
     }
 )
 

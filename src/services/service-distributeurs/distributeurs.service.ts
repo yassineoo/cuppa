@@ -41,10 +41,8 @@ const distributeursService = {
         return distributeur
     }, 
 
-    delete :  async(id : number) => {
-        const distributeur : DistributeurModel = await models.distributeur.findByPk(id)
-        await distributeur.destroy()
-       // console.log(`id: ${distributeur.id_distributeur}, serie: ${distributeur.numero_serie_distributeur}`);
+    delete :  async(distributeur : DistributeurModel) => {
+          await distributeur.destroy();
     }
 }
 

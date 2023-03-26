@@ -67,10 +67,10 @@ const distributeursController = {
 
     deleteById : async(req : Request, res : Response) => {
         try {
-            await distributeursService.delete(Number(req.params.id))
+            await distributeursLogic.delete(req.params.id)
             res.status(200).send(`deleted`)
-        } catch (err : any){
-            res.status(500).send('Internal server error')
+        } catch (error : any){
+            res.status(500).send(error.message)
         }
     },
 }
