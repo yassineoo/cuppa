@@ -65,6 +65,42 @@ const distributeursController = {
         }
     },
 
+    updateClient : async(req : Request, res : Response) => {
+        try {
+            const distributeur = await distributeursLogic.updateClient(req.params.id, req.body)
+            res.status(201).json(distributeur)
+        } catch(err : any) {
+            res.status(500).send("Erreur de mise à jour : " + err.message)
+        }
+    },
+
+    
+    updateState : async(req : Request, res : Response) => {
+        try {
+
+        } catch(err : any) {
+
+        }
+    },
+
+    updateInstallationDate : async(req : Request, res : Response) => {
+        try {
+            if(req.user != null){
+                const  distributeur = await distributeursLogic.updateInstallationDate(
+                    req.params.id,
+                    req.user.id,
+                    req.body)
+                   res.status(200).json(distributeur)
+            }
+        } catch(err : any) {
+            res.status(500).send("Erreur de mise à jour : " + err.message)
+        }
+    },
+
+
+
+
+
     deleteById : async(req : Request, res : Response) => {
         try {
             await distributeursLogic.delete(req.params.id)

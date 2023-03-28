@@ -30,11 +30,36 @@ distributeursRouter.post("/",  authorize(['SADM']), distributeursController.crea
 
 
 /**
-@route PUT distributeurs/:id
-@desc update one distributeur
-@access ADM, SADM, AC, AM
+@route PUT distributeurs/:id/client
+@desc affecter le distributeur à un client 
+@access SADM
 */
-distributeursRouter.put("/:id",  authorize(['AM', 'ADM', 'SADM', 'AC']), distributeursController.updateById)
+distributeursRouter.put("/:id/client",  authorize(['SADM']), distributeursController.updateClient)
+
+
+/**
+@route PUT distributeurs/:id/etat
+@desc changer l'état d'un distributeur
+@access SADM, ADM, AM
+*/
+
+distributeursRouter.put("/:id/etat",  authorize(['SADM', 'ADM', 'AM']), distributeursController.updateState)
+
+
+/**
+@route PUT distributeurs/:id/localisation
+@desc changer la localisation statique d'un distributeur
+@access ADM, AM
+*/
+//distributeursRouter.put("/:id/localisation",  authorize(['ADM', 'AM']), distributeursController.updateById)
+
+
+/**
+@route PUT distributeurs/:id/installation
+@desc changer la data d'installation d'un distributeur
+@access SADM, ADM
+*/
+distributeursRouter.put("/:id/installation",  authorize(['ADM']), distributeursController.updateInstallationDate)
 
 
 /**

@@ -32,12 +32,9 @@ const distributeursService = {
         return distributeur
         
     }, 
-    update : async (info : any, id : Number) : Promise<DistributeurModel[]>=> {
+    update : async (info : any, distributeur : DistributeurModel) : Promise<DistributeurModel>=> {
         
-        const distributeur : DistributeurModel = await models.distributeur.findByPk(id)
         await distributeur.update(info)
-        //log the modified distributeur
-        //console.log(`id: ${distributeur.id_distributeur}, serie: ${distributeur.numero_serie_distributeur}`)
         return distributeur
     }, 
 

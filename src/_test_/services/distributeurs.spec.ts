@@ -222,6 +222,90 @@ describe('Service de gestion de distributeurs', () => {
 
     })
 
+
+    describe("Affecter un distributeur à un client", ()=> {
+
+        it("Affecte un Distributeur existant à un client existant sachant que le champs id_client dans distributeur est null et retourne le distributeur",async () => {
+            const id_dist : string = '5'
+            const id_client : string = ""
+            const distributeur = {id_distributeur : id_dist, numero_serie_distributeur : '3498UR45', id_client : id_client}
+
+           spyOn(distributeursService, "getByID").and.returnValue(Promise.resolve(distributeur));
+
+           distributeur.id_client = id_client
+           spyOn(distributeursService, "update").and.returnValue(Promise.resolve(distributeur));
+
+           const result = await distributeursLogic.updateClient(id_dist, id_client);
+
+           expect(distributeursService.getByID).toHaveBeenCalledWith(id_dist);
+           expect(distributeursService.update).toHaveBeenCalledWith(id_client, distributeur);
+           expect(result).toEqual(distributeur);
+            
+
+        }),
+
+        it("Lance une error si le distributeur est déjà affecté à un client",async () => {
+            const id_dist : string = '5'
+            const id_client : string = "client567"
+            const distributeur = {id_distributeur : id_dist, numero_serie_distributeur : '3498UR45', id_client : id_client}
+
+           spyOn(distributeursService, "getByID").and.returnValue(Promise.resolve(distributeur));
+
+           
+           await expectAsync(distributeursLogic.updateClient(id_dist, id_client)).toBeRejectedWithError(`Distributeur ${id_dist} already belongs to a client ${id_client}`);
+
+           expect(distributeursService.getByID).toHaveBeenCalledWith(id_dist);
+
+        }),
+
+
+        it("Lance une error s'il y a un problème avec la m à j de la bdd",async () => {
+            const id_dist : string = '5'
+            const id_client : string = 'client67'
+            const distributeur = {id_distributeur : id_dist, numero_serie_distributeur : '3498UR45', id_client : null}
+            
+            spyOn(distributeursService, "getByID").and.returnValue(Promise.resolve(distributeur));
+
+            spyOn(distributeursService, "update").and.returnValue(Promise.reject(new Error("Error during update")));
+
+            await expectAsync(distributeursLogic.updateClient(id_dist, id_client)).toBeRejectedWithError(`Error during update`);
+        })
+
+    })
+
+
+    describe("M à j la date d'installation d'un distributeur", ()=> {
+        it("Retourne l'objet distributeur m à j si l'identifiant est valide et le distributeur appartient au même client que l'admin",async () => {
+            const id_dist : string = '23D0L'
+            const nv_info = {date_installation_distributeur : "23-03-2019"} //problem here because it's supposed to only take date format
+             //change to date later 
+
+            const user_id = "23"
+            const user_client = "459"
+
+            const distributeur = {id_distributeur : id_dist, numero_serie_distributeur : "9843LMP9", date_installation_distributeur : "", id_client : user_client}
+
+            spyOn(axios, 'get').and.returnValue(Promise.resolve({ data: { id_client: user_client } }));
+            spyOn(distributeursService, 'getByID').and.returnValue(Promise.resolve(distributeur));
+
+            //update distributeur & create mock
+            const updated = distributeur
+            updated.date_installation_distributeur = nv_info.date_installation_distributeur
+
+            spyOn(distributeursService, "update").and.returnValue(Promise.resolve(updated));
+
+            //act
+            const result = await distributeursLogic.updateInstallationDate(distributeur.id_distributeur, user_id, nv_info);
+
+            //assertions & method calls 
+            expect(result).toEqual(updated)
+            expect(axios.get).toHaveBeenCalledWith(process.env.URL + `getAccount/${user_id}`)
+            expect(distributeursService.update).toHaveBeenCalledWith(nv_info, distributeur);
+
+
+        })
+    })
+
     }
 )
 
