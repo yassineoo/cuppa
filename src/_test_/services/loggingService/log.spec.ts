@@ -7,8 +7,8 @@ describe('LoggingService', () => {
 	beforeAll(() => {
 		// Initialize the logging service and get the file paths for the error and info logs
     
-		errorLogFilePath = './logs/error2.log';
-		infoLogFilePath = './logs/info2.log';
+		errorLogFilePath = './logs/error.log';
+		infoLogFilePath = './logs/info.log';
 	});
 
 	afterEach(() => {
@@ -18,7 +18,7 @@ describe('LoggingService', () => {
 	});
 
 	it('should log an error message', () => {
-		const errorMessage = 'This is an error message';
+		const errorMessage = 'This is an error message spsecial';
 		loggingService.log('error', errorMessage, { errorCode: 123 });
 
 		// Check that the error log file was created and contains the expected message

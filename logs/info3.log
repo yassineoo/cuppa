@@ -1,0 +1,6 @@
+{"level":"info","message":"This is an info message","metadata":{"infoCode":456,"timestamp":"2023-03-27T13:08:11.023Z"}}
+{"level":"error","message":"This is an error message","metadata":{"errorCode":123,"timestamp":"2023-03-27T13:08:11.035Z"}}
+{"level":"info","message":"This is an info message","metadata":{"infoCode":456,"timestamp":"2023-03-27T13:10:16.876Z"}}
+{"level":"error","message":"This is an error message spsecial","metadata":{"errorCode":123,"timestamp":"2023-03-27T13:10:16.896Z"}}
+{"level":"error","message":"This is an error message spsecial","metadata":{"errorCode":123,"timestamp":"2023-03-27T13:11:39.057Z"}}
+{"level":"info","message":"This is an info message","metadata":{"infoCode":456,"timestamp":"2023-03-27T13:11:39.092Z"}}

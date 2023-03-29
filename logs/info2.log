@@ -1,0 +1,2 @@
+{"level":"error","message":"This is an error message","metadata":{"errorCode":123,"timestamp":"2023-03-27T13:06:38.651Z"}}
+{"level":"info","message":"This is an info message","metadata":{"infoCode":456,"timestamp":"2023-03-27T13:06:38.725Z"}}

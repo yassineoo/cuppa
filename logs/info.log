@@ -1,2 +1,2 @@
-{"level":"info","message":"Hello distributed log files!","metadata":{"date":"someRandom","timestamp":"2023-03-20T19:15:48.575Z"}}
-{"level":"info","message":"Hello distributed log files!","metadata":{"date":"someRandom","timestamp":"2023-03-20T19:16:38.954Z"}}
+{"level":"info","message":"This is an info message","metadata":{"infoCode":456,"timestamp":"2023-03-27T13:13:40.365Z"}}
+{"level":"error","message":"This is an error message spsecial","metadata":{"errorCode":123,"timestamp":"2023-03-27T13:13:40.410Z"}}

@@ -6,7 +6,7 @@ class LoggingService {
 	constructor() {
 	// Create Winston logger instance
 		this.logger =createLogger({
-			level: 'info',
+			level: 'silly',
 			format: format.combine(
 				format.timestamp(),
 				format.metadata(),
@@ -24,7 +24,14 @@ class LoggingService {
 				new winston.transports.File({ filename: './logs/info.log',level:'info' }),
 			],
 		});
+
 	}
+	/**
+	 * logger main function
+	 * @param level  {String} the level of the log (error , info,..)
+ 	 * @param message {String} the message of the log 
+	 * @param metadata {object} any additional metadata to the log 
+	 */
 	log(level: string, message: string,metadata:any) {
 		this.logger.log(level, message,metadata);
 	}
