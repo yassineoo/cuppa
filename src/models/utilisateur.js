@@ -18,8 +18,8 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING(50),
       allowNull: true
     },
-    id_client: {
-      type: DataTypes.INTEGER,
+    id_role: {
+      type: DataTypes.STRING(50),
       allowNull: false
     }
   }, {
@@ -39,7 +39,7 @@ module.exports = function(sequelize, DataTypes) {
         name: "id_role",
         using: "BTREE",
         fields: [
-          { name: "id_client" },
+          { name: "id_role" },
         ]
       },
     ]

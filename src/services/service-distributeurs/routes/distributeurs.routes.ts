@@ -1,6 +1,6 @@
 import express, { Request, Response, Router } from "express";
-import authorize from "./distributeurs.autorisation";
-import distributeursController from "./distributeurs.controller";
+import authorize from "../middlwares/distributeurs.autorisation";
+import distributeursController from "../controllers/distributeurs.controller";
 
 
 const distributeursRouter = express.Router();
@@ -38,33 +38,16 @@ distributeursRouter.put("/:id/client",  authorize(['SADM']), distributeursContro
 
 
 /**
-@route PUT distributeurs/:id/etat
-@desc changer l'état d'un distributeur
+@route PUT distributeurs/:id
+@desc changer les informations d'un distributeur
 @access SADM, ADM, AM
 */
 
-distributeursRouter.put("/:id/etat",  authorize(['SADM', 'ADM', 'AM']), distributeursController.updateState)
-
-
-/**
-@route PUT distributeurs/:id/localisation
-@desc changer la localisation statique d'un distributeur
-@access ADM, AM
-*/
-//distributeursRouter.put("/:id/localisation",  authorize(['ADM', 'AM']), distributeursController.updateById)
-
+distributeursRouter.put("/:id",  authorize(['SADM', 'ADM', 'AM']), distributeursController.updateById)
 
 /**
-@route PUT distributeurs/:id/installation
-@desc changer la data d'installation d'un distributeur
-@access SADM, ADM
-*/
-distributeursRouter.put("/:id/installation",  authorize(['ADM']), distributeursController.updateInstallationDate)
-
-
-/**
-@route delete distributeurs/
-@desc delete one distributeur
+@route DELETE distributeurs/
+@desc delete un distributeur
 @access SADM
 */
 distributeursRouter.delete("/:id", authorize(['SADM']), distributeursController.deleteById)

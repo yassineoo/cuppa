@@ -1,7 +1,7 @@
 import express, {Express, Response, Request, NextFunction} from "express"
 
 
-import distributeursRouter from "./services/service-distributeurs/distributeurs.routes"
+import distributeursRouter from "./services/service-distributeurs/routes/distributeurs.routes"
 const port = 8000
 
 const app : Express = express()

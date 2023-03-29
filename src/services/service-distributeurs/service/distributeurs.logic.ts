@@ -2,7 +2,7 @@ import dotenv from 'dotenv';
 import axios, { AxiosResponse } from 'axios';
 import distributeursService from './distributeurs.service';
 
-import models from "../../models/sequelize";
+import models from "../../../models/sequelize";
 
   type DistributeurModel = typeof models.distributeur
 
@@ -61,19 +61,23 @@ const distributeursLogic= {
     },
 
     updateState :async () => {
-        
+        //states : 
+         //en cours d'installation 
+         //actif 
+         //deconnecté 
+         //hors service 
     },
 
-    updateClient :async (id_dist : string, info : string) => {
+    updateClient :async (id_dist : string, info : any) => {
         const distributeur : DistributeurModel = await distributeursService.getByID(id_dist)
         if(!distributeur) {
             throw new Error(`Distributeur with id ${id_dist} does not exist.`);
         } else {
             if(!distributeur.id_client) {
                 try{
-                   return  distributeursService.update(info, distributeur)
-                } catch (err : any ){
-                    throw new Error(err.message)
+                   return  distributeursService.update({id_client : info.id_client}, distributeur)
+                } catch (error){
+                    throw error
                 }
             }
             else {
@@ -82,25 +86,40 @@ const distributeursLogic= {
         }
     },
 
-    updateInstallationDate:async (id : string, user_id: string, info : any) => {
-        try {
-            //find client of user
-           const response = await axios.get(process.env.URL + `getAccount/${user_id}`) 
-           const user_client = response.data.id_client
 
-           const distributeur = await distributeursService.getByID(id)
-           if(user_client == distributeur.id_client) {
-                    return  distributeursService.update(info, distributeur)
+    update :async (info : any, num_serie : string, user_id? : string) => {
+        let authorized : boolean = true
+        console.log("\n \n \n ", user_id)
+        const { date_installation_distributeur, localisation_statique_distributeur, etat_distributeur} = info;
+        try {
+            const distributeur = await distributeursService.getByID(num_serie)
+
+            if(user_id) {
+                const response = await axios.get(process.env.URL + `getAccount/${user_id}`) 
+                const user_client = response.data.id_client
+                if(user_client != distributeur.id_client) {
+                    authorized = false
+                }
+            }
+
+            if(authorized) {
+                return  distributeursService.update(
+                    {   date_installation_distributeur: date_installation_distributeur ?? distributeur.date_installation_distributeur,
+                        localisation_statique_distributeur: localisation_statique_distributeur ?? distributeur.localisation_statique_distributeur,
+                        etat_distributeur: etat_distributeur ?? distributeur.etat_distributeur }, 
+                    distributeur)
             } else {
                     return null
             }
-        
-        } catch (error : any) {
-            throw new Error(error.message)
+
+        } catch(error : any) {
+            throw new error (`Failed update : Distributeur ${num_serie}`);
         }
-        
-        
-    }
+    },
+
+
+
+
 }
 
 

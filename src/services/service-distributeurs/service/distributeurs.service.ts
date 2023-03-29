@@ -1,4 +1,4 @@
-import models from "../../models/sequelize";
+import models from "../../../models/sequelize";
 
   type DistributeurModel = typeof models.distributeur
 
@@ -33,13 +33,14 @@ const distributeursService = {
         
     }, 
     update : async (info : any, distributeur : DistributeurModel) : Promise<DistributeurModel>=> {
-        
-        await distributeur.update(info)
+
+        distributeur = await distributeur.update(info)
         return distributeur
+
     }, 
 
     delete :  async(distributeur : DistributeurModel) => {
-          await distributeur.destroy();
+        await distributeur.destroy();
     }
 }
 

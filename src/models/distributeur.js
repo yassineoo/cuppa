@@ -1,30 +1,26 @@
 const Sequelize = require('sequelize');
 module.exports = function(sequelize, DataTypes) {
   return sequelize.define('distributeur', {
-    id_distributeur: {
-      type: DataTypes.INTEGER,
+    numero_serie_distributeur: {
+      type: DataTypes.STRING(50),
       allowNull: false,
       primaryKey: true
     },
-    numero_serie_distributeur: {
-      type: DataTypes.STRING(50),
-      allowNull: false
-    },
     etat_distributeur: {
       type: DataTypes.STRING(50),
-      allowNull: false
+      allowNull: true
     },
-    Date_installation_distributeur: {
+    date_installation_distributeur: {
       type: DataTypes.DATEONLY,
-      allowNull: false
+      allowNull: true
     },
     localisation_statique_distributeur: {
       type: DataTypes.STRING(50),
       allowNull: true
     },
     id_client: {
-      type: DataTypes.INTEGER,
-      allowNull: false
+      type: DataTypes.STRING(50),
+      allowNull: true
     }
   }, {
     sequelize,
@@ -36,11 +32,11 @@ module.exports = function(sequelize, DataTypes) {
         unique: true,
         using: "BTREE",
         fields: [
-          { name: "id_distributeur" },
+          { name: "numero_serie_distributeur" },
         ]
       },
       {
-        name: "id_role",
+        name: "id_client",
         using: "BTREE",
         fields: [
           { name: "id_client" },
