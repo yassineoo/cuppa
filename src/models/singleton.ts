@@ -29,6 +29,7 @@ import tacheModel from './tache';
 import utilisateurModel from './utilisateur';
 import roleModel from './role';
 import profilModel from './profil';
+import consommateurModel from './consommateur';
 
 
 class Models {
@@ -61,6 +62,7 @@ class Models {
 	private preparerAvec: any = null;
 	private tache: any = null;
 	private am_avoir_tache: any = null;
+	private consommateur: any = null;
 
 	constructor() {
 
@@ -87,7 +89,7 @@ class Models {
 		this.annonceur = annonceurModel(sequelize, Sequelize);
 		this.annonce = annonceModel(sequelize, Sequelize);
 		this.reclamation = reclamationModel(sequelize, Sequelize);
-
+		this.consommateur = consommateurModel (sequelize,Sequelize);
 		this.preparerAvec = preparerAvecModel(sequelize, Sequelize);
 		this.tache = tacheModel(sequelize, Sequelize);
 		this.utilisateur.belongsTo(this.role,{foreignKey: 'id_role'});
@@ -224,6 +226,12 @@ class Models {
 	getTache() {
 
 		return this.tache;
+
+	}
+
+	getConsommateur() {
+
+		return this.consommateur;
 
 	}
 
