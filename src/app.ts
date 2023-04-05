@@ -2,6 +2,7 @@ import express, {Express, Response, Request, NextFunction} from "express"
 
 
 import distributeursRouter from "./services/service-distributeurs/routes/distributeurs.routes"
+import commandesRouter from "./services/service-commandes/routes/commandes.routes";
 const port = 8000
 
 const app : Express = express()
@@ -14,6 +15,8 @@ app.get("/", (req : Request, res : Response) => {
 })
 
 app.use('/distributeurs', distributeursRouter);
+
+app.use('/commandes', commandesRouter);
 
 app.use((req : Request, res : Response) => {
     res.type('text/plain')

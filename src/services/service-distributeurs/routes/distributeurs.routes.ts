@@ -1,5 +1,5 @@
-import express, { Request, Response, Router } from "express";
-import authorize from "../middlwares/distributeurs.autorisation";
+import express from "express";
+import authorize from "../../../middlewares/autorisation";
 import distributeursController from "../controllers/distributeurs.controller";
 
 
