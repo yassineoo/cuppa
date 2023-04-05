@@ -14,22 +14,32 @@ const commandesController = {
     getInstructions :async (req : Request, res : Response) => {
         try {
             //get translated instructions
-            const instructions : Map<string, string> = await commandesService.getInstructions(req.params.id)
+            const instruction : string = await commandesService.getInstructions(req.params.id)
             //update the state of the order to : payed 
 
             //return result
-            res.status(200).send(Object.fromEntries(instructions.entries()))
+            res.status(200).send(instruction)
         } catch (err : any) {
             res.status(500).send(err.message)
         }
     },
 
-    getById :async (req : Request, res : Response) => {
-        
+    getByID :async (req : Request, res : Response) => {
+        try {
+            const commande = await commandesService.getByID(req.params.id)
+            res.status(201).send(commande)
+        } catch (err :any) {
+            res.status(500).send(err.message)
+        }
     },
 
     update :async (req : Request, res : Response) => {
-        
+        try {
+            const commande = await commandesService.update(req.params.id, req.body)
+            res.status(201).send(commande)
+        } catch (err :any) {
+            res.status(500).send(err.message)
+        }
     },
 
     getAll :async (req : Request, res : Response) => {

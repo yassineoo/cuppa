@@ -12,7 +12,7 @@ commandesRouter.post('/', commandesController.create)
 commandesRouter.get('/:id/instructions',  commandesController.getInstructions)
 
 //get commande info for paiement purposes 
-commandesRouter.get('/:id',  commandesController.getById)
+commandesRouter.get('/:id',  commandesController.getByID)
 
 
 //update commande info
