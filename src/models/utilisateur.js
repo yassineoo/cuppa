@@ -25,6 +25,10 @@ module.exports = function(sequelize, DataTypes) {
         model: 'role',
         key: 'id_role'
       }
+    },
+    registration_token: {
+      type: DataTypes.STRING(255),
+      allowNull: true
     }
   }, {
     sequelize,
