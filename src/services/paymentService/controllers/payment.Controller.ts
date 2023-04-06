@@ -14,8 +14,8 @@ class PaymentController {
 	*/
 	static createAccount = async (req : Request, res : Response) => {
 		try {
-			const { email, country , clientId,card } = req.body;
-			const account = await PaymentService.createAccount(email, country,clientId,card);
+			const { email, country , clientId,fName,lName,dob,phoneNumber } = req.body;
+			const account = await PaymentService.createAccount(email, country,clientId,fName,lName,dob,phoneNumber);
 			res.status(200).json({ success: true, data: account });
 		} catch (error) {
 			res.status(500).json({ success: false, error: error.message });
@@ -24,6 +24,7 @@ class PaymentController {
 
 	static createPaymentIntent = async (req : Request, res : Response) => {
 		try {
+			
 			const paymentIntent = await PaymentService.createPaymentIntent(req.body);
 			res.status(200).json({ paymentIntent });
 		} catch (error) {
@@ -35,9 +36,8 @@ class PaymentController {
 
 	static  handleWebhook = async (req, res) =>  {
 		try {
-			const event = req.body;
-			const signature = req.headers['stripe-signature'];
-			await PaymentService.handleWebhook(event,signature);
+			const signature = req.headers['stripe-signature'] as string;			
+			await PaymentService.handleWebhook(req.body,signature);
 			res.status(200).send();
 		} catch (err) {
 			console.error(`Error handling webhook: ${err}`);
