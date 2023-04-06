@@ -1,5 +1,7 @@
 import {Request, Response} from "express"
 import commandesService from "../service/commandes.service"
+import commandesLogic from "../service/commandes.logic"
+import { error } from "console"
 
 const commandesController = {
     create :async (req : Request, res : Response) => {
@@ -43,15 +45,51 @@ const commandesController = {
     },
 
     getAll :async (req : Request, res : Response) => {
-        
+        try {
+            let commandes;
+            if(req.user) {
+                commandes = await commandesService.getAllByClient(req.user.id)
+            } 
+            else {
+                throw new Error("Authorization required")
+            }
+            
+            res.status(200).json(commandes)
+        } catch (err : any){
+            res.status(500).send(err.message)
+        }
     },
 
     getByState :async (req : Request, res : Response) => {
-        
+        try {
+            let commandes;
+            if(req.user) {
+                commandes = await commandesService.getByState(req.user.id, req.params.etat)
+            } 
+            else {
+                throw new Error("Authorization required")
+            }
+            
+            res.status(200).json(commandes)
+        } catch (err : any){
+            res.status(500).send(err.message)
+        }
     },
 
     getByPeriod :async (req : Request, res : Response) => {
-        
+        try {
+            let commandes;
+            if(req.user) {
+                commandes = await commandesService.getByPeriod(req.user.id, req.params.period, req.params.when)
+            } 
+            else {
+                throw new Error("Authorization required")
+            }
+            
+            res.status(200).json(commandes)
+        } catch (err : any){
+            res.status(500).send(err.message)
+        }
     },
 }
 

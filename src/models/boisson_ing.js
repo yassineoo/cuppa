@@ -15,8 +15,7 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.DOUBLE,
       allowNull: true
     }
-  }, 
-  {
+  }, {
     sequelize,
     tableName: 'boisson_ing',
     timestamps: false,

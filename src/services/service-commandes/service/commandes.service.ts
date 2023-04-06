@@ -1,3 +1,4 @@
+import { Sequelize } from "sequelize";
 import models from "../../../models/sequelize";
 import commandesLogic from "./commandes.logic";
 
@@ -7,7 +8,7 @@ import commandesLogic from "./commandes.logic";
 const commandesService = {
     add :async (info : any) : Promise<Number>=> {
         try  {
-            info.etat_cmd = "intialisée"
+            info.etat_cmd = "initialisée"
             const commande : CommandeModel = await models.commande.create(info)
             return commande.id_cmd 
         } catch(err : any) {
@@ -79,9 +80,59 @@ const commandesService = {
       } catch(err) {
 
       }
+    },
+
+    getAllByClient :async (id : string) => {
+      try {
+        //find client of user
+        const user = await models.utilisateur.findByPk(id)
+        if(!user) {
+          throw new Error("User doesn't exist")
+        }    
+        const commandes : CommandeModel[] = await models.commande.findAll({
+          include: [
+            {
+              model: models.distributeur,
+              where : {id_client : user.id_client}
+            }
+          ],
+        });
+        return commandes
+
+      } catch (error) {
+          throw error
+      }
+    }, 
+
+    getByState :async (id : string, etat : string) => {
+        try {
+          //find client of user
+          const user = await models.utilisateur.findByPk(id)
+          if(!user) {
+            throw new Error("User doesn't exist")
+          }    
+        
+          const commandes : CommandeModel[] = await models.commande.findAll({
+            where: {
+              etat_cmd: etat
+            },
+            include: [
+              {
+                model: models.distributeur,
+                where : {id_client : user.id_client}
+              }
+            ],
+          });
+          return commandes
+
+        } catch (error) {
+            throw error
+        }
+      }, 
+      getByPeriod :async (id: string, period : string, when : string) => {
+
+      }
     }
 
-
-}
 
 export default commandesService

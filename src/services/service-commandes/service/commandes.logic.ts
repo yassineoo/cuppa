@@ -8,6 +8,7 @@ const commandesLogic = {
 
         return commande
     }
+
 }
 
 export default commandesLogic
