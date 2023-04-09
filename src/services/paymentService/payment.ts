@@ -127,7 +127,8 @@ class PaymentService {
 			}
 
 			//const payment = Paiement.create({date_paiement:new Date().toLocaleDateString() ,heure_paiement : new Date().toLocaleTimeString(),  id_cmd :orderId });
-	
+			/*
+			for testing */
 			const paymentMethodo = await stripe.paymentMethods.create({
 				type: 'card',
 				card: {
@@ -137,6 +138,7 @@ class PaymentService {
 					cvc: '123',
 				},
 			});
+			
 		
 			const paymentIntent = await stripe.paymentIntents.create({
 				amount,
@@ -198,6 +200,39 @@ class PaymentService {
 		} catch (err) {
 			console.error(`Error handling webhook: ${err}`);
 			throw new Error(`Webhook Error: ${err.message}`);
+		}
+	};
+
+
+	static  refundPayment = async (paymentId, amount,reason) =>  {
+		
+		try {
+			const paiement = Paiement.findByPk(paymentId);
+			
+			const payment = await stripe.refunds.create({
+				payment_intent: paiement.paymentIntentId,
+				amount,
+				reason
+			});
+			
+			// Retrieve all transfers associated with PaymentIntent using transfer_group
+			const transfers = await stripe.transfers.list({ transfer_group: `group_${paiement.paymentIntentId}`  });
+			console.log(transfers);
+
+
+			// Reverse the transfer
+			const reversal = await stripe.transfers.createReversal(
+				transfers.data[0].id,
+				{ 
+					description: `Reversal for transfer (${reason})`,
+					refund_application_fee: true // whether to refund the application fee as well
+				}
+			);
+			return payment;
+		}
+		catch (error) {
+			console.error(error);
+			throw new Error('Error processing refund');
 		}
 	};
 

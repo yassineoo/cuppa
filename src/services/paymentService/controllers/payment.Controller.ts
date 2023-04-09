@@ -41,7 +41,21 @@ class PaymentController {
 			res.status(200).send();
 		} catch (err) {
 			console.error(`Error handling webhook: ${err}`);
-			res.status(400).send(`Webhook Error: ${err.message}`);
+			res.status(400).json({status:'fail' , message:`Webhook Error: ${err.message}}`});
+		}
+	};
+
+	
+	static refund = async (req, res) =>{
+		try {
+			const { paymentId, amount,reason } = req.body;
+			const result = await PaymentService.refundPayment(paymentId, amount,reason);
+			res.status(200);
+			res.json(result);
+
+		}
+		catch (err) {
+			res.status(400).json({status:'fail' , message:`Webhook Error: ${err.message}}`});
 		}
 	};
 
