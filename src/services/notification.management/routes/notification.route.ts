@@ -1,18 +1,18 @@
 import express from 'express';
 import { notifyADMAndAMOfVolAttempt, notifyAMOfInterventionTask, notifyAMOfPanne } from '../controllers/notification.controller';
-import Authorization from './../middlewares/auth';
+//import Authorization from './../middlewares/auth';
 
 const router = express.Router();
 
 
-router.post('/notify-adm-am-of-vol-attempt',Authorization(['adm','am']), notifyADMAndAMOfVolAttempt);
+router.post('/notify-adm-am-of-vol-attempt',notifyADMAndAMOfVolAttempt);
 
 
-router.post('/notify-am-of-panne',Authorization(['am']), notifyAMOfPanne);
+router.post('/notify-am-of-panne',notifyAMOfPanne);
 
 
 
-router.post('/notify-am-of-intervention-task',Authorization(['am']), notifyAMOfInterventionTask);
+router.post('/notify-am-of-intervention-task',notifyAMOfInterventionTask);
 
 
 export default router;
