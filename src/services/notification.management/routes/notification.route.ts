@@ -1,7 +1,6 @@
 import express from 'express';
 import { notifyADMAndAMOfVolAttempt, notifyAMOfInterventionTask, notifyAMOfPanne } from '../controllers/notification.controller';
-
-const Authorization = require('./../middlewares/auth');
+import Authorization from './../middlewares/auth';
 
 const router = express.Router();
 

@@ -6,7 +6,7 @@ const notificationManagementService = new NotificationManagementService();
 
 
 //Increasing the timeout interval for Jasmine test suite, because the methods take longer than the specified timeout interval to complete
-jasmine.DEFAULT_TIMEOUT_INTERVAL = 10000;
+//jasmine.DEFAULT_TIMEOUT_INTERVAL = 10000;
 
 
 export async function notifyADMAndAMOfVolAttempt(req: Request, res: Response): Promise<void> {
