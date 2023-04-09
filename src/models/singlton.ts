@@ -2,7 +2,7 @@ import sequelize from '../config/sequelizer';
 import { Sequelize } from 'sequelize';
 
 
-const clientModel = require('./client.js');
+
 const distributeurModel = require('./distributeur.js');
 
 const typePaiementModel = require('./type_paiement.js');
@@ -69,7 +69,7 @@ private am_avoir_tache: any = null;
 	this.am_avoir_tache = am_avoir_tacheModel(sequelize, Sequelize);
 
 	this.distributeur = distributeurModel(sequelize, Sequelize);
-	this.client = clientModel(sequelize, Sequelize);
+	//this.client = clientModel(sequelize, Sequelize);
 	this.typePaiement = typePaiementModel(sequelize, Sequelize);
 	this.commande = commandeModel(sequelize, Sequelize);
 	this.paiement = paiementModel(sequelize, Sequelize);
