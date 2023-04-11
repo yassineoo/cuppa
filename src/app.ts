@@ -2,9 +2,6 @@ import express from 'express';
 import dotenv from 'dotenv';
 import  loginRoute from './services/authService/routes/auth.Route';
 import bodyParser from 'body-parser';
-// Create express instance to setup API
-//import ExpressLoader from  './loaders/Express' ;
-//new ExpressLoader();
 
 import LoggingService from './services/loggingService/logging';
 
@@ -18,31 +15,26 @@ loggingService.log(
 	{date:'someRandom'}
 );
   
+import paymentRoute from './services/paymentService/routes/payment.Route';
+import parser from './middlewares/parser';
 
 dotenv.config();
 const PORT = process.env.PORT || 5000;
 const app = express();
 
+// Use JSON parser for all non-webhook routes
+app.use(parser);
+  
 
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.json());
+//app.use(express.json());
+app.use('/login', loginRoute);
+app.use('/payment', paymentRoute);
 app.use(express.urlencoded({ extended: false }));
-//app.use(express.static(path.join(__dirname, 'public')));
-app.use('/login',loginRoute);
-app.get('/',(req,res) => {
 
+app.get('/', (req, res) => {
 	res.send('koko');
-
 });
-
-
 
 app.listen(PORT, () => {
-  
 	console.log(`Application started on this port ${PORT}!`);
-
 });
-
-
-
-
