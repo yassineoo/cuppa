@@ -88,7 +88,7 @@ describe('Authentication',async () => {
   		
   		} catch (error) {
 
-  			expect(error.message).toEqual('Invalid credentials:password');
+  			expect(error.message).toEqual('Invalid credentials: password');
   			expect(utilisateur.findAll).toHaveBeenCalled();
   			expect(bcrypt.compare).toHaveBeenCalled();
   		

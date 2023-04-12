@@ -231,7 +231,7 @@ class PaymentService {
 			return payment;
 		}
 		catch (error) {
-			console.error(error);
+		//	console.error(error);
 			throw new Error('Error processing refund');
 		}
 	};
