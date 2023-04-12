@@ -31,6 +31,7 @@ const distributeursService = {
         //console.log(`id: ${distributeur.id_distributeur}, serie: ${distributeur.numero_serie_distributeur}`)
         return distributeur
         
+        
     }, 
     update : async (info : any, distributeur : DistributeurModel) : Promise<DistributeurModel>=> {
 

@@ -1,4 +1,4 @@
-import { Sequelize } from "sequelize";
+
 import models from "../../../models/sequelize";
 import commandesLogic from "./commandes.logic";
 
@@ -14,6 +14,7 @@ const commandesService = {
         } catch(err : any) {
             throw err
         }
+        
     },
 
     getByID : async(id : string) : Promise<CommandeModel | null> => {
