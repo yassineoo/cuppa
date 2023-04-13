@@ -27,7 +27,8 @@ const Authorization = (allowedRoles: string[]) => {
 			
 			}
    
-
+            console.log('hisdd');
+			
 			const decoded = Authentication.verifyToken(token) as unknown as User;
       
 			req.user = {id:decoded?.id,role:decoded.role};

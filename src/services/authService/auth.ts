@@ -37,6 +37,8 @@ class  Authentication {
 
 		// eslint-disable-next-line no-useless-catch
 		try {
+			
+			
 
 			// Verify the token using the JWT secret
 			const decodedToken = await jwt.verify(token, this.jwtSecret) as User ;
@@ -80,7 +82,8 @@ class  Authentication {
 
 		// Destructure loginData object
 		const { username, password, userRole, email } = loginData;
-
+        console.log(loginData);
+		
 		// Find user by username or email
 		const user = await utilisateur.findOne({
 			attributes: ['id_utilisateur', 'id_role', 'password_utilisateur'],
@@ -94,7 +97,7 @@ class  Authentication {
 			where: {
 				[Op.or]: [
 					{ username_utilisateur: username },
-					{ email_utilisateur: email },
+					{ mail_utilisateur: email },
 				],
 			},
 		});
@@ -120,8 +123,7 @@ class  Authentication {
 		// Create JWT
 		const token = jwt.sign(
 			{ id: user.id_utilisateur, role: user.role },
-			this.jwtSecret,
-			{ expiresIn: '1d' }
+			this.jwtSecret
 		);
 
 		return token;

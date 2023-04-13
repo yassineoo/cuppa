@@ -7,6 +7,7 @@ import fs from 'fs';
 */
 
 import singleton from '../../models/singleton';
+import Facture from './facture';
 
 
 const Consommateur = singleton.getConsommateur();
@@ -178,7 +179,7 @@ class PaymentService {
 			const verifiedEvent = stripe.webhooks.constructEvent(event, signature, 'whsec_VIrLM1dRxjhLMM95LzEocepX1zaEeH48');
 			const jsonString = event.toString();
 			const objEvent = JSON.parse(jsonString);
-			
+			let facturePath;
 			
 			// Handle the event based on its type
 			switch (verifiedEvent.type) {
@@ -187,7 +188,11 @@ class PaymentService {
 				// Payment succeeded, update your database and send notification to cammand service
 				Paiement.update({ statut_paiement: 'succeeded' },
 					{ where: { id_paiment: objEvent.data.object.metadata.paymentId} });
-
+				// get the customer Info 
+				Consommateur.findByPk(objEvent.data.object.metadata.customerId);
+				facturePath = Facture.create(Consommateur.name ,'Facture for coffee',objEvent.data.object.metadata.amount,objEvent.data.object.metadata.amount.currency);
+				//send it to the user via notif 
+				// notif.send(facturePath)
 				break;
 			case 'payment_intent.payment_failed':
 			// Payment failed, handle errors and notify the customer
