@@ -6,6 +6,10 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false,
       primaryKey: true
     },
+    status: {
+      type: DataTypes.STRING(50),
+      allowNull: true
+    },
     date_paiement: {
       type: DataTypes.DATEONLY,
       allowNull: false

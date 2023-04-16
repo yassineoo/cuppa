@@ -8,19 +8,19 @@ module.exports = function(sequelize, DataTypes) {
     },
     etat_distributeur: {
       type: DataTypes.STRING(50),
-      allowNull: false
+      allowNull: true
     },
-    Date_installation_distributeur: {
+    date_installation_distributeur: {
       type: DataTypes.DATEONLY,
-      allowNull: false
+      allowNull: true
     },
     localisation_statique_distributeur: {
       type: DataTypes.STRING(50),
       allowNull: true
     },
-    id_utilisateur: {
-      type: DataTypes.STRING(50),
-      allowNull: false
+    id_client: {
+      type: DataTypes.INTEGER,
+      allowNull: true
     }
   }, {
     sequelize,
@@ -36,10 +36,10 @@ module.exports = function(sequelize, DataTypes) {
         ]
       },
       {
-        name: "id_utilisateur",
+        name: "id_client",
         using: "BTREE",
         fields: [
-          { name: "id_utilisateur" },
+          { name: "id_client" },
         ]
       },
     ]

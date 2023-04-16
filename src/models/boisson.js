@@ -2,6 +2,7 @@ const Sequelize = require('sequelize');
 module.exports = function(sequelize, DataTypes) {
   return sequelize.define('boisson', {
     id_boisson: {
+      autoIncrement: true,
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true
@@ -22,12 +23,12 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.DOUBLE,
       allowNull: true
     },
-    path_image_boisson: {
-      type: DataTypes.STRING(50),
+    id_client: {
+      type: DataTypes.INTEGER,
       allowNull: true
     },
-    id_categorie: {
-      type: DataTypes.INTEGER,
+    path_image_boisson: {
+      type: DataTypes.STRING(50),
       allowNull: true
     }
   }, {
@@ -44,10 +45,10 @@ module.exports = function(sequelize, DataTypes) {
         ]
       },
       {
-        name: "id_categorie",
+        name: "id_client",
         using: "BTREE",
         fields: [
-          { name: "id_categorie" },
+          { name: "id_client" },
         ]
       },
     ]

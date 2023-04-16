@@ -2,16 +2,13 @@ const Sequelize = require('sequelize');
 module.exports = function(sequelize, DataTypes) {
   return sequelize.define('commande', {
     id_cmd: {
+      autoIncrement: true,
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true
     },
-    date_cmd: {
-      type: DataTypes.DATEONLY,
-      allowNull: false
-    },
-    heure_cmd: {
-      type: DataTypes.TIME,
+    time_cmd: {
+      type: DataTypes.DATE,
       allowNull: false
     },
     prix_cmd: {
@@ -22,6 +19,10 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.DOUBLE,
       allowNull: true
     },
+    taille_goblet: {
+      type: DataTypes.INTEGER,
+      allowNull: true
+    },
     etat_cmd: {
       type: DataTypes.STRING(50),
       allowNull: true
@@ -29,6 +30,14 @@ module.exports = function(sequelize, DataTypes) {
     id_boisson: {
       type: DataTypes.INTEGER,
       allowNull: false
+    },
+    id_consommateur: {
+      type: DataTypes.INTEGER,
+      allowNull: true
+    },
+    numero_serie_distributeur: {
+      type: DataTypes.STRING(50),
+      allowNull: true
     }
   }, {
     sequelize,
@@ -48,6 +57,20 @@ module.exports = function(sequelize, DataTypes) {
         using: "BTREE",
         fields: [
           { name: "id_boisson" },
+        ]
+      },
+      {
+        name: "id_consommateur",
+        using: "BTREE",
+        fields: [
+          { name: "id_consommateur" },
+        ]
+      },
+      {
+        name: "numero_serie_distributeur",
+        using: "BTREE",
+        fields: [
+          { name: "numero_serie_distributeur" },
         ]
       },
     ]

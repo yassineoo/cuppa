@@ -25,6 +25,10 @@ module.exports = function(sequelize, DataTypes) {
     libelle_role: {
       type: DataTypes.STRING(50),
       allowNull: false
+    },
+    externel_account_id: {
+      type: DataTypes.STRING(80),
+      allowNull: true
     }
   }, {
     sequelize,

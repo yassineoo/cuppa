@@ -87,7 +87,7 @@ class PaymentService {
 			
 			// Update the client record with the Stripe account ID
 			await Client.update(
-				{ receiverId: account.id },
+				{ externel_account_id: account.id },
 				{ where: { id: clientId } }
 			);
 		} catch (error) {
@@ -114,11 +114,11 @@ class PaymentService {
 				if (!customer) {
 					//throw new Error(`Customer with id ${customerId} not found`);
 				}
-				paymentId = customer.paymentMethodId;
+				paymentId = customer.payment_method_id;
 			}
 			else {
 				await Consommateur.update(
-					{ paymentMethodeId: paymentMethodId },
+					{ payment_method_id: paymentMethodId },
 					{ where: { id: customerId } }
 				);
 			}
@@ -182,7 +182,7 @@ class PaymentService {
 			case 'payment_intent.succeeded':
 						
 				// Payment succeeded, update your database and send notification to cammand service
-				Paiement.update({ statut_paiement: 'succeeded' },
+				Paiement.update({ status: 'succeeded' },
 					{ where: { id_paiment: objEvent.data.object.metadata.paymentId} });
 				// get the customer Info 
 				//Consommateur.findByPk(objEvent.data.object.metadata.customerId);
@@ -194,7 +194,7 @@ class PaymentService {
 				break;
 			case 'payment_intent.payment_failed':
 			// Payment failed, handle errors and notify the customer
-				Paiement.update({ statut_paiement: 'failed' },
+				Paiement.update({ status: 'failed' },
 					{ where: { id_paiment: objEvent.data.object.metadata.paymentId} });
 
 				break;

@@ -57,7 +57,7 @@ describe('Payment Service', () => {
   
 			// Verify that update was called with the correct parameters
 			expect(Paiement.update).toHaveBeenCalledWith(
-				{ statut_paiement: 'succeeded' },
+				{ status: 'succeeded' },
 				{ where: { id_paiment: 2 } }
 			);
 			/*
@@ -113,7 +113,7 @@ describe('Payment Service', () => {
           
 			// Verify that update was called with the correct parameters
 			expect(Paiement.update).toHaveBeenCalledWith(
-				{ statut_paiement: 'failed' },
+				{ status: 'failed' },
 				{ where: { id_paiment: 2 } }
 			);
 		});

@@ -2,7 +2,7 @@ const Sequelize = require('sequelize');
 module.exports = function(sequelize, DataTypes) {
   return sequelize.define('utilisateur', {
     id_utilisateur: {
-      type: DataTypes.STRING(50),
+      type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true
     },
@@ -11,16 +11,28 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false
     },
     password_utilisateur: {
-      type: DataTypes.STRING(50),
+      type: DataTypes.STRING(100),
       allowNull: false
     },
     mail_utilisateur: {
       type: DataTypes.STRING(50),
       allowNull: true
     },
-    libelle_role: {
-      type: DataTypes.STRING(50),
+    supervisor_id: {
+      type: DataTypes.INTEGER,
+      allowNull: true
+    },
+    regestration_token: {
+      type: DataTypes.STRING(100),
+      allowNull: true
+    },
+    id_role: {
+      type: DataTypes.INTEGER,
       allowNull: false
+    },
+    id_client: {
+      type: DataTypes.INTEGER,
+      allowNull: true
     }
   }, {
     sequelize,
@@ -36,10 +48,24 @@ module.exports = function(sequelize, DataTypes) {
         ]
       },
       {
-        name: "libelle_role",
+        name: "supervisor_id",
         using: "BTREE",
         fields: [
-          { name: "libelle_role" },
+          { name: "supervisor_id" },
+        ]
+      },
+      {
+        name: "id_role",
+        using: "BTREE",
+        fields: [
+          { name: "id_role" },
+        ]
+      },
+      {
+        name: "id_client",
+        using: "BTREE",
+        fields: [
+          { name: "id_client" },
         ]
       },
     ]

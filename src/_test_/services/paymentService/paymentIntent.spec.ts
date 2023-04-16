@@ -37,7 +37,7 @@ describe('Payment Service', () => {
 
 			// Verify that the Consommateur has been updated correctly
 			expect(Consommateur.update).toHaveBeenCalledWith(
-				{ paymentMethodeId: data.paymentMethodId },
+				{ payment_method_id: data.paymentMethodId },
 				{ where: { id: data.customerId } });
 
 			// Verify that the stripe.paymentIntents.create method was called with the correct parameters

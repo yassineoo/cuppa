@@ -26,6 +26,10 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING(50),
       allowNull: false
     },
+    payment_methode_id: {
+      type: DataTypes.STRING(80),
+      allowNull: true
+    },
     password_cosommateur: {
       type: DataTypes.STRING(50),
       allowNull: false
