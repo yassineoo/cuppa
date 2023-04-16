@@ -12,7 +12,7 @@ interface User {
 
 const Authorization = (allowedRoles: string[]) => {
 
-	return async (req: Request, res: Response, next: NextFunction) => {
+	return async (req, res: Response, next: NextFunction) => {
 
 		try {
      
@@ -27,9 +27,8 @@ const Authorization = (allowedRoles: string[]) => {
 			
 			}
    
-            console.log('hisdd');
 			
-			const decoded = Authentication.verifyToken(token) as unknown as User;
+			const decoded = await Authentication.verifyToken(token) as unknown as User;
       
 			req.user = {id:decoded?.id,role:decoded.role};
 

@@ -26,21 +26,13 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING(50),
       allowNull: false
     },
-    id_role: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      references: {
-        model: 'role',
-        key: 'id_role'
-      }
+    libelle_role: {
+      type: DataTypes.STRING(50),
+      allowNull: false
     },
-    id_distributeur: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      references: {
-        model: 'distributeur',
-        key: 'id_distributeur'
-      }
+    numero_serie_distributeur: {
+      type: DataTypes.STRING(50),
+      allowNull: false
     }
   }, {
     sequelize,
@@ -56,17 +48,17 @@ module.exports = function(sequelize, DataTypes) {
         ]
       },
       {
-        name: "id_role",
+        name: "libelle_role",
         using: "BTREE",
         fields: [
-          { name: "id_role" },
+          { name: "libelle_role" },
         ]
       },
       {
-        name: "id_distributeur",
+        name: "numero_serie_distributeur",
         using: "BTREE",
         fields: [
-          { name: "id_distributeur" },
+          { name: "numero_serie_distributeur" },
         ]
       },
     ]

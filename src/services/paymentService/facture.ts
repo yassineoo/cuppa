@@ -1,11 +1,11 @@
 
-import singleton from '../../models/singleton';
+import models from '../../models/sequilize';
 import path from 'path';
 
 // Get the root directory path
-const Consommateur = singleton.getConsommateur();
-const Client = singleton.getClient();
-const Paiement = singleton.getPaiement();
+const Consommateur = models.consommateur;
+const Client = models.client;
+const Paiement = models.paiement;
 
 import PDFDocument from 'pdfkit';
 import fs from 'fs';

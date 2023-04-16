@@ -18,13 +18,13 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING(50),
       allowNull: false
     },
-    id_role: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      references: {
-        model: 'role',
-        key: 'id_role'
-      }
+    ccp_client: {
+      type: DataTypes.STRING(50),
+      allowNull: true
+    },
+    libelle_role: {
+      type: DataTypes.STRING(50),
+      allowNull: false
     }
   }, {
     sequelize,
@@ -40,10 +40,10 @@ module.exports = function(sequelize, DataTypes) {
         ]
       },
       {
-        name: "id_role",
+        name: "libelle_role",
         using: "BTREE",
         fields: [
-          { name: "id_role" },
+          { name: "libelle_role" },
         ]
       },
     ]

@@ -28,11 +28,7 @@ module.exports = function(sequelize, DataTypes) {
     },
     id_annonceur: {
       type: DataTypes.INTEGER,
-      allowNull: false,
-      references: {
-        model: 'annoceur',
-        key: 'id_annonceur'
-      }
+      allowNull: false
     }
   }, {
     sequelize,

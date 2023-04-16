@@ -1,23 +1,15 @@
 const Sequelize = require('sequelize');
 module.exports = function(sequelize, DataTypes) {
   return sequelize.define('avoir_parametre', {
-    id_distributeur: {
-      type: DataTypes.INTEGER,
+    numero_serie_distributeur: {
+      type: DataTypes.STRING(50),
       allowNull: false,
-      primaryKey: true,
-      references: {
-        model: 'distributeur',
-        key: 'id_distributeur'
-      }
+      primaryKey: true
     },
     localisation_dynamique_distributeur: {
       type: DataTypes.STRING(50),
       allowNull: false,
-      primaryKey: true,
-      references: {
-        model: 'parametre',
-        key: 'localisation_dynamique_distributeur'
-      }
+      primaryKey: true
     }
   }, {
     sequelize,
@@ -29,7 +21,7 @@ module.exports = function(sequelize, DataTypes) {
         unique: true,
         using: "BTREE",
         fields: [
-          { name: "id_distributeur" },
+          { name: "numero_serie_distributeur" },
           { name: "localisation_dynamique_distributeur" },
         ]
       },

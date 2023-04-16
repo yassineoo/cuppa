@@ -1,10 +1,10 @@
 import stripe from '../../../services/paymentService/paymentConfig';
 
 import PaymentService from '../../../services/paymentService/payment';
-import singleton from '../../../models/singleton';
+import models from '../../../models/sequilize';
 
-const Consommateur = singleton.getConsommateur();
-const Client = singleton.getClient();
+const Consommateur = models.consommateur;
+const Client = models.client;
 
 describe('Payment Service', () => {
 	describe('createAccount', () => {

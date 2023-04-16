@@ -5,9 +5,7 @@ const parser = (req:Request,res:Response,next:NextFunction) => {
 		next();
 	}
 	else {
-		express.json();
-		next();
-
+		express.json()(req, res, next);
 	}
 
 };

@@ -1,10 +1,10 @@
 /* eslint-disable no-mixed-spaces-and-tabs */
 import  Authentication from '../../../services/authService/auth';
 import jwt from 'jsonwebtoken';
-import singleton from '../../../models/singleton';
+import models from '../../../models/sequilize';
 import bcrypt from 'bcryptjs';
 
-const utilisateur = singleton.getUtilisateur();
+const utilisateur = models.utilisateur;
 
 
 

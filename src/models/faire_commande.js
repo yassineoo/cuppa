@@ -4,29 +4,17 @@ module.exports = function(sequelize, DataTypes) {
     id_consommateur: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      primaryKey: true,
-      references: {
-        model: 'consommateur',
-        key: 'id_consommateur'
-      }
+      primaryKey: true
     },
-    id_distributeur: {
-      type: DataTypes.INTEGER,
+    numero_serie_distributeur: {
+      type: DataTypes.STRING(50),
       allowNull: false,
-      primaryKey: true,
-      references: {
-        model: 'distributeur',
-        key: 'id_distributeur'
-      }
+      primaryKey: true
     },
     id_cmd: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      primaryKey: true,
-      references: {
-        model: 'commande',
-        key: 'id_cmd'
-      }
+      primaryKey: true
     }
   }, {
     sequelize,
@@ -39,15 +27,15 @@ module.exports = function(sequelize, DataTypes) {
         using: "BTREE",
         fields: [
           { name: "id_consommateur" },
-          { name: "id_distributeur" },
+          { name: "numero_serie_distributeur" },
           { name: "id_cmd" },
         ]
       },
       {
-        name: "id_distributeur",
+        name: "numero_serie_distributeur",
         using: "BTREE",
         fields: [
-          { name: "id_distributeur" },
+          { name: "numero_serie_distributeur" },
         ]
       },
       {

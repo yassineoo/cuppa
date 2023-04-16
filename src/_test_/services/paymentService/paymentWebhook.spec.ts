@@ -2,10 +2,10 @@
 
 import stripe from '../../../services/paymentService/paymentConfig';
 import PaymentService from '../../../services/paymentService/payment';
-import singleton from '../../../models/singleton';
+import models from '../../../models/sequilize';
 import { buffer } from 'stream/consumers';
-
-const Paiement = singleton.getPaiement();
+import Facture from '../../../services/paymentService/facture';
+const Paiement = models.paiement;
 
 describe('Payment Service', () => {
 	describe('handel payment webhook', () => {
@@ -29,6 +29,7 @@ describe('Payment Service', () => {
 							orderId: 1, 
 							paymentId: 2,
 							customerId:4,
+							currency:'dzd'
 						}
 					}
 				}
@@ -42,6 +43,7 @@ describe('Payment Service', () => {
 			spyOn(JSON,'parse').and.returnValue(event );
 			spyOn(stripe.webhooks, 'constructEvent').and.returnValue(event as any);
 			spyOn(Paiement, 'update').and.returnValue(Promise.resolve());
+			spyOn(Facture, 'create').and.returnValue('FacurePath');
   
 			// Call the handleWebhook method
 			await PaymentService.handleWebhook(raw, signature);
@@ -58,6 +60,11 @@ describe('Payment Service', () => {
 				{ statut_paiement: 'succeeded' },
 				{ where: { id_paiment: 2 } }
 			);
+			/*
+			expect(Facture.create).toHaveBeenCalledWith(
+				'koko','factue','sa','as'
+			);
+			*/
   
 		});
 
@@ -78,6 +85,7 @@ describe('Payment Service', () => {
 							orderId: 1, 
 							paymentId: 2,
 							customerId: 4,
+							currency:'dzd'
 						}
 					}
 				}

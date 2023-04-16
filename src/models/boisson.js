@@ -28,11 +28,7 @@ module.exports = function(sequelize, DataTypes) {
     },
     id_categorie: {
       type: DataTypes.INTEGER,
-      allowNull: true,
-      references: {
-        model: 'categorie',
-        key: 'id_categorie'
-      }
+      allowNull: true
     }
   }, {
     sequelize,

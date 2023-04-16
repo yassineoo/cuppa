@@ -16,20 +16,12 @@ module.exports = function(sequelize, DataTypes) {
     },
     id_type_paiement: {
       type: DataTypes.INTEGER,
-      allowNull: false,
-      references: {
-        model: 'type_paiement',
-        key: 'id_type_paiement'
-      }
+      allowNull: false
     },
     id_cmd: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      references: {
-        model: 'commande',
-        key: 'id_cmd'
-      },
-      unique: "paiement_ibfk_2"
+      unique: "id_cmd"
     }
   }, {
     sequelize,

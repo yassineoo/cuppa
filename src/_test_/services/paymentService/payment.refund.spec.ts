@@ -1,9 +1,8 @@
 import stripe from '../../../services/paymentService/paymentConfig';
 import PaymentService from '../../../services/paymentService/payment';
-import singleton from '../../../models/singleton';
+import models from '../../../models/sequilize';
 
-//const Consommateur = singleton.getConsommateur();
-const Paiement = singleton.getPaiement();
+const Paiement = models.paiement;
 
 describe('refundPayment', () => {
 	const mockPaiement = {

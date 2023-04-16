@@ -21,11 +21,7 @@ module.exports = function(sequelize, DataTypes) {
     id_cmd: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      references: {
-        model: 'commande',
-        key: 'id_cmd'
-      },
-      unique: "reclamation_ibfk_1"
+      unique: "id_cmd"
     }
   }, {
     sequelize,

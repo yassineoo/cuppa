@@ -28,11 +28,7 @@ module.exports = function(sequelize, DataTypes) {
     },
     id_boisson: {
       type: DataTypes.INTEGER,
-      allowNull: false,
-      references: {
-        model: 'boisson',
-        key: 'id_boisson'
-      }
+      allowNull: false
     }
   }, {
     sequelize,

@@ -1,18 +1,14 @@
 import stripe from './paymentConfig';
 //import Stripe from 'stripe';
-import fs from 'fs';
-/* const stripe = new Stripe('sk_test_51MoidVHNNef0nI46xUh9zDxSkM1boBYi4dsk34pwiUYQXCVNOlgvJW4SSi6I9e6rKsfuhVHXjPZ6sH9QhunJ9jG500OJ5LxZkQ', {
-	apiVersion: '2022-11-15',
-});
-*/
 
-import singleton from '../../models/singleton';
+
+import models from '../../models/sequilize';
 import Facture from './facture';
 
 
-const Consommateur = singleton.getConsommateur();
-const Client = singleton.getClient();
-const Paiement = singleton.getPaiement();
+const Consommateur = models.consommateur;
+const Client = models.client;
+const Paiement = models.paiement;
 
 class PaymentService {
 	/**
@@ -189,8 +185,10 @@ class PaymentService {
 				Paiement.update({ statut_paiement: 'succeeded' },
 					{ where: { id_paiment: objEvent.data.object.metadata.paymentId} });
 				// get the customer Info 
-				Consommateur.findByPk(objEvent.data.object.metadata.customerId);
-				facturePath = Facture.create(Consommateur.name ,'Facture for coffee',objEvent.data.object.metadata.amount,objEvent.data.object.metadata.amount.currency);
+				//Consommateur.findByPk(objEvent.data.object.metadata.customerId);
+				
+				Facture.create('sda','asd','asda','asd');
+				//facturePath = Facture.create(Consommateur.name ,'Facture for coffee',objEvent.data.object.metadata.amount,'koko');
 				//send it to the user via notif 
 				// notif.send(facturePath)
 				break;

@@ -1,13 +1,15 @@
 /* eslint-disable @typescript-eslint/no-namespace */
 import jwt from 'jsonwebtoken';
 import { Op } from 'sequelize';
-import singleton from '../../models/singleton';
+import models from '../../models/sequilize';
 import bcrypt from 'bcryptjs';
-interface User {
-  id: string;
-  role: string;
-  exp:number;
-}
+
+
+	interface User {
+	id: string;
+	role: string;
+	exp:number;
+	}
 
 
   
@@ -20,8 +22,8 @@ interface User {
 
 
 
-const utilisateur = singleton.getUtilisateur();
-const role = singleton.getRole();
+const utilisateur = models.utilisateur;
+const role = models.role;
 
 class  Authentication {
 
@@ -82,7 +84,7 @@ class  Authentication {
 
 		// Destructure loginData object
 		const { username, password, userRole, email } = loginData;
-        console.log(loginData);
+ 
 		
 		// Find user by username or email
 		const user = await utilisateur.findOne({
