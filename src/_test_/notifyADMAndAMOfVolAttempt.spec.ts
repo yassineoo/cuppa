@@ -1,10 +1,9 @@
 import NotificationManagementService from './../services/notification.management/service/notification.management';
-import Models from './../models/singlton'
+import Models from './../models/sequelize'
 
-const Utilisateur = Models.getUtilisateur();
-const Role = Models.getRole();
-const Distributeur = Models.getDistributeur();
-
+const Utilisateur = Models.utilisateur;
+const Role = Models.role;
+const Distributeur = Models.distributeur;
 
 
 
@@ -51,11 +50,11 @@ describe('NotificationManagementService', () => {
   
       const mockADMUser = {
         id_utilisateur: 1,
-        registration_token: 'dQieF9YRQR21XiAEtyMdEm:APA91bEHss6hz2NvDkU5j-2BLQSafYVGmEaE-glK0tdhDKi4FQToifl38-UE1i4XoImClPIGRrX0wZUKdvLKCQ-MFW0BQWqh3v02glal9KucfYbmhKBID0VTQBfNjxHT0HAsXkbolrcx'
+        regestration_token: 'dQieF9YRQR21XiAEtyMdEm:APA91bEHss6hz2NvDkU5j-2BLQSafYVGmEaE-glK0tdhDKi4FQToifl38-UE1i4XoImClPIGRrX0wZUKdvLKCQ-MFW0BQWqh3v02glal9KucfYbmhKBID0VTQBfNjxHT0HAsXkbolrcx'
       };
       const mockAMUser = {
         id_utilisateur: 2,
-        registration_token: 'dQieF9YRQR21XiAEtyMdEm:APA91bEHss6hz2NvDkU5j-2BLQSafYVGmEaE-glK0tdhDKi4FQToifl38-UE1i4XoImClPIGRrX0wZUKdvLKCQ-MFW0BQWqh3v02glal9KucfYbmhKBID0VTQBfNjxHT0HAsXkbolrcx'
+        regestration_token: 'dQieF9YRQR21XiAEtyMdEm:APA91bEHss6hz2NvDkU5j-2BLQSafYVGmEaE-glK0tdhDKi4FQToifl38-UE1i4XoImClPIGRrX0wZUKdvLKCQ-MFW0BQWqh3v02glal9KucfYbmhKBID0VTQBfNjxHT0HAsXkbolrcx'
       };
       spyOn(Utilisateur, 'findAll').and.returnValues([mockADMUser], [mockAMUser]);
   
@@ -78,14 +77,14 @@ describe('NotificationManagementService', () => {
           title: `Tentative de vol sur le distributeur ${mockDistributeur.numero_serie_distributeur}`,
           body: `Le système a détecté une tentative de vol sur le distributeur ${mockDistributeur.numero_serie_distributeur} situé à ${mockDistributeur.localisation_statique_distributeur}.`
         },
-        token: mockADMUser.registration_token
+        token: mockADMUser.regestration_token
       };
       const expectedAMNotification = {
         notification: {
           title: `Tentative de vol sur le distributeur ${mockDistributeur.numero_serie_distributeur}`,
           body: `Le système a détecté une tentative de vol sur le distributeur ${mockDistributeur.numero_serie_distributeur} situé à ${mockDistributeur.localisation_statique_distributeur}.`
         },
-        token: mockAMUser.registration_token
+        token: mockAMUser.regestration_token
       };
       expect(notificationService.sendNotification).toHaveBeenCalledWith(expectedADMNotification);
       expect(notificationService.sendNotification).toHaveBeenCalledWith(expectedAMNotification);

@@ -1,7 +1,7 @@
 
 //import { modifyAccount } from '../services/account.management/controllers/account.controller';
 import AccountManagmentService from "./../services/account.management/service/account.management";
-import Models from './../models/singlton';
+import Models from './../models/sequelize';
 const bcrypt = require('bcrypt');
 
 describe('modifyAccount', () => {
@@ -15,8 +15,8 @@ describe('modifyAccount', () => {
     const modifierRole = 'adm';
     const expectedResponse = { id_utilisateur: '1',  username_utilisateur: 'A',password_utilisateur: 'AAA',mail_utilisateur: 'AAA',id_role:1 };
 
-    // Mock the Models.getUtilisateur method
-    spyOn(Models, 'getUtilisateur').and.returnValue({
+    // Mock the Models.utilisateur method
+    spyOn(Models, 'utilisateur').and.returnValue({
       findOne: () => Promise.resolve({ id_utilisateur: '1', role: 'am' }),
       save: () => Promise.resolve()
 
@@ -43,8 +43,8 @@ describe('modifyAccount', () => {
     const modifierRole = 'ac';
     body.password_utilisateur = await bcrypt.hash(body.password_utilisateur, 10);
 
-    // Mock the Models.getUtilisateur method
-    spyOn(Models, 'getUtilisateur').and.returnValue({
+    // Mock the Models.utilisateur method
+    spyOn(Models, 'utilisateur').and.returnValue({
       findOne: () => Promise.resolve({ id_utilisateur: '123', role: 'am' }),
       save: () => Promise.resolve()
     });
@@ -63,8 +63,8 @@ describe('modifyAccount', () => {
     const modifierRole = 'adm';
     body.password_utilisateur = await bcrypt.hash(body.password_utilisateur, 10);
 
-    // Mock the Models.getUtilisateur method to return null
-    spyOn(Models, 'getUtilisateur').and.returnValue({
+    // Mock the Models.utilisateur method to return null
+    spyOn(Models, 'utilisateur').and.returnValue({
       findOne: () => Promise.resolve(null)
     });
 

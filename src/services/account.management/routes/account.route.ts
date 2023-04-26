@@ -11,7 +11,7 @@ const router = express.Router();
 @desc get All Accounts
 @access Admin
 */
-router.get('/getAccounts/:role',Authorization(['adm']), getAccounts);
+router.get('/getAccounts/:role',Authorization(['ADM']), getAccounts);
 
 /**
 
@@ -19,21 +19,21 @@ router.get('/getAccounts/:role',Authorization(['adm']), getAccounts);
 @desc Create a new Account
 @access Admin
 */
-router.post('/createAccount/:role',Authorization(['adm','sadm']), createAccount);
+router.post('/createAccount/:role',Authorization(['ADM','SADM']), createAccount);
 /**
 
 @route DELETE api/deleteAccount/:id
 @desc Delete a Account by id
 @access Admin
 */
-router.delete('/deleteAccount/:role/:id',Authorization(['adm','sadm']), deleteAccount);
+router.delete('/deleteAccount/:role/:id',Authorization(['ADM','SADM']), deleteAccount);
 /**
 
 @route PUT api/modifyAccount/:id
 @desc Modify a Account by id
 @access Admin
 */
-router.put('/modifyAccount/:id',Authorization(['adm','ac','am','decideur']), modifyAccount);
+router.put('/modifyAccount/:role/:id',Authorization(['ADM','AC','AM','decideur']), modifyAccount);
 
 
 /**
@@ -41,6 +41,6 @@ router.put('/modifyAccount/:id',Authorization(['adm','ac','am','decideur']), mod
 @route POST api/getProfil
 @desc get profil
 */
-router.get('/getProfil/',getProfil);
+router.get('/getProfil/',Authorization(['SADM','ADM','AC','AM','decideur']),getProfil);
 
 export default router;

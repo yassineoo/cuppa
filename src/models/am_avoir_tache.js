@@ -4,20 +4,12 @@ module.exports = function(sequelize, DataTypes) {
     id_tache: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      primaryKey: true,
-      references: {
-        model: 'tache',
-        key: 'id_tache'
-      }
+      primaryKey: true
     },
-    id_role: {
-      type: DataTypes.INTEGER,
+    libelle_role: {
+      type: DataTypes.STRING(50),
       allowNull: false,
-      primaryKey: true,
-      references: {
-        model: 'role',
-        key: 'id_role'
-      }
+      primaryKey: true
     }
   }, {
     sequelize,
@@ -30,14 +22,14 @@ module.exports = function(sequelize, DataTypes) {
         using: "BTREE",
         fields: [
           { name: "id_tache" },
-          { name: "id_role" },
+          { name: "libelle_role" },
         ]
       },
       {
-        name: "id_role",
+        name: "libelle_role",
         using: "BTREE",
         fields: [
-          { name: "id_role" },
+          { name: "libelle_role" },
         ]
       },
     ]

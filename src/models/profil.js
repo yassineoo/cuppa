@@ -25,11 +25,7 @@ module.exports = function(sequelize, DataTypes) {
     id_utilisateur: {
       type: DataTypes.STRING(50),
       allowNull: false,
-      references: {
-        model: 'utilisateur',
-        key: 'id_utilisateur'
-      },
-      unique: "profil_ibfk_1"
+      unique: "id_utilisateur"
     }
   }, {
     sequelize,

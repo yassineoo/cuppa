@@ -1,18 +1,19 @@
 const Sequelize = require('sequelize');
 module.exports = function(sequelize, DataTypes) {
-  return sequelize.define('role', {
-    id_role: {
+  return sequelize.define('outil', {
+    id_outil: {
+      autoIncrement: true,
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true
     },
-    libelle_role: {
+    libelle_outil: {
       type: DataTypes.STRING(50),
-      allowNull: true
+      allowNull: false
     }
   }, {
     sequelize,
-    tableName: 'role',
+    tableName: 'outil',
     timestamps: false,
     indexes: [
       {
@@ -20,7 +21,7 @@ module.exports = function(sequelize, DataTypes) {
         unique: true,
         using: "BTREE",
         fields: [
-          { name: "id_role" },
+          { name: "id_outil" },
         ]
       },
     ]

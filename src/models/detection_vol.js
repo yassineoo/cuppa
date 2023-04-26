@@ -2,8 +2,8 @@ const Sequelize = require('sequelize');
 module.exports = function(sequelize, DataTypes) {
   return sequelize.define('detection_vol', {
     id_vol: {
-      type: DataTypes.INTEGER,
       autoIncrement: true,
+      type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true
     },
@@ -19,13 +19,9 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING(50),
       allowNull: true
     },
-    id_distributeur: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      references: {
-        model: 'distributeur',
-        key: 'id_distributeur'
-      }
+    numero_serie_distributeur: {
+      type: DataTypes.STRING(50),
+      allowNull: false
     }
   }, {
     sequelize,
@@ -41,10 +37,10 @@ module.exports = function(sequelize, DataTypes) {
         ]
       },
       {
-        name: "id_distributeur",
+        name: "numero_serie_distributeur",
         using: "BTREE",
         fields: [
-          { name: "id_distributeur" },
+          { name: "numero_serie_distributeur" },
         ]
       },
     ]

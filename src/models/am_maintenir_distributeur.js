@@ -1,26 +1,18 @@
 const Sequelize = require('sequelize');
 module.exports = function(sequelize, DataTypes) {
   return sequelize.define('am_maintenir_distributeur', {
-    id_distributeur: {
-      type: DataTypes.INTEGER,
+    numero_serie_distributeur: {
+      type: DataTypes.STRING(50),
       allowNull: false,
-      primaryKey: true,
-      references: {
-        model: 'distributeur',
-        key: 'id_distributeur'
-      }
+      primaryKey: true
     },
     code_pin: {
       type: DataTypes.INTEGER,
       allowNull: true
     },
-    id_role: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      references: {
-        model: 'role',
-        key: 'id_role'
-      }
+    libelle_role: {
+      type: DataTypes.STRING(50),
+      allowNull: false
     }
   }, {
     sequelize,
@@ -32,14 +24,14 @@ module.exports = function(sequelize, DataTypes) {
         unique: true,
         using: "BTREE",
         fields: [
-          { name: "id_distributeur" },
+          { name: "numero_serie_distributeur" },
         ]
       },
       {
-        name: "id_role",
+        name: "libelle_role",
         using: "BTREE",
         fields: [
-          { name: "id_role" },
+          { name: "libelle_role" },
         ]
       },
     ]

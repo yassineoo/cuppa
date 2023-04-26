@@ -16,11 +16,7 @@ module.exports = function(sequelize, DataTypes) {
     },
     id_pays: {
       type: DataTypes.STRING(50),
-      allowNull: false,
-      references: {
-        model: 'pays',
-        key: 'id_pays'
-      }
+      allowNull: false
     }
   }, {
     sequelize,

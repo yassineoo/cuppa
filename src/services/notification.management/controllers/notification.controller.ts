@@ -10,10 +10,10 @@ const notificationManagementService = new NotificationManagementService();
 
 
 export async function notifyADMAndAMOfVolAttempt(req: Request, res: Response): Promise<void> {
-  const { distributeurId, description } = req.body;
+  const { numero_serie_distributeur, description } = req.body;
 
   try {
-    await notificationManagementService.notifyADMAndAMOfVolAttempt(distributeurId, description);
+    await notificationManagementService.notifyADMAndAMOfVolAttempt(numero_serie_distributeur, description);
     res.status(200).json({ message: 'Notification sent successfully' });
   } catch (err:any) {
     res.status(500).json({ message: err.message });
@@ -21,10 +21,10 @@ export async function notifyADMAndAMOfVolAttempt(req: Request, res: Response): P
 }
 
 export async function notifyAMOfPanne(req: Request, res: Response): Promise<void> {
-  const { distributeurId, description } = req.body;
+  const { numero_serie_distributeur,description,etat,object,role} = req.body;
 
   try {
-    await notificationManagementService.notifyAMOfPanne(distributeurId, description);
+    await notificationManagementService.notifyAMOfPanne(numero_serie_distributeur,description,etat,object,role);
     res.status(200).json({ message: 'Notification sent successfully' });
   } catch (err:any) {
     res.status(500).json({ message: err.message });
@@ -32,11 +32,22 @@ export async function notifyAMOfPanne(req: Request, res: Response): Promise<void
 }
 
 export async function notifyAMOfInterventionTask(req: Request, res: Response): Promise<void> {
-  const { distributeurId, description } = req.body;
+  const { numero_serie_distributeur,description,etat} = req.body;
 
   try {
-    await notificationManagementService.notifyAMOfInterventionTask(distributeurId, description);
+    await notificationManagementService.notifyAMOfInterventionTask(numero_serie_distributeur ,etat, description);
     res.status(200).json({ message: 'Notification sent successfully' });
+  } catch (err:any) {
+    res.status(500).json({ message: err.message });
+  }
+}
+
+export async function sendBill(req: Request, res: Response): Promise<void> {
+  const { name, path, email} = req.body;
+ 
+  try {
+    await notificationManagementService.sendBill(name, email, path);
+    res.status(200).json({ message: 'Bill sent successfully' });
   } catch (err:any) {
     res.status(500).json({ message: err.message });
   }

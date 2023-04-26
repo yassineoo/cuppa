@@ -101,7 +101,7 @@ const getAccounts = async (req: Request, res: Response) => {
 
 const getProfil = async (req: Request, res: Response) => {
 	try {
-		const id = req.params.id;
+		const id = req.user.id;
 		const account = await AccountManagmentService.getProfile(id);
 		res.status(200).json({ success: true, data: account });
 	} catch (err:any) {
