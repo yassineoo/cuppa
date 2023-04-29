@@ -1,14 +1,14 @@
 
 const commandesLogic = {
-    translate: (instructions: Map<string, string>): string => {
-        let commande : string = "dispense" 
-        instructions.forEach((value, key) => {
-            commande += " " + key + "?" + value + "$ "
-        })
+	translate: (instructions: Map<string, string>): string => {
+		let commande  = 'dispense'; 
+		instructions.forEach((value, key) => {
+			commande += ' ' + key + '?' + value + '$ ';
+		});
 
-        return commande
-    }
+		return commande;
+	}
 
-}
+};
 
-export default commandesLogic
+export default commandesLogic;
