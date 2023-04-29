@@ -186,11 +186,12 @@ class PaymentService {
 					{ where: { id_paiement: objEvent.data.object.metadata.paymentId} });
 				// get the customer Info 
 				//Consommateur.findByPk(objEvent.data.object.metadata.customerId);
-				
-				Facture.create('sda','asd','asda','asd');
-				//facturePath = Facture.create(Consommateur.name ,'Facture for coffee',objEvent.data.object.metadata.amount,'koko');
+				//Facture.create('sda','asd','asda','asd');
+				facturePath = Facture.create(Consommateur.nom_consommateur ,'Facture for coffee',objEvent.data.object.metadata.amount,'koko');
 				//send it to the user via notif 
 				// notif.send(facturePath)
+				const response = await axios.post(process.env.URL + `api/notification.management/sendBill`,{name :Consommateur.nom_consommateur,path:facturePath,email :Consommateur.mail_consommateur})
+
 				break;
 			case 'payment_intent.payment_failed':
 			// Payment failed, handle errors and notify the customer
