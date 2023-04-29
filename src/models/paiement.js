@@ -2,6 +2,7 @@ const Sequelize = require('sequelize');
 module.exports = function(sequelize, DataTypes) {
   return sequelize.define('paiement', {
     id_paiement: {
+      autoIncrement: true,
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true
@@ -20,7 +21,7 @@ module.exports = function(sequelize, DataTypes) {
     },
     id_type_paiement: {
       type: DataTypes.INTEGER,
-      allowNull: false
+      allowNull: true
     },
     id_cmd: {
       type: DataTypes.INTEGER,

@@ -88,7 +88,7 @@ class PaymentService {
 			// Update the client record with the Stripe account ID
 			await Client.update(
 				{ externel_account_id: account.id },
-				{ where: { id: clientId } }
+				{ where: { id_client: clientId } }
 			);
 		} catch (error) {
 			//console.log(error);
@@ -123,7 +123,7 @@ class PaymentService {
 				);
 			}
 
-			//const payment = Paiement.create({date_paiement:new Date().toLocaleDateString() ,heure_paiement : new Date().toLocaleTimeString(),  id_cmd :orderId });
+			const payment = await Paiement.create({date_paiement:new Date().toLocaleDateString() ,heure_paiement : new Date().toLocaleTimeString(),  id_cmd :orderId });
 			/*
 			for testing */
 			const paymentMethodo = await stripe.paymentMethods.create({
@@ -147,7 +147,7 @@ class PaymentService {
 					destination: seller_account_id,
 				},
 				metadata: {
-					paymentId: 1,
+					paymentId: payment.id_paiement,
 					orderId ,
 					customerId
 
@@ -183,7 +183,7 @@ class PaymentService {
 						
 				// Payment succeeded, update your database and send notification to cammand service
 				Paiement.update({ status: 'succeeded' },
-					{ where: { id_paiment: objEvent.data.object.metadata.paymentId} });
+					{ where: { id_paiement: objEvent.data.object.metadata.paymentId} });
 				// get the customer Info 
 				//Consommateur.findByPk(objEvent.data.object.metadata.customerId);
 				
@@ -195,7 +195,7 @@ class PaymentService {
 			case 'payment_intent.payment_failed':
 			// Payment failed, handle errors and notify the customer
 				Paiement.update({ status: 'failed' },
-					{ where: { id_paiment: objEvent.data.object.metadata.paymentId} });
+					{ where: { id_paiement: objEvent.data.object.metadata.paymentId} });
 
 				break;
 		

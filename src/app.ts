@@ -1,9 +1,12 @@
-import express from 'express';
+import express ,{Express, Response, Request, NextFunction}from 'express';
 import dotenv from 'dotenv';
 import  loginRoute from './services/authService/routes/auth.Route';
-import bodyParser from 'body-parser';
-
+import paymentRoute from './services/paymentService/routes/payment.Route';
+import parser from './middlewares/parser';
 import LoggingService from './services/loggingService/logging';
+
+import distributeursRouter from './services/service-distributeurs/routes/distributeurs.routes';
+import commandesRouter from './services/service-commandes/routes/commandes.routes';
 
 const loggingService = new LoggingService();
 
@@ -15,8 +18,7 @@ loggingService.log(
 	{date:'someRandom'}
 );
   
-import paymentRoute from './services/paymentService/routes/payment.Route';
-import parser from './middlewares/parser';
+
 
 dotenv.config();
 const PORT = process.env.PORT || 5000;
@@ -34,6 +36,31 @@ app.use(express.urlencoded({ extended: false }));
 app.get('/', (req, res) => {
 	res.send('koko');
 });
+
+
+
+app.get('/', (req : Request, res : Response) => {
+	res.send('Hello here is the entry point');
+});
+
+app.use('/distributeurs', distributeursRouter);
+
+app.use('/commandes', commandesRouter);
+
+app.use((req : Request, res : Response) => {
+	res.type('text/plain');
+	res.status(404);
+	res.send('404 not found');
+});
+
+app.use((err : Error, req : Request, res : Response) => {
+	console.error(err.message);
+	res.type('text/plain');
+	res.status(500);
+	res.send('500 server error');
+});
+
+
 
 app.listen(PORT, () => {
 	console.log(`Application started on this port ${PORT}!`);

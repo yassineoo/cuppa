@@ -1,0 +1,5 @@
+Models
+
+// Define the associations
+  boisson.belongsToMany(outil, { through: boisson_ing, foreignKey: 'id_boisson' });
+  outil.belongsToMany(boisson, { through: boisson_ing, foreignKey: 'id_outil' });
