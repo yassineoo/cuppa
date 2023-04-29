@@ -5,8 +5,13 @@ import paymentRoute from './services/paymentService/routes/payment.Route';
 import parser from './middlewares/parser';
 import LoggingService from './services/loggingService/logging';
 
+
 import distributeursRouter from './services/service-distributeurs/routes/distributeurs.routes';
 import commandesRouter from './services/service-commandes/routes/commandes.routes';
+
+
+import accountRoutes from './services/account.management/routes/account.route';
+import notificationRoutes from './services/notification.management/routes/notification.route';
 
 const loggingService = new LoggingService();
 
@@ -33,6 +38,10 @@ app.use('/login', loginRoute);
 app.use('/payment', paymentRoute);
 app.use(express.urlencoded({ extended: false }));
 
+
+app.use('/api/account.management', accountRoutes);
+
+app.use('/api/notification.management', notificationRoutes);
 app.get('/', (req, res) => {
 	res.send('koko');
 });

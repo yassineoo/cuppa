@@ -37,9 +37,6 @@ class LoginController {
 	static login = async (req:Request, res:Response) => {
 
 		try {
-            console.log('req.body');
-
-            console.log(req.body);
 			// Extract login data from the request body
 			const loginData :LoginData = req.body;
 

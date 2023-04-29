@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-namespace */
 import { Request, Response, NextFunction } from 'express';
-import Authentication from '../services/authService/auth';
+import Authentication from '../../authService/auth';
 interface User {
   id: string;
   role: string;
@@ -27,8 +27,8 @@ const Authorization = (allowedRoles: string[]) => {
 			
 			}
    
-			
-			const decoded = await Authentication.verifyToken(token) as unknown as User;
+
+			const decoded = Authentication.verifyToken(token) as unknown as User;
       
 			req.user = {id:decoded?.id,role:decoded.role};
 
