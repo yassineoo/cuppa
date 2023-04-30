@@ -111,11 +111,53 @@ const getProfil = async (req: Request, res: Response) => {
 };
   
 
+const createClientAccount = async (req: Request, res: Response) => {
+
+	try {
+		const createrId = req.user.id;
+		const createrRole = req.user.role;
+		// call the servise function to create the client account
+		const result = await AccountManagmentService.createClientAccount(req.body,createrId,createrRole);
+		// send the response back to the client
+		res.status(200);
+		return res.json({ success: true, data: result });
+	
+	} catch (err:any) {
+		
+		console.error(`Error creating account: ${err.message}`);
+		res.status(500);
+		return res.json({ success: false, error: err.message });
+	
+	}
+
+};
+
+const createConsommateurAccount = async (req: Request, res: Response) => {
+
+	try {
+		
+		// call the servise function to create the consommateur account
+		const result = await AccountManagmentService.createConsommateurAccount(req.body);
+		// send the response
+		res.status(200);
+		return res.json({ success: true, data: result });
+	
+	} catch (err:any) {
+		
+		console.error(`Error creating account: ${err.message}`);
+		res.status(500);
+		return res.json({ success: false, error: err.message });
+	
+	}
+
+};
 
 export {
 	createAccount,
 	deleteAccount,
 	modifyAccount,
 	getAccounts,
-	getProfil
+	getProfil,
+	createClientAccount,
+	createConsommateurAccount
 };

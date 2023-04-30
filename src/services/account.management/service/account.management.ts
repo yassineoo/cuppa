@@ -6,6 +6,8 @@ const bcrypt = require('bcrypt');
 // Initialize the models
 const user = Models.utilisateur;
 const profil = Models.profil;
+const client = Models.client;
+const consommateur = Models.consommateur;
 
 // Define the association between the models
 profil.belongsTo(user, { foreignKey: 'id_utilisateur' }); // Each profile belongs to one user
@@ -330,7 +332,44 @@ static async createAccount(body: any, role: string, createrId: string, createrRo
 };
 
 
+static async createClientAccount(body: any, createrId: string, createrRole: string) {
 
+    let accountModel;
+
+    if (createrRole === 'SADM') {
+
+            accountModel = Models.utilisateur;
+            let account = await accountModel.findOne({ where: { id_utilisateur: createrId } });
+
+            if (!account) {
+                throw new Error(`Account with id ${createrId} not found`);
+            }
+
+
+            await client.create({ ...body });
+            return { message: `Account created successfully` };
+	
+    } else {
+
+        throw new Error(`You are not authorized to create this account`);
+
+    }
+
+};
+
+
+static async createConsommateurAccount(body: any) {
+
+	         // Hash the password using bcrypt
+			 const saltRounds = 10;
+			 const hashedPassword = await bcrypt.hash(body.password_cosommateur, saltRounds);
+ 
+			 // Set the hashed password in the body before creating the account
+			 body.password_cosommateur = hashedPassword;
+            await consommateur.create({ ...body });
+            return { message: `Account created successfully` };
+	
+};
 
 	
 	

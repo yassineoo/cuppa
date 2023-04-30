@@ -1,5 +1,5 @@
 import express from 'express';
-import { createAccount, deleteAccount, modifyAccount,getAccounts,getProfil } from '../controllers/account.controller';
+import { createAccount, deleteAccount, modifyAccount,getAccounts,getProfil,createClientAccount, createConsommateurAccount } from '../controllers/account.controller';
 import Authorization from './../middlewares/auth';
 
 const router = express.Router();
@@ -42,5 +42,19 @@ router.put('/modifyAccount/:role/:id',Authorization(['ADM','AC','AM','decideur']
 @desc get profil
 */
 router.get('/getProfil/',Authorization(['SADM','ADM','AC','AM','decideur']),getProfil);
+
+/**
+@route POST api/createClientAccount
+@desc Create a new client account
+@access SADM
+*/
+router.post('/createClientAccount/',Authorization(['SADM']), createClientAccount);
+
+
+/**
+@route POST api/createConsommateurAccount
+@desc Create a new consommateur account
+*/
+router.post('/createConsommateurAccount/', createConsommateurAccount);
 
 export default router;

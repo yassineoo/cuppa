@@ -6,6 +6,8 @@ const port = 8000;
 
 const app : Express = express();
 
+app.use(express.json());
+
 app.get("/", (req : Request, res : Response) => {
     res.send("Hello here is the entry point")
 });
