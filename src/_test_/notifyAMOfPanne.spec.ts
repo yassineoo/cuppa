@@ -22,19 +22,24 @@ describe('NotificationManagementService', () => {
   });
 
   describe('notifyAMOfPanne', () => {
-    let distributeurId: number;
+    let numero_serie_distributeur: string;
     let description: string;
+    let etat;
+    let object;
+    let role;
     
     beforeEach(() => {
-      distributeurId = 1;
+      numero_serie_distributeur = "1";
       description = 'Panne détectée.';
+      etat="active";
+      object="panne";
+      role='AM';
     });
   
     it('should send notification AM users', async () => {
       // Arrange
       const mockDistributeur = {
-        id_distributeur: distributeurId,
-        numero_serie_distributeur: 'abc',
+        numero_serie_distributeur: numero_serie_distributeur,
         localisation_statique_distributeur: 'Alger'
       };
       spyOn(Distributeur, 'findOne').and.returnValue(mockDistributeur);
@@ -58,10 +63,10 @@ describe('NotificationManagementService', () => {
       spyOn(notificationService, 'savePanne').and.returnValue(Promise.resolve());
   
       // Act
-      await notificationService.notifyAMOfPanne(distributeurId, description);
-  
+      await notificationService.notifyAMOfPanne(numero_serie_distributeur, description,etat,object,role);
+
       // Assert
-      expect(Distributeur.findOne).toHaveBeenCalledWith({ where: { id_distributeur: distributeurId } });
+      expect(Distributeur.findOne).toHaveBeenCalledWith({ where: { numero_serie_distributeur: numero_serie_distributeur } });
       expect(Role.findOne).toHaveBeenCalledWith({ where: { libelle_role: 'AM' } });
       expect(Utilisateur.findAll).toHaveBeenCalledWith({ where: { id_role: mockAMRole.id_role } });
   
@@ -76,7 +81,7 @@ describe('NotificationManagementService', () => {
 
       expect(notificationService.sendNotification).toHaveBeenCalledWith(expectedAMNotification);
   
-      expect(notificationService.savePanne).toHaveBeenCalledWith(distributeurId, description);
+      expect(notificationService.savePanne).toHaveBeenCalledWith(numero_serie_distributeur, description,etat,object,role);
     });
   });
   

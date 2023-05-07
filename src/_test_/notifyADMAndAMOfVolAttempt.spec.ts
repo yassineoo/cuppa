@@ -21,19 +21,19 @@ describe('NotificationManagementService', () => {
   });
 
   describe('notifyADMAndAMOfVolAttempt', () => {
-    let distributeurId: number;
+    let numero_serie_distributeur: string;
     let description: string;
     
     beforeEach(() => {
-      distributeurId = 1;
+      numero_serie_distributeur = "1";
       description = 'Tentative de vol détectée.';
     });
   
     it('should send notification to ADM and AM users', async () => {
       // Arrange
       const mockDistributeur = {
-        id_distributeur: distributeurId,
-        numero_serie_distributeur: 'abc',
+
+        numero_serie_distributeur: "1",
         localisation_statique_distributeur: 'Alger'
       };
       spyOn(Distributeur, 'findOne').and.returnValue(mockDistributeur);
@@ -63,10 +63,10 @@ describe('NotificationManagementService', () => {
       spyOn(notificationService, 'saveDetectionVol').and.returnValue(Promise.resolve());
   
       // Act
-      await notificationService.notifyADMAndAMOfVolAttempt(distributeurId, description);
+      await notificationService.notifyADMAndAMOfVolAttempt(numero_serie_distributeur, description);
   
       // Assert
-      expect(Distributeur.findOne).toHaveBeenCalledWith({ where: { id_distributeur: distributeurId } });
+      expect(Distributeur.findOne).toHaveBeenCalledWith({ where: { numero_serie_distributeur:numero_serie_distributeur } });
       expect(Role.findOne).toHaveBeenCalledWith({ where: { libelle_role: 'ADM' } });
       expect(Role.findOne).toHaveBeenCalledWith({ where: { libelle_role: 'AM' } });
       expect(Utilisateur.findAll).toHaveBeenCalledWith({ where: { id_role: mockADMRole.id_role } });
@@ -89,7 +89,7 @@ describe('NotificationManagementService', () => {
       expect(notificationService.sendNotification).toHaveBeenCalledWith(expectedADMNotification);
       expect(notificationService.sendNotification).toHaveBeenCalledWith(expectedAMNotification);
   
-      expect(notificationService.saveDetectionVol).toHaveBeenCalledWith(distributeurId, description);
+      expect(notificationService.saveDetectionVol).toHaveBeenCalledWith(numero_serie_distributeur, description);
     });
   });
   

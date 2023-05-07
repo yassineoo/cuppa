@@ -2,6 +2,7 @@ const Sequelize = require('sequelize');
 module.exports = function(sequelize, DataTypes) {
   return sequelize.define('annoce', {
     id_annonce: {
+      autoIncrement: true,
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true
@@ -28,6 +29,10 @@ module.exports = function(sequelize, DataTypes) {
     },
     id_annonceur: {
       type: DataTypes.INTEGER,
+      allowNull: false
+    },
+    sexeCible: {
+      type: DataTypes.STRING(50),
       allowNull: false
     }
   }, {
