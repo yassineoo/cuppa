@@ -1,1 +1,0 @@
-{"version":3,"file":"sequelizer.js","sourceRoot":"","sources":["../../../src/config/sequelizer.ts"],"names":[],"mappings":";;AAAA,QAAQ;AACR,yCAAuC;AAEvC,MAAM,SAAS,GAAG,IAAI,qBAAS,CAAC;IAC/B,OAAO,EAAE,OAAO;IAChB,QAAQ,EAAE,UAAU;IACpB,QAAQ,EAAE,MAAM;IAChB,QAAQ,EAAE,EAAE;CACZ,CAAC,CAAC;AAEH,OAAO,CAAC,GAAG,CAAC,SAAS,CAAC,MAAM,CAAC,CAAC;AAE9B,kBAAe,SAAS,CAAC"}

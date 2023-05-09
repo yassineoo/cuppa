@@ -29,15 +29,27 @@ module.exports = function(sequelize, DataTypes) {
     },
     id_boisson: {
       type: DataTypes.INTEGER,
-      allowNull: false
+      allowNull: false,
+      references: {
+        model: 'boisson',
+        key: 'id_boisson'
+      }
     },
     id_consommateur: {
       type: DataTypes.INTEGER,
-      allowNull: true
+      allowNull: true,
+      references: {
+        model: 'consommateur',
+        key: 'id_consommateur'
+      }
     },
     numero_serie_distributeur: {
       type: DataTypes.STRING(50),
-      allowNull: true
+      allowNull: true,
+      references: {
+        model: 'distributeur',
+        key: 'numero_serie_distributeur'
+      }
     }
   }, {
     sequelize,

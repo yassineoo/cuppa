@@ -22,10 +22,6 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING(50),
       allowNull: true
     },
-    libelle_role: {
-      type: DataTypes.STRING(50),
-      allowNull: false
-    },
     externel_account_id: {
       type: DataTypes.STRING(80),
       allowNull: true
@@ -41,13 +37,6 @@ module.exports = function(sequelize, DataTypes) {
         using: "BTREE",
         fields: [
           { name: "id_client" },
-        ]
-      },
-      {
-        name: "libelle_role",
-        using: "BTREE",
-        fields: [
-          { name: "libelle_role" },
         ]
       },
     ]

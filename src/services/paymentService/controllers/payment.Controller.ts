@@ -60,6 +60,19 @@ class PaymentController {
 	};
 
 
+	static getPayments = async (req: Request, res: Response) => {
+		try {
+			const idConsumer = req.params.idConsumer;
+	
+			const paiements = await PaymentService.getPayments(idConsumer);
+	
+			res.status(200).json(paiements);
+		} catch (error) {
+			res.status(500).json({ error: error.message });
+		}
+	};
+
+
 
 
 

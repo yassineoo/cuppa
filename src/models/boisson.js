@@ -25,7 +25,11 @@ module.exports = function(sequelize, DataTypes) {
     },
     id_client: {
       type: DataTypes.INTEGER,
-      allowNull: true
+      allowNull: true,
+      references: {
+        model: 'client',
+        key: 'id_client'
+      }
     },
     path_image_boisson: {
       type: DataTypes.STRING(50),

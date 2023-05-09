@@ -1,4 +1,4 @@
-import LoginController from '../../../services/authService/controllers/auth.controller';
+import LoginController from '../../../services/authService/controllers/auth.Controller';
 import Authentication from '../../../services/authService/auth';
 import {Response,Request} from 'express';
 
@@ -24,12 +24,12 @@ describe('login', () => {
 
 	it('should return a JWT token on successful login', async () => {
    
-		spyOn(Authentication, 'login').and.returnValue(Promise.resolve('testtoken'));
+		spyOn(Authentication, 'login').and.returnValue(Promise.resolve({token:'testtoken',role:'sadm'}));
   
 		await LoginController.login(req as Request, res as Response);
   
 		expect(res.status).toHaveBeenCalledWith(200);
-		expect(res.json).toHaveBeenCalledWith('testtoken');
+		expect(res.json).toHaveBeenCalledWith({token:'testtoken',role:'sadm'});
 	});
 
 	it('should return a 401 status code for invalid credentials', async () => {

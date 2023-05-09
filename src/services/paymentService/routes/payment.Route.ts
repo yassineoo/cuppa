@@ -1,24 +1,40 @@
 import express from 'express';
-//import Authorization from '../../../middlewares/auth';
-//import LoginController from '../controllers/auth.Controller';
 import PaymentController from '../controllers/payment.Controller';
+import Authorization from '../../../middlewares/auth';
 
 const route = express.Router();
-// route for testing 
-route.get('/', (req,res) => res.send('login'));
 
 
 /**
- * @route   POST api/login
- * @desc    Login a user and return a JWT token
- * @access  Public
+ * @route   POST  payment/create-account
+ * @desc    Creeate the client account in stripe 
+ * @access  SADM 
 */
+route.post('/create-account',Authorization(['SADM']), PaymentController.createAccount);
 
-
-route.post('/create-account', PaymentController.createAccount);
+/**
+ * @route   POST  payment/create-payment-intent
+ * @desc    Creeate the payment and lunch it 
+ * @access  Service Commandes
+*/
 route.post('/create-payment-intent', PaymentController.createPaymentIntent);
+/**
+ * @route   POST  payment/webhook
+ * @desc    Recive the stripe answer about the payment 
+ * @access  Service Commandes
+*/
 route.post('/webhook',express.raw({type: 'application/json'}), PaymentController.handleWebhook);
+/**
+ * @route   POST  payment/refund
+ * @desc    refund the payment  
+ * @access  Service Reclamation 
+*/
 route.post('/refund',PaymentController.refund);
-  
+/**
+ * @route   POST  payment/refund
+ * @desc    refund the payment  
+ * @access  Service Reclamation 
+*/
+route.get('/get-payments/:id',PaymentController.getPayments);
 
 export default route;

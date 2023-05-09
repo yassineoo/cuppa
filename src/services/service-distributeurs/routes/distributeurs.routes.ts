@@ -1,5 +1,5 @@
 import express from "express";
-import authorize from "../../../middlewares/autorisation";
+import Authorization from "../../../middlewares/auth";
 import distributeursController from "../controllers/distributeurs.controller";
 
 
@@ -10,7 +10,7 @@ const distributeursRouter = express.Router();
 @desc retrieve the list of distributeurs
 @access ADM, SADM, AC, AM
 */
-distributeursRouter.get("/", authorize(['AM', 'ADM', 'SADM', 'AC']), distributeursController.getAll)
+distributeursRouter.get("/", distributeursController.getAll)
 
 
 /**
@@ -18,7 +18,7 @@ distributeursRouter.get("/", authorize(['AM', 'ADM', 'SADM', 'AC']), distributeu
 @desc retrieve one distributeur
 @access ADM, SADM, AC, AM
 */
-distributeursRouter.get("/:id",  authorize(['AM', 'ADM', 'SADM', 'AC']), distributeursController.getById)
+distributeursRouter.get("/:id",  Authorization(['AM', 'ADM', 'SADM', 'AC']), distributeursController.getById)
 
 
 /**
@@ -26,7 +26,7 @@ distributeursRouter.get("/:id",  authorize(['AM', 'ADM', 'SADM', 'AC']), distrib
 @desc create a new one
 @access SADM
 */
-distributeursRouter.post("/",  authorize(['SADM']), distributeursController.create)
+distributeursRouter.post("/",  Authorization(['SADM']), distributeursController.create)
 
 
 /**
@@ -34,7 +34,7 @@ distributeursRouter.post("/",  authorize(['SADM']), distributeursController.crea
 @desc affecter le distributeur à un client 
 @access SADM
 */
-distributeursRouter.put("/:id/client",  authorize(['SADM']), distributeursController.updateClient)
+distributeursRouter.put("/:id/client",  Authorization(['SADM']), distributeursController.updateClient)
 
 
 /**
@@ -43,14 +43,14 @@ distributeursRouter.put("/:id/client",  authorize(['SADM']), distributeursContro
 @access SADM, ADM, AM
 */
 
-distributeursRouter.put("/:id",  authorize(['SADM', 'ADM', 'AM']), distributeursController.updateById)
+distributeursRouter.put("/:id",  Authorization(['SADM', 'ADM', 'AM']), distributeursController.updateById)
 
 /**
 @route DELETE distributeurs/
 @desc delete un distributeur
 @access SADM
 */
-distributeursRouter.delete("/:id", authorize(['SADM']), distributeursController.deleteById)
+distributeursRouter.delete("/:id", Authorization(['SADM']), distributeursController.deleteById)
 
 
 export default distributeursRouter 

@@ -13,6 +13,8 @@ import commandesRouter from './services/service-commandes/routes/commandes.route
 import accountRoutes from './services/account.management/routes/account.route';
 import notificationRoutes from './services/notification.management/routes/notification.route';
 
+import cors from 'cors';
+
 const loggingService = new LoggingService();
 
 
@@ -31,7 +33,11 @@ const app = express();
 
 // Use JSON parser for all non-webhook routes
 app.use(parser);
-  
+app.use(cors({
+	origin:'http://localhost:3000',
+	methods:['GET','POST'] ,
+	allowedHeaders:['Content-Type','Authorization']
+}));
 
 //app.use(express.json());
 app.use('/login', loginRoute);

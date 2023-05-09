@@ -22,7 +22,7 @@ const distributeursController = {
 
             res.status(200).json(distributeurs)
         } catch (err : any){
-            res.status(500).send('Internal server error')
+            res.status(500).json(err)
         }
     },
     

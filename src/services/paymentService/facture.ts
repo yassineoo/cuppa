@@ -1,5 +1,5 @@
 
-import models from '../../models/sequilize';
+import models from '../../models/sequelize';
 import path from 'path';
 
 // Get the root directory path

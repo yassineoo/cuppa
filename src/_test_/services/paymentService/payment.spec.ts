@@ -1,7 +1,7 @@
 import stripe from '../../../services/paymentService/paymentConfig';
 
 import PaymentService from '../../../services/paymentService/payment';
-import models from '../../../models/sequilize';
+import models from '../../../models/sequelize';
 
 const Consommateur = models.consommateur;
 const Client = models.client;

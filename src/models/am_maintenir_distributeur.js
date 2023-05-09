@@ -4,15 +4,24 @@ module.exports = function(sequelize, DataTypes) {
     numero_serie_distributeur: {
       type: DataTypes.STRING(50),
       allowNull: false,
-      primaryKey: true
+      primaryKey: true,
+      references: {
+        model: 'distributeur',
+        key: 'numero_serie_distributeur'
+      }
     },
     code_pin: {
       type: DataTypes.INTEGER,
       allowNull: true
     },
-    libelle_role: {
-      type: DataTypes.STRING(50),
-      allowNull: false
+    id_utilisateur: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      primaryKey: true,
+      references: {
+        model: 'utilisateur',
+        key: 'id_utilisateur'
+      }
     }
   }, {
     sequelize,
@@ -25,13 +34,14 @@ module.exports = function(sequelize, DataTypes) {
         using: "BTREE",
         fields: [
           { name: "numero_serie_distributeur" },
+          { name: "id_utilisateur" },
         ]
       },
       {
-        name: "libelle_role",
+        name: "id_utilisateur",
         using: "BTREE",
         fields: [
-          { name: "libelle_role" },
+          { name: "id_utilisateur" },
         ]
       },
     ]

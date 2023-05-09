@@ -1,14 +1,13 @@
 import stripe from './paymentConfig';
-//import Stripe from 'stripe';
-
-
-import models from '../../models/sequilize';
+import axios from 'axios';
+import models from '../../models/sequelize';
 import Facture from './facture';
 
 
 const Consommateur = models.consommateur;
 const Client = models.client;
 const Paiement = models.paiement;
+const Commande  = models.commande;
 
 class PaymentService {
 	/**
@@ -112,9 +111,9 @@ class PaymentService {
 				// Retrieve the customer from our local database.
 				const customer = await Consommateur.findByPk(customerId);
 				if (!customer) {
-					//throw new Error(`Customer with id ${customerId} not found`);
+					throw new Error(`Customer with id ${customerId} not found`);
 				}
-				paymentId = customer.payment_method_id;
+				else paymentId = customer.payment_method_id;
 			}
 			else {
 				await Consommateur.update(
@@ -190,7 +189,13 @@ class PaymentService {
 				facturePath = Facture.create(Consommateur.nom_consommateur ,'Facture for coffee',objEvent.data.object.metadata.amount,'koko');
 				//send it to the user via notif 
 				// notif.send(facturePath)
-				const response = await axios.post(process.env.URL + `api/notification.management/sendBill`,{name :Consommateur.nom_consommateur,path:facturePath,email :Consommateur.mail_consommateur})
+				await axios.post(`${process.env.URL}api/notification.management/sendBill`,
+					{
+						name :Consommateur.nom_consommateur,
+						path:facturePath,
+						email :Consommateur.mail_consommateur
+					}
+				);
 
 				break;
 			case 'payment_intent.payment_failed':
@@ -238,6 +243,25 @@ class PaymentService {
 		//	console.error(error);
 			throw new Error('Error processing refund');
 		}
+	};
+
+
+	static getPayments = async (idConsumer) => {
+		try {
+			
+			const paiements = await Paiement.findAll({
+				include: {
+					model: Commande,
+					as: 'id_cmd_commande',
+				},
+				//where: { id_paiement: idConsumer },
+			});
+
+			return paiements;
+		} catch (error) {
+			throw new Error (error.message);
+		}
+
 	};
 
 }

@@ -23,9 +23,13 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: true
     },
     id_utilisateur: {
-      type: DataTypes.STRING(50),
+      type: DataTypes.INTEGER,
       allowNull: false,
-      unique: "id_utilisateur"
+      references: {
+        model: 'utilisateur',
+        key: 'id_utilisateur'
+      },
+      unique: "profil_ibfk_1"
     }
   }, {
     sequelize,

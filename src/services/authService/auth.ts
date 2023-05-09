@@ -1,8 +1,9 @@
 /* eslint-disable @typescript-eslint/no-namespace */
 import jwt from 'jsonwebtoken';
 import { Op } from 'sequelize';
-import models from '../../models/sequilize';
+import models from '../../models/sequelize';
 import bcrypt from 'bcryptjs';
+import consommateur from '../../models/consommateur';
 
 
 	interface User {
@@ -16,14 +17,16 @@ import bcrypt from 'bcryptjs';
   interface LoginData {
 	username: string;
 	password: string;
-	userRole: string;
-	email:string
+	
+	email :  string;
+	consumer : string;
   }
 
 
 
 const utilisateur = models.utilisateur;
 const role = models.role;
+const Consommateur = models.consommateur;
 
 class  Authentication {
 
@@ -80,30 +83,37 @@ class  Authentication {
  * @returns {Promise<string>} A Promise that resolves with a JWT token.
  * @throws {Error} If the credentials are invalid.
  */
-	static login = async (loginData: LoginData): Promise<string> => {
+	static login = async (loginData: LoginData) => {
 
 		// Destructure loginData object
-		const { username, password, userRole, email } = loginData;
+		const { username, password,  email, consumer } = loginData;
  
-		
+		let user;
+		if(!consumer){
 		// Find user by username or email
-		const user = await utilisateur.findOne({
-			attributes: ['id_utilisateur', 'id_role', 'password_utilisateur'],
-			include: [
-				{
-					model: role,
-					attributes: ['id_role', 'libelle_role'],
-					where: { libelle_role: userRole },
-				},
-			],
-			where: {
-				[Op.or]: [
-					{ username_utilisateur: username },
-					{ mail_utilisateur: email },
+			user = await utilisateur.findOne({
+				attributes: ['id_utilisateur', 'id_role', 'password_utilisateur'],
+				include: [
+					{
+						model: role,
+						as : 'id_role_role',
+						attributes: ['id_role', 'libelle_role'],
+					
+					},
 				],
-			},
-		});
+				where: {
+					[Op.or]: [
+						{ username_utilisateur: username || '' },
+						{ mail_utilisateur: email || '' },
+					],
+				},
+			});
 
+		}
+		else {
+			user = await  Consommateur.findOne({where : {mail_consommateur:email}});
+
+		}
 		// Throw error if user not found
 		if (!user) {
 
@@ -124,11 +134,11 @@ class  Authentication {
 
 		// Create JWT
 		const token = jwt.sign(
-			{ id: user.id_utilisateur, role: user.role },
+			{ id: user.id_utilisateur, role: user.id_role_role.libelle_role || consumer },
 			this.jwtSecret
 		);
-
-		return token;
+		const response = {token, role :user?.id_role_role?.libelle_role || consumer };
+		return response;
 
 	};
 

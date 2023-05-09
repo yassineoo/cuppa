@@ -8,7 +8,8 @@ interface LoginData {
 	username: string;
 	password: string;
 	userRole: string;
-	email:string
+	email:string;
+	consumer : string;
   }
 
 interface User {
@@ -41,11 +42,13 @@ class LoginController {
 			const loginData :LoginData = req.body;
 
 			// Attempt to login and retrieve a JWT token
-			const token = await Authentication.login(loginData);
+			const response = await Authentication.login(loginData);
 			
 			// Send the token back in the response
+			console.log(response);
+			
 			res.status(200);
-			return res.json(token);
+			return res.json(response);
 		
 		} catch (error) {
 
