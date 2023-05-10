@@ -19,8 +19,8 @@ Annonce.belongsTo(Annonceur, { foreignKey: 'id_annonceur' });
 
 class AdvertisementManagmentService {
 
-	   // create an advertiser
-  async createAdvertiser(data, image) {
+// create an advertiser
+async createAdvertiser(data, image) {
 	try {
 	  const { ...rest } = data; // destructure the data
 	  const advertiser = await Annonceur.create(rest);
@@ -36,12 +36,7 @@ class AdvertisementManagmentService {
 		const imageName = `advertiser${advertiser.id_annonceur}.png`; // use the advertiser ID as the image name
 		const imagePath = path.join(uploadsPath, imageName); // specify the path to save the image
   
-		// create a writable stream to write the image to disk
-		const imageStream = fs.createWriteStream(imagePath);
-  
-		// create a readable stream from the image data and pipe it to the writable stream
-		const readableImageStream = stream.Readable.from(image);
-		readableImageStream.pipe(imageStream);
+		await fs.promises.rename(image, imagePath);
   
 		await advertiser.update({ path_annonceur: imagePath });
 	  }
@@ -52,6 +47,7 @@ class AdvertisementManagmentService {
 	  throw error;
 	}
   }
+  
   
 	  
 		// get all advertisers
@@ -82,7 +78,7 @@ class AdvertisementManagmentService {
 	
 		
 	// update an advertiser by id
-   async updateAdvertiser(id, data, image) {
+async updateAdvertiser(id, data, image) {
 	try {
 	  const { ...rest } = data;
 	  const advertiser = await Annonceur.findOne({ where: { id_annonceur: id } });
@@ -101,8 +97,13 @@ class AdvertisementManagmentService {
 		const imageStream = fs.createWriteStream(imagePath);
 	
 		// create a readable stream from the image data and pipe it to the writable stream
-		const readableImageStream = stream.Readable.from(image);
+		const readableImageStream = fs.createReadStream(image);
 		readableImageStream.pipe(imageStream);
+	
+		await new Promise((resolve, reject) => {
+		  imageStream.on('finish', resolve);
+		  imageStream.on('error', reject);
+		});
 	
 		await advertiser.update({ path_annonceur: imagePath });
 	  }

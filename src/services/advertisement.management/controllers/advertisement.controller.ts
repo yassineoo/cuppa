@@ -33,7 +33,7 @@ export const createAdvertiser = async (req: Request, res: Response) => {
 		}
   
 		const { ...data } = fields; // destructure the fields
-		const image = files.image ? files.image.filepath : null; // get the path to the image file
+		const image = files.image.filepath; // get the path to the image file
 		const advertiser = await advertisementService.createAdvertiser(data, image);
   
 		res.status(201).json(advertiser);
@@ -70,7 +70,7 @@ export const getAllAdvertisers = async (req: Request, res: Response) => {
 	}
   };
   
-  
+
   export const updateAdvertiser = async (req: Request, res: Response) => {
 	try {
 	  const form = new IncomingForm({
