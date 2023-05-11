@@ -22,19 +22,21 @@ describe('NotificationManagementService', () => {
   });
 
   describe('notifyAMOfInterventionTask', () => {
-    let distributeurId: number;
+    let numero_serie_distributeur: string;
     let description: string;
-    
+    let etat;
+
     beforeEach(() => {
-      distributeurId = 1;
+      numero_serie_distributeur = "1";
       description = "Tache pour l'AM";
+      etat = "active";
     });
   
     it('should send notification to AM users', async () => {
       // Arrange
       const mockDistributeur = {
-        id_distributeur: distributeurId,
-        numero_serie_distributeur: 'abc',
+        numero_serie_distributeur: numero_serie_distributeur,
+      
         localisation_statique_distributeur: 'Alger'
       };
       spyOn(Distributeur, 'findOne').and.returnValue(mockDistributeur);
@@ -57,10 +59,10 @@ describe('NotificationManagementService', () => {
       spyOn(notificationService, 'saveInterventionTask').and.returnValue(Promise.resolve());
   
       // Act
-      await notificationService.notifyAMOfInterventionTask(distributeurId, description);
+      await notificationService.notifyAMOfInterventionTask(numero_serie_distributeur,etat,description);
   
       // Assert
-      expect(Distributeur.findOne).toHaveBeenCalledWith({ where: { id_distributeur: distributeurId } });
+      expect(Distributeur.findOne).toHaveBeenCalledWith({ where: { numero_serie_distributeur: numero_serie_distributeur } });
       expect(Role.findOne).toHaveBeenCalledWith({ where: { libelle_role: 'AM' } });
       expect(Utilisateur.findAll).toHaveBeenCalledWith({ where: { id_role: mockAMRole.id_role } });
   
@@ -75,7 +77,7 @@ describe('NotificationManagementService', () => {
   
       expect(notificationService.sendNotification).toHaveBeenCalledWith(expectedAMNotification);
   
-      expect(notificationService.saveInterventionTask).toHaveBeenCalledWith(distributeurId, description);
+      expect(notificationService.saveInterventionTask).toHaveBeenCalledWith(numero_serie_distributeur,etat,description);
     });
   });
   

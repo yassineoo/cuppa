@@ -12,6 +12,7 @@ import commandesRouter from './services/service-commandes/routes/commandes.route
 
 import accountRoutes from './services/account.management/routes/account.route';
 import notificationRoutes from './services/notification.management/routes/notification.route';
+import advertisementRoutes from './services/advertisement.management/routes/advertisement.route';
 
 import cors from 'cors';
 
@@ -46,7 +47,7 @@ app.use(express.urlencoded({ extended: false }));
 
 
 app.use('/api/account.management', accountRoutes);
-
+app.use('/api/ads',advertisementRoutes);
 app.use('/api/notification.management', notificationRoutes);
 app.get('/', (req, res) => {
 	res.send('koko');
