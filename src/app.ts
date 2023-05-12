@@ -31,7 +31,7 @@ loggingService.log(
 dotenv.config();
 const PORT = process.env.PORT || 5000;
 const app = express();
-
+app.use(express.static('src/uploads'));
 // Use JSON parser for all non-webhook routes
 app.use(parser);
 app.use(cors({

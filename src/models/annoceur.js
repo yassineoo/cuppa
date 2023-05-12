@@ -15,12 +15,12 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING(50),
       allowNull: false
     },
-    sexe_annonceur: {
-      type: DataTypes.STRING(10),
+    type_annonceur: {
+      type: DataTypes.STRING(50),
       allowNull: true
     },
     path_annonceur: {
-      type: DataTypes.STRING(50),
+      type: DataTypes.STRING(160),
       allowNull: true
     }
   }, {

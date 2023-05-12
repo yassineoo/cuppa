@@ -20,8 +20,8 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false
     },
     path_video: {
-      type: DataTypes.STRING(50),
-      allowNull: false
+      type: DataTypes.STRING(100),
+      allowNull: true
     },
     prix_annonce: {
       type: DataTypes.DOUBLE,
@@ -34,6 +34,10 @@ module.exports = function(sequelize, DataTypes) {
         model: 'annoceur',
         key: 'id_annonceur'
       }
+    },
+    nom_annonce: {
+      type: DataTypes.STRING(100),
+      allowNull: true
     }
   }, {
     sequelize,
@@ -49,7 +53,7 @@ module.exports = function(sequelize, DataTypes) {
         ]
       },
       {
-        name: "id_annonceur",
+        name: "annoce_ibfk_1",
         using: "BTREE",
         fields: [
           { name: "id_annonceur" },

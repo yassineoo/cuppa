@@ -25,25 +25,25 @@ router.get('/getAllAdvertisers/',getAllAdvertisers);
 router.get('/getAdvertiserById/:id',Authorization(['AC']),getAdvertiserById);
 
 // Update an advertiser by ID
-router.put('/updateAdvertiser/:id',Authorization(['AC']),updateAdvertiser);
+router.post('/updateAdvertiser/:id',updateAdvertiser);
 
 // Delete an advertiser by ID
-router.delete('/deleteAdvertiser/:id',Authorization(['AC']),deleteAdvertiser);
+router.post('/deleteAdvertiser/:id',deleteAdvertiser);
 
 // Create a new advertisement
 router.post('/createAdvertisement/',createAdvertisement);
 
 // Get all advertisements
-router.get('/getAllAdvertisements/',Authorization(['AC']),getAllAdvertisements);
+router.get('/getAllAdvertisements/',getAllAdvertisements);
 
 // Get an advertisement by ID
-router.get('/getAdvertisementById/:id',Authorization(['AC']),getAdvertisementById);
+router.get('/getAdvertisementById/:id',getAdvertisementById);
 
 // Update an advertisement by ID
-router.put('/updateAdvertisement/:id',Authorization(['AC']),updateAdvertisement);
+router.post('/updateAdvertisement/:id',updateAdvertisement);
 
 // Delete an advertisement by ID
-router.delete('/deleteAdvertisement/:id',Authorization(['AC']),deleteAdvertisement);
+router.post('/deleteAdvertisement/:id',deleteAdvertisement);
 
 
 export default router;
