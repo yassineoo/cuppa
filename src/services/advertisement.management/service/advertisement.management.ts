@@ -37,7 +37,7 @@ async createAdvertiser(data, image) {
 		const imagePath = path.join(uploadsPath, imageName); // specify the path to save the image
   
 		await fs.promises.rename(image, imagePath);
-  
+        console.log(imageName);
 		await advertiser.update({ path_annonceur: imageName });
 	  }
   
@@ -53,8 +53,29 @@ async createAdvertiser(data, image) {
 		// get all advertisers
 		async getAllAdvertisers() {
 			try {
-			  const annonceurs = await Annonceur.findAll();
-			  return annonceurs;
+
+
+				const annonceurs = await Annonceur.findAll({
+					include: [{ model: Annonce ,as:'annoces'  }],
+					
+				  });
+			  
+				  const advertisersWithAdsCount = annonceurs.map((annonceur) => {
+					const { id_annonceur, nom_annonceur, prenom_annonceur, type_annonceur, path_annonceur } = annonceur;
+			  
+					const numberOfAds = annonceur.annoces.length;
+			  
+					return {
+					  id_annonceur,
+					  nom_annonceur,
+					  prenom_annonceur,
+					  type_annonceur,
+					  path_annonceur,
+					  numberOfAds,
+					};
+				  });
+			  
+				  return advertisersWithAdsCount;
 			} catch (error) {
 			  console.log(error);
 			  throw error;
@@ -105,7 +126,7 @@ async updateAdvertiser(id, data, image) {
 		  imageStream.on('error', reject);
 		});
 	
-		await advertiser.update({ path_annonceur: imagePath });
+		await advertiser.update({ path_annonceur: imageName });
 	  }
 	
 	  return advertiser.toJSON();
@@ -219,7 +240,7 @@ async updateAdvertiser(id, data, image) {
   }
 
  // Update an advertisement by ID
- async updateAdvertisement(id, data, videoFile) {
+async updateAdvertisement(id, data, videoFile) {
 	try {
 	  const advertisement = await Annonce.findOne({ where: { id_annonce: id } });
 	  if (!advertisement) {
@@ -227,19 +248,22 @@ async updateAdvertiser(id, data, image) {
 	  }
   
 	  // Save the uploaded video file to the uploads directory
-	  const uploadsPath = path.join(__dirname, '..', '..', '..', 'uploads');
-	  if (!fs.existsSync(uploadsPath)) {
-		fs.mkdirSync(uploadsPath);
-	  }
-	  const videoName = `advertisement${id}.mp4`;
-	  const videoPath = path.join(uploadsPath, videoName);
-	  await createReadStream(videoFile.filepath).pipe(createWriteStream(videoPath));
+	  let videoPath;
+	  if (videoFile) {
+		const uploadsPath = path.join(__dirname, '..', '..', '..', 'uploads');
+		if (!fs.existsSync(uploadsPath)) {
+		  fs.mkdirSync(uploadsPath);
+		}
+		const videoName = `advertisement${id}.mp4`;
+		videoPath = path.join(uploadsPath, videoName);
+		await createReadStream(videoFile.filepath).pipe(createWriteStream(videoPath));
   
-	  // Add the video path to the advertisement data
-	  const dataWithVideo = { ...data, path_video: videoPath };
+		// Add the video path to the advertisement data
+		data.path_video = videoPath;
+	  }
   
 	  // Update the advertisement
-	  const updatedAdvertisement = { ...advertisement.toJSON(), ...dataWithVideo };
+	  const updatedAdvertisement = { ...advertisement.toJSON(), ...data };
 	  await advertisement.update(updatedAdvertisement);
   
 	  return advertisement.toJSON();

@@ -48,6 +48,7 @@ export const createAdvertiser = async (req: Request, res: Response) => {
 export const getAllAdvertisers = async (req: Request, res: Response) => {
 	try {
 	  const advertisers = await advertisementService.getAllAdvertisers();
+	  
 	  res.status(200).json(advertisers);
 	} catch (error) {
 	  console.log(error);
@@ -98,7 +99,7 @@ export const getAllAdvertisers = async (req: Request, res: Response) => {
 		res.status(200).json(advertiser);
 	  });
 	} catch (error) {
-	  console.error(error);
+	  //console.error(error);
 	  res.status(500).send({ error: 'Internal server error' });
 	}
   };

@@ -34,7 +34,7 @@ router.post('/deleteAdvertiser/:id',deleteAdvertiser);
 router.post('/createAdvertisement/',createAdvertisement);
 
 // Get all advertisements
-router.get('/getAllAdvertisements/',getAllAdvertisements);
+router.get('/getAllAdvertisements/',Authorization(['AC']),getAllAdvertisements);
 
 // Get an advertisement by ID
 router.get('/getAdvertisementById/:id',getAdvertisementById);
@@ -44,6 +44,8 @@ router.post('/updateAdvertisement/:id',updateAdvertisement);
 
 // Delete an advertisement by ID
 router.post('/deleteAdvertisement/:id',deleteAdvertisement);
+
+
 
 
 export default router;
