@@ -29,4 +29,7 @@ commandesRouter.get('/etat/:etat', authorize(['AC']), commandesController.getByS
 commandesRouter.get('/:period/:when' , authorize(['AC']), commandesController.getByPeriod)
 
 
+
+
+
 export default commandesRouter

@@ -3,7 +3,8 @@ import express, {Express, Response, Request, NextFunction} from "express"
 
 import distributeursRouter from "./services/service-distributeurs/routes/distributeurs.routes"
 import commandesRouter from "./services/service-commandes/routes/commandes.routes";
-const port = 8000
+import { drinksRoutes } from "./services/service-boissons/routes/boissons.routes";
+const port = 3000
 
 const app : Express = express()
 
@@ -13,10 +14,11 @@ app.use(express.json());
 app.get("/", (req : Request, res : Response) => {
     res.send("Hello here is the entry point")
 })
-
-app.use('/distributeurs', distributeursRouter);
-
 app.use('/commandes', commandesRouter);
+app.use('/distributeurs', distributeursRouter);
+app.use('/boissons', drinksRoutes);
+
+app.use('/images', express.static("./images"));
 
 app.use((req : Request, res : Response) => {
     res.type('text/plain')

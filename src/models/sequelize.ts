@@ -1,7 +1,7 @@
 import { Sequelize} from "sequelize";
 import initModels from "./init-models";
 
-const sequelize = new Sequelize('smartbev', 'bouchra', 'root', {
+const sequelize = new Sequelize('db_projet_2cs', 'root', '', {
   host: 'localhost',
   dialect: 'mysql'
 });

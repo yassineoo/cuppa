@@ -10,6 +10,7 @@ const commandesController = {
             res.status(201).json({"cmd_id" : cmd_id})
         } catch (err :any) {
             res.status(500).send(err.message)
+            console.log(err.message)
         }
     },
 
