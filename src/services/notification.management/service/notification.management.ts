@@ -101,7 +101,7 @@ class NotificationManagementService {
       await this.sendNotification(message);
     }
 
-    await this.saveInterventionTask(numero_serie_distributeur,etat,description);
+    //await this.saveInterventionTask(numero_serie_distributeur,etat,description);
   }
 
   async sendNotification(message: any): Promise<void> {

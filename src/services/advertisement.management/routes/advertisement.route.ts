@@ -9,7 +9,8 @@ import { createAdvertisement,
     getAllAdvertisers,
     getAdvertiserById,
     updateAdvertiser,
-    deleteAdvertiser } from '../controllers/advertisement.controller';
+    deleteAdvertiser,
+    handleImageUpload } from '../controllers/advertisement.controller';
 
 import Authorization from './../middlewares/auth';
 
@@ -25,10 +26,10 @@ router.get('/getAllAdvertisers/',Authorization(['AC']),getAllAdvertisers);
 router.get('/getAdvertiserById/:id',Authorization(['AC']),getAdvertiserById);
 
 // Update an advertiser by ID
-router.put('/updateAdvertiser/:id',Authorization(['AC']),updateAdvertiser);
+router.post('/updateAdvertiser/:id',Authorization(['AC']),updateAdvertiser);
 
 // Delete an advertiser by ID
-router.delete('/deleteAdvertiser/:id',Authorization(['AC']),deleteAdvertiser);
+router.get('/deleteAdvertiser/:id',Authorization(['AC']),deleteAdvertiser);
 
 // Create a new advertisement
 router.post('/createAdvertisement/',Authorization(['AC']),createAdvertisement);
@@ -40,10 +41,13 @@ router.get('/getAllAdvertisements/',Authorization(['AC']),getAllAdvertisements);
 router.get('/getAdvertisementById/:id',Authorization(['AC']),getAdvertisementById);
 
 // Update an advertisement by ID
-router.put('/updateAdvertisement/:id',Authorization(['AC']),updateAdvertisement);
+router.post('/updateAdvertisement/:id',Authorization(['AC']),updateAdvertisement);
 
 // Delete an advertisement by ID
-router.delete('/deleteAdvertisement/:id',Authorization(['AC']),deleteAdvertisement);
+router.get('/deleteAdvertisement/:id',Authorization(['AC']),deleteAdvertisement);
+
+// Handle image upload
+router.post('/handleImageUpload',Authorization(['AC']),handleImageUpload);
 
 
 export default router;

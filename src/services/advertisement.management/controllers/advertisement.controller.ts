@@ -219,3 +219,36 @@ export const getAdvertisementById = async (req: Request, res: Response) => {
 		res.status(500).json({ success: false, error: 'Failed to delete advertisement' });
 	}
 	};
+
+
+	export const handleImageUpload = async (req, res) => {
+		try {
+		  const form = new IncomingForm({
+			multiples: false,
+			keepExtensions: true,
+			uploadDir: process.env.UPLOAD_DIR,
+			type: 'multipart',
+			parse: (req, options, callback) => {
+			  // use the default parser
+			  return IncomingForm.prototype.parse.call(this, req, options, callback);
+			}
+		  });
+	  
+		  form.parse(req, async (err, fields, files) => {
+			if (err) {
+			  console.error(err);
+			  throw err;
+			}
+
+			const imagePath = files.image.filepath; // get the path to the image file
+
+			const { age, gender } = await advertisementService.predictAgeAndGender(imagePath);
+			const advertisement = await advertisementService.selectAdvertisement(age, gender);
+	  
+			res.status(200).json(advertisement);
+		  });
+		} catch (error) {
+		  console.error(error);
+		  res.status(500).send({ error: 'Internal server error' });
+		}
+	  };

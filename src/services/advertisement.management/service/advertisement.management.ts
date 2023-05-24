@@ -2,12 +2,18 @@ import Models from './../../../models/sequelize';
 const fs = require('fs');
 const path = require('path');
 import stream from 'stream';
-
+import { Op } from 'sequelize';
 import { createReadStream,createWriteStream } from 'fs';
+import axios from 'axios';
+import fetch from 'isomorphic-fetch';
+import request from 'request';
+import got from 'got';
+import http from 'http';
+import FormData from 'form-data';
+import * as faceapi from 'face-api.js';
 
-
-
-
+// Set fetch implementation to node-fetch
+faceapi.env.monkeyPatch({ fetch: fetch});
   
 // Initialize the models
 const Annonce = Models.annoce;
@@ -38,7 +44,7 @@ async createAdvertiser(data, image) {
   
 		await fs.promises.rename(image, imagePath);
   
-		await advertiser.update({ path_annonceur: imagePath });
+		await advertiser.update({ path_annonceur: imageName });
 	  }
   
 	  return advertiser;
@@ -105,7 +111,7 @@ async updateAdvertiser(id, data, image) {
 		  imageStream.on('error', reject);
 		});
 	
-		await advertiser.update({ path_annonceur: imagePath });
+		await advertiser.update({ path_annonceur: imageName });
 	  }
 	
 	  return advertiser.toJSON();
@@ -175,7 +181,7 @@ async updateAdvertiser(id, data, image) {
 	  await createReadStream(videoFile.filepath).pipe(createWriteStream(videoPath));
   
 	  // add the video path to the advertisement data
-	  const dataWithVideo = { id_annonceur, duree_affichage, ageMin, ageMax, sexeCible, prix_annonce, path_video: videoPath };
+	  const dataWithVideo = { id_annonceur, duree_affichage, ageMin, ageMax, sexeCible, prix_annonce, path_video: videoName };
   
 	  await annonce.update(dataWithVideo);
 	  return annonce;
@@ -235,7 +241,7 @@ async updateAdvertiser(id, data, image) {
 	  await createReadStream(videoFile.filepath).pipe(createWriteStream(videoPath));
   
 	  // Add the video path to the advertisement data
-	  const dataWithVideo = { ...data, path_video: videoPath };
+	  const dataWithVideo = { ...data, path_video: videoName };
   
 	  // Update the advertisement
 	  const updatedAdvertisement = { ...advertisement.toJSON(), ...dataWithVideo };
@@ -272,6 +278,61 @@ async updateAdvertiser(id, data, image) {
 	}
   }
 
+
+
+  
+// Function to predict age and gender using face-recognition library
+
+async predictAgeAndGender(imagePath) {
+	try {
+	  const imageData = await fs.promises.readFile(imagePath);
+  
+	  const formData = new FormData();
+	  formData.append('image', imageData, 'image.png');
+  
+	  const response = await axios.post('https://detectionmodel.onrender.com/predict', formData, {
+		headers: {
+			'Host': 'detectionmodel.onrender.com',
+	        'Content-Type': 'multipart/form-data',
+	        'Content-Length': imageData.length.toString(),
+		},
+	  });
+  
+	  const { age, gender } = response.data;
+	  return { age, gender };
+	} catch (error) {
+	  console.log(error);
+	  throw error;
+	}
+  }
+
+
+  /*
+  async loadImage(imagePath: string): Promise<HTMLImageElement> {
+	return new Promise((resolve, reject) => {
+	  const imageElement = document.createElement('img');
+	  imageElement.onload = () => resolve(imageElement);
+	  imageElement.onerror = reject;
+	  imageElement.src = imagePath;
+	});
+  }
+  */
+
+
+
+
+  // Function to select an appropriate advertisement based on age and gender
+  async selectAdvertisement(age, gender) {
+	const whereCondition = {
+	  ageMin: { [Op.lte]: age },
+	  ageMax: { [Op.gte]: age },
+	  sexeCible: gender,
+	};
+  
+	const advertisement = await Annonce.findOne({ where: whereCondition });
+	return advertisement;
+  }
+  
 
 }
 
