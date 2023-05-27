@@ -8,19 +8,19 @@ module.exports = function(sequelize, DataTypes) {
       primaryKey: true
     },
     time_cmd: {
-      type: DataTypes.DATE,
+      type: DataTypes.DATEONLY,
       allowNull: false
     },
     prix_cmd: {
       type: DataTypes.STRING(50),
       allowNull: false
     },
-    quantite_sucre: {
-      type: DataTypes.DOUBLE,
-      allowNull: true
-    },
     taille_goblet: {
       type: DataTypes.INTEGER,
+      allowNull: true
+    },
+    quantite_sucre: {
+      type: DataTypes.DOUBLE,
       allowNull: true
     },
     etat_cmd: {
@@ -37,7 +37,7 @@ module.exports = function(sequelize, DataTypes) {
     },
     id_consommateur: {
       type: DataTypes.INTEGER,
-      allowNull: true,
+      allowNull: false,
       references: {
         model: 'consommateur',
         key: 'id_consommateur'
@@ -45,7 +45,7 @@ module.exports = function(sequelize, DataTypes) {
     },
     numero_serie_distributeur: {
       type: DataTypes.STRING(50),
-      allowNull: true,
+      allowNull: false,
       references: {
         model: 'distributeur',
         key: 'numero_serie_distributeur'

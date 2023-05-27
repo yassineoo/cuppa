@@ -31,7 +31,7 @@ router.post('/updateAdvertiser/:id',updateAdvertiser);
 router.post('/deleteAdvertiser/:id',deleteAdvertiser);
 
 // Create a new advertisement
-router.post('/createAdvertisement/',createAdvertisement);
+router.post('/createAdvertisement/',Authorization(['AC']),createAdvertisement);
 
 // Get all advertisements
 router.get('/getAllAdvertisements/',Authorization(['AC']),getAllAdvertisements);

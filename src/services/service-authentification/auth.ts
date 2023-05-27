@@ -92,7 +92,7 @@ class  Authentication {
 		if(!consumer){
 		// Find user by username or email
 			user = await utilisateur.findOne({
-				attributes: ['id_utilisateur', 'id_role', 'password_utilisateur'],
+				attributes: ['id_utilisateur', 'id_role', 'password_utilisateur' ],
 				include: [
 					{
 						model: role,
@@ -128,7 +128,7 @@ class  Authentication {
 		);
 		if (!passwordMatch) {
 
-			throw new Error('Invalid credentials: password');
+			throw new Error('Invalid credentials:password');
 		
 		}
 
@@ -137,7 +137,7 @@ class  Authentication {
 			{ id: user.id_utilisateur, role: user.id_role_role.libelle_role || consumer },
 			this.jwtSecret
 		);
-		const response = {token, role :user?.id_role_role?.libelle_role || consumer };
+		const response = {token,name:username ,  role :user?.id_role_role?.libelle_role || consumer };
 		return response;
 
 	};

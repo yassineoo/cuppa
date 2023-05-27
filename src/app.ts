@@ -1,10 +1,10 @@
 import express ,{Express, Response, Request, NextFunction}from 'express';
 import dotenv from 'dotenv';
-import  loginRoute from './services/authService/routes/auth.Route';
-import paymentRoute from './services/paymentService/routes/payment.Route';
+import  loginRoute from './services/service-authentification/routes/auth.Route';
+import paymentRoute from './services/service-paiement/routes/payment.Route';
 import parser from './middlewares/parser';
-import LoggingService from './services/loggingService/logging';
-
+import LoggingService from './services/service-logging/logging';
+import reclamation from './services/service-reclamation/routes/routes.reclmation'
 
 import distributeursRouter from './services/service-distributeurs/routes/distributeurs.routes';
 import commandesRouter from './services/service-commandes/routes/commandes.routes';
@@ -43,6 +43,7 @@ app.use(cors({
 //app.use(express.json());
 app.use('/login', loginRoute);
 app.use('/payment', paymentRoute);
+app.use('/reclamation', reclamation);
 app.use(express.urlencoded({ extended: false }));
 
 

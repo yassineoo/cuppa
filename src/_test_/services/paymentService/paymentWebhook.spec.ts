@@ -1,10 +1,10 @@
 
 
-import stripe from '../../../services/paymentService/paymentConfig';
-import PaymentService from '../../../services/paymentService/payment';
+import stripe from '../../../services/service-paiement/paymentConfig';
+import PaymentService from '../../../services/service-paiement/payment';
 import models from '../../../models/sequelize';
 import { buffer } from 'stream/consumers';
-import Facture from '../../../services/paymentService/facture';
+import Facture from '../../../services/service-paiement/facture';
 const Paiement = models.paiement;
 
 describe('Payment Service', () => {

@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-namespace */
 import { Request, Response, NextFunction } from 'express';
-import Authentication from '../../authService/auth';
+import Authentication from '../../service-authentification/auth';
 interface User {
   id: string;
   role: string;

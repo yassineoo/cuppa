@@ -1,5 +1,5 @@
 /* eslint-disable no-mixed-spaces-and-tabs */
-import  Authentication from '../../../services/authService/auth';
+import  Authentication from '../../../services/service-authentification/auth';
 import jwt from 'jsonwebtoken';
 import models from '../../../models/sequelize';
 import bcrypt from 'bcryptjs';
@@ -48,7 +48,7 @@ describe('Authentication',async () => {
 
   		const token = await Authentication.login(mockLoginData);
 
-  		expect(token).toEqual({token:'mock-token',role:'SADM'});
+  		expect(token).toEqual({token:'mock-token',role:'SADM',name:'testuser'});
   		expect(utilisateur.findAll).toHaveBeenCalled();
   		expect(bcrypt.compare).toHaveBeenCalled();
   		expect(jwt.sign).toHaveBeenCalled();

@@ -10,8 +10,8 @@ import { createReadStream,createWriteStream } from 'fs';
 
   
 // Initialize the models
-const Annonce = Models.annoce;
-const Annonceur = Models.annoceur;
+const Annonce = Models.annonce;
+const Annonceur = Models.annonceur;
    
 
 // Define the association between the models
@@ -165,7 +165,6 @@ async updateAdvertiser(id, data, image) {
 	try {
 	  const {
 		id_annonceur,
-		
 		duree_affichage,
 		ageMin,
 		nom_annonce ,

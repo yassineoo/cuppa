@@ -95,7 +95,14 @@ class PaymentService {
 		}
 	};
 
+
 	
+		/**
+		 * Creates a payment intent for a customer's payment.
+		 * @param {object} data - Data for creating the payment intent.
+		 * @returns {Promise<string>} - A Promise that resolves with the client secret of the payment intent or rejects with an error.
+		 * @throws {Error} - If an error occurs during the payment intent creation, an error will be thrown with the error message.
+		 */
 	static  createPaymentIntent = async (data) => {
 		
 		try {
@@ -166,6 +173,14 @@ class PaymentService {
 			throw new Error(error.message);
 		}
 	};
+	
+		/**
+		 * Handles the webhook event from Stripe.
+		 * @param {object} event - The webhook event object.
+		 * @param {string} signature - The webhook signature.
+		 * @returns {Promise<void>} - A Promise that resolves when the webhook event is handled successfully or rejects with an error.
+		 * @throws {Error} - If an error occurs while handling the webhook event, an error will be thrown with the error message.
+		 */
 
 	static  handleWebhook = async (event,signature) => {
 		try {
@@ -212,6 +227,14 @@ class PaymentService {
 		}
 	};
 
+		/**
+		 * Refunds a payment.
+		 * @param {string} paymentId - The ID of the payment to be refunded.
+		 * @param {number} amount - The amount to be refunded.
+		 * @param {string} reason - The reason for the refund.
+		 * @returns {Promise<object>} - A Promise that resolves with the refund object or rejects with an error.
+		 * @throws {Error} - If an error occurs while processing the refund, an error will be thrown with the error message.
+		 */
 
 	static  refundPayment = async (paymentId, amount,reason) =>  {
 		
@@ -245,6 +268,12 @@ class PaymentService {
 		}
 	};
 
+		/**
+		 * Retrieves the list of payments for a consumer.
+		 * @param {number} idConsumer - The ID of the consumer.
+		 * @returns {Promise<Array>} - A Promise that resolves with an array of payment objects or rejects with an error.
+		 * @throws {Error} - If an error occurs while retrieving the payments, an error will be thrown with the error message.
+		 */
 
 	static getPayments = async (idConsumer) => {
 		try {

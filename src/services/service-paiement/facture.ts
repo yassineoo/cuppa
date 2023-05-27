@@ -13,6 +13,15 @@ import fs from 'fs';
 
 class Facture {
 
+	  /**
+   * Creates a PDF invoice.
+   * @param {string} name - The name associated with the invoice.
+   * @param {string} Description - The description of the invoice.
+   * @param {number} Price - The price of the invoice.
+   * @param {string} currency - The currency of the invoice.
+   * @returns {string} - The file path of the created invoice.
+   */
+
 	static create = (name,Description,Price,currency) => {
 		
 		try {

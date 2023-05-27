@@ -1,48 +1,63 @@
 const Sequelize = require('sequelize');
 module.exports = function(sequelize, DataTypes) {
-  return sequelize.define('reclamation', {
-    id_reclamation: {
+  return sequelize.define('annonce', {
+    id_annonce: {
       autoIncrement: true,
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true
     },
-    description_reclamation: {
-      type: DataTypes.STRING(250),
+    duree_affichage: {
+      type: DataTypes.INTEGER,
       allowNull: false
     },
-    date_reclamation: {
-      type: DataTypes.DATEONLY,
+    ageMin: {
+      type: DataTypes.INTEGER,
       allowNull: false
     },
-    heure_reclamtion: {
-      type: DataTypes.TIME,
+    ageMax: {
+      type: DataTypes.INTEGER,
       allowNull: false
     },
-    type_reclamation: {
+    path_video: {
+      type: DataTypes.STRING(50),
+      allowNull: false
+    },
+    tarif_annonce: {
+      type: DataTypes.DOUBLE,
+      allowNull: false
+    },
+    nom_annonce: {
       type: DataTypes.STRING(100),
       allowNull: false
     },
-    etat_reclamation: {
+    type_forfait: {
       type: DataTypes.STRING(50),
       allowNull: true
     },
-    prix_remboursement: {
+    etat_annonce: {
+      type: DataTypes.STRING(50),
+      allowNull: true
+    },
+    date_debut: {
+      type: DataTypes.DATEONLY,
+      allowNull: true
+    },
+    nombre_affichage: {
       type: DataTypes.INTEGER,
       allowNull: true
     },
-    id_cmd: {
+    id_annonceur: {
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
-        model: 'commande',
-        key: 'id_cmd'
-      },
-      unique: "reclamation_ibfk_1"
+        model: 'annonceur',
+        key: 'id_annonceur'
+      }
     }
   }, {
     sequelize,
-    tableName: 'reclamation',
+    tableName: 'annonce',
     timestamps: false,
     indexes: [
       {
@@ -50,15 +65,14 @@ module.exports = function(sequelize, DataTypes) {
         unique: true,
         using: "BTREE",
         fields: [
-          { name: "id_reclamation" },
+          { name: "id_annonce" },
         ]
       },
       {
-        name: "id_cmd",
-        unique: true,
+        name: "id_annonceur",
         using: "BTREE",
         fields: [
-          { name: "id_cmd" },
+          { name: "id_annonceur" },
         ]
       },
     ]

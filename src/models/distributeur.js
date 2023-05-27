@@ -8,14 +8,14 @@ module.exports = function(sequelize, DataTypes) {
     },
     etat_distributeur: {
       type: DataTypes.STRING(50),
-      allowNull: true
+      allowNull: false
     },
     date_installation_distributeur: {
       type: DataTypes.DATEONLY,
-      allowNull: true
+      allowNull: false
     },
     localisation_statique_distributeur: {
-      type: DataTypes.STRING(50),
+      type: DataTypes.TEXT,
       allowNull: true
     },
     id_client: {

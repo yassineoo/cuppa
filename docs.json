@@ -1,0 +1,6897 @@
+[
+	{
+		"file": "c:\\Users\\PC\\Desktop\\dev\\Work\\test\\Smartbev_backend\\src\\app.ts",
+		"params": {
+			"configuration": {
+				"_tagDefinitions": [
+					{
+						"tagName": "@alpha",
+						"tagNameWithUpperCase": "@ALPHA",
+						"syntaxKind": 2,
+						"standardization": "Discretionary",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@beta",
+						"tagNameWithUpperCase": "@BETA",
+						"syntaxKind": 2,
+						"standardization": "Discretionary",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@defaultValue",
+						"tagNameWithUpperCase": "@DEFAULTVALUE",
+						"syntaxKind": 1,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@decorator",
+						"tagNameWithUpperCase": "@DECORATOR",
+						"syntaxKind": 1,
+						"standardization": "Extended",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@deprecated",
+						"tagNameWithUpperCase": "@DEPRECATED",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@eventProperty",
+						"tagNameWithUpperCase": "@EVENTPROPERTY",
+						"syntaxKind": 2,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@example",
+						"tagNameWithUpperCase": "@EXAMPLE",
+						"syntaxKind": 1,
+						"standardization": "Extended",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@experimental",
+						"tagNameWithUpperCase": "@EXPERIMENTAL",
+						"syntaxKind": 2,
+						"standardization": "Discretionary",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@inheritDoc",
+						"tagNameWithUpperCase": "@INHERITDOC",
+						"syntaxKind": 0,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@internal",
+						"tagNameWithUpperCase": "@INTERNAL",
+						"syntaxKind": 2,
+						"standardization": "Discretionary",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@label",
+						"tagNameWithUpperCase": "@LABEL",
+						"syntaxKind": 0,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@link",
+						"tagNameWithUpperCase": "@LINK",
+						"syntaxKind": 0,
+						"standardization": "Core",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@override",
+						"tagNameWithUpperCase": "@OVERRIDE",
+						"syntaxKind": 2,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@packageDocumentation",
+						"tagNameWithUpperCase": "@PACKAGEDOCUMENTATION",
+						"syntaxKind": 2,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@param",
+						"tagNameWithUpperCase": "@PARAM",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@privateRemarks",
+						"tagNameWithUpperCase": "@PRIVATEREMARKS",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@public",
+						"tagNameWithUpperCase": "@PUBLIC",
+						"syntaxKind": 2,
+						"standardization": "Discretionary",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@readonly",
+						"tagNameWithUpperCase": "@READONLY",
+						"syntaxKind": 2,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@remarks",
+						"tagNameWithUpperCase": "@REMARKS",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@returns",
+						"tagNameWithUpperCase": "@RETURNS",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@sealed",
+						"tagNameWithUpperCase": "@SEALED",
+						"syntaxKind": 2,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@see",
+						"tagNameWithUpperCase": "@SEE",
+						"syntaxKind": 1,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@throws",
+						"tagNameWithUpperCase": "@THROWS",
+						"syntaxKind": 1,
+						"standardization": "Extended",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@typeParam",
+						"tagNameWithUpperCase": "@TYPEPARAM",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@virtual",
+						"tagNameWithUpperCase": "@VIRTUAL",
+						"syntaxKind": 2,
+						"standardization": "Extended",
+						"allowMultiple": false
+					}
+				],
+				"_tagDefinitionsByName": {},
+				"_supportedTagDefinitions": {},
+				"_validation": {
+					"ignoreUndefinedTags": false,
+					"reportUnsupportedTags": false,
+					"reportUnsupportedHtmlElements": false
+				},
+				"_docNodeManager": {
+					"_docNodeDefinitionsByKind": {},
+					"_docNodeDefinitionsByConstructor": {}
+				},
+				"_supportedHtmlElements": {}
+			},
+			"_blocks": []
+		}
+	},
+	{
+		"file": "c:\\Users\\PC\\Desktop\\dev\\Work\\test\\Smartbev_backend\\src\\config\\sequilize.ts",
+		"params": {
+			"configuration": {
+				"_tagDefinitions": [
+					{
+						"tagName": "@alpha",
+						"tagNameWithUpperCase": "@ALPHA",
+						"syntaxKind": 2,
+						"standardization": "Discretionary",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@beta",
+						"tagNameWithUpperCase": "@BETA",
+						"syntaxKind": 2,
+						"standardization": "Discretionary",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@defaultValue",
+						"tagNameWithUpperCase": "@DEFAULTVALUE",
+						"syntaxKind": 1,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@decorator",
+						"tagNameWithUpperCase": "@DECORATOR",
+						"syntaxKind": 1,
+						"standardization": "Extended",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@deprecated",
+						"tagNameWithUpperCase": "@DEPRECATED",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@eventProperty",
+						"tagNameWithUpperCase": "@EVENTPROPERTY",
+						"syntaxKind": 2,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@example",
+						"tagNameWithUpperCase": "@EXAMPLE",
+						"syntaxKind": 1,
+						"standardization": "Extended",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@experimental",
+						"tagNameWithUpperCase": "@EXPERIMENTAL",
+						"syntaxKind": 2,
+						"standardization": "Discretionary",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@inheritDoc",
+						"tagNameWithUpperCase": "@INHERITDOC",
+						"syntaxKind": 0,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@internal",
+						"tagNameWithUpperCase": "@INTERNAL",
+						"syntaxKind": 2,
+						"standardization": "Discretionary",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@label",
+						"tagNameWithUpperCase": "@LABEL",
+						"syntaxKind": 0,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@link",
+						"tagNameWithUpperCase": "@LINK",
+						"syntaxKind": 0,
+						"standardization": "Core",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@override",
+						"tagNameWithUpperCase": "@OVERRIDE",
+						"syntaxKind": 2,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@packageDocumentation",
+						"tagNameWithUpperCase": "@PACKAGEDOCUMENTATION",
+						"syntaxKind": 2,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@param",
+						"tagNameWithUpperCase": "@PARAM",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@privateRemarks",
+						"tagNameWithUpperCase": "@PRIVATEREMARKS",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@public",
+						"tagNameWithUpperCase": "@PUBLIC",
+						"syntaxKind": 2,
+						"standardization": "Discretionary",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@readonly",
+						"tagNameWithUpperCase": "@READONLY",
+						"syntaxKind": 2,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@remarks",
+						"tagNameWithUpperCase": "@REMARKS",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@returns",
+						"tagNameWithUpperCase": "@RETURNS",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@sealed",
+						"tagNameWithUpperCase": "@SEALED",
+						"syntaxKind": 2,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@see",
+						"tagNameWithUpperCase": "@SEE",
+						"syntaxKind": 1,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@throws",
+						"tagNameWithUpperCase": "@THROWS",
+						"syntaxKind": 1,
+						"standardization": "Extended",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@typeParam",
+						"tagNameWithUpperCase": "@TYPEPARAM",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@virtual",
+						"tagNameWithUpperCase": "@VIRTUAL",
+						"syntaxKind": 2,
+						"standardization": "Extended",
+						"allowMultiple": false
+					}
+				],
+				"_tagDefinitionsByName": {},
+				"_supportedTagDefinitions": {},
+				"_validation": {
+					"ignoreUndefinedTags": false,
+					"reportUnsupportedTags": false,
+					"reportUnsupportedHtmlElements": false
+				},
+				"_docNodeManager": {
+					"_docNodeDefinitionsByKind": {},
+					"_docNodeDefinitionsByConstructor": {}
+				},
+				"_supportedHtmlElements": {}
+			},
+			"_blocks": []
+		}
+	},
+	{
+		"file": "c:\\Users\\PC\\Desktop\\dev\\Work\\test\\Smartbev_backend\\src\\middlewares\\auth.ts",
+		"params": {
+			"configuration": {
+				"_tagDefinitions": [
+					{
+						"tagName": "@alpha",
+						"tagNameWithUpperCase": "@ALPHA",
+						"syntaxKind": 2,
+						"standardization": "Discretionary",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@beta",
+						"tagNameWithUpperCase": "@BETA",
+						"syntaxKind": 2,
+						"standardization": "Discretionary",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@defaultValue",
+						"tagNameWithUpperCase": "@DEFAULTVALUE",
+						"syntaxKind": 1,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@decorator",
+						"tagNameWithUpperCase": "@DECORATOR",
+						"syntaxKind": 1,
+						"standardization": "Extended",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@deprecated",
+						"tagNameWithUpperCase": "@DEPRECATED",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@eventProperty",
+						"tagNameWithUpperCase": "@EVENTPROPERTY",
+						"syntaxKind": 2,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@example",
+						"tagNameWithUpperCase": "@EXAMPLE",
+						"syntaxKind": 1,
+						"standardization": "Extended",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@experimental",
+						"tagNameWithUpperCase": "@EXPERIMENTAL",
+						"syntaxKind": 2,
+						"standardization": "Discretionary",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@inheritDoc",
+						"tagNameWithUpperCase": "@INHERITDOC",
+						"syntaxKind": 0,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@internal",
+						"tagNameWithUpperCase": "@INTERNAL",
+						"syntaxKind": 2,
+						"standardization": "Discretionary",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@label",
+						"tagNameWithUpperCase": "@LABEL",
+						"syntaxKind": 0,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@link",
+						"tagNameWithUpperCase": "@LINK",
+						"syntaxKind": 0,
+						"standardization": "Core",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@override",
+						"tagNameWithUpperCase": "@OVERRIDE",
+						"syntaxKind": 2,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@packageDocumentation",
+						"tagNameWithUpperCase": "@PACKAGEDOCUMENTATION",
+						"syntaxKind": 2,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@param",
+						"tagNameWithUpperCase": "@PARAM",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@privateRemarks",
+						"tagNameWithUpperCase": "@PRIVATEREMARKS",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@public",
+						"tagNameWithUpperCase": "@PUBLIC",
+						"syntaxKind": 2,
+						"standardization": "Discretionary",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@readonly",
+						"tagNameWithUpperCase": "@READONLY",
+						"syntaxKind": 2,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@remarks",
+						"tagNameWithUpperCase": "@REMARKS",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@returns",
+						"tagNameWithUpperCase": "@RETURNS",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@sealed",
+						"tagNameWithUpperCase": "@SEALED",
+						"syntaxKind": 2,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@see",
+						"tagNameWithUpperCase": "@SEE",
+						"syntaxKind": 1,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@throws",
+						"tagNameWithUpperCase": "@THROWS",
+						"syntaxKind": 1,
+						"standardization": "Extended",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@typeParam",
+						"tagNameWithUpperCase": "@TYPEPARAM",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@virtual",
+						"tagNameWithUpperCase": "@VIRTUAL",
+						"syntaxKind": 2,
+						"standardization": "Extended",
+						"allowMultiple": false
+					}
+				],
+				"_tagDefinitionsByName": {},
+				"_supportedTagDefinitions": {},
+				"_validation": {
+					"ignoreUndefinedTags": false,
+					"reportUnsupportedTags": false,
+					"reportUnsupportedHtmlElements": false
+				},
+				"_docNodeManager": {
+					"_docNodeDefinitionsByKind": {},
+					"_docNodeDefinitionsByConstructor": {}
+				},
+				"_supportedHtmlElements": {}
+			},
+			"_blocks": []
+		}
+	},
+	{
+		"file": "c:\\Users\\PC\\Desktop\\dev\\Work\\test\\Smartbev_backend\\src\\middlewares\\parser.ts",
+		"params": {
+			"configuration": {
+				"_tagDefinitions": [
+					{
+						"tagName": "@alpha",
+						"tagNameWithUpperCase": "@ALPHA",
+						"syntaxKind": 2,
+						"standardization": "Discretionary",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@beta",
+						"tagNameWithUpperCase": "@BETA",
+						"syntaxKind": 2,
+						"standardization": "Discretionary",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@defaultValue",
+						"tagNameWithUpperCase": "@DEFAULTVALUE",
+						"syntaxKind": 1,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@decorator",
+						"tagNameWithUpperCase": "@DECORATOR",
+						"syntaxKind": 1,
+						"standardization": "Extended",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@deprecated",
+						"tagNameWithUpperCase": "@DEPRECATED",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@eventProperty",
+						"tagNameWithUpperCase": "@EVENTPROPERTY",
+						"syntaxKind": 2,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@example",
+						"tagNameWithUpperCase": "@EXAMPLE",
+						"syntaxKind": 1,
+						"standardization": "Extended",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@experimental",
+						"tagNameWithUpperCase": "@EXPERIMENTAL",
+						"syntaxKind": 2,
+						"standardization": "Discretionary",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@inheritDoc",
+						"tagNameWithUpperCase": "@INHERITDOC",
+						"syntaxKind": 0,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@internal",
+						"tagNameWithUpperCase": "@INTERNAL",
+						"syntaxKind": 2,
+						"standardization": "Discretionary",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@label",
+						"tagNameWithUpperCase": "@LABEL",
+						"syntaxKind": 0,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@link",
+						"tagNameWithUpperCase": "@LINK",
+						"syntaxKind": 0,
+						"standardization": "Core",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@override",
+						"tagNameWithUpperCase": "@OVERRIDE",
+						"syntaxKind": 2,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@packageDocumentation",
+						"tagNameWithUpperCase": "@PACKAGEDOCUMENTATION",
+						"syntaxKind": 2,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@param",
+						"tagNameWithUpperCase": "@PARAM",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@privateRemarks",
+						"tagNameWithUpperCase": "@PRIVATEREMARKS",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@public",
+						"tagNameWithUpperCase": "@PUBLIC",
+						"syntaxKind": 2,
+						"standardization": "Discretionary",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@readonly",
+						"tagNameWithUpperCase": "@READONLY",
+						"syntaxKind": 2,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@remarks",
+						"tagNameWithUpperCase": "@REMARKS",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@returns",
+						"tagNameWithUpperCase": "@RETURNS",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@sealed",
+						"tagNameWithUpperCase": "@SEALED",
+						"syntaxKind": 2,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@see",
+						"tagNameWithUpperCase": "@SEE",
+						"syntaxKind": 1,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@throws",
+						"tagNameWithUpperCase": "@THROWS",
+						"syntaxKind": 1,
+						"standardization": "Extended",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@typeParam",
+						"tagNameWithUpperCase": "@TYPEPARAM",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@virtual",
+						"tagNameWithUpperCase": "@VIRTUAL",
+						"syntaxKind": 2,
+						"standardization": "Extended",
+						"allowMultiple": false
+					}
+				],
+				"_tagDefinitionsByName": {},
+				"_supportedTagDefinitions": {},
+				"_validation": {
+					"ignoreUndefinedTags": false,
+					"reportUnsupportedTags": false,
+					"reportUnsupportedHtmlElements": false
+				},
+				"_docNodeManager": {
+					"_docNodeDefinitionsByKind": {},
+					"_docNodeDefinitionsByConstructor": {}
+				},
+				"_supportedHtmlElements": {}
+			},
+			"_blocks": []
+		}
+	},
+	{
+		"file": "c:\\Users\\PC\\Desktop\\dev\\Work\\test\\Smartbev_backend\\src\\models\\sequelize.ts",
+		"params": {
+			"configuration": {
+				"_tagDefinitions": [
+					{
+						"tagName": "@alpha",
+						"tagNameWithUpperCase": "@ALPHA",
+						"syntaxKind": 2,
+						"standardization": "Discretionary",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@beta",
+						"tagNameWithUpperCase": "@BETA",
+						"syntaxKind": 2,
+						"standardization": "Discretionary",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@defaultValue",
+						"tagNameWithUpperCase": "@DEFAULTVALUE",
+						"syntaxKind": 1,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@decorator",
+						"tagNameWithUpperCase": "@DECORATOR",
+						"syntaxKind": 1,
+						"standardization": "Extended",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@deprecated",
+						"tagNameWithUpperCase": "@DEPRECATED",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@eventProperty",
+						"tagNameWithUpperCase": "@EVENTPROPERTY",
+						"syntaxKind": 2,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@example",
+						"tagNameWithUpperCase": "@EXAMPLE",
+						"syntaxKind": 1,
+						"standardization": "Extended",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@experimental",
+						"tagNameWithUpperCase": "@EXPERIMENTAL",
+						"syntaxKind": 2,
+						"standardization": "Discretionary",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@inheritDoc",
+						"tagNameWithUpperCase": "@INHERITDOC",
+						"syntaxKind": 0,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@internal",
+						"tagNameWithUpperCase": "@INTERNAL",
+						"syntaxKind": 2,
+						"standardization": "Discretionary",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@label",
+						"tagNameWithUpperCase": "@LABEL",
+						"syntaxKind": 0,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@link",
+						"tagNameWithUpperCase": "@LINK",
+						"syntaxKind": 0,
+						"standardization": "Core",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@override",
+						"tagNameWithUpperCase": "@OVERRIDE",
+						"syntaxKind": 2,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@packageDocumentation",
+						"tagNameWithUpperCase": "@PACKAGEDOCUMENTATION",
+						"syntaxKind": 2,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@param",
+						"tagNameWithUpperCase": "@PARAM",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@privateRemarks",
+						"tagNameWithUpperCase": "@PRIVATEREMARKS",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@public",
+						"tagNameWithUpperCase": "@PUBLIC",
+						"syntaxKind": 2,
+						"standardization": "Discretionary",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@readonly",
+						"tagNameWithUpperCase": "@READONLY",
+						"syntaxKind": 2,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@remarks",
+						"tagNameWithUpperCase": "@REMARKS",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@returns",
+						"tagNameWithUpperCase": "@RETURNS",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@sealed",
+						"tagNameWithUpperCase": "@SEALED",
+						"syntaxKind": 2,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@see",
+						"tagNameWithUpperCase": "@SEE",
+						"syntaxKind": 1,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@throws",
+						"tagNameWithUpperCase": "@THROWS",
+						"syntaxKind": 1,
+						"standardization": "Extended",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@typeParam",
+						"tagNameWithUpperCase": "@TYPEPARAM",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@virtual",
+						"tagNameWithUpperCase": "@VIRTUAL",
+						"syntaxKind": 2,
+						"standardization": "Extended",
+						"allowMultiple": false
+					}
+				],
+				"_tagDefinitionsByName": {},
+				"_supportedTagDefinitions": {},
+				"_validation": {
+					"ignoreUndefinedTags": false,
+					"reportUnsupportedTags": false,
+					"reportUnsupportedHtmlElements": false
+				},
+				"_docNodeManager": {
+					"_docNodeDefinitionsByKind": {},
+					"_docNodeDefinitionsByConstructor": {}
+				},
+				"_supportedHtmlElements": {}
+			},
+			"_blocks": []
+		}
+	},
+	{
+		"file": "c:\\Users\\PC\\Desktop\\dev\\Work\\test\\Smartbev_backend\\src\\models\\singlton.ts",
+		"params": {
+			"configuration": {
+				"_tagDefinitions": [
+					{
+						"tagName": "@alpha",
+						"tagNameWithUpperCase": "@ALPHA",
+						"syntaxKind": 2,
+						"standardization": "Discretionary",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@beta",
+						"tagNameWithUpperCase": "@BETA",
+						"syntaxKind": 2,
+						"standardization": "Discretionary",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@defaultValue",
+						"tagNameWithUpperCase": "@DEFAULTVALUE",
+						"syntaxKind": 1,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@decorator",
+						"tagNameWithUpperCase": "@DECORATOR",
+						"syntaxKind": 1,
+						"standardization": "Extended",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@deprecated",
+						"tagNameWithUpperCase": "@DEPRECATED",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@eventProperty",
+						"tagNameWithUpperCase": "@EVENTPROPERTY",
+						"syntaxKind": 2,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@example",
+						"tagNameWithUpperCase": "@EXAMPLE",
+						"syntaxKind": 1,
+						"standardization": "Extended",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@experimental",
+						"tagNameWithUpperCase": "@EXPERIMENTAL",
+						"syntaxKind": 2,
+						"standardization": "Discretionary",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@inheritDoc",
+						"tagNameWithUpperCase": "@INHERITDOC",
+						"syntaxKind": 0,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@internal",
+						"tagNameWithUpperCase": "@INTERNAL",
+						"syntaxKind": 2,
+						"standardization": "Discretionary",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@label",
+						"tagNameWithUpperCase": "@LABEL",
+						"syntaxKind": 0,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@link",
+						"tagNameWithUpperCase": "@LINK",
+						"syntaxKind": 0,
+						"standardization": "Core",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@override",
+						"tagNameWithUpperCase": "@OVERRIDE",
+						"syntaxKind": 2,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@packageDocumentation",
+						"tagNameWithUpperCase": "@PACKAGEDOCUMENTATION",
+						"syntaxKind": 2,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@param",
+						"tagNameWithUpperCase": "@PARAM",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@privateRemarks",
+						"tagNameWithUpperCase": "@PRIVATEREMARKS",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@public",
+						"tagNameWithUpperCase": "@PUBLIC",
+						"syntaxKind": 2,
+						"standardization": "Discretionary",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@readonly",
+						"tagNameWithUpperCase": "@READONLY",
+						"syntaxKind": 2,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@remarks",
+						"tagNameWithUpperCase": "@REMARKS",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@returns",
+						"tagNameWithUpperCase": "@RETURNS",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@sealed",
+						"tagNameWithUpperCase": "@SEALED",
+						"syntaxKind": 2,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@see",
+						"tagNameWithUpperCase": "@SEE",
+						"syntaxKind": 1,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@throws",
+						"tagNameWithUpperCase": "@THROWS",
+						"syntaxKind": 1,
+						"standardization": "Extended",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@typeParam",
+						"tagNameWithUpperCase": "@TYPEPARAM",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@virtual",
+						"tagNameWithUpperCase": "@VIRTUAL",
+						"syntaxKind": 2,
+						"standardization": "Extended",
+						"allowMultiple": false
+					}
+				],
+				"_tagDefinitionsByName": {},
+				"_supportedTagDefinitions": {},
+				"_validation": {
+					"ignoreUndefinedTags": false,
+					"reportUnsupportedTags": false,
+					"reportUnsupportedHtmlElements": false
+				},
+				"_docNodeManager": {
+					"_docNodeDefinitionsByKind": {},
+					"_docNodeDefinitionsByConstructor": {}
+				},
+				"_supportedHtmlElements": {}
+			},
+			"_blocks": []
+		}
+	},
+	{
+		"file": "c:\\Users\\PC\\Desktop\\dev\\Work\\test\\Smartbev_backend\\src\\services\\account.management\\controllers\\account.controller.ts",
+		"params": {
+			"configuration": {
+				"_tagDefinitions": [
+					{
+						"tagName": "@alpha",
+						"tagNameWithUpperCase": "@ALPHA",
+						"syntaxKind": 2,
+						"standardization": "Discretionary",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@beta",
+						"tagNameWithUpperCase": "@BETA",
+						"syntaxKind": 2,
+						"standardization": "Discretionary",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@defaultValue",
+						"tagNameWithUpperCase": "@DEFAULTVALUE",
+						"syntaxKind": 1,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@decorator",
+						"tagNameWithUpperCase": "@DECORATOR",
+						"syntaxKind": 1,
+						"standardization": "Extended",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@deprecated",
+						"tagNameWithUpperCase": "@DEPRECATED",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@eventProperty",
+						"tagNameWithUpperCase": "@EVENTPROPERTY",
+						"syntaxKind": 2,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@example",
+						"tagNameWithUpperCase": "@EXAMPLE",
+						"syntaxKind": 1,
+						"standardization": "Extended",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@experimental",
+						"tagNameWithUpperCase": "@EXPERIMENTAL",
+						"syntaxKind": 2,
+						"standardization": "Discretionary",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@inheritDoc",
+						"tagNameWithUpperCase": "@INHERITDOC",
+						"syntaxKind": 0,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@internal",
+						"tagNameWithUpperCase": "@INTERNAL",
+						"syntaxKind": 2,
+						"standardization": "Discretionary",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@label",
+						"tagNameWithUpperCase": "@LABEL",
+						"syntaxKind": 0,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@link",
+						"tagNameWithUpperCase": "@LINK",
+						"syntaxKind": 0,
+						"standardization": "Core",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@override",
+						"tagNameWithUpperCase": "@OVERRIDE",
+						"syntaxKind": 2,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@packageDocumentation",
+						"tagNameWithUpperCase": "@PACKAGEDOCUMENTATION",
+						"syntaxKind": 2,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@param",
+						"tagNameWithUpperCase": "@PARAM",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@privateRemarks",
+						"tagNameWithUpperCase": "@PRIVATEREMARKS",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@public",
+						"tagNameWithUpperCase": "@PUBLIC",
+						"syntaxKind": 2,
+						"standardization": "Discretionary",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@readonly",
+						"tagNameWithUpperCase": "@READONLY",
+						"syntaxKind": 2,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@remarks",
+						"tagNameWithUpperCase": "@REMARKS",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@returns",
+						"tagNameWithUpperCase": "@RETURNS",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@sealed",
+						"tagNameWithUpperCase": "@SEALED",
+						"syntaxKind": 2,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@see",
+						"tagNameWithUpperCase": "@SEE",
+						"syntaxKind": 1,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@throws",
+						"tagNameWithUpperCase": "@THROWS",
+						"syntaxKind": 1,
+						"standardization": "Extended",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@typeParam",
+						"tagNameWithUpperCase": "@TYPEPARAM",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@virtual",
+						"tagNameWithUpperCase": "@VIRTUAL",
+						"syntaxKind": 2,
+						"standardization": "Extended",
+						"allowMultiple": false
+					}
+				],
+				"_tagDefinitionsByName": {},
+				"_supportedTagDefinitions": {},
+				"_validation": {
+					"ignoreUndefinedTags": false,
+					"reportUnsupportedTags": false,
+					"reportUnsupportedHtmlElements": false
+				},
+				"_docNodeManager": {
+					"_docNodeDefinitionsByKind": {},
+					"_docNodeDefinitionsByConstructor": {}
+				},
+				"_supportedHtmlElements": {}
+			},
+			"_blocks": []
+		}
+	},
+	{
+		"file": "c:\\Users\\PC\\Desktop\\dev\\Work\\test\\Smartbev_backend\\src\\services\\account.management\\middlewares\\auth.ts",
+		"params": {
+			"configuration": {
+				"_tagDefinitions": [
+					{
+						"tagName": "@alpha",
+						"tagNameWithUpperCase": "@ALPHA",
+						"syntaxKind": 2,
+						"standardization": "Discretionary",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@beta",
+						"tagNameWithUpperCase": "@BETA",
+						"syntaxKind": 2,
+						"standardization": "Discretionary",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@defaultValue",
+						"tagNameWithUpperCase": "@DEFAULTVALUE",
+						"syntaxKind": 1,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@decorator",
+						"tagNameWithUpperCase": "@DECORATOR",
+						"syntaxKind": 1,
+						"standardization": "Extended",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@deprecated",
+						"tagNameWithUpperCase": "@DEPRECATED",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@eventProperty",
+						"tagNameWithUpperCase": "@EVENTPROPERTY",
+						"syntaxKind": 2,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@example",
+						"tagNameWithUpperCase": "@EXAMPLE",
+						"syntaxKind": 1,
+						"standardization": "Extended",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@experimental",
+						"tagNameWithUpperCase": "@EXPERIMENTAL",
+						"syntaxKind": 2,
+						"standardization": "Discretionary",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@inheritDoc",
+						"tagNameWithUpperCase": "@INHERITDOC",
+						"syntaxKind": 0,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@internal",
+						"tagNameWithUpperCase": "@INTERNAL",
+						"syntaxKind": 2,
+						"standardization": "Discretionary",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@label",
+						"tagNameWithUpperCase": "@LABEL",
+						"syntaxKind": 0,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@link",
+						"tagNameWithUpperCase": "@LINK",
+						"syntaxKind": 0,
+						"standardization": "Core",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@override",
+						"tagNameWithUpperCase": "@OVERRIDE",
+						"syntaxKind": 2,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@packageDocumentation",
+						"tagNameWithUpperCase": "@PACKAGEDOCUMENTATION",
+						"syntaxKind": 2,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@param",
+						"tagNameWithUpperCase": "@PARAM",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@privateRemarks",
+						"tagNameWithUpperCase": "@PRIVATEREMARKS",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@public",
+						"tagNameWithUpperCase": "@PUBLIC",
+						"syntaxKind": 2,
+						"standardization": "Discretionary",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@readonly",
+						"tagNameWithUpperCase": "@READONLY",
+						"syntaxKind": 2,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@remarks",
+						"tagNameWithUpperCase": "@REMARKS",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@returns",
+						"tagNameWithUpperCase": "@RETURNS",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@sealed",
+						"tagNameWithUpperCase": "@SEALED",
+						"syntaxKind": 2,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@see",
+						"tagNameWithUpperCase": "@SEE",
+						"syntaxKind": 1,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@throws",
+						"tagNameWithUpperCase": "@THROWS",
+						"syntaxKind": 1,
+						"standardization": "Extended",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@typeParam",
+						"tagNameWithUpperCase": "@TYPEPARAM",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@virtual",
+						"tagNameWithUpperCase": "@VIRTUAL",
+						"syntaxKind": 2,
+						"standardization": "Extended",
+						"allowMultiple": false
+					}
+				],
+				"_tagDefinitionsByName": {},
+				"_supportedTagDefinitions": {},
+				"_validation": {
+					"ignoreUndefinedTags": false,
+					"reportUnsupportedTags": false,
+					"reportUnsupportedHtmlElements": false
+				},
+				"_docNodeManager": {
+					"_docNodeDefinitionsByKind": {},
+					"_docNodeDefinitionsByConstructor": {}
+				},
+				"_supportedHtmlElements": {}
+			},
+			"_blocks": []
+		}
+	},
+	{
+		"file": "c:\\Users\\PC\\Desktop\\dev\\Work\\test\\Smartbev_backend\\src\\services\\account.management\\routes\\account.route.ts",
+		"params": {
+			"configuration": {
+				"_tagDefinitions": [
+					{
+						"tagName": "@alpha",
+						"tagNameWithUpperCase": "@ALPHA",
+						"syntaxKind": 2,
+						"standardization": "Discretionary",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@beta",
+						"tagNameWithUpperCase": "@BETA",
+						"syntaxKind": 2,
+						"standardization": "Discretionary",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@defaultValue",
+						"tagNameWithUpperCase": "@DEFAULTVALUE",
+						"syntaxKind": 1,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@decorator",
+						"tagNameWithUpperCase": "@DECORATOR",
+						"syntaxKind": 1,
+						"standardization": "Extended",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@deprecated",
+						"tagNameWithUpperCase": "@DEPRECATED",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@eventProperty",
+						"tagNameWithUpperCase": "@EVENTPROPERTY",
+						"syntaxKind": 2,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@example",
+						"tagNameWithUpperCase": "@EXAMPLE",
+						"syntaxKind": 1,
+						"standardization": "Extended",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@experimental",
+						"tagNameWithUpperCase": "@EXPERIMENTAL",
+						"syntaxKind": 2,
+						"standardization": "Discretionary",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@inheritDoc",
+						"tagNameWithUpperCase": "@INHERITDOC",
+						"syntaxKind": 0,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@internal",
+						"tagNameWithUpperCase": "@INTERNAL",
+						"syntaxKind": 2,
+						"standardization": "Discretionary",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@label",
+						"tagNameWithUpperCase": "@LABEL",
+						"syntaxKind": 0,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@link",
+						"tagNameWithUpperCase": "@LINK",
+						"syntaxKind": 0,
+						"standardization": "Core",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@override",
+						"tagNameWithUpperCase": "@OVERRIDE",
+						"syntaxKind": 2,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@packageDocumentation",
+						"tagNameWithUpperCase": "@PACKAGEDOCUMENTATION",
+						"syntaxKind": 2,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@param",
+						"tagNameWithUpperCase": "@PARAM",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@privateRemarks",
+						"tagNameWithUpperCase": "@PRIVATEREMARKS",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@public",
+						"tagNameWithUpperCase": "@PUBLIC",
+						"syntaxKind": 2,
+						"standardization": "Discretionary",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@readonly",
+						"tagNameWithUpperCase": "@READONLY",
+						"syntaxKind": 2,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@remarks",
+						"tagNameWithUpperCase": "@REMARKS",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@returns",
+						"tagNameWithUpperCase": "@RETURNS",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@sealed",
+						"tagNameWithUpperCase": "@SEALED",
+						"syntaxKind": 2,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@see",
+						"tagNameWithUpperCase": "@SEE",
+						"syntaxKind": 1,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@throws",
+						"tagNameWithUpperCase": "@THROWS",
+						"syntaxKind": 1,
+						"standardization": "Extended",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@typeParam",
+						"tagNameWithUpperCase": "@TYPEPARAM",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@virtual",
+						"tagNameWithUpperCase": "@VIRTUAL",
+						"syntaxKind": 2,
+						"standardization": "Extended",
+						"allowMultiple": false
+					}
+				],
+				"_tagDefinitionsByName": {},
+				"_supportedTagDefinitions": {},
+				"_validation": {
+					"ignoreUndefinedTags": false,
+					"reportUnsupportedTags": false,
+					"reportUnsupportedHtmlElements": false
+				},
+				"_docNodeManager": {
+					"_docNodeDefinitionsByKind": {},
+					"_docNodeDefinitionsByConstructor": {}
+				},
+				"_supportedHtmlElements": {}
+			},
+			"_blocks": []
+		}
+	},
+	{
+		"file": "c:\\Users\\PC\\Desktop\\dev\\Work\\test\\Smartbev_backend\\src\\services\\account.management\\service\\account.management.ts",
+		"params": {
+			"configuration": {
+				"_tagDefinitions": [
+					{
+						"tagName": "@alpha",
+						"tagNameWithUpperCase": "@ALPHA",
+						"syntaxKind": 2,
+						"standardization": "Discretionary",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@beta",
+						"tagNameWithUpperCase": "@BETA",
+						"syntaxKind": 2,
+						"standardization": "Discretionary",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@defaultValue",
+						"tagNameWithUpperCase": "@DEFAULTVALUE",
+						"syntaxKind": 1,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@decorator",
+						"tagNameWithUpperCase": "@DECORATOR",
+						"syntaxKind": 1,
+						"standardization": "Extended",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@deprecated",
+						"tagNameWithUpperCase": "@DEPRECATED",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@eventProperty",
+						"tagNameWithUpperCase": "@EVENTPROPERTY",
+						"syntaxKind": 2,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@example",
+						"tagNameWithUpperCase": "@EXAMPLE",
+						"syntaxKind": 1,
+						"standardization": "Extended",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@experimental",
+						"tagNameWithUpperCase": "@EXPERIMENTAL",
+						"syntaxKind": 2,
+						"standardization": "Discretionary",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@inheritDoc",
+						"tagNameWithUpperCase": "@INHERITDOC",
+						"syntaxKind": 0,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@internal",
+						"tagNameWithUpperCase": "@INTERNAL",
+						"syntaxKind": 2,
+						"standardization": "Discretionary",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@label",
+						"tagNameWithUpperCase": "@LABEL",
+						"syntaxKind": 0,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@link",
+						"tagNameWithUpperCase": "@LINK",
+						"syntaxKind": 0,
+						"standardization": "Core",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@override",
+						"tagNameWithUpperCase": "@OVERRIDE",
+						"syntaxKind": 2,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@packageDocumentation",
+						"tagNameWithUpperCase": "@PACKAGEDOCUMENTATION",
+						"syntaxKind": 2,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@param",
+						"tagNameWithUpperCase": "@PARAM",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@privateRemarks",
+						"tagNameWithUpperCase": "@PRIVATEREMARKS",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@public",
+						"tagNameWithUpperCase": "@PUBLIC",
+						"syntaxKind": 2,
+						"standardization": "Discretionary",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@readonly",
+						"tagNameWithUpperCase": "@READONLY",
+						"syntaxKind": 2,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@remarks",
+						"tagNameWithUpperCase": "@REMARKS",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@returns",
+						"tagNameWithUpperCase": "@RETURNS",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@sealed",
+						"tagNameWithUpperCase": "@SEALED",
+						"syntaxKind": 2,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@see",
+						"tagNameWithUpperCase": "@SEE",
+						"syntaxKind": 1,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@throws",
+						"tagNameWithUpperCase": "@THROWS",
+						"syntaxKind": 1,
+						"standardization": "Extended",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@typeParam",
+						"tagNameWithUpperCase": "@TYPEPARAM",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@virtual",
+						"tagNameWithUpperCase": "@VIRTUAL",
+						"syntaxKind": 2,
+						"standardization": "Extended",
+						"allowMultiple": false
+					}
+				],
+				"_tagDefinitionsByName": {},
+				"_supportedTagDefinitions": {},
+				"_validation": {
+					"ignoreUndefinedTags": false,
+					"reportUnsupportedTags": false,
+					"reportUnsupportedHtmlElements": false
+				},
+				"_docNodeManager": {
+					"_docNodeDefinitionsByKind": {},
+					"_docNodeDefinitionsByConstructor": {}
+				},
+				"_supportedHtmlElements": {}
+			},
+			"_blocks": []
+		}
+	},
+	{
+		"file": "c:\\Users\\PC\\Desktop\\dev\\Work\\test\\Smartbev_backend\\src\\services\\advertisement.management\\controllers\\advertisement.controller.ts",
+		"params": {
+			"configuration": {
+				"_tagDefinitions": [
+					{
+						"tagName": "@alpha",
+						"tagNameWithUpperCase": "@ALPHA",
+						"syntaxKind": 2,
+						"standardization": "Discretionary",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@beta",
+						"tagNameWithUpperCase": "@BETA",
+						"syntaxKind": 2,
+						"standardization": "Discretionary",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@defaultValue",
+						"tagNameWithUpperCase": "@DEFAULTVALUE",
+						"syntaxKind": 1,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@decorator",
+						"tagNameWithUpperCase": "@DECORATOR",
+						"syntaxKind": 1,
+						"standardization": "Extended",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@deprecated",
+						"tagNameWithUpperCase": "@DEPRECATED",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@eventProperty",
+						"tagNameWithUpperCase": "@EVENTPROPERTY",
+						"syntaxKind": 2,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@example",
+						"tagNameWithUpperCase": "@EXAMPLE",
+						"syntaxKind": 1,
+						"standardization": "Extended",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@experimental",
+						"tagNameWithUpperCase": "@EXPERIMENTAL",
+						"syntaxKind": 2,
+						"standardization": "Discretionary",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@inheritDoc",
+						"tagNameWithUpperCase": "@INHERITDOC",
+						"syntaxKind": 0,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@internal",
+						"tagNameWithUpperCase": "@INTERNAL",
+						"syntaxKind": 2,
+						"standardization": "Discretionary",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@label",
+						"tagNameWithUpperCase": "@LABEL",
+						"syntaxKind": 0,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@link",
+						"tagNameWithUpperCase": "@LINK",
+						"syntaxKind": 0,
+						"standardization": "Core",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@override",
+						"tagNameWithUpperCase": "@OVERRIDE",
+						"syntaxKind": 2,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@packageDocumentation",
+						"tagNameWithUpperCase": "@PACKAGEDOCUMENTATION",
+						"syntaxKind": 2,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@param",
+						"tagNameWithUpperCase": "@PARAM",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@privateRemarks",
+						"tagNameWithUpperCase": "@PRIVATEREMARKS",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@public",
+						"tagNameWithUpperCase": "@PUBLIC",
+						"syntaxKind": 2,
+						"standardization": "Discretionary",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@readonly",
+						"tagNameWithUpperCase": "@READONLY",
+						"syntaxKind": 2,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@remarks",
+						"tagNameWithUpperCase": "@REMARKS",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@returns",
+						"tagNameWithUpperCase": "@RETURNS",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@sealed",
+						"tagNameWithUpperCase": "@SEALED",
+						"syntaxKind": 2,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@see",
+						"tagNameWithUpperCase": "@SEE",
+						"syntaxKind": 1,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@throws",
+						"tagNameWithUpperCase": "@THROWS",
+						"syntaxKind": 1,
+						"standardization": "Extended",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@typeParam",
+						"tagNameWithUpperCase": "@TYPEPARAM",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@virtual",
+						"tagNameWithUpperCase": "@VIRTUAL",
+						"syntaxKind": 2,
+						"standardization": "Extended",
+						"allowMultiple": false
+					}
+				],
+				"_tagDefinitionsByName": {},
+				"_supportedTagDefinitions": {},
+				"_validation": {
+					"ignoreUndefinedTags": false,
+					"reportUnsupportedTags": false,
+					"reportUnsupportedHtmlElements": false
+				},
+				"_docNodeManager": {
+					"_docNodeDefinitionsByKind": {},
+					"_docNodeDefinitionsByConstructor": {}
+				},
+				"_supportedHtmlElements": {}
+			},
+			"_blocks": []
+		}
+	},
+	{
+		"file": "c:\\Users\\PC\\Desktop\\dev\\Work\\test\\Smartbev_backend\\src\\services\\advertisement.management\\middlewares\\auth.ts",
+		"params": {
+			"configuration": {
+				"_tagDefinitions": [
+					{
+						"tagName": "@alpha",
+						"tagNameWithUpperCase": "@ALPHA",
+						"syntaxKind": 2,
+						"standardization": "Discretionary",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@beta",
+						"tagNameWithUpperCase": "@BETA",
+						"syntaxKind": 2,
+						"standardization": "Discretionary",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@defaultValue",
+						"tagNameWithUpperCase": "@DEFAULTVALUE",
+						"syntaxKind": 1,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@decorator",
+						"tagNameWithUpperCase": "@DECORATOR",
+						"syntaxKind": 1,
+						"standardization": "Extended",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@deprecated",
+						"tagNameWithUpperCase": "@DEPRECATED",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@eventProperty",
+						"tagNameWithUpperCase": "@EVENTPROPERTY",
+						"syntaxKind": 2,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@example",
+						"tagNameWithUpperCase": "@EXAMPLE",
+						"syntaxKind": 1,
+						"standardization": "Extended",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@experimental",
+						"tagNameWithUpperCase": "@EXPERIMENTAL",
+						"syntaxKind": 2,
+						"standardization": "Discretionary",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@inheritDoc",
+						"tagNameWithUpperCase": "@INHERITDOC",
+						"syntaxKind": 0,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@internal",
+						"tagNameWithUpperCase": "@INTERNAL",
+						"syntaxKind": 2,
+						"standardization": "Discretionary",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@label",
+						"tagNameWithUpperCase": "@LABEL",
+						"syntaxKind": 0,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@link",
+						"tagNameWithUpperCase": "@LINK",
+						"syntaxKind": 0,
+						"standardization": "Core",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@override",
+						"tagNameWithUpperCase": "@OVERRIDE",
+						"syntaxKind": 2,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@packageDocumentation",
+						"tagNameWithUpperCase": "@PACKAGEDOCUMENTATION",
+						"syntaxKind": 2,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@param",
+						"tagNameWithUpperCase": "@PARAM",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@privateRemarks",
+						"tagNameWithUpperCase": "@PRIVATEREMARKS",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@public",
+						"tagNameWithUpperCase": "@PUBLIC",
+						"syntaxKind": 2,
+						"standardization": "Discretionary",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@readonly",
+						"tagNameWithUpperCase": "@READONLY",
+						"syntaxKind": 2,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@remarks",
+						"tagNameWithUpperCase": "@REMARKS",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@returns",
+						"tagNameWithUpperCase": "@RETURNS",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@sealed",
+						"tagNameWithUpperCase": "@SEALED",
+						"syntaxKind": 2,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@see",
+						"tagNameWithUpperCase": "@SEE",
+						"syntaxKind": 1,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@throws",
+						"tagNameWithUpperCase": "@THROWS",
+						"syntaxKind": 1,
+						"standardization": "Extended",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@typeParam",
+						"tagNameWithUpperCase": "@TYPEPARAM",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@virtual",
+						"tagNameWithUpperCase": "@VIRTUAL",
+						"syntaxKind": 2,
+						"standardization": "Extended",
+						"allowMultiple": false
+					}
+				],
+				"_tagDefinitionsByName": {},
+				"_supportedTagDefinitions": {},
+				"_validation": {
+					"ignoreUndefinedTags": false,
+					"reportUnsupportedTags": false,
+					"reportUnsupportedHtmlElements": false
+				},
+				"_docNodeManager": {
+					"_docNodeDefinitionsByKind": {},
+					"_docNodeDefinitionsByConstructor": {}
+				},
+				"_supportedHtmlElements": {}
+			},
+			"_blocks": []
+		}
+	},
+	{
+		"file": "c:\\Users\\PC\\Desktop\\dev\\Work\\test\\Smartbev_backend\\src\\services\\advertisement.management\\routes\\advertisement.route.ts",
+		"params": {
+			"configuration": {
+				"_tagDefinitions": [
+					{
+						"tagName": "@alpha",
+						"tagNameWithUpperCase": "@ALPHA",
+						"syntaxKind": 2,
+						"standardization": "Discretionary",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@beta",
+						"tagNameWithUpperCase": "@BETA",
+						"syntaxKind": 2,
+						"standardization": "Discretionary",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@defaultValue",
+						"tagNameWithUpperCase": "@DEFAULTVALUE",
+						"syntaxKind": 1,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@decorator",
+						"tagNameWithUpperCase": "@DECORATOR",
+						"syntaxKind": 1,
+						"standardization": "Extended",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@deprecated",
+						"tagNameWithUpperCase": "@DEPRECATED",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@eventProperty",
+						"tagNameWithUpperCase": "@EVENTPROPERTY",
+						"syntaxKind": 2,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@example",
+						"tagNameWithUpperCase": "@EXAMPLE",
+						"syntaxKind": 1,
+						"standardization": "Extended",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@experimental",
+						"tagNameWithUpperCase": "@EXPERIMENTAL",
+						"syntaxKind": 2,
+						"standardization": "Discretionary",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@inheritDoc",
+						"tagNameWithUpperCase": "@INHERITDOC",
+						"syntaxKind": 0,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@internal",
+						"tagNameWithUpperCase": "@INTERNAL",
+						"syntaxKind": 2,
+						"standardization": "Discretionary",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@label",
+						"tagNameWithUpperCase": "@LABEL",
+						"syntaxKind": 0,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@link",
+						"tagNameWithUpperCase": "@LINK",
+						"syntaxKind": 0,
+						"standardization": "Core",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@override",
+						"tagNameWithUpperCase": "@OVERRIDE",
+						"syntaxKind": 2,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@packageDocumentation",
+						"tagNameWithUpperCase": "@PACKAGEDOCUMENTATION",
+						"syntaxKind": 2,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@param",
+						"tagNameWithUpperCase": "@PARAM",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@privateRemarks",
+						"tagNameWithUpperCase": "@PRIVATEREMARKS",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@public",
+						"tagNameWithUpperCase": "@PUBLIC",
+						"syntaxKind": 2,
+						"standardization": "Discretionary",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@readonly",
+						"tagNameWithUpperCase": "@READONLY",
+						"syntaxKind": 2,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@remarks",
+						"tagNameWithUpperCase": "@REMARKS",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@returns",
+						"tagNameWithUpperCase": "@RETURNS",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@sealed",
+						"tagNameWithUpperCase": "@SEALED",
+						"syntaxKind": 2,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@see",
+						"tagNameWithUpperCase": "@SEE",
+						"syntaxKind": 1,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@throws",
+						"tagNameWithUpperCase": "@THROWS",
+						"syntaxKind": 1,
+						"standardization": "Extended",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@typeParam",
+						"tagNameWithUpperCase": "@TYPEPARAM",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@virtual",
+						"tagNameWithUpperCase": "@VIRTUAL",
+						"syntaxKind": 2,
+						"standardization": "Extended",
+						"allowMultiple": false
+					}
+				],
+				"_tagDefinitionsByName": {},
+				"_supportedTagDefinitions": {},
+				"_validation": {
+					"ignoreUndefinedTags": false,
+					"reportUnsupportedTags": false,
+					"reportUnsupportedHtmlElements": false
+				},
+				"_docNodeManager": {
+					"_docNodeDefinitionsByKind": {},
+					"_docNodeDefinitionsByConstructor": {}
+				},
+				"_supportedHtmlElements": {}
+			},
+			"_blocks": []
+		}
+	},
+	{
+		"file": "c:\\Users\\PC\\Desktop\\dev\\Work\\test\\Smartbev_backend\\src\\services\\advertisement.management\\service\\advertisement.management.ts",
+		"params": {
+			"configuration": {
+				"_tagDefinitions": [
+					{
+						"tagName": "@alpha",
+						"tagNameWithUpperCase": "@ALPHA",
+						"syntaxKind": 2,
+						"standardization": "Discretionary",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@beta",
+						"tagNameWithUpperCase": "@BETA",
+						"syntaxKind": 2,
+						"standardization": "Discretionary",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@defaultValue",
+						"tagNameWithUpperCase": "@DEFAULTVALUE",
+						"syntaxKind": 1,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@decorator",
+						"tagNameWithUpperCase": "@DECORATOR",
+						"syntaxKind": 1,
+						"standardization": "Extended",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@deprecated",
+						"tagNameWithUpperCase": "@DEPRECATED",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@eventProperty",
+						"tagNameWithUpperCase": "@EVENTPROPERTY",
+						"syntaxKind": 2,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@example",
+						"tagNameWithUpperCase": "@EXAMPLE",
+						"syntaxKind": 1,
+						"standardization": "Extended",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@experimental",
+						"tagNameWithUpperCase": "@EXPERIMENTAL",
+						"syntaxKind": 2,
+						"standardization": "Discretionary",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@inheritDoc",
+						"tagNameWithUpperCase": "@INHERITDOC",
+						"syntaxKind": 0,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@internal",
+						"tagNameWithUpperCase": "@INTERNAL",
+						"syntaxKind": 2,
+						"standardization": "Discretionary",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@label",
+						"tagNameWithUpperCase": "@LABEL",
+						"syntaxKind": 0,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@link",
+						"tagNameWithUpperCase": "@LINK",
+						"syntaxKind": 0,
+						"standardization": "Core",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@override",
+						"tagNameWithUpperCase": "@OVERRIDE",
+						"syntaxKind": 2,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@packageDocumentation",
+						"tagNameWithUpperCase": "@PACKAGEDOCUMENTATION",
+						"syntaxKind": 2,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@param",
+						"tagNameWithUpperCase": "@PARAM",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@privateRemarks",
+						"tagNameWithUpperCase": "@PRIVATEREMARKS",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@public",
+						"tagNameWithUpperCase": "@PUBLIC",
+						"syntaxKind": 2,
+						"standardization": "Discretionary",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@readonly",
+						"tagNameWithUpperCase": "@READONLY",
+						"syntaxKind": 2,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@remarks",
+						"tagNameWithUpperCase": "@REMARKS",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@returns",
+						"tagNameWithUpperCase": "@RETURNS",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@sealed",
+						"tagNameWithUpperCase": "@SEALED",
+						"syntaxKind": 2,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@see",
+						"tagNameWithUpperCase": "@SEE",
+						"syntaxKind": 1,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@throws",
+						"tagNameWithUpperCase": "@THROWS",
+						"syntaxKind": 1,
+						"standardization": "Extended",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@typeParam",
+						"tagNameWithUpperCase": "@TYPEPARAM",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@virtual",
+						"tagNameWithUpperCase": "@VIRTUAL",
+						"syntaxKind": 2,
+						"standardization": "Extended",
+						"allowMultiple": false
+					}
+				],
+				"_tagDefinitionsByName": {},
+				"_supportedTagDefinitions": {},
+				"_validation": {
+					"ignoreUndefinedTags": false,
+					"reportUnsupportedTags": false,
+					"reportUnsupportedHtmlElements": false
+				},
+				"_docNodeManager": {
+					"_docNodeDefinitionsByKind": {},
+					"_docNodeDefinitionsByConstructor": {}
+				},
+				"_supportedHtmlElements": {}
+			},
+			"_blocks": []
+		}
+	},
+	{
+		"file": "c:\\Users\\PC\\Desktop\\dev\\Work\\test\\Smartbev_backend\\src\\services\\service-authentification\\auth.ts",
+		"params": {
+			"configuration": {
+				"_tagDefinitions": [
+					{
+						"tagName": "@alpha",
+						"tagNameWithUpperCase": "@ALPHA",
+						"syntaxKind": 2,
+						"standardization": "Discretionary",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@beta",
+						"tagNameWithUpperCase": "@BETA",
+						"syntaxKind": 2,
+						"standardization": "Discretionary",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@defaultValue",
+						"tagNameWithUpperCase": "@DEFAULTVALUE",
+						"syntaxKind": 1,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@decorator",
+						"tagNameWithUpperCase": "@DECORATOR",
+						"syntaxKind": 1,
+						"standardization": "Extended",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@deprecated",
+						"tagNameWithUpperCase": "@DEPRECATED",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@eventProperty",
+						"tagNameWithUpperCase": "@EVENTPROPERTY",
+						"syntaxKind": 2,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@example",
+						"tagNameWithUpperCase": "@EXAMPLE",
+						"syntaxKind": 1,
+						"standardization": "Extended",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@experimental",
+						"tagNameWithUpperCase": "@EXPERIMENTAL",
+						"syntaxKind": 2,
+						"standardization": "Discretionary",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@inheritDoc",
+						"tagNameWithUpperCase": "@INHERITDOC",
+						"syntaxKind": 0,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@internal",
+						"tagNameWithUpperCase": "@INTERNAL",
+						"syntaxKind": 2,
+						"standardization": "Discretionary",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@label",
+						"tagNameWithUpperCase": "@LABEL",
+						"syntaxKind": 0,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@link",
+						"tagNameWithUpperCase": "@LINK",
+						"syntaxKind": 0,
+						"standardization": "Core",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@override",
+						"tagNameWithUpperCase": "@OVERRIDE",
+						"syntaxKind": 2,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@packageDocumentation",
+						"tagNameWithUpperCase": "@PACKAGEDOCUMENTATION",
+						"syntaxKind": 2,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@param",
+						"tagNameWithUpperCase": "@PARAM",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@privateRemarks",
+						"tagNameWithUpperCase": "@PRIVATEREMARKS",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@public",
+						"tagNameWithUpperCase": "@PUBLIC",
+						"syntaxKind": 2,
+						"standardization": "Discretionary",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@readonly",
+						"tagNameWithUpperCase": "@READONLY",
+						"syntaxKind": 2,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@remarks",
+						"tagNameWithUpperCase": "@REMARKS",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@returns",
+						"tagNameWithUpperCase": "@RETURNS",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@sealed",
+						"tagNameWithUpperCase": "@SEALED",
+						"syntaxKind": 2,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@see",
+						"tagNameWithUpperCase": "@SEE",
+						"syntaxKind": 1,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@throws",
+						"tagNameWithUpperCase": "@THROWS",
+						"syntaxKind": 1,
+						"standardization": "Extended",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@typeParam",
+						"tagNameWithUpperCase": "@TYPEPARAM",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@virtual",
+						"tagNameWithUpperCase": "@VIRTUAL",
+						"syntaxKind": 2,
+						"standardization": "Extended",
+						"allowMultiple": false
+					}
+				],
+				"_tagDefinitionsByName": {},
+				"_supportedTagDefinitions": {},
+				"_validation": {
+					"ignoreUndefinedTags": false,
+					"reportUnsupportedTags": false,
+					"reportUnsupportedHtmlElements": false
+				},
+				"_docNodeManager": {
+					"_docNodeDefinitionsByKind": {},
+					"_docNodeDefinitionsByConstructor": {}
+				},
+				"_supportedHtmlElements": {}
+			},
+			"_blocks": []
+		}
+	},
+	{
+		"file": "c:\\Users\\PC\\Desktop\\dev\\Work\\test\\Smartbev_backend\\src\\services\\service-authentification\\controllers\\auth.Controller.ts",
+		"params": {
+			"configuration": {
+				"_tagDefinitions": [
+					{
+						"tagName": "@alpha",
+						"tagNameWithUpperCase": "@ALPHA",
+						"syntaxKind": 2,
+						"standardization": "Discretionary",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@beta",
+						"tagNameWithUpperCase": "@BETA",
+						"syntaxKind": 2,
+						"standardization": "Discretionary",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@defaultValue",
+						"tagNameWithUpperCase": "@DEFAULTVALUE",
+						"syntaxKind": 1,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@decorator",
+						"tagNameWithUpperCase": "@DECORATOR",
+						"syntaxKind": 1,
+						"standardization": "Extended",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@deprecated",
+						"tagNameWithUpperCase": "@DEPRECATED",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@eventProperty",
+						"tagNameWithUpperCase": "@EVENTPROPERTY",
+						"syntaxKind": 2,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@example",
+						"tagNameWithUpperCase": "@EXAMPLE",
+						"syntaxKind": 1,
+						"standardization": "Extended",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@experimental",
+						"tagNameWithUpperCase": "@EXPERIMENTAL",
+						"syntaxKind": 2,
+						"standardization": "Discretionary",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@inheritDoc",
+						"tagNameWithUpperCase": "@INHERITDOC",
+						"syntaxKind": 0,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@internal",
+						"tagNameWithUpperCase": "@INTERNAL",
+						"syntaxKind": 2,
+						"standardization": "Discretionary",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@label",
+						"tagNameWithUpperCase": "@LABEL",
+						"syntaxKind": 0,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@link",
+						"tagNameWithUpperCase": "@LINK",
+						"syntaxKind": 0,
+						"standardization": "Core",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@override",
+						"tagNameWithUpperCase": "@OVERRIDE",
+						"syntaxKind": 2,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@packageDocumentation",
+						"tagNameWithUpperCase": "@PACKAGEDOCUMENTATION",
+						"syntaxKind": 2,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@param",
+						"tagNameWithUpperCase": "@PARAM",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@privateRemarks",
+						"tagNameWithUpperCase": "@PRIVATEREMARKS",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@public",
+						"tagNameWithUpperCase": "@PUBLIC",
+						"syntaxKind": 2,
+						"standardization": "Discretionary",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@readonly",
+						"tagNameWithUpperCase": "@READONLY",
+						"syntaxKind": 2,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@remarks",
+						"tagNameWithUpperCase": "@REMARKS",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@returns",
+						"tagNameWithUpperCase": "@RETURNS",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@sealed",
+						"tagNameWithUpperCase": "@SEALED",
+						"syntaxKind": 2,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@see",
+						"tagNameWithUpperCase": "@SEE",
+						"syntaxKind": 1,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@throws",
+						"tagNameWithUpperCase": "@THROWS",
+						"syntaxKind": 1,
+						"standardization": "Extended",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@typeParam",
+						"tagNameWithUpperCase": "@TYPEPARAM",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@virtual",
+						"tagNameWithUpperCase": "@VIRTUAL",
+						"syntaxKind": 2,
+						"standardization": "Extended",
+						"allowMultiple": false
+					}
+				],
+				"_tagDefinitionsByName": {},
+				"_supportedTagDefinitions": {},
+				"_validation": {
+					"ignoreUndefinedTags": false,
+					"reportUnsupportedTags": false,
+					"reportUnsupportedHtmlElements": false
+				},
+				"_docNodeManager": {
+					"_docNodeDefinitionsByKind": {},
+					"_docNodeDefinitionsByConstructor": {}
+				},
+				"_supportedHtmlElements": {}
+			},
+			"_blocks": []
+		}
+	},
+	{
+		"file": "c:\\Users\\PC\\Desktop\\dev\\Work\\test\\Smartbev_backend\\src\\services\\service-authentification\\routes\\auth.Route.ts",
+		"params": {
+			"configuration": {
+				"_tagDefinitions": [
+					{
+						"tagName": "@alpha",
+						"tagNameWithUpperCase": "@ALPHA",
+						"syntaxKind": 2,
+						"standardization": "Discretionary",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@beta",
+						"tagNameWithUpperCase": "@BETA",
+						"syntaxKind": 2,
+						"standardization": "Discretionary",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@defaultValue",
+						"tagNameWithUpperCase": "@DEFAULTVALUE",
+						"syntaxKind": 1,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@decorator",
+						"tagNameWithUpperCase": "@DECORATOR",
+						"syntaxKind": 1,
+						"standardization": "Extended",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@deprecated",
+						"tagNameWithUpperCase": "@DEPRECATED",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@eventProperty",
+						"tagNameWithUpperCase": "@EVENTPROPERTY",
+						"syntaxKind": 2,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@example",
+						"tagNameWithUpperCase": "@EXAMPLE",
+						"syntaxKind": 1,
+						"standardization": "Extended",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@experimental",
+						"tagNameWithUpperCase": "@EXPERIMENTAL",
+						"syntaxKind": 2,
+						"standardization": "Discretionary",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@inheritDoc",
+						"tagNameWithUpperCase": "@INHERITDOC",
+						"syntaxKind": 0,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@internal",
+						"tagNameWithUpperCase": "@INTERNAL",
+						"syntaxKind": 2,
+						"standardization": "Discretionary",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@label",
+						"tagNameWithUpperCase": "@LABEL",
+						"syntaxKind": 0,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@link",
+						"tagNameWithUpperCase": "@LINK",
+						"syntaxKind": 0,
+						"standardization": "Core",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@override",
+						"tagNameWithUpperCase": "@OVERRIDE",
+						"syntaxKind": 2,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@packageDocumentation",
+						"tagNameWithUpperCase": "@PACKAGEDOCUMENTATION",
+						"syntaxKind": 2,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@param",
+						"tagNameWithUpperCase": "@PARAM",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@privateRemarks",
+						"tagNameWithUpperCase": "@PRIVATEREMARKS",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@public",
+						"tagNameWithUpperCase": "@PUBLIC",
+						"syntaxKind": 2,
+						"standardization": "Discretionary",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@readonly",
+						"tagNameWithUpperCase": "@READONLY",
+						"syntaxKind": 2,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@remarks",
+						"tagNameWithUpperCase": "@REMARKS",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@returns",
+						"tagNameWithUpperCase": "@RETURNS",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@sealed",
+						"tagNameWithUpperCase": "@SEALED",
+						"syntaxKind": 2,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@see",
+						"tagNameWithUpperCase": "@SEE",
+						"syntaxKind": 1,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@throws",
+						"tagNameWithUpperCase": "@THROWS",
+						"syntaxKind": 1,
+						"standardization": "Extended",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@typeParam",
+						"tagNameWithUpperCase": "@TYPEPARAM",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@virtual",
+						"tagNameWithUpperCase": "@VIRTUAL",
+						"syntaxKind": 2,
+						"standardization": "Extended",
+						"allowMultiple": false
+					}
+				],
+				"_tagDefinitionsByName": {},
+				"_supportedTagDefinitions": {},
+				"_validation": {
+					"ignoreUndefinedTags": false,
+					"reportUnsupportedTags": false,
+					"reportUnsupportedHtmlElements": false
+				},
+				"_docNodeManager": {
+					"_docNodeDefinitionsByKind": {},
+					"_docNodeDefinitionsByConstructor": {}
+				},
+				"_supportedHtmlElements": {}
+			},
+			"_blocks": []
+		}
+	},
+	{
+		"file": "c:\\Users\\PC\\Desktop\\dev\\Work\\test\\Smartbev_backend\\src\\services\\service-logging\\logging.ts",
+		"params": {
+			"configuration": {
+				"_tagDefinitions": [
+					{
+						"tagName": "@alpha",
+						"tagNameWithUpperCase": "@ALPHA",
+						"syntaxKind": 2,
+						"standardization": "Discretionary",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@beta",
+						"tagNameWithUpperCase": "@BETA",
+						"syntaxKind": 2,
+						"standardization": "Discretionary",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@defaultValue",
+						"tagNameWithUpperCase": "@DEFAULTVALUE",
+						"syntaxKind": 1,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@decorator",
+						"tagNameWithUpperCase": "@DECORATOR",
+						"syntaxKind": 1,
+						"standardization": "Extended",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@deprecated",
+						"tagNameWithUpperCase": "@DEPRECATED",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@eventProperty",
+						"tagNameWithUpperCase": "@EVENTPROPERTY",
+						"syntaxKind": 2,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@example",
+						"tagNameWithUpperCase": "@EXAMPLE",
+						"syntaxKind": 1,
+						"standardization": "Extended",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@experimental",
+						"tagNameWithUpperCase": "@EXPERIMENTAL",
+						"syntaxKind": 2,
+						"standardization": "Discretionary",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@inheritDoc",
+						"tagNameWithUpperCase": "@INHERITDOC",
+						"syntaxKind": 0,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@internal",
+						"tagNameWithUpperCase": "@INTERNAL",
+						"syntaxKind": 2,
+						"standardization": "Discretionary",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@label",
+						"tagNameWithUpperCase": "@LABEL",
+						"syntaxKind": 0,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@link",
+						"tagNameWithUpperCase": "@LINK",
+						"syntaxKind": 0,
+						"standardization": "Core",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@override",
+						"tagNameWithUpperCase": "@OVERRIDE",
+						"syntaxKind": 2,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@packageDocumentation",
+						"tagNameWithUpperCase": "@PACKAGEDOCUMENTATION",
+						"syntaxKind": 2,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@param",
+						"tagNameWithUpperCase": "@PARAM",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@privateRemarks",
+						"tagNameWithUpperCase": "@PRIVATEREMARKS",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@public",
+						"tagNameWithUpperCase": "@PUBLIC",
+						"syntaxKind": 2,
+						"standardization": "Discretionary",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@readonly",
+						"tagNameWithUpperCase": "@READONLY",
+						"syntaxKind": 2,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@remarks",
+						"tagNameWithUpperCase": "@REMARKS",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@returns",
+						"tagNameWithUpperCase": "@RETURNS",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@sealed",
+						"tagNameWithUpperCase": "@SEALED",
+						"syntaxKind": 2,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@see",
+						"tagNameWithUpperCase": "@SEE",
+						"syntaxKind": 1,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@throws",
+						"tagNameWithUpperCase": "@THROWS",
+						"syntaxKind": 1,
+						"standardization": "Extended",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@typeParam",
+						"tagNameWithUpperCase": "@TYPEPARAM",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@virtual",
+						"tagNameWithUpperCase": "@VIRTUAL",
+						"syntaxKind": 2,
+						"standardization": "Extended",
+						"allowMultiple": false
+					}
+				],
+				"_tagDefinitionsByName": {},
+				"_supportedTagDefinitions": {},
+				"_validation": {
+					"ignoreUndefinedTags": false,
+					"reportUnsupportedTags": false,
+					"reportUnsupportedHtmlElements": false
+				},
+				"_docNodeManager": {
+					"_docNodeDefinitionsByKind": {},
+					"_docNodeDefinitionsByConstructor": {}
+				},
+				"_supportedHtmlElements": {}
+			},
+			"_blocks": []
+		}
+	},
+	{
+		"file": "c:\\Users\\PC\\Desktop\\dev\\Work\\test\\Smartbev_backend\\src\\services\\notification.management\\controllers\\notification.controller.ts",
+		"params": {
+			"configuration": {
+				"_tagDefinitions": [
+					{
+						"tagName": "@alpha",
+						"tagNameWithUpperCase": "@ALPHA",
+						"syntaxKind": 2,
+						"standardization": "Discretionary",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@beta",
+						"tagNameWithUpperCase": "@BETA",
+						"syntaxKind": 2,
+						"standardization": "Discretionary",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@defaultValue",
+						"tagNameWithUpperCase": "@DEFAULTVALUE",
+						"syntaxKind": 1,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@decorator",
+						"tagNameWithUpperCase": "@DECORATOR",
+						"syntaxKind": 1,
+						"standardization": "Extended",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@deprecated",
+						"tagNameWithUpperCase": "@DEPRECATED",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@eventProperty",
+						"tagNameWithUpperCase": "@EVENTPROPERTY",
+						"syntaxKind": 2,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@example",
+						"tagNameWithUpperCase": "@EXAMPLE",
+						"syntaxKind": 1,
+						"standardization": "Extended",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@experimental",
+						"tagNameWithUpperCase": "@EXPERIMENTAL",
+						"syntaxKind": 2,
+						"standardization": "Discretionary",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@inheritDoc",
+						"tagNameWithUpperCase": "@INHERITDOC",
+						"syntaxKind": 0,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@internal",
+						"tagNameWithUpperCase": "@INTERNAL",
+						"syntaxKind": 2,
+						"standardization": "Discretionary",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@label",
+						"tagNameWithUpperCase": "@LABEL",
+						"syntaxKind": 0,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@link",
+						"tagNameWithUpperCase": "@LINK",
+						"syntaxKind": 0,
+						"standardization": "Core",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@override",
+						"tagNameWithUpperCase": "@OVERRIDE",
+						"syntaxKind": 2,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@packageDocumentation",
+						"tagNameWithUpperCase": "@PACKAGEDOCUMENTATION",
+						"syntaxKind": 2,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@param",
+						"tagNameWithUpperCase": "@PARAM",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@privateRemarks",
+						"tagNameWithUpperCase": "@PRIVATEREMARKS",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@public",
+						"tagNameWithUpperCase": "@PUBLIC",
+						"syntaxKind": 2,
+						"standardization": "Discretionary",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@readonly",
+						"tagNameWithUpperCase": "@READONLY",
+						"syntaxKind": 2,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@remarks",
+						"tagNameWithUpperCase": "@REMARKS",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@returns",
+						"tagNameWithUpperCase": "@RETURNS",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@sealed",
+						"tagNameWithUpperCase": "@SEALED",
+						"syntaxKind": 2,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@see",
+						"tagNameWithUpperCase": "@SEE",
+						"syntaxKind": 1,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@throws",
+						"tagNameWithUpperCase": "@THROWS",
+						"syntaxKind": 1,
+						"standardization": "Extended",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@typeParam",
+						"tagNameWithUpperCase": "@TYPEPARAM",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@virtual",
+						"tagNameWithUpperCase": "@VIRTUAL",
+						"syntaxKind": 2,
+						"standardization": "Extended",
+						"allowMultiple": false
+					}
+				],
+				"_tagDefinitionsByName": {},
+				"_supportedTagDefinitions": {},
+				"_validation": {
+					"ignoreUndefinedTags": false,
+					"reportUnsupportedTags": false,
+					"reportUnsupportedHtmlElements": false
+				},
+				"_docNodeManager": {
+					"_docNodeDefinitionsByKind": {},
+					"_docNodeDefinitionsByConstructor": {}
+				},
+				"_supportedHtmlElements": {}
+			},
+			"_blocks": []
+		}
+	},
+	{
+		"file": "c:\\Users\\PC\\Desktop\\dev\\Work\\test\\Smartbev_backend\\src\\services\\notification.management\\middlewares\\auth.ts",
+		"params": {
+			"configuration": {
+				"_tagDefinitions": [
+					{
+						"tagName": "@alpha",
+						"tagNameWithUpperCase": "@ALPHA",
+						"syntaxKind": 2,
+						"standardization": "Discretionary",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@beta",
+						"tagNameWithUpperCase": "@BETA",
+						"syntaxKind": 2,
+						"standardization": "Discretionary",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@defaultValue",
+						"tagNameWithUpperCase": "@DEFAULTVALUE",
+						"syntaxKind": 1,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@decorator",
+						"tagNameWithUpperCase": "@DECORATOR",
+						"syntaxKind": 1,
+						"standardization": "Extended",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@deprecated",
+						"tagNameWithUpperCase": "@DEPRECATED",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@eventProperty",
+						"tagNameWithUpperCase": "@EVENTPROPERTY",
+						"syntaxKind": 2,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@example",
+						"tagNameWithUpperCase": "@EXAMPLE",
+						"syntaxKind": 1,
+						"standardization": "Extended",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@experimental",
+						"tagNameWithUpperCase": "@EXPERIMENTAL",
+						"syntaxKind": 2,
+						"standardization": "Discretionary",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@inheritDoc",
+						"tagNameWithUpperCase": "@INHERITDOC",
+						"syntaxKind": 0,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@internal",
+						"tagNameWithUpperCase": "@INTERNAL",
+						"syntaxKind": 2,
+						"standardization": "Discretionary",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@label",
+						"tagNameWithUpperCase": "@LABEL",
+						"syntaxKind": 0,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@link",
+						"tagNameWithUpperCase": "@LINK",
+						"syntaxKind": 0,
+						"standardization": "Core",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@override",
+						"tagNameWithUpperCase": "@OVERRIDE",
+						"syntaxKind": 2,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@packageDocumentation",
+						"tagNameWithUpperCase": "@PACKAGEDOCUMENTATION",
+						"syntaxKind": 2,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@param",
+						"tagNameWithUpperCase": "@PARAM",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@privateRemarks",
+						"tagNameWithUpperCase": "@PRIVATEREMARKS",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@public",
+						"tagNameWithUpperCase": "@PUBLIC",
+						"syntaxKind": 2,
+						"standardization": "Discretionary",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@readonly",
+						"tagNameWithUpperCase": "@READONLY",
+						"syntaxKind": 2,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@remarks",
+						"tagNameWithUpperCase": "@REMARKS",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@returns",
+						"tagNameWithUpperCase": "@RETURNS",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@sealed",
+						"tagNameWithUpperCase": "@SEALED",
+						"syntaxKind": 2,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@see",
+						"tagNameWithUpperCase": "@SEE",
+						"syntaxKind": 1,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@throws",
+						"tagNameWithUpperCase": "@THROWS",
+						"syntaxKind": 1,
+						"standardization": "Extended",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@typeParam",
+						"tagNameWithUpperCase": "@TYPEPARAM",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@virtual",
+						"tagNameWithUpperCase": "@VIRTUAL",
+						"syntaxKind": 2,
+						"standardization": "Extended",
+						"allowMultiple": false
+					}
+				],
+				"_tagDefinitionsByName": {},
+				"_supportedTagDefinitions": {},
+				"_validation": {
+					"ignoreUndefinedTags": false,
+					"reportUnsupportedTags": false,
+					"reportUnsupportedHtmlElements": false
+				},
+				"_docNodeManager": {
+					"_docNodeDefinitionsByKind": {},
+					"_docNodeDefinitionsByConstructor": {}
+				},
+				"_supportedHtmlElements": {}
+			},
+			"_blocks": []
+		}
+	},
+	{
+		"file": "c:\\Users\\PC\\Desktop\\dev\\Work\\test\\Smartbev_backend\\src\\services\\notification.management\\routes\\notification.route.ts",
+		"params": {
+			"configuration": {
+				"_tagDefinitions": [
+					{
+						"tagName": "@alpha",
+						"tagNameWithUpperCase": "@ALPHA",
+						"syntaxKind": 2,
+						"standardization": "Discretionary",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@beta",
+						"tagNameWithUpperCase": "@BETA",
+						"syntaxKind": 2,
+						"standardization": "Discretionary",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@defaultValue",
+						"tagNameWithUpperCase": "@DEFAULTVALUE",
+						"syntaxKind": 1,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@decorator",
+						"tagNameWithUpperCase": "@DECORATOR",
+						"syntaxKind": 1,
+						"standardization": "Extended",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@deprecated",
+						"tagNameWithUpperCase": "@DEPRECATED",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@eventProperty",
+						"tagNameWithUpperCase": "@EVENTPROPERTY",
+						"syntaxKind": 2,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@example",
+						"tagNameWithUpperCase": "@EXAMPLE",
+						"syntaxKind": 1,
+						"standardization": "Extended",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@experimental",
+						"tagNameWithUpperCase": "@EXPERIMENTAL",
+						"syntaxKind": 2,
+						"standardization": "Discretionary",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@inheritDoc",
+						"tagNameWithUpperCase": "@INHERITDOC",
+						"syntaxKind": 0,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@internal",
+						"tagNameWithUpperCase": "@INTERNAL",
+						"syntaxKind": 2,
+						"standardization": "Discretionary",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@label",
+						"tagNameWithUpperCase": "@LABEL",
+						"syntaxKind": 0,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@link",
+						"tagNameWithUpperCase": "@LINK",
+						"syntaxKind": 0,
+						"standardization": "Core",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@override",
+						"tagNameWithUpperCase": "@OVERRIDE",
+						"syntaxKind": 2,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@packageDocumentation",
+						"tagNameWithUpperCase": "@PACKAGEDOCUMENTATION",
+						"syntaxKind": 2,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@param",
+						"tagNameWithUpperCase": "@PARAM",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@privateRemarks",
+						"tagNameWithUpperCase": "@PRIVATEREMARKS",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@public",
+						"tagNameWithUpperCase": "@PUBLIC",
+						"syntaxKind": 2,
+						"standardization": "Discretionary",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@readonly",
+						"tagNameWithUpperCase": "@READONLY",
+						"syntaxKind": 2,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@remarks",
+						"tagNameWithUpperCase": "@REMARKS",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@returns",
+						"tagNameWithUpperCase": "@RETURNS",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@sealed",
+						"tagNameWithUpperCase": "@SEALED",
+						"syntaxKind": 2,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@see",
+						"tagNameWithUpperCase": "@SEE",
+						"syntaxKind": 1,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@throws",
+						"tagNameWithUpperCase": "@THROWS",
+						"syntaxKind": 1,
+						"standardization": "Extended",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@typeParam",
+						"tagNameWithUpperCase": "@TYPEPARAM",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@virtual",
+						"tagNameWithUpperCase": "@VIRTUAL",
+						"syntaxKind": 2,
+						"standardization": "Extended",
+						"allowMultiple": false
+					}
+				],
+				"_tagDefinitionsByName": {},
+				"_supportedTagDefinitions": {},
+				"_validation": {
+					"ignoreUndefinedTags": false,
+					"reportUnsupportedTags": false,
+					"reportUnsupportedHtmlElements": false
+				},
+				"_docNodeManager": {
+					"_docNodeDefinitionsByKind": {},
+					"_docNodeDefinitionsByConstructor": {}
+				},
+				"_supportedHtmlElements": {}
+			},
+			"_blocks": []
+		}
+	},
+	{
+		"file": "c:\\Users\\PC\\Desktop\\dev\\Work\\test\\Smartbev_backend\\src\\services\\notification.management\\service\\notification.management.ts",
+		"params": {
+			"configuration": {
+				"_tagDefinitions": [
+					{
+						"tagName": "@alpha",
+						"tagNameWithUpperCase": "@ALPHA",
+						"syntaxKind": 2,
+						"standardization": "Discretionary",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@beta",
+						"tagNameWithUpperCase": "@BETA",
+						"syntaxKind": 2,
+						"standardization": "Discretionary",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@defaultValue",
+						"tagNameWithUpperCase": "@DEFAULTVALUE",
+						"syntaxKind": 1,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@decorator",
+						"tagNameWithUpperCase": "@DECORATOR",
+						"syntaxKind": 1,
+						"standardization": "Extended",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@deprecated",
+						"tagNameWithUpperCase": "@DEPRECATED",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@eventProperty",
+						"tagNameWithUpperCase": "@EVENTPROPERTY",
+						"syntaxKind": 2,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@example",
+						"tagNameWithUpperCase": "@EXAMPLE",
+						"syntaxKind": 1,
+						"standardization": "Extended",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@experimental",
+						"tagNameWithUpperCase": "@EXPERIMENTAL",
+						"syntaxKind": 2,
+						"standardization": "Discretionary",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@inheritDoc",
+						"tagNameWithUpperCase": "@INHERITDOC",
+						"syntaxKind": 0,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@internal",
+						"tagNameWithUpperCase": "@INTERNAL",
+						"syntaxKind": 2,
+						"standardization": "Discretionary",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@label",
+						"tagNameWithUpperCase": "@LABEL",
+						"syntaxKind": 0,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@link",
+						"tagNameWithUpperCase": "@LINK",
+						"syntaxKind": 0,
+						"standardization": "Core",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@override",
+						"tagNameWithUpperCase": "@OVERRIDE",
+						"syntaxKind": 2,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@packageDocumentation",
+						"tagNameWithUpperCase": "@PACKAGEDOCUMENTATION",
+						"syntaxKind": 2,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@param",
+						"tagNameWithUpperCase": "@PARAM",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@privateRemarks",
+						"tagNameWithUpperCase": "@PRIVATEREMARKS",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@public",
+						"tagNameWithUpperCase": "@PUBLIC",
+						"syntaxKind": 2,
+						"standardization": "Discretionary",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@readonly",
+						"tagNameWithUpperCase": "@READONLY",
+						"syntaxKind": 2,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@remarks",
+						"tagNameWithUpperCase": "@REMARKS",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@returns",
+						"tagNameWithUpperCase": "@RETURNS",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@sealed",
+						"tagNameWithUpperCase": "@SEALED",
+						"syntaxKind": 2,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@see",
+						"tagNameWithUpperCase": "@SEE",
+						"syntaxKind": 1,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@throws",
+						"tagNameWithUpperCase": "@THROWS",
+						"syntaxKind": 1,
+						"standardization": "Extended",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@typeParam",
+						"tagNameWithUpperCase": "@TYPEPARAM",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@virtual",
+						"tagNameWithUpperCase": "@VIRTUAL",
+						"syntaxKind": 2,
+						"standardization": "Extended",
+						"allowMultiple": false
+					}
+				],
+				"_tagDefinitionsByName": {},
+				"_supportedTagDefinitions": {},
+				"_validation": {
+					"ignoreUndefinedTags": false,
+					"reportUnsupportedTags": false,
+					"reportUnsupportedHtmlElements": false
+				},
+				"_docNodeManager": {
+					"_docNodeDefinitionsByKind": {},
+					"_docNodeDefinitionsByConstructor": {}
+				},
+				"_supportedHtmlElements": {}
+			},
+			"_blocks": []
+		}
+	},
+	{
+		"file": "c:\\Users\\PC\\Desktop\\dev\\Work\\test\\Smartbev_backend\\src\\services\\paymentService\\controllers\\payment.Controller.ts",
+		"params": {
+			"configuration": {
+				"_tagDefinitions": [
+					{
+						"tagName": "@alpha",
+						"tagNameWithUpperCase": "@ALPHA",
+						"syntaxKind": 2,
+						"standardization": "Discretionary",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@beta",
+						"tagNameWithUpperCase": "@BETA",
+						"syntaxKind": 2,
+						"standardization": "Discretionary",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@defaultValue",
+						"tagNameWithUpperCase": "@DEFAULTVALUE",
+						"syntaxKind": 1,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@decorator",
+						"tagNameWithUpperCase": "@DECORATOR",
+						"syntaxKind": 1,
+						"standardization": "Extended",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@deprecated",
+						"tagNameWithUpperCase": "@DEPRECATED",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@eventProperty",
+						"tagNameWithUpperCase": "@EVENTPROPERTY",
+						"syntaxKind": 2,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@example",
+						"tagNameWithUpperCase": "@EXAMPLE",
+						"syntaxKind": 1,
+						"standardization": "Extended",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@experimental",
+						"tagNameWithUpperCase": "@EXPERIMENTAL",
+						"syntaxKind": 2,
+						"standardization": "Discretionary",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@inheritDoc",
+						"tagNameWithUpperCase": "@INHERITDOC",
+						"syntaxKind": 0,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@internal",
+						"tagNameWithUpperCase": "@INTERNAL",
+						"syntaxKind": 2,
+						"standardization": "Discretionary",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@label",
+						"tagNameWithUpperCase": "@LABEL",
+						"syntaxKind": 0,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@link",
+						"tagNameWithUpperCase": "@LINK",
+						"syntaxKind": 0,
+						"standardization": "Core",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@override",
+						"tagNameWithUpperCase": "@OVERRIDE",
+						"syntaxKind": 2,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@packageDocumentation",
+						"tagNameWithUpperCase": "@PACKAGEDOCUMENTATION",
+						"syntaxKind": 2,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@param",
+						"tagNameWithUpperCase": "@PARAM",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@privateRemarks",
+						"tagNameWithUpperCase": "@PRIVATEREMARKS",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@public",
+						"tagNameWithUpperCase": "@PUBLIC",
+						"syntaxKind": 2,
+						"standardization": "Discretionary",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@readonly",
+						"tagNameWithUpperCase": "@READONLY",
+						"syntaxKind": 2,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@remarks",
+						"tagNameWithUpperCase": "@REMARKS",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@returns",
+						"tagNameWithUpperCase": "@RETURNS",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@sealed",
+						"tagNameWithUpperCase": "@SEALED",
+						"syntaxKind": 2,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@see",
+						"tagNameWithUpperCase": "@SEE",
+						"syntaxKind": 1,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@throws",
+						"tagNameWithUpperCase": "@THROWS",
+						"syntaxKind": 1,
+						"standardization": "Extended",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@typeParam",
+						"tagNameWithUpperCase": "@TYPEPARAM",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@virtual",
+						"tagNameWithUpperCase": "@VIRTUAL",
+						"syntaxKind": 2,
+						"standardization": "Extended",
+						"allowMultiple": false
+					}
+				],
+				"_tagDefinitionsByName": {},
+				"_supportedTagDefinitions": {},
+				"_validation": {
+					"ignoreUndefinedTags": false,
+					"reportUnsupportedTags": false,
+					"reportUnsupportedHtmlElements": false
+				},
+				"_docNodeManager": {
+					"_docNodeDefinitionsByKind": {},
+					"_docNodeDefinitionsByConstructor": {}
+				},
+				"_supportedHtmlElements": {}
+			},
+			"_blocks": []
+		}
+	},
+	{
+		"file": "c:\\Users\\PC\\Desktop\\dev\\Work\\test\\Smartbev_backend\\src\\services\\paymentService\\facture.ts",
+		"params": {
+			"configuration": {
+				"_tagDefinitions": [
+					{
+						"tagName": "@alpha",
+						"tagNameWithUpperCase": "@ALPHA",
+						"syntaxKind": 2,
+						"standardization": "Discretionary",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@beta",
+						"tagNameWithUpperCase": "@BETA",
+						"syntaxKind": 2,
+						"standardization": "Discretionary",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@defaultValue",
+						"tagNameWithUpperCase": "@DEFAULTVALUE",
+						"syntaxKind": 1,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@decorator",
+						"tagNameWithUpperCase": "@DECORATOR",
+						"syntaxKind": 1,
+						"standardization": "Extended",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@deprecated",
+						"tagNameWithUpperCase": "@DEPRECATED",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@eventProperty",
+						"tagNameWithUpperCase": "@EVENTPROPERTY",
+						"syntaxKind": 2,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@example",
+						"tagNameWithUpperCase": "@EXAMPLE",
+						"syntaxKind": 1,
+						"standardization": "Extended",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@experimental",
+						"tagNameWithUpperCase": "@EXPERIMENTAL",
+						"syntaxKind": 2,
+						"standardization": "Discretionary",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@inheritDoc",
+						"tagNameWithUpperCase": "@INHERITDOC",
+						"syntaxKind": 0,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@internal",
+						"tagNameWithUpperCase": "@INTERNAL",
+						"syntaxKind": 2,
+						"standardization": "Discretionary",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@label",
+						"tagNameWithUpperCase": "@LABEL",
+						"syntaxKind": 0,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@link",
+						"tagNameWithUpperCase": "@LINK",
+						"syntaxKind": 0,
+						"standardization": "Core",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@override",
+						"tagNameWithUpperCase": "@OVERRIDE",
+						"syntaxKind": 2,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@packageDocumentation",
+						"tagNameWithUpperCase": "@PACKAGEDOCUMENTATION",
+						"syntaxKind": 2,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@param",
+						"tagNameWithUpperCase": "@PARAM",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@privateRemarks",
+						"tagNameWithUpperCase": "@PRIVATEREMARKS",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@public",
+						"tagNameWithUpperCase": "@PUBLIC",
+						"syntaxKind": 2,
+						"standardization": "Discretionary",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@readonly",
+						"tagNameWithUpperCase": "@READONLY",
+						"syntaxKind": 2,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@remarks",
+						"tagNameWithUpperCase": "@REMARKS",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@returns",
+						"tagNameWithUpperCase": "@RETURNS",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@sealed",
+						"tagNameWithUpperCase": "@SEALED",
+						"syntaxKind": 2,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@see",
+						"tagNameWithUpperCase": "@SEE",
+						"syntaxKind": 1,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@throws",
+						"tagNameWithUpperCase": "@THROWS",
+						"syntaxKind": 1,
+						"standardization": "Extended",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@typeParam",
+						"tagNameWithUpperCase": "@TYPEPARAM",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@virtual",
+						"tagNameWithUpperCase": "@VIRTUAL",
+						"syntaxKind": 2,
+						"standardization": "Extended",
+						"allowMultiple": false
+					}
+				],
+				"_tagDefinitionsByName": {},
+				"_supportedTagDefinitions": {},
+				"_validation": {
+					"ignoreUndefinedTags": false,
+					"reportUnsupportedTags": false,
+					"reportUnsupportedHtmlElements": false
+				},
+				"_docNodeManager": {
+					"_docNodeDefinitionsByKind": {},
+					"_docNodeDefinitionsByConstructor": {}
+				},
+				"_supportedHtmlElements": {}
+			},
+			"_blocks": []
+		}
+	},
+	{
+		"file": "c:\\Users\\PC\\Desktop\\dev\\Work\\test\\Smartbev_backend\\src\\services\\paymentService\\payment.ts",
+		"params": {
+			"configuration": {
+				"_tagDefinitions": [
+					{
+						"tagName": "@alpha",
+						"tagNameWithUpperCase": "@ALPHA",
+						"syntaxKind": 2,
+						"standardization": "Discretionary",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@beta",
+						"tagNameWithUpperCase": "@BETA",
+						"syntaxKind": 2,
+						"standardization": "Discretionary",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@defaultValue",
+						"tagNameWithUpperCase": "@DEFAULTVALUE",
+						"syntaxKind": 1,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@decorator",
+						"tagNameWithUpperCase": "@DECORATOR",
+						"syntaxKind": 1,
+						"standardization": "Extended",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@deprecated",
+						"tagNameWithUpperCase": "@DEPRECATED",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@eventProperty",
+						"tagNameWithUpperCase": "@EVENTPROPERTY",
+						"syntaxKind": 2,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@example",
+						"tagNameWithUpperCase": "@EXAMPLE",
+						"syntaxKind": 1,
+						"standardization": "Extended",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@experimental",
+						"tagNameWithUpperCase": "@EXPERIMENTAL",
+						"syntaxKind": 2,
+						"standardization": "Discretionary",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@inheritDoc",
+						"tagNameWithUpperCase": "@INHERITDOC",
+						"syntaxKind": 0,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@internal",
+						"tagNameWithUpperCase": "@INTERNAL",
+						"syntaxKind": 2,
+						"standardization": "Discretionary",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@label",
+						"tagNameWithUpperCase": "@LABEL",
+						"syntaxKind": 0,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@link",
+						"tagNameWithUpperCase": "@LINK",
+						"syntaxKind": 0,
+						"standardization": "Core",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@override",
+						"tagNameWithUpperCase": "@OVERRIDE",
+						"syntaxKind": 2,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@packageDocumentation",
+						"tagNameWithUpperCase": "@PACKAGEDOCUMENTATION",
+						"syntaxKind": 2,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@param",
+						"tagNameWithUpperCase": "@PARAM",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@privateRemarks",
+						"tagNameWithUpperCase": "@PRIVATEREMARKS",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@public",
+						"tagNameWithUpperCase": "@PUBLIC",
+						"syntaxKind": 2,
+						"standardization": "Discretionary",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@readonly",
+						"tagNameWithUpperCase": "@READONLY",
+						"syntaxKind": 2,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@remarks",
+						"tagNameWithUpperCase": "@REMARKS",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@returns",
+						"tagNameWithUpperCase": "@RETURNS",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@sealed",
+						"tagNameWithUpperCase": "@SEALED",
+						"syntaxKind": 2,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@see",
+						"tagNameWithUpperCase": "@SEE",
+						"syntaxKind": 1,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@throws",
+						"tagNameWithUpperCase": "@THROWS",
+						"syntaxKind": 1,
+						"standardization": "Extended",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@typeParam",
+						"tagNameWithUpperCase": "@TYPEPARAM",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@virtual",
+						"tagNameWithUpperCase": "@VIRTUAL",
+						"syntaxKind": 2,
+						"standardization": "Extended",
+						"allowMultiple": false
+					}
+				],
+				"_tagDefinitionsByName": {},
+				"_supportedTagDefinitions": {},
+				"_validation": {
+					"ignoreUndefinedTags": false,
+					"reportUnsupportedTags": false,
+					"reportUnsupportedHtmlElements": false
+				},
+				"_docNodeManager": {
+					"_docNodeDefinitionsByKind": {},
+					"_docNodeDefinitionsByConstructor": {}
+				},
+				"_supportedHtmlElements": {}
+			},
+			"_blocks": []
+		}
+	},
+	{
+		"file": "c:\\Users\\PC\\Desktop\\dev\\Work\\test\\Smartbev_backend\\src\\services\\paymentService\\paymentConfig.ts",
+		"params": {
+			"configuration": {
+				"_tagDefinitions": [
+					{
+						"tagName": "@alpha",
+						"tagNameWithUpperCase": "@ALPHA",
+						"syntaxKind": 2,
+						"standardization": "Discretionary",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@beta",
+						"tagNameWithUpperCase": "@BETA",
+						"syntaxKind": 2,
+						"standardization": "Discretionary",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@defaultValue",
+						"tagNameWithUpperCase": "@DEFAULTVALUE",
+						"syntaxKind": 1,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@decorator",
+						"tagNameWithUpperCase": "@DECORATOR",
+						"syntaxKind": 1,
+						"standardization": "Extended",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@deprecated",
+						"tagNameWithUpperCase": "@DEPRECATED",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@eventProperty",
+						"tagNameWithUpperCase": "@EVENTPROPERTY",
+						"syntaxKind": 2,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@example",
+						"tagNameWithUpperCase": "@EXAMPLE",
+						"syntaxKind": 1,
+						"standardization": "Extended",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@experimental",
+						"tagNameWithUpperCase": "@EXPERIMENTAL",
+						"syntaxKind": 2,
+						"standardization": "Discretionary",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@inheritDoc",
+						"tagNameWithUpperCase": "@INHERITDOC",
+						"syntaxKind": 0,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@internal",
+						"tagNameWithUpperCase": "@INTERNAL",
+						"syntaxKind": 2,
+						"standardization": "Discretionary",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@label",
+						"tagNameWithUpperCase": "@LABEL",
+						"syntaxKind": 0,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@link",
+						"tagNameWithUpperCase": "@LINK",
+						"syntaxKind": 0,
+						"standardization": "Core",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@override",
+						"tagNameWithUpperCase": "@OVERRIDE",
+						"syntaxKind": 2,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@packageDocumentation",
+						"tagNameWithUpperCase": "@PACKAGEDOCUMENTATION",
+						"syntaxKind": 2,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@param",
+						"tagNameWithUpperCase": "@PARAM",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@privateRemarks",
+						"tagNameWithUpperCase": "@PRIVATEREMARKS",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@public",
+						"tagNameWithUpperCase": "@PUBLIC",
+						"syntaxKind": 2,
+						"standardization": "Discretionary",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@readonly",
+						"tagNameWithUpperCase": "@READONLY",
+						"syntaxKind": 2,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@remarks",
+						"tagNameWithUpperCase": "@REMARKS",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@returns",
+						"tagNameWithUpperCase": "@RETURNS",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@sealed",
+						"tagNameWithUpperCase": "@SEALED",
+						"syntaxKind": 2,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@see",
+						"tagNameWithUpperCase": "@SEE",
+						"syntaxKind": 1,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@throws",
+						"tagNameWithUpperCase": "@THROWS",
+						"syntaxKind": 1,
+						"standardization": "Extended",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@typeParam",
+						"tagNameWithUpperCase": "@TYPEPARAM",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@virtual",
+						"tagNameWithUpperCase": "@VIRTUAL",
+						"syntaxKind": 2,
+						"standardization": "Extended",
+						"allowMultiple": false
+					}
+				],
+				"_tagDefinitionsByName": {},
+				"_supportedTagDefinitions": {},
+				"_validation": {
+					"ignoreUndefinedTags": false,
+					"reportUnsupportedTags": false,
+					"reportUnsupportedHtmlElements": false
+				},
+				"_docNodeManager": {
+					"_docNodeDefinitionsByKind": {},
+					"_docNodeDefinitionsByConstructor": {}
+				},
+				"_supportedHtmlElements": {}
+			},
+			"_blocks": []
+		}
+	},
+	{
+		"file": "c:\\Users\\PC\\Desktop\\dev\\Work\\test\\Smartbev_backend\\src\\services\\paymentService\\routes\\payment.Route.ts",
+		"params": {
+			"configuration": {
+				"_tagDefinitions": [
+					{
+						"tagName": "@alpha",
+						"tagNameWithUpperCase": "@ALPHA",
+						"syntaxKind": 2,
+						"standardization": "Discretionary",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@beta",
+						"tagNameWithUpperCase": "@BETA",
+						"syntaxKind": 2,
+						"standardization": "Discretionary",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@defaultValue",
+						"tagNameWithUpperCase": "@DEFAULTVALUE",
+						"syntaxKind": 1,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@decorator",
+						"tagNameWithUpperCase": "@DECORATOR",
+						"syntaxKind": 1,
+						"standardization": "Extended",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@deprecated",
+						"tagNameWithUpperCase": "@DEPRECATED",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@eventProperty",
+						"tagNameWithUpperCase": "@EVENTPROPERTY",
+						"syntaxKind": 2,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@example",
+						"tagNameWithUpperCase": "@EXAMPLE",
+						"syntaxKind": 1,
+						"standardization": "Extended",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@experimental",
+						"tagNameWithUpperCase": "@EXPERIMENTAL",
+						"syntaxKind": 2,
+						"standardization": "Discretionary",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@inheritDoc",
+						"tagNameWithUpperCase": "@INHERITDOC",
+						"syntaxKind": 0,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@internal",
+						"tagNameWithUpperCase": "@INTERNAL",
+						"syntaxKind": 2,
+						"standardization": "Discretionary",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@label",
+						"tagNameWithUpperCase": "@LABEL",
+						"syntaxKind": 0,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@link",
+						"tagNameWithUpperCase": "@LINK",
+						"syntaxKind": 0,
+						"standardization": "Core",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@override",
+						"tagNameWithUpperCase": "@OVERRIDE",
+						"syntaxKind": 2,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@packageDocumentation",
+						"tagNameWithUpperCase": "@PACKAGEDOCUMENTATION",
+						"syntaxKind": 2,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@param",
+						"tagNameWithUpperCase": "@PARAM",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@privateRemarks",
+						"tagNameWithUpperCase": "@PRIVATEREMARKS",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@public",
+						"tagNameWithUpperCase": "@PUBLIC",
+						"syntaxKind": 2,
+						"standardization": "Discretionary",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@readonly",
+						"tagNameWithUpperCase": "@READONLY",
+						"syntaxKind": 2,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@remarks",
+						"tagNameWithUpperCase": "@REMARKS",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@returns",
+						"tagNameWithUpperCase": "@RETURNS",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@sealed",
+						"tagNameWithUpperCase": "@SEALED",
+						"syntaxKind": 2,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@see",
+						"tagNameWithUpperCase": "@SEE",
+						"syntaxKind": 1,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@throws",
+						"tagNameWithUpperCase": "@THROWS",
+						"syntaxKind": 1,
+						"standardization": "Extended",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@typeParam",
+						"tagNameWithUpperCase": "@TYPEPARAM",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@virtual",
+						"tagNameWithUpperCase": "@VIRTUAL",
+						"syntaxKind": 2,
+						"standardization": "Extended",
+						"allowMultiple": false
+					}
+				],
+				"_tagDefinitionsByName": {},
+				"_supportedTagDefinitions": {},
+				"_validation": {
+					"ignoreUndefinedTags": false,
+					"reportUnsupportedTags": false,
+					"reportUnsupportedHtmlElements": false
+				},
+				"_docNodeManager": {
+					"_docNodeDefinitionsByKind": {},
+					"_docNodeDefinitionsByConstructor": {}
+				},
+				"_supportedHtmlElements": {}
+			},
+			"_blocks": []
+		}
+	},
+	{
+		"file": "c:\\Users\\PC\\Desktop\\dev\\Work\\test\\Smartbev_backend\\src\\services\\service-commandes\\contollers\\commandes.controller.ts",
+		"params": {
+			"configuration": {
+				"_tagDefinitions": [
+					{
+						"tagName": "@alpha",
+						"tagNameWithUpperCase": "@ALPHA",
+						"syntaxKind": 2,
+						"standardization": "Discretionary",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@beta",
+						"tagNameWithUpperCase": "@BETA",
+						"syntaxKind": 2,
+						"standardization": "Discretionary",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@defaultValue",
+						"tagNameWithUpperCase": "@DEFAULTVALUE",
+						"syntaxKind": 1,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@decorator",
+						"tagNameWithUpperCase": "@DECORATOR",
+						"syntaxKind": 1,
+						"standardization": "Extended",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@deprecated",
+						"tagNameWithUpperCase": "@DEPRECATED",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@eventProperty",
+						"tagNameWithUpperCase": "@EVENTPROPERTY",
+						"syntaxKind": 2,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@example",
+						"tagNameWithUpperCase": "@EXAMPLE",
+						"syntaxKind": 1,
+						"standardization": "Extended",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@experimental",
+						"tagNameWithUpperCase": "@EXPERIMENTAL",
+						"syntaxKind": 2,
+						"standardization": "Discretionary",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@inheritDoc",
+						"tagNameWithUpperCase": "@INHERITDOC",
+						"syntaxKind": 0,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@internal",
+						"tagNameWithUpperCase": "@INTERNAL",
+						"syntaxKind": 2,
+						"standardization": "Discretionary",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@label",
+						"tagNameWithUpperCase": "@LABEL",
+						"syntaxKind": 0,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@link",
+						"tagNameWithUpperCase": "@LINK",
+						"syntaxKind": 0,
+						"standardization": "Core",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@override",
+						"tagNameWithUpperCase": "@OVERRIDE",
+						"syntaxKind": 2,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@packageDocumentation",
+						"tagNameWithUpperCase": "@PACKAGEDOCUMENTATION",
+						"syntaxKind": 2,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@param",
+						"tagNameWithUpperCase": "@PARAM",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@privateRemarks",
+						"tagNameWithUpperCase": "@PRIVATEREMARKS",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@public",
+						"tagNameWithUpperCase": "@PUBLIC",
+						"syntaxKind": 2,
+						"standardization": "Discretionary",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@readonly",
+						"tagNameWithUpperCase": "@READONLY",
+						"syntaxKind": 2,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@remarks",
+						"tagNameWithUpperCase": "@REMARKS",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@returns",
+						"tagNameWithUpperCase": "@RETURNS",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@sealed",
+						"tagNameWithUpperCase": "@SEALED",
+						"syntaxKind": 2,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@see",
+						"tagNameWithUpperCase": "@SEE",
+						"syntaxKind": 1,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@throws",
+						"tagNameWithUpperCase": "@THROWS",
+						"syntaxKind": 1,
+						"standardization": "Extended",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@typeParam",
+						"tagNameWithUpperCase": "@TYPEPARAM",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@virtual",
+						"tagNameWithUpperCase": "@VIRTUAL",
+						"syntaxKind": 2,
+						"standardization": "Extended",
+						"allowMultiple": false
+					}
+				],
+				"_tagDefinitionsByName": {},
+				"_supportedTagDefinitions": {},
+				"_validation": {
+					"ignoreUndefinedTags": false,
+					"reportUnsupportedTags": false,
+					"reportUnsupportedHtmlElements": false
+				},
+				"_docNodeManager": {
+					"_docNodeDefinitionsByKind": {},
+					"_docNodeDefinitionsByConstructor": {}
+				},
+				"_supportedHtmlElements": {}
+			},
+			"_blocks": []
+		}
+	},
+	{
+		"file": "c:\\Users\\PC\\Desktop\\dev\\Work\\test\\Smartbev_backend\\src\\services\\service-commandes\\routes\\commandes.routes.ts",
+		"params": {
+			"configuration": {
+				"_tagDefinitions": [
+					{
+						"tagName": "@alpha",
+						"tagNameWithUpperCase": "@ALPHA",
+						"syntaxKind": 2,
+						"standardization": "Discretionary",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@beta",
+						"tagNameWithUpperCase": "@BETA",
+						"syntaxKind": 2,
+						"standardization": "Discretionary",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@defaultValue",
+						"tagNameWithUpperCase": "@DEFAULTVALUE",
+						"syntaxKind": 1,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@decorator",
+						"tagNameWithUpperCase": "@DECORATOR",
+						"syntaxKind": 1,
+						"standardization": "Extended",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@deprecated",
+						"tagNameWithUpperCase": "@DEPRECATED",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@eventProperty",
+						"tagNameWithUpperCase": "@EVENTPROPERTY",
+						"syntaxKind": 2,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@example",
+						"tagNameWithUpperCase": "@EXAMPLE",
+						"syntaxKind": 1,
+						"standardization": "Extended",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@experimental",
+						"tagNameWithUpperCase": "@EXPERIMENTAL",
+						"syntaxKind": 2,
+						"standardization": "Discretionary",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@inheritDoc",
+						"tagNameWithUpperCase": "@INHERITDOC",
+						"syntaxKind": 0,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@internal",
+						"tagNameWithUpperCase": "@INTERNAL",
+						"syntaxKind": 2,
+						"standardization": "Discretionary",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@label",
+						"tagNameWithUpperCase": "@LABEL",
+						"syntaxKind": 0,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@link",
+						"tagNameWithUpperCase": "@LINK",
+						"syntaxKind": 0,
+						"standardization": "Core",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@override",
+						"tagNameWithUpperCase": "@OVERRIDE",
+						"syntaxKind": 2,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@packageDocumentation",
+						"tagNameWithUpperCase": "@PACKAGEDOCUMENTATION",
+						"syntaxKind": 2,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@param",
+						"tagNameWithUpperCase": "@PARAM",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@privateRemarks",
+						"tagNameWithUpperCase": "@PRIVATEREMARKS",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@public",
+						"tagNameWithUpperCase": "@PUBLIC",
+						"syntaxKind": 2,
+						"standardization": "Discretionary",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@readonly",
+						"tagNameWithUpperCase": "@READONLY",
+						"syntaxKind": 2,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@remarks",
+						"tagNameWithUpperCase": "@REMARKS",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@returns",
+						"tagNameWithUpperCase": "@RETURNS",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@sealed",
+						"tagNameWithUpperCase": "@SEALED",
+						"syntaxKind": 2,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@see",
+						"tagNameWithUpperCase": "@SEE",
+						"syntaxKind": 1,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@throws",
+						"tagNameWithUpperCase": "@THROWS",
+						"syntaxKind": 1,
+						"standardization": "Extended",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@typeParam",
+						"tagNameWithUpperCase": "@TYPEPARAM",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@virtual",
+						"tagNameWithUpperCase": "@VIRTUAL",
+						"syntaxKind": 2,
+						"standardization": "Extended",
+						"allowMultiple": false
+					}
+				],
+				"_tagDefinitionsByName": {},
+				"_supportedTagDefinitions": {},
+				"_validation": {
+					"ignoreUndefinedTags": false,
+					"reportUnsupportedTags": false,
+					"reportUnsupportedHtmlElements": false
+				},
+				"_docNodeManager": {
+					"_docNodeDefinitionsByKind": {},
+					"_docNodeDefinitionsByConstructor": {}
+				},
+				"_supportedHtmlElements": {}
+			},
+			"_blocks": []
+		}
+	},
+	{
+		"file": "c:\\Users\\PC\\Desktop\\dev\\Work\\test\\Smartbev_backend\\src\\services\\service-commandes\\service\\commandes.logic.ts",
+		"params": {
+			"configuration": {
+				"_tagDefinitions": [
+					{
+						"tagName": "@alpha",
+						"tagNameWithUpperCase": "@ALPHA",
+						"syntaxKind": 2,
+						"standardization": "Discretionary",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@beta",
+						"tagNameWithUpperCase": "@BETA",
+						"syntaxKind": 2,
+						"standardization": "Discretionary",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@defaultValue",
+						"tagNameWithUpperCase": "@DEFAULTVALUE",
+						"syntaxKind": 1,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@decorator",
+						"tagNameWithUpperCase": "@DECORATOR",
+						"syntaxKind": 1,
+						"standardization": "Extended",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@deprecated",
+						"tagNameWithUpperCase": "@DEPRECATED",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@eventProperty",
+						"tagNameWithUpperCase": "@EVENTPROPERTY",
+						"syntaxKind": 2,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@example",
+						"tagNameWithUpperCase": "@EXAMPLE",
+						"syntaxKind": 1,
+						"standardization": "Extended",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@experimental",
+						"tagNameWithUpperCase": "@EXPERIMENTAL",
+						"syntaxKind": 2,
+						"standardization": "Discretionary",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@inheritDoc",
+						"tagNameWithUpperCase": "@INHERITDOC",
+						"syntaxKind": 0,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@internal",
+						"tagNameWithUpperCase": "@INTERNAL",
+						"syntaxKind": 2,
+						"standardization": "Discretionary",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@label",
+						"tagNameWithUpperCase": "@LABEL",
+						"syntaxKind": 0,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@link",
+						"tagNameWithUpperCase": "@LINK",
+						"syntaxKind": 0,
+						"standardization": "Core",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@override",
+						"tagNameWithUpperCase": "@OVERRIDE",
+						"syntaxKind": 2,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@packageDocumentation",
+						"tagNameWithUpperCase": "@PACKAGEDOCUMENTATION",
+						"syntaxKind": 2,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@param",
+						"tagNameWithUpperCase": "@PARAM",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@privateRemarks",
+						"tagNameWithUpperCase": "@PRIVATEREMARKS",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@public",
+						"tagNameWithUpperCase": "@PUBLIC",
+						"syntaxKind": 2,
+						"standardization": "Discretionary",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@readonly",
+						"tagNameWithUpperCase": "@READONLY",
+						"syntaxKind": 2,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@remarks",
+						"tagNameWithUpperCase": "@REMARKS",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@returns",
+						"tagNameWithUpperCase": "@RETURNS",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@sealed",
+						"tagNameWithUpperCase": "@SEALED",
+						"syntaxKind": 2,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@see",
+						"tagNameWithUpperCase": "@SEE",
+						"syntaxKind": 1,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@throws",
+						"tagNameWithUpperCase": "@THROWS",
+						"syntaxKind": 1,
+						"standardization": "Extended",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@typeParam",
+						"tagNameWithUpperCase": "@TYPEPARAM",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@virtual",
+						"tagNameWithUpperCase": "@VIRTUAL",
+						"syntaxKind": 2,
+						"standardization": "Extended",
+						"allowMultiple": false
+					}
+				],
+				"_tagDefinitionsByName": {},
+				"_supportedTagDefinitions": {},
+				"_validation": {
+					"ignoreUndefinedTags": false,
+					"reportUnsupportedTags": false,
+					"reportUnsupportedHtmlElements": false
+				},
+				"_docNodeManager": {
+					"_docNodeDefinitionsByKind": {},
+					"_docNodeDefinitionsByConstructor": {}
+				},
+				"_supportedHtmlElements": {}
+			},
+			"_blocks": []
+		}
+	},
+	{
+		"file": "c:\\Users\\PC\\Desktop\\dev\\Work\\test\\Smartbev_backend\\src\\services\\service-commandes\\service\\commandes.service.ts",
+		"params": {
+			"configuration": {
+				"_tagDefinitions": [
+					{
+						"tagName": "@alpha",
+						"tagNameWithUpperCase": "@ALPHA",
+						"syntaxKind": 2,
+						"standardization": "Discretionary",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@beta",
+						"tagNameWithUpperCase": "@BETA",
+						"syntaxKind": 2,
+						"standardization": "Discretionary",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@defaultValue",
+						"tagNameWithUpperCase": "@DEFAULTVALUE",
+						"syntaxKind": 1,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@decorator",
+						"tagNameWithUpperCase": "@DECORATOR",
+						"syntaxKind": 1,
+						"standardization": "Extended",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@deprecated",
+						"tagNameWithUpperCase": "@DEPRECATED",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@eventProperty",
+						"tagNameWithUpperCase": "@EVENTPROPERTY",
+						"syntaxKind": 2,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@example",
+						"tagNameWithUpperCase": "@EXAMPLE",
+						"syntaxKind": 1,
+						"standardization": "Extended",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@experimental",
+						"tagNameWithUpperCase": "@EXPERIMENTAL",
+						"syntaxKind": 2,
+						"standardization": "Discretionary",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@inheritDoc",
+						"tagNameWithUpperCase": "@INHERITDOC",
+						"syntaxKind": 0,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@internal",
+						"tagNameWithUpperCase": "@INTERNAL",
+						"syntaxKind": 2,
+						"standardization": "Discretionary",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@label",
+						"tagNameWithUpperCase": "@LABEL",
+						"syntaxKind": 0,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@link",
+						"tagNameWithUpperCase": "@LINK",
+						"syntaxKind": 0,
+						"standardization": "Core",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@override",
+						"tagNameWithUpperCase": "@OVERRIDE",
+						"syntaxKind": 2,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@packageDocumentation",
+						"tagNameWithUpperCase": "@PACKAGEDOCUMENTATION",
+						"syntaxKind": 2,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@param",
+						"tagNameWithUpperCase": "@PARAM",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@privateRemarks",
+						"tagNameWithUpperCase": "@PRIVATEREMARKS",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@public",
+						"tagNameWithUpperCase": "@PUBLIC",
+						"syntaxKind": 2,
+						"standardization": "Discretionary",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@readonly",
+						"tagNameWithUpperCase": "@READONLY",
+						"syntaxKind": 2,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@remarks",
+						"tagNameWithUpperCase": "@REMARKS",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@returns",
+						"tagNameWithUpperCase": "@RETURNS",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@sealed",
+						"tagNameWithUpperCase": "@SEALED",
+						"syntaxKind": 2,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@see",
+						"tagNameWithUpperCase": "@SEE",
+						"syntaxKind": 1,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@throws",
+						"tagNameWithUpperCase": "@THROWS",
+						"syntaxKind": 1,
+						"standardization": "Extended",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@typeParam",
+						"tagNameWithUpperCase": "@TYPEPARAM",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@virtual",
+						"tagNameWithUpperCase": "@VIRTUAL",
+						"syntaxKind": 2,
+						"standardization": "Extended",
+						"allowMultiple": false
+					}
+				],
+				"_tagDefinitionsByName": {},
+				"_supportedTagDefinitions": {},
+				"_validation": {
+					"ignoreUndefinedTags": false,
+					"reportUnsupportedTags": false,
+					"reportUnsupportedHtmlElements": false
+				},
+				"_docNodeManager": {
+					"_docNodeDefinitionsByKind": {},
+					"_docNodeDefinitionsByConstructor": {}
+				},
+				"_supportedHtmlElements": {}
+			},
+			"_blocks": []
+		}
+	},
+	{
+		"file": "c:\\Users\\PC\\Desktop\\dev\\Work\\test\\Smartbev_backend\\src\\services\\service-distributeurs\\controllers\\distributeurs.controller.ts",
+		"params": {
+			"configuration": {
+				"_tagDefinitions": [
+					{
+						"tagName": "@alpha",
+						"tagNameWithUpperCase": "@ALPHA",
+						"syntaxKind": 2,
+						"standardization": "Discretionary",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@beta",
+						"tagNameWithUpperCase": "@BETA",
+						"syntaxKind": 2,
+						"standardization": "Discretionary",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@defaultValue",
+						"tagNameWithUpperCase": "@DEFAULTVALUE",
+						"syntaxKind": 1,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@decorator",
+						"tagNameWithUpperCase": "@DECORATOR",
+						"syntaxKind": 1,
+						"standardization": "Extended",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@deprecated",
+						"tagNameWithUpperCase": "@DEPRECATED",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@eventProperty",
+						"tagNameWithUpperCase": "@EVENTPROPERTY",
+						"syntaxKind": 2,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@example",
+						"tagNameWithUpperCase": "@EXAMPLE",
+						"syntaxKind": 1,
+						"standardization": "Extended",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@experimental",
+						"tagNameWithUpperCase": "@EXPERIMENTAL",
+						"syntaxKind": 2,
+						"standardization": "Discretionary",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@inheritDoc",
+						"tagNameWithUpperCase": "@INHERITDOC",
+						"syntaxKind": 0,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@internal",
+						"tagNameWithUpperCase": "@INTERNAL",
+						"syntaxKind": 2,
+						"standardization": "Discretionary",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@label",
+						"tagNameWithUpperCase": "@LABEL",
+						"syntaxKind": 0,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@link",
+						"tagNameWithUpperCase": "@LINK",
+						"syntaxKind": 0,
+						"standardization": "Core",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@override",
+						"tagNameWithUpperCase": "@OVERRIDE",
+						"syntaxKind": 2,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@packageDocumentation",
+						"tagNameWithUpperCase": "@PACKAGEDOCUMENTATION",
+						"syntaxKind": 2,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@param",
+						"tagNameWithUpperCase": "@PARAM",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@privateRemarks",
+						"tagNameWithUpperCase": "@PRIVATEREMARKS",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@public",
+						"tagNameWithUpperCase": "@PUBLIC",
+						"syntaxKind": 2,
+						"standardization": "Discretionary",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@readonly",
+						"tagNameWithUpperCase": "@READONLY",
+						"syntaxKind": 2,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@remarks",
+						"tagNameWithUpperCase": "@REMARKS",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@returns",
+						"tagNameWithUpperCase": "@RETURNS",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@sealed",
+						"tagNameWithUpperCase": "@SEALED",
+						"syntaxKind": 2,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@see",
+						"tagNameWithUpperCase": "@SEE",
+						"syntaxKind": 1,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@throws",
+						"tagNameWithUpperCase": "@THROWS",
+						"syntaxKind": 1,
+						"standardization": "Extended",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@typeParam",
+						"tagNameWithUpperCase": "@TYPEPARAM",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@virtual",
+						"tagNameWithUpperCase": "@VIRTUAL",
+						"syntaxKind": 2,
+						"standardization": "Extended",
+						"allowMultiple": false
+					}
+				],
+				"_tagDefinitionsByName": {},
+				"_supportedTagDefinitions": {},
+				"_validation": {
+					"ignoreUndefinedTags": false,
+					"reportUnsupportedTags": false,
+					"reportUnsupportedHtmlElements": false
+				},
+				"_docNodeManager": {
+					"_docNodeDefinitionsByKind": {},
+					"_docNodeDefinitionsByConstructor": {}
+				},
+				"_supportedHtmlElements": {}
+			},
+			"_blocks": []
+		}
+	},
+	{
+		"file": "c:\\Users\\PC\\Desktop\\dev\\Work\\test\\Smartbev_backend\\src\\services\\service-distributeurs\\routes\\distributeurs.routes.ts",
+		"params": {
+			"configuration": {
+				"_tagDefinitions": [
+					{
+						"tagName": "@alpha",
+						"tagNameWithUpperCase": "@ALPHA",
+						"syntaxKind": 2,
+						"standardization": "Discretionary",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@beta",
+						"tagNameWithUpperCase": "@BETA",
+						"syntaxKind": 2,
+						"standardization": "Discretionary",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@defaultValue",
+						"tagNameWithUpperCase": "@DEFAULTVALUE",
+						"syntaxKind": 1,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@decorator",
+						"tagNameWithUpperCase": "@DECORATOR",
+						"syntaxKind": 1,
+						"standardization": "Extended",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@deprecated",
+						"tagNameWithUpperCase": "@DEPRECATED",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@eventProperty",
+						"tagNameWithUpperCase": "@EVENTPROPERTY",
+						"syntaxKind": 2,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@example",
+						"tagNameWithUpperCase": "@EXAMPLE",
+						"syntaxKind": 1,
+						"standardization": "Extended",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@experimental",
+						"tagNameWithUpperCase": "@EXPERIMENTAL",
+						"syntaxKind": 2,
+						"standardization": "Discretionary",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@inheritDoc",
+						"tagNameWithUpperCase": "@INHERITDOC",
+						"syntaxKind": 0,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@internal",
+						"tagNameWithUpperCase": "@INTERNAL",
+						"syntaxKind": 2,
+						"standardization": "Discretionary",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@label",
+						"tagNameWithUpperCase": "@LABEL",
+						"syntaxKind": 0,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@link",
+						"tagNameWithUpperCase": "@LINK",
+						"syntaxKind": 0,
+						"standardization": "Core",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@override",
+						"tagNameWithUpperCase": "@OVERRIDE",
+						"syntaxKind": 2,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@packageDocumentation",
+						"tagNameWithUpperCase": "@PACKAGEDOCUMENTATION",
+						"syntaxKind": 2,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@param",
+						"tagNameWithUpperCase": "@PARAM",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@privateRemarks",
+						"tagNameWithUpperCase": "@PRIVATEREMARKS",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@public",
+						"tagNameWithUpperCase": "@PUBLIC",
+						"syntaxKind": 2,
+						"standardization": "Discretionary",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@readonly",
+						"tagNameWithUpperCase": "@READONLY",
+						"syntaxKind": 2,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@remarks",
+						"tagNameWithUpperCase": "@REMARKS",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@returns",
+						"tagNameWithUpperCase": "@RETURNS",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@sealed",
+						"tagNameWithUpperCase": "@SEALED",
+						"syntaxKind": 2,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@see",
+						"tagNameWithUpperCase": "@SEE",
+						"syntaxKind": 1,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@throws",
+						"tagNameWithUpperCase": "@THROWS",
+						"syntaxKind": 1,
+						"standardization": "Extended",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@typeParam",
+						"tagNameWithUpperCase": "@TYPEPARAM",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@virtual",
+						"tagNameWithUpperCase": "@VIRTUAL",
+						"syntaxKind": 2,
+						"standardization": "Extended",
+						"allowMultiple": false
+					}
+				],
+				"_tagDefinitionsByName": {},
+				"_supportedTagDefinitions": {},
+				"_validation": {
+					"ignoreUndefinedTags": false,
+					"reportUnsupportedTags": false,
+					"reportUnsupportedHtmlElements": false
+				},
+				"_docNodeManager": {
+					"_docNodeDefinitionsByKind": {},
+					"_docNodeDefinitionsByConstructor": {}
+				},
+				"_supportedHtmlElements": {}
+			},
+			"_blocks": []
+		}
+	},
+	{
+		"file": "c:\\Users\\PC\\Desktop\\dev\\Work\\test\\Smartbev_backend\\src\\services\\service-distributeurs\\service\\distributeurs.logic.ts",
+		"params": {
+			"configuration": {
+				"_tagDefinitions": [
+					{
+						"tagName": "@alpha",
+						"tagNameWithUpperCase": "@ALPHA",
+						"syntaxKind": 2,
+						"standardization": "Discretionary",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@beta",
+						"tagNameWithUpperCase": "@BETA",
+						"syntaxKind": 2,
+						"standardization": "Discretionary",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@defaultValue",
+						"tagNameWithUpperCase": "@DEFAULTVALUE",
+						"syntaxKind": 1,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@decorator",
+						"tagNameWithUpperCase": "@DECORATOR",
+						"syntaxKind": 1,
+						"standardization": "Extended",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@deprecated",
+						"tagNameWithUpperCase": "@DEPRECATED",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@eventProperty",
+						"tagNameWithUpperCase": "@EVENTPROPERTY",
+						"syntaxKind": 2,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@example",
+						"tagNameWithUpperCase": "@EXAMPLE",
+						"syntaxKind": 1,
+						"standardization": "Extended",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@experimental",
+						"tagNameWithUpperCase": "@EXPERIMENTAL",
+						"syntaxKind": 2,
+						"standardization": "Discretionary",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@inheritDoc",
+						"tagNameWithUpperCase": "@INHERITDOC",
+						"syntaxKind": 0,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@internal",
+						"tagNameWithUpperCase": "@INTERNAL",
+						"syntaxKind": 2,
+						"standardization": "Discretionary",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@label",
+						"tagNameWithUpperCase": "@LABEL",
+						"syntaxKind": 0,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@link",
+						"tagNameWithUpperCase": "@LINK",
+						"syntaxKind": 0,
+						"standardization": "Core",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@override",
+						"tagNameWithUpperCase": "@OVERRIDE",
+						"syntaxKind": 2,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@packageDocumentation",
+						"tagNameWithUpperCase": "@PACKAGEDOCUMENTATION",
+						"syntaxKind": 2,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@param",
+						"tagNameWithUpperCase": "@PARAM",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@privateRemarks",
+						"tagNameWithUpperCase": "@PRIVATEREMARKS",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@public",
+						"tagNameWithUpperCase": "@PUBLIC",
+						"syntaxKind": 2,
+						"standardization": "Discretionary",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@readonly",
+						"tagNameWithUpperCase": "@READONLY",
+						"syntaxKind": 2,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@remarks",
+						"tagNameWithUpperCase": "@REMARKS",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@returns",
+						"tagNameWithUpperCase": "@RETURNS",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@sealed",
+						"tagNameWithUpperCase": "@SEALED",
+						"syntaxKind": 2,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@see",
+						"tagNameWithUpperCase": "@SEE",
+						"syntaxKind": 1,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@throws",
+						"tagNameWithUpperCase": "@THROWS",
+						"syntaxKind": 1,
+						"standardization": "Extended",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@typeParam",
+						"tagNameWithUpperCase": "@TYPEPARAM",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@virtual",
+						"tagNameWithUpperCase": "@VIRTUAL",
+						"syntaxKind": 2,
+						"standardization": "Extended",
+						"allowMultiple": false
+					}
+				],
+				"_tagDefinitionsByName": {},
+				"_supportedTagDefinitions": {},
+				"_validation": {
+					"ignoreUndefinedTags": false,
+					"reportUnsupportedTags": false,
+					"reportUnsupportedHtmlElements": false
+				},
+				"_docNodeManager": {
+					"_docNodeDefinitionsByKind": {},
+					"_docNodeDefinitionsByConstructor": {}
+				},
+				"_supportedHtmlElements": {}
+			},
+			"_blocks": []
+		}
+	},
+	{
+		"file": "c:\\Users\\PC\\Desktop\\dev\\Work\\test\\Smartbev_backend\\src\\services\\service-distributeurs\\service\\distributeurs.service.ts",
+		"params": {
+			"configuration": {
+				"_tagDefinitions": [
+					{
+						"tagName": "@alpha",
+						"tagNameWithUpperCase": "@ALPHA",
+						"syntaxKind": 2,
+						"standardization": "Discretionary",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@beta",
+						"tagNameWithUpperCase": "@BETA",
+						"syntaxKind": 2,
+						"standardization": "Discretionary",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@defaultValue",
+						"tagNameWithUpperCase": "@DEFAULTVALUE",
+						"syntaxKind": 1,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@decorator",
+						"tagNameWithUpperCase": "@DECORATOR",
+						"syntaxKind": 1,
+						"standardization": "Extended",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@deprecated",
+						"tagNameWithUpperCase": "@DEPRECATED",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@eventProperty",
+						"tagNameWithUpperCase": "@EVENTPROPERTY",
+						"syntaxKind": 2,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@example",
+						"tagNameWithUpperCase": "@EXAMPLE",
+						"syntaxKind": 1,
+						"standardization": "Extended",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@experimental",
+						"tagNameWithUpperCase": "@EXPERIMENTAL",
+						"syntaxKind": 2,
+						"standardization": "Discretionary",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@inheritDoc",
+						"tagNameWithUpperCase": "@INHERITDOC",
+						"syntaxKind": 0,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@internal",
+						"tagNameWithUpperCase": "@INTERNAL",
+						"syntaxKind": 2,
+						"standardization": "Discretionary",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@label",
+						"tagNameWithUpperCase": "@LABEL",
+						"syntaxKind": 0,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@link",
+						"tagNameWithUpperCase": "@LINK",
+						"syntaxKind": 0,
+						"standardization": "Core",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@override",
+						"tagNameWithUpperCase": "@OVERRIDE",
+						"syntaxKind": 2,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@packageDocumentation",
+						"tagNameWithUpperCase": "@PACKAGEDOCUMENTATION",
+						"syntaxKind": 2,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@param",
+						"tagNameWithUpperCase": "@PARAM",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@privateRemarks",
+						"tagNameWithUpperCase": "@PRIVATEREMARKS",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@public",
+						"tagNameWithUpperCase": "@PUBLIC",
+						"syntaxKind": 2,
+						"standardization": "Discretionary",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@readonly",
+						"tagNameWithUpperCase": "@READONLY",
+						"syntaxKind": 2,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@remarks",
+						"tagNameWithUpperCase": "@REMARKS",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@returns",
+						"tagNameWithUpperCase": "@RETURNS",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@sealed",
+						"tagNameWithUpperCase": "@SEALED",
+						"syntaxKind": 2,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@see",
+						"tagNameWithUpperCase": "@SEE",
+						"syntaxKind": 1,
+						"standardization": "Extended",
+						"allowMultiple": false
+					},
+					{
+						"tagName": "@throws",
+						"tagNameWithUpperCase": "@THROWS",
+						"syntaxKind": 1,
+						"standardization": "Extended",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@typeParam",
+						"tagNameWithUpperCase": "@TYPEPARAM",
+						"syntaxKind": 1,
+						"standardization": "Core",
+						"allowMultiple": true
+					},
+					{
+						"tagName": "@virtual",
+						"tagNameWithUpperCase": "@VIRTUAL",
+						"syntaxKind": 2,
+						"standardization": "Extended",
+						"allowMultiple": false
+					}
+				],
+				"_tagDefinitionsByName": {},
+				"_supportedTagDefinitions": {},
+				"_validation": {
+					"ignoreUndefinedTags": false,
+					"reportUnsupportedTags": false,
+					"reportUnsupportedHtmlElements": false
+				},
+				"_docNodeManager": {
+					"_docNodeDefinitionsByKind": {},
+					"_docNodeDefinitionsByConstructor": {}
+				},
+				"_supportedHtmlElements": {}
+			},
+			"_blocks": []
+		}
+	}
+]

@@ -1,5 +1,5 @@
 import jwt from 'jsonwebtoken';
-import  Authentication from '../../../services/authService/auth';
+import  Authentication from '../../../services/service-authentification/auth';
 
 
 describe('verifyToken', () => {

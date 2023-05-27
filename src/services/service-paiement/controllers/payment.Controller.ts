@@ -22,6 +22,14 @@ class PaymentController {
 		}
 	};
 
+		/**
+	 * Create payment intent endpoint that creates a new payment intent.
+	 * @param {Object} req - The HTTP request object.
+	 * @param {Object} res - The HTTP response object.
+	 * @returns {Promise<void>} - A Promise that resolves with the newly created payment intent or rejects with an error.
+	 * @throws {Error} - Throws an error if there is an error creating the payment intent.
+	 */
+
 	static createPaymentIntent = async (req : Request, res : Response) => {
 		try {
 			
@@ -32,6 +40,16 @@ class PaymentController {
 			res.status(500).json({ error: 'Failed to create payment intent' });
 		}
 	};
+
+
+	
+	/**
+	 * Handles the webhook for Stripe events.
+	 * @param {Object} req - The HTTP request object.
+	 * @param {Object} res - The HTTP response object.
+	 * @returns {Promise<void>} - A Promise that resolves when the webhook is successfully handled or rejects with an error.
+	 * @throws {Error} - Throws an error if there is an error handling the webhook.
+	 */
 
 
 	static  handleWebhook = async (req, res) =>  {
@@ -45,7 +63,15 @@ class PaymentController {
 		}
 	};
 
-	
+
+
+	/**
+	 * Refunds a payment.
+	 * @param {Object} req - The HTTP request object.
+	 * @param {Object} res - The HTTP response object.
+	 * @returns {Promise<void>} - A Promise that resolves with the refund result or rejects with an error.
+	 * @throws {Error} - Throws an error if there is an error in refunding the payment.
+	 */	
 	static refund = async (req, res) =>{
 		try {
 			const { paymentId, amount,reason } = req.body;
@@ -59,6 +85,14 @@ class PaymentController {
 		}
 	};
 
+		
+		/**
+		 * Retrieves the payments for a given consumer.
+		 * @param {Object} req - The HTTP request object.
+		 * @param {Object} res - The HTTP response object.
+		 * @returns {Promise<void>} - A Promise that resolves with the payments or rejects with an error.
+		 * @throws {Error} - Throws an error if there is an error in retrieving the payments.
+		 */
 
 	static getPayments = async (req: Request, res: Response) => {
 		try {

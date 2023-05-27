@@ -19,14 +19,6 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.TIME,
       allowNull: false
     },
-    id_type_paiement: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      references: {
-        model: 'type_paiement',
-        key: 'id_type_paiement'
-      }
-    },
     id_cmd: {
       type: DataTypes.INTEGER,
       allowNull: false,
@@ -34,7 +26,7 @@ module.exports = function(sequelize, DataTypes) {
         model: 'commande',
         key: 'id_cmd'
       },
-      unique: "paiement_ibfk_2"
+      unique: "paiement_ibfk_1"
     }
   }, {
     sequelize,
@@ -55,13 +47,6 @@ module.exports = function(sequelize, DataTypes) {
         using: "BTREE",
         fields: [
           { name: "id_cmd" },
-        ]
-      },
-      {
-        name: "id_type_paiement",
-        using: "BTREE",
-        fields: [
-          { name: "id_type_paiement" },
         ]
       },
     ]

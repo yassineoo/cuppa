@@ -11,8 +11,16 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false
     },
     description_tache: {
-      type: DataTypes.STRING(50),
+      type: DataTypes.STRING(200),
       allowNull: true
+    },
+    id_utilisateur: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      references: {
+        model: 'utilisateur',
+        key: 'id_utilisateur'
+      }
     }
   }, {
     sequelize,
@@ -25,6 +33,13 @@ module.exports = function(sequelize, DataTypes) {
         using: "BTREE",
         fields: [
           { name: "id_tache" },
+        ]
+      },
+      {
+        name: "id_utilisateur",
+        using: "BTREE",
+        fields: [
+          { name: "id_utilisateur" },
         ]
       },
     ]

@@ -2,6 +2,7 @@ const Sequelize = require('sequelize');
 module.exports = function(sequelize, DataTypes) {
   return sequelize.define('client', {
     id_client: {
+      autoIncrement: true,
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true
@@ -10,20 +11,17 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING(50),
       allowNull: false
     },
-    prenom_client: {
-      type: DataTypes.STRING(50),
-      allowNull: true
-    },
     type_client: {
       type: DataTypes.STRING(50),
       allowNull: false
     },
-    ccp_client: {
-      type: DataTypes.STRING(50),
-      allowNull: true
-    },
     externel_account_id: {
-      type: DataTypes.STRING(80),
+      type: DataTypes.STRING(100),
+      allowNull: true,
+      unique: "externel_account_id"
+    },
+    ccp_client: {
+      type: DataTypes.STRING(100),
       allowNull: true
     }
   }, {
@@ -37,6 +35,14 @@ module.exports = function(sequelize, DataTypes) {
         using: "BTREE",
         fields: [
           { name: "id_client" },
+        ]
+      },
+      {
+        name: "externel_account_id",
+        unique: true,
+        using: "BTREE",
+        fields: [
+          { name: "externel_account_id" },
         ]
       },
     ]

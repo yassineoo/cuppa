@@ -1,7 +1,7 @@
-import LoggingService from '../../../services/loggingService/logging';
+import LoggingService from '../../../services/service-logging/logging';
 import fs from 'fs';
 const loggingService = new LoggingService();
-describe('LoggingService', () => {
+describe('loggingService', () => {
 	let errorLogFilePath: string;
 	let infoLogFilePath: string;
 	beforeAll(() => {

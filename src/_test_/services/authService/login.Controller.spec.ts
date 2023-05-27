@@ -1,5 +1,5 @@
-import LoginController from '../../../services/authService/controllers/auth.Controller';
-import Authentication from '../../../services/authService/auth';
+import LoginController from '../../../services/service-authentification/controllers/auth.Controller';
+import Authentication from '../../../services/service-authentification/auth';
 import {Response,Request} from 'express';
 
 let  req: Partial<Request> ;
@@ -24,7 +24,7 @@ describe('login', () => {
 
 	it('should return a JWT token on successful login', async () => {
    
-		spyOn(Authentication, 'login').and.returnValue(Promise.resolve({token:'testtoken',role:'sadm'}));
+		spyOn(Authentication, 'login').and.returnValue(Promise.resolve({token:'testtoken',role:'sadm',name:"testuser"}));
   
 		await LoginController.login(req as Request, res as Response);
   

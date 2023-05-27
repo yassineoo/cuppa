@@ -1,5 +1,5 @@
-import stripe from '../../../services/paymentService/paymentConfig';
-import PaymentService from '../../../services/paymentService/payment';
+import stripe from '../../../services/service-paiement/paymentConfig';
+import PaymentService from '../../../services/service-paiement/payment';
 import models from '../../../models/sequelize';
 
 const Paiement = models.paiement;

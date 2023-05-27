@@ -2,6 +2,7 @@ const Sequelize = require('sequelize');
 module.exports = function(sequelize, DataTypes) {
   return sequelize.define('utilisateur', {
     id_utilisateur: {
+      autoIncrement: true,
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true
@@ -18,6 +19,10 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING(50),
       allowNull: true
     },
+    registration_token: {
+      type: DataTypes.STRING(100),
+      allowNull: true
+    },
     supervisor_id: {
       type: DataTypes.INTEGER,
       allowNull: true,
@@ -26,9 +31,13 @@ module.exports = function(sequelize, DataTypes) {
         key: 'id_utilisateur'
       }
     },
-    regestration_token: {
-      type: DataTypes.STRING(100),
-      allowNull: true
+    id_client: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      references: {
+        model: 'client',
+        key: 'id_client'
+      }
     },
     id_role: {
       type: DataTypes.INTEGER,
@@ -36,14 +45,6 @@ module.exports = function(sequelize, DataTypes) {
       references: {
         model: 'role',
         key: 'id_role'
-      }
-    },
-    id_client: {
-      type: DataTypes.INTEGER,
-      allowNull: true,
-      references: {
-        model: 'client',
-        key: 'id_client'
       }
     }
   }, {
@@ -67,17 +68,17 @@ module.exports = function(sequelize, DataTypes) {
         ]
       },
       {
-        name: "id_role",
-        using: "BTREE",
-        fields: [
-          { name: "id_role" },
-        ]
-      },
-      {
         name: "id_client",
         using: "BTREE",
         fields: [
           { name: "id_client" },
+        ]
+      },
+      {
+        name: "id_role",
+        using: "BTREE",
+        fields: [
+          { name: "id_role" },
         ]
       },
     ]

@@ -2,7 +2,8 @@ const Sequelize = require('sequelize');
 module.exports = function(sequelize, DataTypes) {
   return sequelize.define('panne', {
     id_panne: {
-      type: DataTypes.STRING(50),
+      autoIncrement: true,
+      type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true
     },
@@ -19,7 +20,7 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false
     },
     description_panne: {
-      type: DataTypes.STRING(50),
+      type: DataTypes.STRING(200),
       allowNull: true
     },
     etat_panne: {
@@ -56,17 +57,17 @@ module.exports = function(sequelize, DataTypes) {
         ]
       },
       {
-        name: "numero_serie_distributeur",
-        using: "BTREE",
-        fields: [
-          { name: "numero_serie_distributeur" },
-        ]
-      },
-      {
         name: "id_utilisateur",
         using: "BTREE",
         fields: [
           { name: "id_utilisateur" },
+        ]
+      },
+      {
+        name: "numero_serie_distributeur",
+        using: "BTREE",
+        fields: [
+          { name: "numero_serie_distributeur" },
         ]
       },
     ]
