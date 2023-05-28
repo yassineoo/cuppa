@@ -2,8 +2,8 @@ var DataTypes = require("sequelize").DataTypes;
 var _afficher_dans_region = require("./afficher_dans_region");
 var _am_avoir_tache = require("./am_avoir_tache");
 var _am_maintenir_distributeur = require("./am_maintenir_distributeur");
-var _annoce = require("./annoce");
-var _annoceur = require("./annoceur");
+var _annonce = require("./annonce");
+var _annonceur = require("./annonceur");
 var _avoir_parametre = require("./avoir_parametre");
 var _boisson = require("./boisson");
 var _boisson_ing = require("./boisson_ing");
@@ -35,8 +35,8 @@ function initModels(sequelize) {
   var afficher_dans_region = _afficher_dans_region(sequelize, DataTypes);
   var am_avoir_tache = _am_avoir_tache(sequelize, DataTypes);
   var am_maintenir_distributeur = _am_maintenir_distributeur(sequelize, DataTypes);
-  var annoce = _annoce(sequelize, DataTypes);
-  var annoceur = _annoceur(sequelize, DataTypes);
+  var annonce = _annonce(sequelize, DataTypes);
+  var annonceur = _annonceur(sequelize, DataTypes);
   var avoir_parametre = _avoir_parametre(sequelize, DataTypes);
   var boisson = _boisson(sequelize, DataTypes);
   var boisson_ing = _boisson_ing(sequelize, DataTypes);
@@ -69,8 +69,8 @@ function initModels(sequelize) {
     afficher_dans_region,
     am_avoir_tache,
     am_maintenir_distributeur,
-    annoce,
-    annoceur,
+    annonce,
+    annonceur,
     avoir_parametre,
     boisson,
     boisson_ing,

@@ -6,7 +6,7 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false,
       primaryKey: true
     },
-    libelle_role: {
+    id_utilisateur: {
       type: DataTypes.STRING(50),
       allowNull: false,
       primaryKey: true
@@ -22,14 +22,14 @@ module.exports = function(sequelize, DataTypes) {
         using: "BTREE",
         fields: [
           { name: "id_tache" },
-          { name: "libelle_role" },
+          { name: "id_utilisateur" },
         ]
       },
       {
         name: "libelle_role",
         using: "BTREE",
         fields: [
-          { name: "libelle_role" },
+          { name: "id_utilisateur" },
         ]
       },
     ]
