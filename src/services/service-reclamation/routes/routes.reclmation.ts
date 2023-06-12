@@ -5,12 +5,12 @@ import {
   getAllReclamations,
   valider,
   deleteReclamation
-} from '../controllers/reclamation.controller';
-
+} from '../controllers/reclamation.Controller';
+import Authorization from '../../../middlewares/auth';
 const router = express.Router();
 
 // Get all reclamations
-router.get('/getAllReclamations', getAllReclamations);
+router.get('/getAllReclamations',Authorization(['AC']), getAllReclamations);
 
 
 // Get by ID 

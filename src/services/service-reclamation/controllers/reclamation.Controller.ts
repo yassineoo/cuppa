@@ -4,10 +4,10 @@ import ReclamationService from '../reclamationService';
 const reclamationService = new ReclamationService();
 
 // Get all reclamations
-export const getAllReclamations = async (req: Request, res: Response) => {
+export const getAllReclamations = async (req: any  , res: Response) => {
   try {
-    const id = Number(req.params.id);
-    const reclamations = await reclamationService.getAllReclamationsByClient(1);
+    const id = Number(req.user.id );
+    const reclamations = await reclamationService.getAllReclamationsByClient(id);
     res.json(reclamations);
   } catch (error) {
     console.log(error);
