@@ -10,9 +10,12 @@ const sequelize = new Sequelize({
 	database: 'cuppa_db',
 	host: 'mysql-cuppa.alwaysdata.net',
 	username : 'cuppa',
+
 	password : 'FZrP@Q3uuRZ*i7L',
 	dialect: 'mysql'
 });
+
+
 
 
 
