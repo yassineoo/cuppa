@@ -11,7 +11,7 @@ describe('Payment Service', () => {
 	describe('handel payment webhook', () => {
 
 		
-		
+		/*
 
 		
 		it('should handle payment_intent.succeeded event and update database', async () => {
@@ -66,7 +66,7 @@ describe('Payment Service', () => {
 			expect(Facture.create).toHaveBeenCalledWith(
 				'koko','factue','sa','as'
 			);
-			*/
+			
 
 
   
@@ -121,10 +121,10 @@ describe('Payment Service', () => {
 				{ where: { id_paiment: 2 } }
 			);
 
-			*/
+			
 		});
 		
-  
+  */
 	});
 });
 

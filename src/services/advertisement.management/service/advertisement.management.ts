@@ -14,8 +14,7 @@ const Annonce = Models.annonce;
 const Annonceur = Models.annonceur;
    
 
-// Define the association between the models
-Annonce.belongsTo(Annonceur, { foreignKey: 'id_annonceur' });
+
 
 class AdvertisementManagmentService {
 
@@ -56,22 +55,23 @@ async createAdvertiser(data, image) {
 
 
 				const annonceurs = await Annonceur.findAll({
-					include: [{ model: Annonce ,as:'annoces'  }],
+					include: [{ model: Annonce ,as:'annonces'  }],
 					
 				  });
 			  
 				  const advertisersWithAdsCount = annonceurs.map((annonceur) => {
-					const { id_annonceur, nom_annonceur, prenom_annonceur, type_annonceur, path_annonceur } = annonceur;
+					const { id_annonceur, nom_annonceur, type_annonceur, path_annonceur,id_client } = annonceur;
 			  
-					const numberOfAds = annonceur.annoces.length;
+					const numberOfAds = annonceur.annonces.length;
 			  
 					return {
 					  id_annonceur,
 					  nom_annonceur,
-					  prenom_annonceur,
+					
 					  type_annonceur,
 					  path_annonceur,
 					  numberOfAds,
+					  id_client
 					};
 				  });
 			  
@@ -215,7 +215,7 @@ async updateAdvertiser(id, data, image) {
   async getAllAdvertisements() {
     try {
       const annonces = await Annonce.findAll({
-        include: [{ model: Annonceur }],
+        include: [{ model: Annonceur , as:'id_annonceur_annonceur' }],
       });
       return annonces;
     } catch (error) {

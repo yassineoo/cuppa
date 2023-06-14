@@ -14,7 +14,7 @@ const ClientModel = models.client;
 const utilisateurModel = models.utilisateur;
 class ReclamationService {
   // Get all reclamations
-  async getAllReclamations() {
+    async getAllReclamations() {
     try {
 
       const reclamations = await ReclamationModel.findAll();

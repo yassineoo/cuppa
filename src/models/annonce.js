@@ -54,6 +54,11 @@ module.exports = function(sequelize, DataTypes) {
         model: 'annonceur',
         key: 'id_annonceur'
       }
+    },
+    sexe_cible: {
+      type: DataTypes.STRING(20),
+      allowNull: false,
+      defaultValue: "_utf8mb4\\'b\\'"
     }
   }, {
     sequelize,

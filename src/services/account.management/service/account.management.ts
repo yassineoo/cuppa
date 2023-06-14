@@ -251,10 +251,9 @@ class AccountManagmentService {
 
 		account = await user.findOne({
 			where: { id_utilisateur: id },
-			include: profil
-		  });
-		  
-		
+			include: [ {model :  profil  }, {model : client ,as : 'id_client_client'}]
+		});
+
 		return account;
 	};
 
@@ -362,10 +361,10 @@ static async createConsommateurAccount(body: any) {
 
 	         // Hash the password using bcrypt
 			 const saltRounds = 10;
-			 const hashedPassword = await bcrypt.hash(body.password_cosommateur, saltRounds);
+			 const hashedPassword = await bcrypt.hash(body.password_consommateur, saltRounds);
  
 			 // Set the hashed password in the body before creating the account
-			 body.password_cosommateur = hashedPassword;
+			 body.password_consommateur = hashedPassword;
             await consommateur.create({ ...body });
             return { message: `Account created successfully` };
 	

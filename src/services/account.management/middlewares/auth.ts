@@ -28,7 +28,7 @@ const Authorization = (allowedRoles: string[]) => {
 			}
    
 
-			const decoded = Authentication.verifyToken(token) as unknown as User;
+			const decoded = await Authentication.verifyToken(token) as unknown as User;
       
 			req.user = {id:decoded?.id,role:decoded.role};
 
