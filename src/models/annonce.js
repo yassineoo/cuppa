@@ -11,11 +11,11 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.INTEGER,
       allowNull: false
     },
-    ageMin: {
+    age_min: {
       type: DataTypes.INTEGER,
       allowNull: false
     },
-    ageMax: {
+    age_max: {
       type: DataTypes.INTEGER,
       allowNull: false
     },
@@ -31,7 +31,7 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING(100),
       allowNull: false
     },
-    type_forfait: {
+    type: {
       type: DataTypes.STRING(50),
       allowNull: false
     },
@@ -52,7 +52,7 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.INTEGER,
       allowNull: false
     },
-    sexeCible: {
+    sexe_cible: {
       type: DataTypes.STRING(50),
       allowNull: false
     }

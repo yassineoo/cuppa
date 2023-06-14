@@ -5,7 +5,18 @@ import AdvertisementManagmentService from './../service/advertisement.management
 
 import { IncomingForm } from 'formidable';
 
-
+interface User {
+    id: string;
+    role: string;
+  }
+  
+declare global {
+    namespace Express {
+      interface Request {
+        user: User;
+      }
+    }
+}
 
 
 const advertisementService = new AdvertisementManagmentService();
@@ -162,7 +173,7 @@ export const getAllAdvertisers = async (req: Request, res: Response) => {
 
   export const getAllAdvertisementsByUser = async (req: Request, res: Response) => {
 	try {
-	  const id = parseInt(req.params.userId);
+	  const id = req.user.id;
 	  const advertisements = await advertisementService.getAllAdvertisementsByUser(id);
 	  res.status(200).json(advertisements);
 	} catch (error) {
@@ -291,5 +302,17 @@ export const getAdvertisementById = async (req: Request, res: Response) => {
 		} catch (error) {
 		  console.log(error);
 		  res.status(500).json({ message: 'Failed to retrieve total price' });
+		}
+	  };
+
+
+	  export const getAllAdvertisersByUser = async (req: Request, res: Response) => {
+		const userId = req.user.id;
+		try {
+		  const advertisers = await advertisementService.getAllAdvertisersByUser(userId);
+		  res.status(200).json(advertisers);
+		} catch (error) {
+		  console.log(error);
+		  res.status(500).json({ message: 'Failed to retrieve advertisers' });
 		}
 	  };

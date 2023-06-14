@@ -19,10 +19,14 @@ faceapi.env.monkeyPatch({ fetch: fetch});
 const Annonce = Models.annonce;
 const Annonceur = Models.annonceur;
 const Utilisateur = Models.utilisateur;
+const client = Models.client;
    
 
 // Define the association between the models
 Annonce.belongsTo(Annonceur, { foreignKey: 'id_annonceur' });
+Annonceur.belongsTo(client, { foreignKey: 'id_client' });
+client.hasMany(Annonceur, { foreignKey: 'id_client' });
+
 
 class AdvertisementManagmentService {
 
@@ -152,12 +156,12 @@ async createAdvertisement(data) {
 	  const {
 		id_annonceur,
 		duree_affichage,
-		ageMin,
-		ageMax,
-		sexeCible,
+		age_min,
+		age_max,
+		sexe_cible,
 		tarif_annonce,
 		nom_annonce,
-		type_forfait,
+		type,
 		etat_annonce,
 		date_debut,
 		nombre_affichage,
@@ -172,12 +176,12 @@ async createAdvertisement(data) {
 	  const advertisement = await Annonce.create({
 		id_annonceur,
 		duree_affichage,
-		ageMin,
-		ageMax,
-		sexeCible,
+		age_min,
+		age_max,
+		sexe_cible,
 		tarif_annonce,
 		nom_annonce,
-		type_forfait,
+		type,
 		etat_annonce,
 		date_debut,
 		nombre_affichage,
@@ -340,9 +344,9 @@ async predictAgeAndGender(imagePath) {
   // Function to select an appropriate advertisement based on age and gender
   async selectAdvertisement(age, gender) {
 	const whereCondition = {
-	  ageMin: { [Op.lte]: age },
-	  ageMax: { [Op.gte]: age },
-	  sexeCible: gender,
+	  age_min: { [Op.lte]: age },
+	  age_max: { [Op.gte]: age },
+	  sexe_cible: gender,
 	};
   
 	const advertisement = await Annonce.findOne({ where: whereCondition });
@@ -388,9 +392,9 @@ async predictAgeAndGender(imagePath) {
 	  let totalPrice = 0;
   
 	  for (const advertisement of advertisements) {
-		if (advertisement.type_forfait === 'duree') {
+		if (advertisement.type === 'duree') {
 		  totalPrice += advertisement.duree_affichage * advertisement.tarif_annonce;
-		} else if (advertisement.type_forfait === 'vues') {
+		} else if (advertisement.type === 'vues') {
 		  totalPrice += advertisement.nombre_affichage * advertisement.tarif_annonce;
 		}
 	  }
@@ -401,6 +405,33 @@ async predictAgeAndGender(imagePath) {
 	  throw error;
 	}
   }
+
+
+
+  // Get all advertisers for a user
+async getAllAdvertisersByUser(userId) {
+	try {
+	  const utilisateur = await Utilisateur.findByPk(userId);
+	  if (!utilisateur) {
+		throw new Error(`User with id ${userId} not found`);
+	  }
+  
+	  const annonceurs = await Annonceur.findAll({
+		include: [
+		  {
+			model: client,
+			where: { id_client: utilisateur.id_client },
+		  },
+		],
+	  });
+  
+	  return annonceurs;
+	} catch (error) {
+	  console.log(error);
+	  throw error;
+	}
+  }
+  
 }
 
 

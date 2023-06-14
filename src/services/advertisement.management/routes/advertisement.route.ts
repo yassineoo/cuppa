@@ -13,7 +13,8 @@ import { createAdvertisement,
     handleImageUpload, 
     getAllAdvertisementsByUser,
     getAllAdvertisementsByAdvertiser,
-    getTotalPriceByAdvertiser } from '../controllers/advertisement.controller';
+    getTotalPriceByAdvertiser,
+    getAllAdvertisersByUser } from '../controllers/advertisement.controller';
 
 import Authorization from './../middlewares/auth';
 
@@ -41,7 +42,7 @@ router.post('/createAdvertisement/',Authorization(['AC']),createAdvertisement);
 router.get('/getAllAdvertisements/',Authorization(['AC']),getAllAdvertisements);
 
 // Get all advertisements for a user
-router.get('/getAllAdvertisementsByUser/:userId',Authorization(['AC']),getAllAdvertisementsByUser);
+router.get('/getAllAdvertisementsByUser/',Authorization(['AC']),getAllAdvertisementsByUser);
 
 // Get an advertisement by ID
 router.get('/getAdvertisementById/:id',Authorization(['AC']),getAdvertisementById);
@@ -60,8 +61,10 @@ router.get('/getAllAdvertisementsByAdvertiser/:advertiserId',Authorization(['AC'
 
 
 // Get the total price of all advertisements for an advertiser
-router.get('/getTotalPriceByAdvertiser/:advertiserId', Authorization(['AC']), getTotalPriceByAdvertiser);
+router.get('/getTotalPriceByAdvertiser/:advertiserId', getTotalPriceByAdvertiser);
 
+// Get all advertisers for a user
+router.get('/getAllAdvertisersByUser/', Authorization(['AC']), getAllAdvertisersByUser);
 
 
 export default router;
