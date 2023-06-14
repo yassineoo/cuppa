@@ -12,6 +12,9 @@ const consommateur = Models.consommateur;
 // Define the association between the models
 profil.belongsTo(user, { foreignKey: 'id_utilisateur' }); // Each profile belongs to one user
 user.hasOne(profil, { foreignKey: 'id_utilisateur' }); // Each user has one profile
+user.belongsTo(client, { foreignKey: 'id_client' }); // Each user belongs to one client
+client.hasMany(user, { foreignKey: 'id_client' }); // Each client can have multiple users
+
 
 class AccountManagmentService {
 
@@ -372,7 +375,37 @@ static async createConsommateurAccount(body: any) {
 };
 
 	
-	
+static getAllClients = async () => {
+    const clients = await client.findAll();
+    return clients;
+};
+
+
+static getClientByID = async (id) => {
+    const clientData = await client.findOne({ where: { id_client: id } });
+    if (!clientData) {
+      throw new Error(`Client with id ${id} not found`);
+    }
+    return clientData;
+  };
+
+  static getUtilisateurByClientID = async (clientID) => {
+	const utilisateurs = await user.findAll({
+	  where: { id_client: clientID },
+	  include: [
+		{
+		  model: profil,
+		  include: [
+			{
+			  model: user,
+			  where: { id_client: clientID },
+			},
+		  ],
+		},
+	  ],
+	});
+	return utilisateurs;
+  };
 
 }
 

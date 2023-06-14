@@ -152,6 +152,41 @@ const createConsommateurAccount = async (req: Request, res: Response) => {
 
 };
 
+
+
+const getAllClients = async (req: Request, res: Response) => {
+	try {
+	  const clients = await AccountManagmentService.getAllClients();
+	  res.status(200).json({ success: true, data: clients });
+	} catch (err) {
+	  console.error(`Error getting all clients: ${err.message}`);
+	  res.status(500).json({ success: false, error: err.message });
+	}
+  };
+  
+  const getClientByID = async (req: Request, res: Response) => {
+	try {
+	  const { id } = req.params;
+	  const clientData = await AccountManagmentService.getClientByID(id);
+	  res.status(200).json({ success: true, data: clientData });
+	} catch (err) {
+	  console.error(`Error getting client by ID: ${err.message}`);
+	  res.status(500).json({ success: false, error: err.message });
+	}
+  };
+  
+  const getUtilisateurByClientID = async (req: Request, res: Response) => {
+	try {
+	  const { clientID } = req.params;
+	  const utilisateurs = await AccountManagmentService.getUtilisateurByClientID(clientID);
+	  res.status(200).json({ success: true, data: utilisateurs });
+	} catch (err) {
+	  console.error(`Error getting utilisateurs by client ID: ${err.message}`);
+	  res.status(500).json({ success: false, error: err.message });
+	}
+  };
+  
+
 export {
 	createAccount,
 	deleteAccount,
@@ -159,5 +194,8 @@ export {
 	getAccounts,
 	getProfil,
 	createClientAccount,
-	createConsommateurAccount
+	createConsommateurAccount,
+	getAllClients,
+	getClientByID,
+	getUtilisateurByClientID
 };
