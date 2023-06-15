@@ -46,11 +46,7 @@ const io = socketIo(server);
 app.use(express.static('src/uploads'));
 // Use JSON parser for all non-webhook routes
 app.use(parser);
-app.use(cors({
-	origin:'http://localhost:3000',
-	methods:['GET','POST'] ,
-	allowedHeaders:['Content-Type','Authorization']
-}));
+app.use(cors());
 
 //app.use(express.json());
 app.use('/login', loginRoute);

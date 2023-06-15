@@ -8,19 +8,20 @@ const sequelize = new Sequelize({
 	password : 'thama81Bp3',
 	*/
 
-/*	database: 'cuppa_db',
+	database: 'cuppa_db',
 	host: 'mysql-cuppa.alwaysdata.net',
 	username : 'cuppa',
 
 	password : 'FZrP@Q3uuRZ*i7L',
-	*/
-
+	
+/*
 
 	database: 'smartbev2',
 
 	username : 'root',
 
 	password : 'root1234',
+	*/
 
 	dialect: 'mysql'
 });
