@@ -194,6 +194,8 @@ class PaymentService {
 			// Handle the event based on its type
 			switch (verifiedEvent.type) {
 			case 'payment_intent.succeeded':
+
+
 						
 				// Payment succeeded, update your database and send notification to cammand service
 				Paiement.update({ status: 'succeeded' },
@@ -211,6 +213,8 @@ class PaymentService {
 						email :Consommateur.mail_consommateur
 					}
 				);
+				await axios.post(`${process.env.URL}/lunchCommande/${objEvent.data.object.metadata.orderId}`,
+			);
 
 				break;
 			case 'payment_intent.payment_failed':
@@ -282,6 +286,7 @@ class PaymentService {
 				include: {
 					model: Commande,
 					as: 'id_cmd_commande',
+					where : { id_consommateur :idConsumer}
 				},
 				//where: { id_paiement: idConsumer },
 			});

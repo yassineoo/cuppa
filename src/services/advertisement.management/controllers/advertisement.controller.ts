@@ -149,15 +149,29 @@ export const getAllAdvertisers = async (req: Request, res: Response) => {
 	}
   };
 
-export const getAllAdvertisements = async (req: Request, res: Response) => {
-  try {
-    const annonces = await advertisementService.getAllAdvertisements();
-    res.status(200).json(annonces);
-  } catch (error) {
-    console.log(error);
-    res.status(500).json({ message: 'Failed to retrieve advertisements' });
-  }
-};
+
+  export const getAllAdvertisements = async (req: Request, res: Response) => {
+	try {
+	  const advertisements = await advertisementService.getAllAdvertisements();
+	  res.status(200).json(advertisements);
+	} catch (error) {
+	  console.log(error);
+	  res.status(500).json({ message: 'Failed to retrieve advertisements' });
+	}
+  };
+
+
+  export const getAllAdvertisementsByUser = async (req: Request, res: Response) => {
+	try {
+	  const id = parseInt(req.params.userId);
+	  const advertisements = await advertisementService.getAllAdvertisementsByUser(id);
+	  res.status(200).json(advertisements);
+	} catch (error) {
+	  console.log(error);
+	  res.status(500).json({ message: 'Failed to retrieve advertisements' });
+	}
+  };
+
 
 export const getAdvertisementById = async (req: Request, res: Response) => {
   const id = parseInt(req.params.id);
@@ -220,3 +234,63 @@ export const getAdvertisementById = async (req: Request, res: Response) => {
 		res.status(500).json({ success: false, error: 'Failed to delete advertisement' });
 	}
 	};
+
+
+	export const handleImageUpload = async (req, res) => {
+		try {
+		  const form = new IncomingForm({
+			multiples: false,
+			keepExtensions: true,
+			uploadDir: process.env.UPLOAD_DIR,
+			type: 'multipart',
+			parse: (req, options, callback) => {
+			  // use the default parser
+			  return IncomingForm.prototype.parse.call(this, req, options, callback);
+			}
+		  });
+	  
+		  form.parse(req, async (err, fields, files) => {
+			if (err) {
+			  console.error(err);
+			  throw err;
+			}
+
+			const imagePath = files.image.filepath; // get the path to the image file
+
+			const { age, gender } = await advertisementService.predictAgeAndGender(imagePath);
+			const advertisement = await advertisementService.selectAdvertisement(age, gender);
+	  
+			res.status(200).json(advertisement);
+		  });
+		} catch (error) {
+		  console.error(error);
+		  res.status(500).send({ error: 'Internal server error' });
+		}
+
+	  };
+
+
+
+	  export const getAllAdvertisementsByAdvertiser = async (req: Request, res: Response) => {
+		try {
+		  const { advertiserId } = req.params; // Assuming advertiserId is passed as a parameter
+		  const advertisements = await advertisementService.getAllAdvertisementsByAdvertiser(advertiserId);
+		  res.status(200).json(advertisements);
+		} catch (error) {
+		  console.log(error);
+		  res.status(500).json({ message: 'Failed to retrieve advertisements' });
+		}
+	  };
+
+
+
+	  export const getTotalPriceByAdvertiser = async (req: Request, res: Response) => {
+		try {
+		  const { advertiserId } = req.params; // Assuming advertiserId is passed as a parameter
+		  const totalPrice = await advertisementService.getTotalPriceByAdvertiser(advertiserId);
+		  res.status(200).json({ totalPrice });
+		} catch (error) {
+		  console.log(error);
+		  res.status(500).json({ message: 'Failed to retrieve total price' });
+		}
+	  };

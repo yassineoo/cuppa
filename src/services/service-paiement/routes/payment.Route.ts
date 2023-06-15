@@ -35,6 +35,6 @@ route.post('/refund',PaymentController.refund);
  * @desc    refund the payment  
  * @access  Service Reclamation 
 */
-route.get('/get-payments/:id',PaymentController.getPayments);
+route.get('/get-payments/:idConsumer',PaymentController.getPayments);
 
 export default route;

@@ -1,4 +1,12 @@
-import express ,{Express, Response, Request, NextFunction}from 'express';
+import express ,{ Response, Request}from 'express';
+
+
+
+const socketIo = require('socket.io');
+const http = require('http');
+
+
+
 import dotenv from 'dotenv';
 import  loginRoute from './services/service-authentification/routes/auth.Route';
 import paymentRoute from './services/service-paiement/routes/payment.Route';
@@ -8,13 +16,12 @@ import reclamation from './services/service-reclamation/routes/routes.reclmation
 
 import distributeursRouter from './services/service-distributeurs/routes/distributeurs.routes';
 import commandesRouter from './services/service-commandes/routes/commandes.routes';
-
-
 import accountRoutes from './services/account.management/routes/account.route';
 import notificationRoutes from './services/notification.management/routes/notification.route';
 import advertisementRoutes from './services/advertisement.management/routes/advertisement.route';
-
+const WebSocket = require('ws');
 import cors from 'cors';
+import { Socket } from 'socket.io';
 
 const loggingService = new LoggingService();
 
@@ -31,6 +38,11 @@ loggingService.log(
 dotenv.config();
 const PORT = process.env.PORT || 5000;
 const app = express();
+
+const port = 5000;
+
+const server = http.createServer(app)
+const io = socketIo(server);
 app.use(express.static('src/uploads'));
 // Use JSON parser for all non-webhook routes
 app.use(parser);
@@ -50,35 +62,81 @@ app.use(express.urlencoded({ extended: false }));
 app.use('/api/account.management', accountRoutes);
 app.use('/api/ads',advertisementRoutes);
 app.use('/api/notification.management', notificationRoutes);
-app.get('/', (req, res) => {
-	res.send('koko');
-});
 
+
+
+
+
+app.use('/distributeurs', distributeursRouter);
+
+app.use('/commandes', commandesRouter);
+
+
+app.get('/ko', (req : Request, res : Response) => {
+	res.send('Hello here is the entry point');
+});
 
 
 app.get('/', (req : Request, res : Response) => {
 	res.send('Hello here is the entry point');
 });
 
-app.use('/distributeurs', distributeursRouter);
-
-app.use('/commandes', commandesRouter);
-
-app.use((req : Request, res : Response) => {
-	res.type('text/plain');
-	res.status(404);
-	res.send('404 not found');
-});
-
-app.use((err : Error, req : Request, res : Response) => {
-	console.error(err.message);
-	res.type('text/plain');
-	res.status(500);
-	res.send('500 server error');
-});
 
 
 
-app.listen(PORT, () => {
-	console.log(`Application started on this port ${PORT}!`);
+
+
+
+
+
+
+
+
+
+const clients: { client: Socket; idCommand: number }[] = [];
+
+let client1;
+
+//channel 
+io.on("connection",(client)=>{
+  console.log("new client connected!")
+       console.log(client.id)
+      //  client.emit('msg', "OK")
+      console.log(client);
+	  client1 =client;
+	  client.on('id_command',(data) =>{
+         console.log(data);
+		 let y = {client :client1 , idCommand : Number (data)} as any;
+		 clients.push(y)
+		 
+	  })
+	
+      
+}) 
+
+
+app.get('/confirme/:orderId', (req, res) => {
+	const orderId =Number (req.params.orderId);
+	let foundClient ;
+  
+	for (const clientData of clients) {
+	  if (clientData.idCommand == orderId) {
+		foundClient = clientData.client;
+		break;
+	  }
+	}
+  
+	if (foundClient) {
+	  // Emit the 'msg' event with the "OK" message to the found client
+	  foundClient.emit('msg', 'OK');
+	  res.send('Message sent');
+	} else {
+	  res.send('No client connected with the given order ID');
+	}
+  });
+  
+
+
+server.listen(port, () => {
+  console.log(`Server is running on port ${port}`);
 });

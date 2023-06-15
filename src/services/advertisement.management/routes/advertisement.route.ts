@@ -9,7 +9,11 @@ import { createAdvertisement,
     getAllAdvertisers,
     getAdvertiserById,
     updateAdvertiser,
-    deleteAdvertiser } from '../controllers/advertisement.controller';
+    deleteAdvertiser,
+    handleImageUpload, 
+    getAllAdvertisementsByUser,
+    getAllAdvertisementsByAdvertiser,
+    getTotalPriceByAdvertiser } from '../controllers/advertisement.controller';
 
 import Authorization from './../../../middlewares/auth';
 
@@ -25,10 +29,10 @@ router.get('/getAllAdvertisers/',getAllAdvertisers);
 router.get('/getAdvertiserById/:id',Authorization(['AC']),getAdvertiserById);
 
 // Update an advertiser by ID
-router.post('/updateAdvertiser/:id',updateAdvertiser);
+router.post('/updateAdvertiser/:id',Authorization(['AC']),updateAdvertiser);
 
 // Delete an advertiser by ID
-router.post('/deleteAdvertiser/:id',deleteAdvertiser);
+router.get('/deleteAdvertiser/:id',Authorization(['AC']),deleteAdvertiser);
 
 // Create a new advertisement
 router.post('/createAdvertisement/',Authorization(['AC']),createAdvertisement);
@@ -36,15 +40,27 @@ router.post('/createAdvertisement/',Authorization(['AC']),createAdvertisement);
 // Get all advertisements
 router.get('/getAllAdvertisements/',Authorization(['AC']),getAllAdvertisements);
 
+// Get all advertisements for a user
+router.get('/getAllAdvertisementsByUser/:userId',Authorization(['AC']),getAllAdvertisementsByUser);
+
 // Get an advertisement by ID
 router.get('/getAdvertisementById/:id',getAdvertisementById);
 
 // Update an advertisement by ID
-router.post('/updateAdvertisement/:id',updateAdvertisement);
+router.post('/updateAdvertisement/:id',Authorization(['AC']),updateAdvertisement);
 
 // Delete an advertisement by ID
-router.post('/deleteAdvertisement/:id',deleteAdvertisement);
+router.get('/deleteAdvertisement/:id',Authorization(['AC']),deleteAdvertisement);
 
+// Handle image upload
+router.post('/handleImageUpload',Authorization(['AC']),handleImageUpload);
+
+// Get all advertisements for an advertiser
+router.get('/getAllAdvertisementsByAdvertiser/:advertiserId',Authorization(['AC']),getAllAdvertisementsByAdvertiser)
+
+
+// Get the total price of all advertisements for an advertiser
+router.get('/getTotalPriceByAdvertiser/:advertiserId', Authorization(['AC']), getTotalPriceByAdvertiser);
 
 
 

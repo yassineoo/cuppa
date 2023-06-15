@@ -1,5 +1,5 @@
 import express from 'express';
-import { createAccount, deleteAccount, modifyAccount,getAccounts,getProfil,createClientAccount, createConsommateurAccount } from '../controllers/account.controller';
+import { createAccount, deleteAccount, modifyAccount,getAccounts,getProfil,createClientAccount, createConsommateurAccount, getAllClients, getClientByID, getUtilisateurByClientID } from '../controllers/account.controller';
 import Authorization from './../middlewares/auth';
 
 const router = express.Router();
@@ -56,5 +56,27 @@ router.post('/createClientAccount/',Authorization(['SADM']), createClientAccount
 @desc Create a new consommateur account
 */
 router.post('/createConsommateurAccount/', createConsommateurAccount);
+
+
+/**
+@route GET api/getAllClients
+@desc Get all clients
+@access AC
+*/
+router.get('/getAllClients', Authorization(['AC']), getAllClients);
+
+/**
+@route GET api/getClientByID/:id
+@desc Get a client by ID
+@access AC
+*/
+router.get('/getClientByID/:id', Authorization(['AC']), getClientByID);
+
+/**
+@route GET api/getUtilisateurByClientID/:clientID
+@desc Get utilisateurs by client ID
+@access AC
+*/
+router.get('/getUtilisateurByClientID/:clientID', Authorization(['AC']), getUtilisateurByClientID);
 
 export default router;
