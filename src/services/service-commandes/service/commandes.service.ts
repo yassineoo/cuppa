@@ -41,19 +41,7 @@ const commandesService = {
             const sucre = commande.quantite_sucre;
             const size = commande.taille_goblet;
             
-              
-              //join boisson_ing (where id_boisson = commande.id_boisson) and ingredient (outil)
-            /*const boisson = await models.boisson.findByPk(commande.id_boisson, {
-                include: [{
-                  model: models.outils_preparation_boisson,
-                  attributes: ['libelle_outil']
-                }]
-            })
-
-            if(!boisson) {
-              throw new Error(`La boisson identifiée par ${commande.id_boisson} is not found`)
-            }
-              */
+            
 
             const ingredients : any[] = await models.preparer_avec.findAll({
               where : {
@@ -80,11 +68,6 @@ const commandesService = {
             } else {
               throw new Error(`empty instructions for boisson ${commande.id_boisson}`)
             }
-
-            
-                
-            
-              
         } catch (err : any){
             throw err
         }

@@ -7,6 +7,7 @@ import distributeursLogic from "../service/distributeurs.logic";
 
 
 const distributeursController = {
+    
     getAll : async(req : Request, res : Response) => {
         try {
             let distributeurs;
