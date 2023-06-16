@@ -2,6 +2,7 @@
 import { profile } from 'console';
 import Models from './../../../models/sequelize';
 const bcrypt = require('bcrypt');
+import sequelize from 'sequelize';
 
 // Initialize the models
 const user = Models.utilisateur;
@@ -9,6 +10,7 @@ const profil = Models.profil;
 const client = Models.client;
 const consommateur = Models.consommateur;
 const role = Models.role;
+const distributeur = Models.distributeur;
 
 // Define the association between the models
 profil.belongsTo(user, { foreignKey: 'id_utilisateur' }); // Each profile belongs to one user
@@ -20,6 +22,10 @@ role.hasMany(user, { foreignKey: 'id_role' }); // Each role can have multiple us
 
 // Define the association between utilisateur and supervisor
 user.belongsTo(user, { foreignKey: 'supervisor_id', as: 'Supervisor' });
+
+client.hasMany(distributeur, { foreignKey: 'id_client' }); // Each client can have multiple distributeurs
+distributeur.belongsTo(client, { foreignKey: 'id_client' }); // Each distributeur belongs to one client
+
 
 
 class AccountManagmentService {
@@ -382,9 +388,28 @@ static async createConsommateurAccount(body: any) {
 
 	
 static getAllClients = async () => {
-    const clients = await client.findAll();
-    return clients;
-};
+	try {
+	  const clients = await client.findAll({
+		attributes: ['id_client', 'nom_client', 'type_client', 'ccp_client', 'externel_account_id'],
+		include: [
+		  {
+			model: distributeur,
+			attributes: [[sequelize.fn('COUNT', sequelize.col('distributeurs.numero_serie_distributeur')), 'distributor_count']],
+			as: 'distributeurs',
+		  },
+		],
+		group: ['client.id_client'],
+	  });
+  
+	  return clients;
+	} catch (error) {
+	  return {
+		success: false,
+		error: error.message,
+	  };
+	}
+  };
+  
 
 
 static getClientByID = async (id) => {

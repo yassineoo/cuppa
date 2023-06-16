@@ -52,3 +52,14 @@ export async function sendBill(req: Request, res: Response): Promise<void> {
     res.status(500).json({ message: err.message });
   }
 }
+
+export async function notifyReclamationAnswer(req: Request, res: Response): Promise<void> {
+  const {email,description} = req.body;
+
+  try {
+    await notificationManagementService.notifyReclamationAnswer(email, description);
+    res.status(200).json({ message: 'Response sent successfully' });
+  } catch (err:any) {
+    res.status(500).json({ message: err.message });
+  }
+}

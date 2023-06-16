@@ -43,9 +43,10 @@ export const createAdvertiser = async (req: Request, res: Response) => {
 		  throw err;
 		}
   
+		const idAC = req.user.id;
 		const { ...data } = fields; // destructure the fields
 		const image = files.image.filepath; // get the path to the image file
-		const advertiser = await advertisementService.createAdvertiser(data, image);
+		const advertiser = await advertisementService.createAdvertiser(data, image,idAC);
   
 		res.status(201).json(advertiser);
 	  });

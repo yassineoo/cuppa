@@ -31,9 +31,10 @@ client.hasMany(Annonceur, { foreignKey: 'id_client' });
 class AdvertisementManagmentService {
 
 // create an advertiser
-async createAdvertiser(data, image) {
+async createAdvertiser(data, image, idAC) {
 	try {
 	  const { ...rest } = data; // destructure the data
+  
 	  const advertiser = await Annonceur.create(rest);
   
 	  // create the uploads folder if it doesn't exist
@@ -51,6 +52,9 @@ async createAdvertiser(data, image) {
   
 		await advertiser.update({ path_annonceur: imageName });
 	  }
+  
+	  // Update the utilisateur with idAC
+	  await Utilisateur.update({ id_client: rest.id_client }, { where: { id_utilisateur: idAC } });
   
 	  return advertiser;
 	} catch (error) {
