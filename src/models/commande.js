@@ -2,26 +2,25 @@ const Sequelize = require('sequelize');
 module.exports = function(sequelize, DataTypes) {
   return sequelize.define('commande', {
     id_cmd: {
-      autoIncrement: true,
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true
     },
     time_cmd: {
-      type: DataTypes.DATE,
+      type: DataTypes.DATEONLY,
       allowNull: false
     },
     prix_cmd: {
       type: DataTypes.STRING(50),
       allowNull: false
     },
-    quantite_sucre: {
-      type: DataTypes.DOUBLE,
-      allowNull: false
-    },
     taille_goblet: {
       type: DataTypes.INTEGER,
-      allowNull: false
+      allowNull: true
+    },
+    quantite_sucre: {
+      type: DataTypes.DOUBLE,
+      allowNull: true
     },
     etat_cmd: {
       type: DataTypes.STRING(50),
@@ -33,11 +32,11 @@ module.exports = function(sequelize, DataTypes) {
     },
     id_consommateur: {
       type: DataTypes.INTEGER,
-      allowNull: true
+      allowNull: false
     },
     numero_serie_distributeur: {
       type: DataTypes.STRING(50),
-      allowNull: true
+      allowNull: false
     }
   }, {
     sequelize,

@@ -1,30 +1,31 @@
 const Sequelize = require('sequelize');
 module.exports = function(sequelize, DataTypes) {
-  return sequelize.define('distributeur', {
-    numero_serie_distributeur: {
-      type: DataTypes.STRING(50),
+  return sequelize.define('paiement', {
+    id_paiement: {
+      type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true
     },
-    etat_distributeur: {
+    status: {
       type: DataTypes.STRING(50),
-      allowNull: false
+      allowNull: true
     },
-    date_installation_distributeur: {
+    date_paiement: {
       type: DataTypes.DATEONLY,
       allowNull: false
     },
-    localisation_statique_distributeur: {
-      type: DataTypes.TEXT,
-      allowNull: true
+    heure_paiement: {
+      type: DataTypes.TIME,
+      allowNull: false
     },
-    id_client: {
+    id_cmd: {
       type: DataTypes.INTEGER,
-      allowNull: true
+      allowNull: false,
+      unique: "id_cmd"
     }
   }, {
     sequelize,
-    tableName: 'distributeur',
+    tableName: 'paiement',
     timestamps: false,
     indexes: [
       {
@@ -32,14 +33,15 @@ module.exports = function(sequelize, DataTypes) {
         unique: true,
         using: "BTREE",
         fields: [
-          { name: "numero_serie_distributeur" },
+          { name: "id_paiement" },
         ]
       },
       {
-        name: "id_client",
+        name: "id_cmd",
+        unique: true,
         using: "BTREE",
         fields: [
-          { name: "id_client" },
+          { name: "id_cmd" },
         ]
       },
     ]

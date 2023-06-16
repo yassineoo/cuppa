@@ -1,42 +1,42 @@
 const Sequelize = require('sequelize');
 module.exports = function(sequelize, DataTypes) {
-  return sequelize.define('boisson', {
-    id_boisson: {
+  return sequelize.define('panne', {
+    id_panne: {
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true
     },
-    duree_preparation_boisson: {
+    objet_panne: {
       type: DataTypes.STRING(50),
       allowNull: false
     },
-    libelle_boisson: {
-      type: DataTypes.STRING(50),
+    date_panne: {
+      type: DataTypes.DATEONLY,
       allowNull: false
     },
-    description_boisson: {
-      type: DataTypes.STRING(50),
+    heure_panne: {
+      type: DataTypes.TIME,
       allowNull: false
     },
-    prix_boisson: {
-      type: DataTypes.DOUBLE,
+    description_panne: {
+      type: DataTypes.STRING(200),
       allowNull: true
     },
-    path_image_boisson: {
-      type: DataTypes.STRING(50),
-      allowNull: true
-    },
-    monnaie_prix: {
+    etat_panne: {
       type: DataTypes.STRING(50),
       allowNull: false
     },
-    id_categorie: {
+    id_utilisateur: {
       type: DataTypes.INTEGER,
-      allowNull: true
+      allowNull: false
+    },
+    numero_serie_distributeur: {
+      type: DataTypes.STRING(50),
+      allowNull: false
     }
   }, {
     sequelize,
-    tableName: 'boisson',
+    tableName: 'panne',
     timestamps: false,
     indexes: [
       {
@@ -44,14 +44,21 @@ module.exports = function(sequelize, DataTypes) {
         unique: true,
         using: "BTREE",
         fields: [
-          { name: "id_boisson" },
+          { name: "id_panne" },
         ]
       },
       {
-        name: "id_categorie",
+        name: "id_utilisateur",
         using: "BTREE",
         fields: [
-          { name: "id_categorie" },
+          { name: "id_utilisateur" },
+        ]
+      },
+      {
+        name: "numero_serie_distributeur",
+        using: "BTREE",
+        fields: [
+          { name: "numero_serie_distributeur" },
         ]
       },
     ]

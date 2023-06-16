@@ -1,30 +1,31 @@
 const Sequelize = require('sequelize');
 module.exports = function(sequelize, DataTypes) {
-  return sequelize.define('distributeur', {
-    numero_serie_distributeur: {
-      type: DataTypes.STRING(50),
+  return sequelize.define('client', {
+    id_client: {
+      type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true
     },
-    etat_distributeur: {
+    nom_client: {
       type: DataTypes.STRING(50),
       allowNull: false
     },
-    date_installation_distributeur: {
-      type: DataTypes.DATEONLY,
+    type_client: {
+      type: DataTypes.STRING(50),
       allowNull: false
     },
-    localisation_statique_distributeur: {
-      type: DataTypes.TEXT,
-      allowNull: true
+    externel_account_id: {
+      type: DataTypes.STRING(100),
+      allowNull: true,
+      unique: "externel_account_id"
     },
-    id_client: {
-      type: DataTypes.INTEGER,
+    ccp_client: {
+      type: DataTypes.STRING(100),
       allowNull: true
     }
   }, {
     sequelize,
-    tableName: 'distributeur',
+    tableName: 'client',
     timestamps: false,
     indexes: [
       {
@@ -32,14 +33,15 @@ module.exports = function(sequelize, DataTypes) {
         unique: true,
         using: "BTREE",
         fields: [
-          { name: "numero_serie_distributeur" },
+          { name: "id_client" },
         ]
       },
       {
-        name: "id_client",
+        name: "externel_account_id",
+        unique: true,
         using: "BTREE",
         fields: [
-          { name: "id_client" },
+          { name: "externel_account_id" },
         ]
       },
     ]

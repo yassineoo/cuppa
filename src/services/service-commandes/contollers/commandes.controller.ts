@@ -16,11 +16,11 @@ const commandesController = {
     getInstructions :async (req : Request, res : Response) => {
         try {
             //get translated instructions
-            const instruction : string = await commandesService.getInstructions(req.params.id)
+            const instructions : string[] = await commandesService.getInstructions(req.params.id)
             //update the state of the order to : payed 
 
             //return result
-            res.status(200).send(instruction)
+            res.status(200).send(instructions)
         } catch (err : any) {
             res.status(500).send(err.message)
         }

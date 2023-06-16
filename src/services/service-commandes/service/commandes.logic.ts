@@ -1,12 +1,20 @@
 
 const commandesLogic = {
-    translate: (instructions: Map<string, string>): string => {
-        let commande : string = "dispense" 
+    translate: (instructions: Map<string, string>, sucre : string, size : string): string[] => {
+        let commandes : string[] = [];
+        commandes.push("start");
+        //preparation instructions 
+        let cmd : string = "prepare " + size;
         instructions.forEach((value, key) => {
-            commande += " " + key + "?" + value + "$ "
+            cmd += " add " + key + " " + value + "g"
         })
 
-        return commande
+        cmd += " dispense sugar " + sucre;
+
+        commandes.push(cmd);
+        commandes.push("stop")
+
+        return commandes
     }
 
 }

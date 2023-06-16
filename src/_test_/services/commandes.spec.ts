@@ -44,20 +44,100 @@ describe('Service de gestion des commandes ', () => {
                 numero_serie_distributeur: "34E89R4U"
             }
 
-            spyOn(models.commande, 'findByPk').and.callFake((id : number) => {
-                return Promise.resolve(commande);
-            })
+            const findByPkSpy = spyOn(models.commande, 'findByPk').and.returnValue(Promise.resolve(commande))
 
+        
             const result = await commandesService.getByID(commande.id_cmd.toString())
-            expect(models.commande.findByPk).toHaveBeenCalledWith(commande.id_cmd);
-            expect(result).toBeDefined();
+            expect(findByPkSpy).toHaveBeenCalledWith(commande.id_cmd)
+            expect(result).toBeDefined()
             expect(result).toEqual(commande) 
         })
     })
 
-    describe("", ()=> {
-        
+    describe("recuperer les instruction de préparation d'une commande", ()=>{
+        it("retourne une ",async () => {
+            
+        })
+    })
+
+    describe("m à jour des informations d'une commande", ()=>{
+        it("retourne la commande modifiée si l'identifiant est valide",async () => {
+
+            const commande = {
+                id_cmd: 23,
+                time_cmd: "2019-07-26T11:08:00.000Z",
+                prix_cmd: "40",
+                quantite_sucre: 2,
+                taille_goblet: 1,
+                etat_cmd: "payée",
+                id_boisson: 1,
+                id_consommateur: null,
+                numero_serie_distributeur: "34E89R4U"
+            }
+
+            const findByPkSpy = spyOn(models.commande, 'findByPk').and.returnValue(Promise.resolve(commande))
+
+            const nv_commande = {
+                id_cmd: 23,
+                time_cmd: "2019-07-26T11:08:00.000Z",
+                prix_cmd: "40",
+                quantite_sucre: 2,
+                taille_goblet: 1,
+                etat_cmd: "finalisée",
+                id_boisson: 1,
+                id_consommateur: null,
+                numero_serie_distributeur: "34E89R4U"
+            }
+
+            const updateSpy = spyOn(models.commande, 'update').and.returnValue(Promise.resolve(nv_commande))
+
+
+            const result = await commandesService.update(commande.id_cmd.toString(), {etat_cmd: "finalisée"})
+            expect(findByPkSpy).toHaveBeenCalledWith(commande.id_cmd)
+            expect(updateSpy).toHaveBeenCalledWith({etat_cmd: "finalisée"})
+            expect(result).toBeDefined()
+            expect(result).toEqual(nv_commande) 
+
+            
+        })
+        it("Lance une erreur si la commande n'existe pas",async () => {
+            const commande = {
+                id_cmd: 145,
+                time_cmd: "2019-07-26T11:08:00.000Z",
+                prix_cmd: "40",
+                quantite_sucre: 2,
+                taille_goblet: 1,
+                etat_cmd: "payée",
+                id_boisson: 1,
+                id_consommateur: null,
+                numero_serie_distributeur: "34E89R4U"
+            }
+
+            const findByPkSpy = spyOn(models.commande, 'findByPk').and.returnValue(null)
+
+           
+            
+            await expectAsync(commandesService.update(commande.id_cmd.toString(), {etat_cmd: "finalisée"})).toBeRejectedWithError(`La commande identifiée par ${commande.id_cmd} is not found`);
+
+            
+            expect(findByPkSpy).toHaveBeenCalledWith(commande.id_cmd)
+        })
+    })
+
+    describe("Recuperer la liste des commandes d'un client", ()=>{
+        it("retourne la liste des commandes",async () => {
+            
+        })
+        it("Recupère la liste des commandes d'un client par etat",async () => {
+            
+        })
+
+        it("Recupère la liste des commandes d'un client par period",async () => {
+            
+        })
     })
 
     
+
+   
 })
