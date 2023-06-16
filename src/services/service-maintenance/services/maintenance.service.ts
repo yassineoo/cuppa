@@ -34,6 +34,24 @@ const maintenanceService = {
         } catch(err : any) {
             throw err
         }
+    },
+
+    getTaskByID :async (id : string) : Promise<tacheModel>=> {
+        try {
+            const task = await models.tache.findByPk(Number(id))
+            return task
+        } catch (err : any) {
+            throw err
+        }
+    }, 
+
+    getPanneByID :async (id : string) : Promise<panneModel>=> {
+        try {
+            const panne = await models.panne.findByPk(Number(id))
+            return panne
+        } catch (err : any) {
+            throw err
+        }
     }
     
 }
