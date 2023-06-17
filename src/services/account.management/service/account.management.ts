@@ -2,18 +2,30 @@
 import { profile } from 'console';
 import Models from './../../../models/sequelize';
 const bcrypt = require('bcrypt');
+import sequelize from 'sequelize';
 
 // Initialize the models
 const user = Models.utilisateur;
 const profil = Models.profil;
 const client = Models.client;
 const consommateur = Models.consommateur;
+const role = Models.role;
+const distributeur = Models.distributeur;
 
 // Define the association between the models
 profil.belongsTo(user, { foreignKey: 'id_utilisateur' }); // Each profile belongs to one user
 user.hasOne(profil, { foreignKey: 'id_utilisateur' }); // Each user has one profile
 user.belongsTo(client, { foreignKey: 'id_client' }); // Each user belongs to one client
 client.hasMany(user, { foreignKey: 'id_client' }); // Each client can have multiple users
+user.belongsTo(role, { foreignKey: 'id_role' }); // Each user belongs to one role
+role.hasMany(user, { foreignKey: 'id_role' }); // Each role can have multiple users
+
+// Define the association between utilisateur and supervisor
+user.belongsTo(user, { foreignKey: 'supervisor_id', as: 'Supervisor' });
+
+client.hasMany(distributeur, { foreignKey: 'id_client' }); // Each client can have multiple distributeurs
+distributeur.belongsTo(client, { foreignKey: 'id_client' }); // Each distributeur belongs to one client
+
 
 
 class AccountManagmentService {
@@ -375,9 +387,28 @@ static async createConsommateurAccount(body: any) {
 
 	
 static getAllClients = async () => {
-    const clients = await client.findAll();
-    return clients;
-};
+	try {
+	  const clients = await client.findAll({
+		attributes: ['id_client', 'nom_client', 'type_client', 'ccp_client', 'externel_account_id'],
+		include: [
+		  {
+			model: distributeur,
+			attributes: [[sequelize.fn('COUNT', sequelize.col('distributeurs.numero_serie_distributeur')), 'distributor_count']],
+			as: 'distributeurs',
+		  },
+		],
+		group: ['client.id_client'],
+	  });
+  
+	  return clients;
+	} catch (error) {
+	  return {
+		success: false,
+		error: error.message,
+	  };
+	}
+  };
+  
 
 
 static getClientByID = async (id) => {
@@ -406,7 +437,174 @@ static getClientByID = async (id) => {
 	return utilisateurs;
   };
 
+  
+  static getProfilWithClient = async (id) => {
+	try {
+	  const account = await user.findOne({
+		where: { id_utilisateur: id },
+		include: [
+		  {
+			model: profil,
+			attributes: ['id_profil', 'nom_utilisateur', 'prenom_utilisateur', 'path_image_utilisateur', 'sexe_utilisateur'],
+		  },
+		  {
+			model: client,
+			attributes: ['id_client', 'nom_client', 'prenom_client', 'type_client', 'ccp_client', 'externel_account_id'],
+		  },
+		  {
+			model: role,
+			attributes: ['libelle_role'],
+		  },
+		  {
+			model: user,
+			as: 'Supervisor',
+			attributes: ['id_utilisateur', 'username_utilisateur', 'password_utilisateur', 'mail_utilisateur', 'supervisor_id', 'regestration_token', 'id_role', 'id_client'],
+			include: [
+			  {
+				model: profil,
+				attributes: ['id_profil', 'nom_utilisateur', 'prenom_utilisateur', 'path_image_utilisateur', 'sexe_utilisateur'],
+			  },
+			  {
+				model: client,
+				attributes: ['id_client', 'nom_client', 'prenom_client', 'type_client', 'ccp_client', 'externel_account_id'],
+			  },
+			],
+		  },
+		],
+		attributes: ['id_utilisateur', 'username_utilisateur', 'password_utilisateur', 'mail_utilisateur', 'supervisor_id', 'regestration_token', 'id_role', 'id_client'],
+	  });
+  
+	  if (!account) {
+		throw new Error(`User with ID ${id} not found`);
+	  }
+  
+	  if (!account.profil) {
+		throw new Error(`Profile information not found for user with ID ${id}`);
+	  }
+  
+	  const { id_utilisateur, username_utilisateur, password_utilisateur, mail_utilisateur, supervisor_id, regestration_token, id_role, profil: userProfil, client: userClient, role: userRole, Supervisor } = account;
+	  const {
+		id_profil,
+		nom_utilisateur,
+		prenom_utilisateur,
+		path_image_utilisateur,
+		sexe_utilisateur,
+	  } = userProfil;
+  
+	  const {
+		id_client,
+		nom_client,
+		prenom_client,
+		type_client,
+		ccp_client,
+		externel_account_id,
+	  } = userClient;
+  
+	  const { libelle_role } = userRole;
+  
+	  let supervisor;
+	  if (Supervisor) {
+		const {
+		  id_utilisateur: supervisorId,
+		  username_utilisateur: supervisorUsername,
+		  password_utilisateur: supervisorPassword,
+		  mail_utilisateur: supervisorMail,
+		  supervisor_id: supervisorSupervisorId,
+		  regestration_token: supervisorRegestrationToken,
+		  id_role: supervisorRoleId,
+		  id_client: supervisorClientId,
+		  profil: supervisorProfil,
+		  client: supervisorClient,
+		} = Supervisor;
+  
+		const {
+		  id_profil: supervisorProfilId,
+		  nom_utilisateur: supervisorNomUtilisateur,
+		  prenom_utilisateur: supervisorPrenomUtilisateur,
+		  path_image_utilisateur: supervisorPathImageUtilisateur,
+		  sexe_utilisateur: supervisorSexeUtilisateur,
+		} = supervisorProfil;
+  
+		const {
+		  id_client: supervisorClientID,
+		  nom_client: supervisorNomClient,
+		  prenom_client: supervisorPrenomClient,
+		  type_client: supervisorTypeClient,
+		  ccp_client: supervisorCcpClient,
+		  externel_account_id: supervisorExternelAccountId,
+		} = supervisorClient;
+  
+		supervisor = {
+		  id_utilisateur: supervisorId,
+		  username_utilisateur: supervisorUsername,
+		  password_utilisateur: supervisorPassword,
+		  mail_utilisateur: supervisorMail,
+		  supervisor_id: supervisorSupervisorId,
+		  regestration_token: supervisorRegestrationToken,
+		  id_role: supervisorRoleId,
+		  id_client: supervisorClientId,
+		  profil: {
+			id_profil: supervisorProfilId,
+			nom_utilisateur: supervisorNomUtilisateur,
+			prenom_utilisateur: supervisorPrenomUtilisateur,
+			path_image_utilisateur: supervisorPathImageUtilisateur,
+			sexe_utilisateur: supervisorSexeUtilisateur,
+		  },
+		  client: {
+			id_client: supervisorClientId,
+			nom_client: supervisorNomClient,
+			prenom_client: supervisorPrenomClient,
+			type_client: supervisorTypeClient,
+			ccp_client: supervisorCcpClient,
+			externel_account_id: supervisorExternelAccountId,
+		  },
+		};
+	  }
+  
+	  return {
+		id_utilisateur,
+		username_utilisateur,
+		password_utilisateur,
+		mail_utilisateur,
+		supervisor_id,
+		regestration_token,
+		id_role,
+		id_client,
+		profil: {
+		  id_profil,
+		  nom_utilisateur,
+		  prenom_utilisateur,
+		  path_image_utilisateur,
+		  sexe_utilisateur,
+		},
+		client: {
+		  id_client,
+		  nom_client,
+		  prenom_client,
+		  type_client,
+		  ccp_client,
+		  externel_account_id,
+		},
+		role: {
+		  libelle_role,
+		},
+		supervisor,
+	  };
+	} catch (error) {
+	  return {
+		success: false,
+		error: error.message,
+	  };
+	}
+  };
+  
+  
+  
+  
+
 }
+
+
 
 
   

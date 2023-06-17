@@ -1,5 +1,5 @@
 import express from 'express';
-import { createAccount, deleteAccount, modifyAccount,getAccounts,getProfil,createClientAccount, createConsommateurAccount, getAllClients, getClientByID, getUtilisateurByClientID } from '../controllers/account.controller';
+import { createAccount, deleteAccount, modifyAccount,getAccounts,getProfil,createClientAccount, createConsommateurAccount, getAllClients, getClientByID, getUtilisateurByClientID, getProfilWithClient } from '../controllers/account.controller';
 import Authorization from './../middlewares/auth';
 
 const router = express.Router();
@@ -78,5 +78,13 @@ router.get('/getClientByID/:id', Authorization(['AC']), getClientByID);
 @access AC
 */
 router.get('/getUtilisateurByClientID/:clientID', Authorization(['AC']), getUtilisateurByClientID);
+
+
+/**
+ * @route GET api/getProfilWithClient/:userID
+ * @desc Get the profile with client information
+ * @access SADM, ADM, AC, AM, decideur
+ */
+router.get('/getProfilWithClient/:userID', Authorization(['SADM', 'ADM', 'AC', 'AM', 'decideur']), getProfilWithClient);
 
 export default router;

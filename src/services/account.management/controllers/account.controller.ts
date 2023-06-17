@@ -187,7 +187,18 @@ const getAllClients = async (req: Request, res: Response) => {
   };
   
 
-export {
+  const getProfilWithClient = async (req: Request, res: Response) => {
+	try {
+	  const { userID } = req.params;
+	  const account = await AccountManagmentService.getProfilWithClient(userID);
+	  res.status(200).json({ success: true, data: account });
+	} catch (err) {
+	  console.error(`Error getting account: ${err.message}`);
+	  res.status(500).json({ success: false, error: err.message });
+	}
+  };
+  
+  export {
 	createAccount,
 	deleteAccount,
 	modifyAccount,
@@ -197,5 +208,6 @@ export {
 	createConsommateurAccount,
 	getAllClients,
 	getClientByID,
-	getUtilisateurByClientID
-};
+	getUtilisateurByClientID,
+	getProfilWithClient,
+  };
