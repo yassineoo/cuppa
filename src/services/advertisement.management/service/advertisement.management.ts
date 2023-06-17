@@ -43,7 +43,8 @@ async createAdvertiser(data, image) {
 		const imagePath = path.join(uploadsPath, imageName); // specify the path to save the image
   
 		await fs.promises.rename(image, imagePath);
-  
+        console.log(imageName);
+		
 		await advertiser.update({ path_annonceur: imageName });
 	  }
   

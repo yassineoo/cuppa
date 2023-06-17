@@ -44,6 +44,19 @@ const distributeursLogic= {
         }
         
     },
+      getAllByClient2 :async (user_client : string) : Promise<DistributeurModel[]> => {
+        
+        try {
+         
+           //distributeurs du client
+           const distributeurs = await distributeursService.getAllByClientID(user_client)
+           return distributeurs
+        } catch (error) {
+            console.error(error)
+            return []
+        }
+        
+    },
 
     delete : async(id : string) => {
         const distributeur : DistributeurModel = await distributeursService.getByID(id)

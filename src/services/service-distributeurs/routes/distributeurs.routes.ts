@@ -11,6 +11,12 @@ const distributeursRouter = express.Router();
 @access ADM, SADM, AC, AM
 */
 distributeursRouter.get("/", distributeursController.getAll)
+/**
+@route GET distributeurs by client/
+@desc retrieve the list of distributeurs
+@access ADM, SADM, AC, AM
+*/
+distributeursRouter.get("/getAllByClient/:id", distributeursController.getAllByClient)
 
 
 /**
@@ -34,7 +40,7 @@ distributeursRouter.post("/",  Authorization(['SADM']), distributeursController.
 @desc affecter le distributeur à un client 
 @access SADM
 */
-distributeursRouter.put("/:id/client",  Authorization(['SADM']), distributeursController.updateClient)
+distributeursRouter.post("/:id/client",  Authorization(['SADM']), distributeursController.updateClient)
 
 
 /**
@@ -50,7 +56,7 @@ distributeursRouter.put("/:id",  Authorization(['SADM', 'ADM', 'AM']), distribut
 @desc delete un distributeur
 @access SADM
 */
-distributeursRouter.delete("/:id", Authorization(['SADM']), distributeursController.deleteById)
+distributeursRouter.post("/delete/:id", Authorization(['SADM']), distributeursController.deleteById)
 
 
 export default distributeursRouter 

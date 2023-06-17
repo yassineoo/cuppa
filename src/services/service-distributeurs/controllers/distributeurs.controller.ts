@@ -25,6 +25,20 @@ const distributeursController = {
             res.status(500).json(err)
         }
     },
+
+    getAllByClient : async(req : Request, res : Response) => {
+        try {
+            let distributeurs;
+                 const id = req.params.id
+                //console.log(req.user)
+                distributeurs = await distributeursLogic.getAllByClient2(id)
+            
+
+            res.status(200).json(distributeurs)
+        } catch (err : any){
+            res.status(500).json(err)
+        }
+    },
     
     getById : async(req : Request, res : Response) => {
         try {
@@ -49,13 +63,15 @@ const distributeursController = {
         }
     },
 
+
+
     create : async(req : Request, res : Response) => {
         try {
             console.log(req.body)
             const distributeur = await distributeursService.add(req.body)
             res.status(201).json(distributeur)
         } catch (err : any){
-            res.status(500).send('Internal server error')
+            res.status(500).send('Internal server error'+ err)
         }
     },
 
