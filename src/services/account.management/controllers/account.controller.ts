@@ -189,7 +189,7 @@ const getAllClients = async (req: Request, res: Response) => {
 
   const getProfilWithClient = async (req: Request, res: Response) => {
 	try {
-	  const { userID } = req.params;
+	  const  userID  = req.user.id;
 	  const account = await AccountManagmentService.getProfilWithClient(userID);
 	  res.status(200).json({ success: true, data: account });
 	} catch (err) {

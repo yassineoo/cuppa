@@ -85,6 +85,6 @@ router.get('/getUtilisateurByClientID/:clientID', Authorization(['AC']), getUtil
  * @desc Get the profile with client information
  * @access SADM, ADM, AC, AM, decideur
  */
-router.get('/getProfilWithClient/:userID', Authorization(['SADM', 'ADM', 'AC', 'AM', 'decideur']), getProfilWithClient);
+router.get('/getProfileWithClient', Authorization(['SADM', 'ADM', 'AC', 'AM', 'decideur']), getProfilWithClient);
 
 export default router;

@@ -449,7 +449,7 @@ static getClientByID = async (id) => {
 		  },
 		  {
 			model: client,
-			attributes: ['id_client', 'nom_client', 'prenom_client', 'type_client', 'ccp_client', 'externel_account_id'],
+			attributes: ['id_client', 'nom_client', 'type_client', 'ccp_client', 'externel_account_id'],
 		  },
 		  {
 			model: role,
@@ -458,7 +458,7 @@ static getClientByID = async (id) => {
 		  {
 			model: user,
 			as: 'Supervisor',
-			attributes: ['id_utilisateur', 'username_utilisateur', 'password_utilisateur', 'mail_utilisateur', 'supervisor_id', 'regestration_token', 'id_role', 'id_client'],
+			attributes: ['id_utilisateur', 'username_utilisateur', 'password_utilisateur', 'mail_utilisateur', 'supervisor_id', 'registration_token', 'id_role', 'id_client'],
 			include: [
 			  {
 				model: profil,
@@ -466,12 +466,12 @@ static getClientByID = async (id) => {
 			  },
 			  {
 				model: client,
-				attributes: ['id_client', 'nom_client', 'prenom_client', 'type_client', 'ccp_client', 'externel_account_id'],
+				attributes: ['id_client', 'nom_client', 'type_client', 'ccp_client', 'externel_account_id'],
 			  },
 			],
 		  },
 		],
-		attributes: ['id_utilisateur', 'username_utilisateur', 'password_utilisateur', 'mail_utilisateur', 'supervisor_id', 'regestration_token', 'id_role', 'id_client'],
+		attributes: ['id_utilisateur', 'username_utilisateur', 'password_utilisateur', 'mail_utilisateur', 'supervisor_id', 'registration_token', 'id_role', 'id_client'],
 	  });
   
 	  if (!account) {
@@ -482,7 +482,7 @@ static getClientByID = async (id) => {
 		throw new Error(`Profile information not found for user with ID ${id}`);
 	  }
   
-	  const { id_utilisateur, username_utilisateur, password_utilisateur, mail_utilisateur, supervisor_id, regestration_token, id_role, profil: userProfil, client: userClient, role: userRole, Supervisor } = account;
+	  const { id_utilisateur, username_utilisateur, password_utilisateur, mail_utilisateur, supervisor_id, registration_token, id_role, profil: userProfil, client: userClient, role: userRole, Supervisor } = account;
 	  const {
 		id_profil,
 		nom_utilisateur,
@@ -494,7 +494,7 @@ static getClientByID = async (id) => {
 	  const {
 		id_client,
 		nom_client,
-		prenom_client,
+		
 		type_client,
 		ccp_client,
 		externel_account_id,
@@ -510,7 +510,7 @@ static getClientByID = async (id) => {
 		  password_utilisateur: supervisorPassword,
 		  mail_utilisateur: supervisorMail,
 		  supervisor_id: supervisorSupervisorId,
-		  regestration_token: supervisorRegestrationToken,
+		  registration_token: supervisorRegestrationToken,
 		  id_role: supervisorRoleId,
 		  id_client: supervisorClientId,
 		  profil: supervisorProfil,
@@ -528,7 +528,7 @@ static getClientByID = async (id) => {
 		const {
 		  id_client: supervisorClientID,
 		  nom_client: supervisorNomClient,
-		  prenom_client: supervisorPrenomClient,
+		 
 		  type_client: supervisorTypeClient,
 		  ccp_client: supervisorCcpClient,
 		  externel_account_id: supervisorExternelAccountId,
@@ -540,7 +540,7 @@ static getClientByID = async (id) => {
 		  password_utilisateur: supervisorPassword,
 		  mail_utilisateur: supervisorMail,
 		  supervisor_id: supervisorSupervisorId,
-		  regestration_token: supervisorRegestrationToken,
+		  registration_token: supervisorRegestrationToken,
 		  id_role: supervisorRoleId,
 		  id_client: supervisorClientId,
 		  profil: {
@@ -553,7 +553,7 @@ static getClientByID = async (id) => {
 		  client: {
 			id_client: supervisorClientId,
 			nom_client: supervisorNomClient,
-			prenom_client: supervisorPrenomClient,
+		
 			type_client: supervisorTypeClient,
 			ccp_client: supervisorCcpClient,
 			externel_account_id: supervisorExternelAccountId,
@@ -567,7 +567,7 @@ static getClientByID = async (id) => {
 		password_utilisateur,
 		mail_utilisateur,
 		supervisor_id,
-		regestration_token,
+		registration_token,
 		id_role,
 		id_client,
 		profil: {
@@ -580,7 +580,7 @@ static getClientByID = async (id) => {
 		client: {
 		  id_client,
 		  nom_client,
-		  prenom_client,
+		
 		  type_client,
 		  ccp_client,
 		  externel_account_id,

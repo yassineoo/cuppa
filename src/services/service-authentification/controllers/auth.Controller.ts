@@ -36,11 +36,11 @@ class LoginController {
  * @returns {Promise<void>} - A Promise that resolves with the token or rejects with an error.
  */
 	static login = async (req:Request, res:Response) => {
-
+ 
 		try {
 			// Extract login data from the request body
 			const loginData :LoginData = req.body;
-
+            console.log(loginData);
 			// Attempt to login and retrieve a JWT token
 			const response = await Authentication.login(loginData);
 			

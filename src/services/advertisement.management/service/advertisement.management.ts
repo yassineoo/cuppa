@@ -377,8 +377,8 @@ async predictAgeAndGender(imagePath) {
   // Function to select an appropriate advertisement based on age and gender
   async selectAdvertisement(age, gender) {
 	const whereCondition = {
-	  age_min: { [Op.lte]: age },
-	  age_max: { [Op.gte]: age },
+	  ageMin: { [Op.lte]: age },
+	  ageMax: { [Op.gte]: age },
 	  sexe_cible: gender,
 	};
   
