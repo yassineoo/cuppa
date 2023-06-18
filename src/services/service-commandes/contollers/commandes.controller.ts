@@ -4,14 +4,15 @@ import commandesLogic from '../service/commandes.logic';
 import { error } from 'console';
 
 const commandesController = {
-	create :async (req : Request, res : Response) => {
-		try {
-			const cmd_id = await commandesService.add(req.body);
-			res.status(201).json({'cmd_id' : cmd_id});
-		} catch (err :any) {
-			res.status(500).send(err.message);
-		}
-	},
+    create :async (req : Request, res : Response) => {
+        try {
+            const cmd_id = await commandesService.add(req.body)
+            res.status(201).json({"cmd_id" : cmd_id})
+        } catch (err :any) {
+            res.status(500).send(err.message)
+            console.log(err.message)
+        }
+    },
 
 	getInstructions :async (req : Request, res : Response) => {
 		try {

@@ -2,10 +2,6 @@ import express ,{ Response, Request}from 'express';
 
 
 
-const socketIo = require('socket.io');
-const http = require('http');
-
-
 
 import dotenv from 'dotenv';
 import  loginRoute from './services/service-authentification/routes/auth.Route';
@@ -19,9 +15,16 @@ import commandesRouter from './services/service-commandes/routes/commandes.route
 import accountRoutes from './services/account.management/routes/account.route';
 import notificationRoutes from './services/notification.management/routes/notification.route';
 import advertisementRoutes from './services/advertisement.management/routes/advertisement.route';
-const WebSocket = require('ws');
+import drinksRouter from './services/service-boissons/routes/boissons.routes'
 import cors from 'cors';
 import { Socket } from 'socket.io';
+
+
+const WebSocket = require('ws');
+
+
+const socketIo = require('socket.io');
+const http = require('http');
 
 const loggingService = new LoggingService();
 
@@ -62,10 +65,11 @@ app.use('/api/notification.management', notificationRoutes);
 
 
 
-
 app.use('/distributeurs', distributeursRouter);
-
+app.use('/boissons', drinksRouter);
 app.use('/commandes', commandesRouter);
+
+app.use('/images', express.static("./images"));
 
 
 app.get('/ko', (req : Request, res : Response) => {

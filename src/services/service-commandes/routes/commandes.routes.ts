@@ -29,4 +29,7 @@ commandesRouter.get('/etat/:etat', Authorization(['AC']), commandesController.ge
 commandesRouter.get('/:period/:when' , Authorization(['AC']), commandesController.getByPeriod);
 
 
-export default commandesRouter;
+
+
+
+export default commandesRouter

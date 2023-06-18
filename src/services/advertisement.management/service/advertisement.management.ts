@@ -73,14 +73,16 @@ async createAdvertiser(data, image, idAC) {
 				  });
 			  
 				  const advertisersWithAdsCount = annonceurs.map((annonceur) => {
-					const { id_annonceur, nom_annonceur, type_annonceur, path_annonceur,id_client } = annonceur;
+					const { id_annonceur, nom_annonceur, type_annonceur, path_annonceur,id_client ,telephone_annonceur ,rcs_annonceur,fiscal_annonceur    } = annonceur;
 			  
 					const numberOfAds = annonceur.annonces.length;
 			  
 					return {
 					  id_annonceur,
 					  nom_annonceur,
-					
+					  telephone_annonceur ,
+					  rcs_annonceur,
+					  fiscal_annonceur,
 					  type_annonceur,
 					  path_annonceur,
 					  numberOfAds,
@@ -275,7 +277,8 @@ async createAdvertisement(data) {
   
   
   // Update an advertisement by ID
-  async updateAdvertisement(id, data, videoFile) {
+   // Update an advertisement by ID
+   async updateAdvertisement(id, data, videoFile) {
 	try {
 	  const advertisement = await Annonce.findOne({ where: { id_annonce: id } });
 	  if (!advertisement) {
@@ -283,29 +286,19 @@ async createAdvertisement(data) {
 	  }
   
 	  // Save the uploaded video file to the uploads directory
-	  let videoPath;
-	  let uploadsPath;
-	  if (videoFile) {
-		 uploadsPath = path.join(__dirname, '..', '..', '..', 'uploads');
-		if (!fs.existsSync(uploadsPath)) {
-		  fs.mkdirSync(uploadsPath);
-		}
-		const videoName = `advertisement${id}.mp4`;
-		videoPath = path.join(uploadsPath, videoName);
-		await createReadStream(videoFile.filepath).pipe(createWriteStream(videoPath));
-  
-		// Add the video path to the advertisement data
-		data.path_video = videoPath;
+	  const uploadsPath = path.join(__dirname, '..', '..', '..', 'uploads');
+	  if (!fs.existsSync(uploadsPath)) {
+		fs.mkdirSync(uploadsPath);
 	  }
 	  const videoName = `advertisement${id}.mp4`;
-	  videoPath = path.join(uploadsPath, videoName);
+	  const videoPath = path.join(uploadsPath, videoName);
 	  await createReadStream(videoFile.filepath).pipe(createWriteStream(videoPath));
   
 	  // Add the video path to the advertisement data
 	  const dataWithVideo = { ...data, path_video: videoName };
   
 	  // Update the advertisement
-	  const updatedAdvertisement = { ...advertisement.toJSON(), ...data };
+	  const updatedAdvertisement = { ...advertisement.toJSON(), ...dataWithVideo };
 	  await advertisement.update(updatedAdvertisement);
   
 	  return advertisement.toJSON();
@@ -315,6 +308,36 @@ async createAdvertisement(data) {
 	}
   }
 
+
+
+    // Update an advertisement by ID
+	async updateAdvertisementWithoutTheFile (id, data) {
+		try {
+		  const advertisement = await Annonce.findOne({ where: { id_annonce: id } });
+		  if (!advertisement) {
+			console.log('not found');
+			throw new Error(`Advertisement with id ${id} not found`);
+			
+		  }
+		  console.log(data);
+		  
+		  const advertisement2 = await Annonce.update(data,{ where: { id_annonce: id } });
+	  
+	
+		  // Update the advertisement
+		//  const updatedAdvertisement = { ...advertisement.toJSON(), ...data };
+		  // Update the advertisement
+		  const updatedAdvertisement = { ...advertisement.toJSON(), ...data };
+		  await advertisement.update(updatedAdvertisement);
+	  
+		  return advertisement.toJSON();
+	  
+		
+		} catch (error) {
+		  console.log(error);
+		  throw error;
+		}
+	  }
 
   // Delete an advertisement by ID
   async deleteAdvertisement(id) {

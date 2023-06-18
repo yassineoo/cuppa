@@ -4,6 +4,7 @@ import { createAdvertisement,
     getAllAdvertisements,
     getAdvertisementById,
     updateAdvertisement,
+    updateAdvertisementWithoutTheFile,
     deleteAdvertisement,
     createAdvertiser,
     getAllAdvertisers,
@@ -21,10 +22,10 @@ import Authorization from './../../../middlewares/auth';
 const router = express.Router();
 
 // Create a new advertiser
-router.post('/createAdvertiser/',createAdvertiser);
+router.post('/createAdvertiser/',Authorization(['AC']),createAdvertiser);
 
 // Get all advertisers
-router.get('/getAllAdvertisers/',getAllAdvertisers);
+router.get('/getAllAdvertisers/',Authorization(['AC']),getAllAdvertisers);
 
 // Get an advertiser by ID
 router.get('/getAdvertiserById/:id',Authorization(['AC']),getAdvertiserById);
@@ -48,7 +49,11 @@ router.get('/getAllAdvertisementsByUser/',Authorization(['AC']),getAllAdvertisem
 router.get('/getAdvertisementById/:id',getAdvertisementById);
 
 // Update an advertisement by ID
-router.post('/updateAdvertisement/:id',Authorization(['AC']),updateAdvertisement);
+router.put('/updateAdvertisement/:id',updateAdvertisement);
+
+// Update an advertisement by ID
+router.post('/updateAdvertisementWithoutTheFile/:id',updateAdvertisementWithoutTheFile);
+
 
 // Delete an advertisement by ID
 router.get('/deleteAdvertisement/:id',Authorization(['AC']),deleteAdvertisement);

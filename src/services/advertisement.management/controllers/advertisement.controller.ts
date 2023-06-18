@@ -206,6 +206,9 @@ export const getAdvertisementById = async (req: Request, res: Response) => {
  export const updateAdvertisement = async (req: Request, res: Response) => {
 	try {
 	  const { id } = req.params;
+	  console.log(`req.body ------------------------------------`,id);
+	  console.log(req.body)
+	  console.log(`req.body ------------------------------------`);
 	  const form = new IncomingForm({
 		multiples: true,
 		keepExtensions: true,
@@ -228,6 +231,22 @@ export const getAdvertisementById = async (req: Request, res: Response) => {
   
 		res.status(200).json(updatedAdvertisement);
 	  });
+	} catch (error) {
+	  console.error(error);
+	  res.status(500).send({ error: 'Internal server error' });
+	}
+  };
+
+  export const updateAdvertisementWithoutTheFile = async (req: Request, res: Response) => {
+	try {
+	  const { id } = req.params;
+	  console.log(`req.body ---********---------------------------------`,id);
+	  console.log(req.body)
+	  console.log(`req.body -------**********-----------------------------`);
+
+	  
+      const updatedAdvertisement = await advertisementService.updateAdvertisementWithoutTheFile(id, req.body);
+	  res.status(200).json(updatedAdvertisement);
 	} catch (error) {
 	  console.error(error);
 	  res.status(500).send({ error: 'Internal server error' });

@@ -203,7 +203,7 @@ class PaymentService {
 				// get the customer Info 
 				//Consommateur.findByPk(objEvent.data.object.metadata.customerId);
 				//Facture.create('sda','asd','asda','asd');
-				facturePath = Facture.create(Consommateur.nom_consommateur ,'Facture for coffee',objEvent.data.object.metadata.amount,'koko');
+				facturePath = Facture.create(Consommateur.nom_consommateur ,'Facture for coffee',objEvent.data.object.metadata.amount,'DA');
 				//send it to the user via notif 
 				// notif.send(facturePath)
 				await axios.post(`${process.env.URL}api/notification.management/sendBill`,
@@ -213,7 +213,7 @@ class PaymentService {
 						email :Consommateur.mail_consommateur
 					}
 				);
-				await axios.post(`${process.env.URL}/lunchCommande/${objEvent.data.object.metadata.orderId}`,
+				await axios.post(`${process.env.URL}/confirme/${objEvent.data.object.metadata.orderId}`,
 			);
 
 				break;

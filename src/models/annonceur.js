@@ -26,6 +26,18 @@ module.exports = function(sequelize, DataTypes) {
         model: 'client',
         key: 'id_client'
       }
+    },
+    telephone_annonceur: {
+      type: DataTypes.INTEGER,
+      allowNull: true
+    },
+    rcs_annonceur: {
+      type: DataTypes.INTEGER,
+      allowNull: true
+    },
+    fiscal_annonceur: {
+      type: DataTypes.INTEGER,
+      allowNull: true
     }
   }, {
     sequelize,
