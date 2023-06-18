@@ -134,3 +134,5 @@
 {"level":"info","message":"Hello distributed log files!","metadata":{"date":"someRandom","timestamp":"2023-06-17T23:02:59.503Z"}}
 {"level":"info","message":"Hello distributed log files!","metadata":{"date":"someRandom","timestamp":"2023-06-18T07:46:39.453Z"}}
 {"level":"info","message":"Hello distributed log files!","metadata":{"date":"someRandom","timestamp":"2023-06-18T08:15:56.358Z"}}
+{"level":"info","message":"Hello distributed log files!","metadata":{"date":"someRandom","timestamp":"2023-06-18T08:53:58.045Z"}}
+{"level":"info","message":"Hello distributed log files!","metadata":{"date":"someRandom","timestamp":"2023-06-18T09:43:09.935Z"}}

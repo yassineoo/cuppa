@@ -39,8 +39,8 @@ const distributeursLogic= {
            const distributeurs = await distributeursService.getAllByClientID(user_client)
            return distributeurs
         } catch (error) {
-            console.error(error)
-            return []
+
+            throw error
         }
         
     },

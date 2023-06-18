@@ -133,7 +133,6 @@ describe('Service de gestion de distributeurs', () => {
                     return Promise.resolve(null)
                 } else {
                     return Promise.resolve({
-                        id_distributeur : info.id_distributeur,
                         numero_serie_distributeur : info.numero_serie_distributeur
                       });
                 }
@@ -149,7 +148,6 @@ describe('Service de gestion de distributeurs', () => {
 
         it("crée un nouveau distributeur et retourne l'objet",async () => {
             const info = {
-                id_distributeur : '-2',
                 numero_serie_distributeur : '1246'
             }
             const result = await distributeursService.add(info)
@@ -227,7 +225,7 @@ describe('Service de gestion de distributeurs', () => {
 
         it("Affecte un Distributeur existant à un client existant sachant que le champs id_client dans distributeur est null et retourne le distributeur",async () => {
             const id_dist : string = '5'
-            const id_client : string = ""
+            let id_client : number = 0
             const distributeur = {id_distributeur : id_dist, numero_serie_distributeur : '3498UR45', id_client : id_client}
 
            spyOn(distributeursService, "getByID").and.returnValue(Promise.resolve(distributeur));
@@ -235,10 +233,10 @@ describe('Service de gestion de distributeurs', () => {
            distributeur.id_client = id_client
            spyOn(distributeursService, "update").and.returnValue(Promise.resolve(distributeur));
 
-           const result = await distributeursLogic.updateClient(id_dist, id_client);
+           const result = await distributeursLogic.updateClient(id_dist, {id_client : id_client});
 
            expect(distributeursService.getByID).toHaveBeenCalledWith(id_dist);
-           expect(distributeursService.update).toHaveBeenCalledWith(id_client, distributeur);
+           expect(distributeursService.update).toHaveBeenCalledWith({id_client : id_client}, distributeur);
            expect(result).toEqual(distributeur);
             
 

@@ -12,6 +12,7 @@ import reclamation from './services/service-reclamation/routes/routes.reclmation
 
 import distributeursRouter from './services/service-distributeurs/routes/distributeurs.routes';
 import commandesRouter from './services/service-commandes/routes/commandes.routes';
+import maintenanceRouter from "./services/service-maintenance/routes/maintenance.routes";
 import accountRoutes from './services/account.management/routes/account.route';
 import notificationRoutes from './services/notification.management/routes/notification.route';
 import advertisementRoutes from './services/advertisement.management/routes/advertisement.route';

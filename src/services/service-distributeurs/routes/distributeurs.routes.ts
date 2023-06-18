@@ -49,7 +49,7 @@ distributeursRouter.post("/:id/client",  Authorization(['SADM']), distributeursC
 @access SADM, ADM, AM
 */
 
-distributeursRouter.put("/:id",  Authorization(['SADM', 'ADM', 'AM']), distributeursController.updateById)
+distributeursRouter.post("/:id",  Authorization(['SADM', 'ADM', 'AM']), distributeursController.updateById)
 
 /**
 @route DELETE distributeurs/

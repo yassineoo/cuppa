@@ -1,4 +1,5 @@
-import { Sequelize } from "sequelize";
+
+import boisson from "../../../models/boisson";
 import models from "../../../models/sequelize";
 import commandesLogic from "./commandes.logic";
 
@@ -14,6 +15,7 @@ const commandesService = {
         } catch(err : any) {
             throw err
         }
+        
     },
 
     getByID : async(id : string) : Promise<CommandeModel | null> => {
@@ -26,7 +28,7 @@ const commandesService = {
     },
 
 
-    getInstructions : async function(id : string) : Promise<string> {
+    getInstructions : async function(id : string) : Promise<string[]> {
         
         try {
             //Get commande 
@@ -35,32 +37,37 @@ const commandesService = {
             if(!commande) {
               throw new Error(`La commande identifiée par ${id} is not found`)
             }
+
+            const sucre = commande.quantite_sucre;
+            const size = commande.taille_goblet;
             
-              //to test only, later we will be making requests + maybe keep some sort of cache? 
-              //join boisson_ing (where id_boisson = commande.id_boisson) and ingredient (outil)
-            const boisson = await models.boisson.findByPk(commande.id_boisson, {
-                include: [{
-                  model: models.outil,
-                  attributes: ['libelle_outil']
-                }]
+            
+
+            const ingredients : any[] = await models.preparer_avec.findAll({
+              where : {
+                id_boisson : commande.id_boisson
+              }, 
+              include : [{
+                  model : models.outils_preparation_boisson,
+                  attributes: ['libelle_ingredient']
+                }], 
+                attributes : ['quantite_preparation']
             })
 
-            if(!boisson) {
-              throw new Error(`La boisson identifiée par ${commande.id_boisson} is not found`)
-            }
-              
-            //map the name of the ingredient to the quantite_preparation
-            let ingredients = new Map<string, string>()
-            boisson.outils.forEach((outil: any) => {
-              ingredients.set(outil.libelle_outil, outil.boisson_ing.quantite_preparation);
-            });
+            if(ingredients.length !== 0) {
+              let instructions = new Map<string, string>()
+              ingredients.forEach((ingredient : any) => {
+                const quantity = ingredient.quantite_preparation;
+                const toolLabel = ingredient.outils_preparation_boisson.libelle_ingredient;
+                instructions.set(toolLabel, quantity);
+                
+              });
 
-            ingredients.set("sucre", commande.quantite_sucre)
-            ingredients.set("taille", commande.taille_goblet)
-                
-                
-            return commandesLogic.translate(ingredients)
-              
+              return commandesLogic.translate(instructions, sucre, size)
+  
+            } else {
+              throw new Error(`empty instructions for boisson ${commande.id_boisson}`)
+            }
         } catch (err : any){
             throw err
         }
@@ -74,11 +81,11 @@ const commandesService = {
           throw new Error(`La commande identifiée par ${id} is not found`)
         }
 
-        commande = await commande.update(info)
+        commande = await models.commande.update(info)
         return commande
 
       } catch(err) {
-
+        throw err
       }
     },
 
