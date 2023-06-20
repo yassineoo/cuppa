@@ -63,21 +63,21 @@ router.post('/createConsommateurAccount/', createConsommateurAccount);
 @desc Get all clients
 @access AC
 */
-router.get('/getAllClients', getAllClients);
+router.get('/getAllClients',Authorization(['SADM']), getAllClients);
 
 /**
 @route GET api/getClientByID/:id
 @desc Get a client by ID
 @access AC
 */
-router.get('/getClientByID/:id', Authorization(['AC']), getClientByID);
+router.get('/getClientByID/:id', Authorization(['SADM']), getClientByID);
 
 /**
 @route GET api/getUtilisateurByClientID/:clientID
 @desc Get utilisateurs by client ID
 @access AC
 */
-router.get('/getUtilisateurByClientID/:clientID', Authorization(['AC']), getUtilisateurByClientID);
+router.get('/getUtilisateurByClientID/:clientID', Authorization(['SADM']), getUtilisateurByClientID);
 
 
 /**

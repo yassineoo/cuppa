@@ -20,6 +20,7 @@ import accountRoutes from './services/account.management/routes/account.route';
 import notificationRoutes from './services/notification.management/routes/notification.route';
 import advertisementRoutes from './services/advertisement.management/routes/advertisement.route';
 import cors from 'cors';
+import boissonRouter from './services/service-boissons/routes/boissons.routes';
 
 const loggingService = new LoggingService();
 
@@ -60,7 +61,7 @@ app.use('/api/notification.management', notificationRoutes);
 
 
 app.use('/distributeurs', distributeursRouter);
-
+app.use('boissons',boissonRouter)
 app.use('/commandes', commandesRouter);
 app.use('/maintenance', maintenanceRouter);
 

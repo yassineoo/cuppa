@@ -368,16 +368,7 @@ static getAllClients = async () => {
 		],
 		group: ['client.id_client'],
 	  });
-      const clients2 =  clients.map (client =>{
-		return {...client ,distributor_count : client?.distributeurs[0]?.dataValues?.distributor_count || 0   }
-        console.log('---------------------------');
-		//console.log(client);
-		
-        console.log('---------------------------');
-		console.log();
-        console.log('---------------------------');
-			 
- 	});
+
 	  return clients;
 	} catch (error) {
 	  return {
