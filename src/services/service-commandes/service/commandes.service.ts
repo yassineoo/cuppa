@@ -56,7 +56,7 @@ const commandesService = {
               }, 
               include : [{
                   model : models.outils_preparation_boisson,
-                  as : "id_ingredient_outils_preparation_boisson"
+                  as : "id_ingredient_outils_preparation_boisson",
                   attributes: ['libelle_ingredient']
                 }], 
                 attributes : ['quantite_preparation']
