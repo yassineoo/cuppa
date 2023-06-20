@@ -56,7 +56,7 @@ router.post('/updateAdvertisementWithoutTheFile/:id',updateAdvertisementWithoutT
 
 
 // Delete an advertisement by ID
-router.get('/deleteAdvertisement/:id',Authorization(['AC']),deleteAdvertisement);
+router.post('/deleteAdvertisement/:id',Authorization(['AC']),deleteAdvertisement);
 
 // Handle image upload
 router.post('/handleImageUpload',Authorization(['AC']),handleImageUpload);
