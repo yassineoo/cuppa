@@ -1,7 +1,7 @@
 import express from "express";
-import authorize from "../../../middlewares/autorisation";
 import maintenaceController from "../controllers/maintenance.controller";
 
+import Authorization from '../../../middlewares/auth';
 
 const maintenanceRouter = express.Router();
 

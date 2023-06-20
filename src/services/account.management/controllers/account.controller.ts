@@ -197,12 +197,27 @@ const getAllClients = async (req: Request, res: Response) => {
 	  res.status(500).json({ success: false, error: err.message });
 	}
   };
+
+  
+  const getEmployees = async (req: Request, res: Response) => {
+	try {
+	  const  userID  = req.user.id;
+	  console.log(req.user);
+	  
+	  const accounts = await AccountManagmentService.getEmployees(userID);
+	  res.status(200).json(accounts);
+	} catch (err) {
+	  console.error(`Error getting account: ${err.message}`);
+	  res.status(500).json({ success: false, error: err.message });
+	}
+  };
   
   export {
 	createAccount,
 	deleteAccount,
 	modifyAccount,
 	getAccounts,
+	getEmployees,
 	getProfil,
 	createClientAccount,
 	createConsommateurAccount,

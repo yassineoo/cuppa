@@ -17,6 +17,7 @@ class ReclamationService {
     async getAllReclamations() {
     try {
 
+
       const reclamations = await ReclamationModel.findAll();
       return reclamations;
     } catch (error) {
@@ -80,14 +81,22 @@ class ReclamationService {
           }
         ]
       });
-       reclamation = 
-        {...reclamation.dataValues,id_cmd_commande:null , 
-          ... reclamation.dataValues.id_cmd_commande.dataValues , id_consommateur_consommateur :null,
-            ...reclamation.dataValues.id_cmd_commande.dataValues.id_consommateur_consommateur.dataValues   } ;
-       
+      let reclamationUpdated = 
+        {...reclamation.dataValues, 
+          ... reclamation.dataValues.id_cmd_commande.dataValues , 
+            ...reclamation.dataValues.id_cmd_commande.dataValues.id_consommateur_consommateur.dataValues ,id_cmd_commande:null ,id_consommateur_consommateur :null,  } ;
+            console.log(`----------------------------------------\n------------------`);
+          
+            console.log({ ... reclamationUpdated });
+            console.log(`----------------------------------------------------------`);
+
+            console.log({ ... reclamation });
+            console.log(`----------------------------------------------------------`);
+      
+                   
        
       const result = await ConsommateurModel.findOne({
-        where: { id_consommateur: reclamation.id_consommateur },
+        where: { id_consommateur: reclamationUpdated.id_consommateur },
         attributes: [
           [sequelize.fn('COUNT', sequelize.col('commandes.id_cmd')), 'numberOfCommande'],
           [sequelize.fn('COUNT', sequelize.col('commandes->reclamation.id_reclamation')), 'numberOfReclamation']
@@ -111,13 +120,19 @@ class ReclamationService {
       
       const numberOfCommande =  result.get('numberOfCommande');
       const numberOfReclamation = result.get('numberOfReclamation');
+      console.log(`----------------------------------------\n------------------`);
+      console.log(`{ ... reclamationUpdated,numberOfCommande,numberOfReclamation }`);
 
-      return { ... reclamation,numberOfCommande,numberOfReclamation };
+      console.log({ ... reclamationUpdated,numberOfCommande,numberOfReclamation });
+      console.log(`----------------------------------------------------------`);
+
+      
+      return { ... reclamationUpdated,numberOfCommande,numberOfReclamation };
     } catch (error) {
       
       console.log(error);
       
-      throw new Error('Failed to retrieve the reclamation');
+      throw new Error('Failed to retrieve the reclamation' +error);
     }
   }
 

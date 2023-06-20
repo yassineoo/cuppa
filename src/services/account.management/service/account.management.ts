@@ -105,6 +105,8 @@ class AccountManagmentService {
                 if (role === 'AM' || role === 'AC' || role === 'decideur') {
 			
 				let account = await user.findOne({ where: { id_utilisateur:id } });
+				let profilUser = await  profil.findOne({ where: { id_utilisateur:id } });
+
 				if (!account) {
 					throw new Error(`Account with id ${id} not found`);
 				}
@@ -116,6 +118,7 @@ class AccountManagmentService {
 				}
 				
 				let updatedUser = { ...account.toJSON(), ...body };
+				await profilUser.update({ ... profilUser ,...body});
 				// Save changes to database
 				await account.update(updatedUser);
                 return account.toJSON();
@@ -125,13 +128,11 @@ class AccountManagmentService {
 			}
 			
 
-		} else if(modifierRole ===  'AM') {
-
-			if (role === 'AM') {
-
+		} else if(modifierRole ===  role) {
+		
 				accountModel = Models.utilisateur;
 				let account = await accountModel.findOne({ where: { id_utilisateur:id } });
-
+			
 				if (!account) {
 					throw new Error(`Account with id ${id} not found`);
 				}
@@ -147,64 +148,9 @@ class AccountManagmentService {
 				await account.update(updatedUser);
                 return account.toJSON();
 
-			} else {
-				throw new Error(`You are not authorized to modify this account`);
-			}
-
-		} else if(modifierRole ===  'AC') {
-
-			if (role === 'AC') {
-
-				accountModel = Models.utilisateur;
-				let account = await accountModel.findOne({ where: { id_utilisateur:id } });
-
-				if (!account) {
-					throw new Error(`Account with id ${id} not found`);
-				}
 		
-				 // Hash the password before updating the account in the database
-				 if (body.password_utilisateur) {
-					const hashedPassword = await bcrypt.hash(body.password_utilisateur, 10);
-					body.password_utilisateur = hashedPassword;
-				}
 
-				// Update account properties
-		        let updatedUser = { ...account.toJSON(), ...body };
-				// Save changes to database
-				await account.update(updatedUser);
-                return account.toJSON();
-
-			} else {
-				throw new Error(`You are not authorized to modify this account`);
-			}
-
-		} else if(modifierRole ===  'decideur') {
-
-			if (role === 'decideur') {
-
-				accountModel = Models.utilisateur;
-				let account = await accountModel.findOne({ where: { id_utilisateur:id } });
-
-				if (!account) {
-					throw new Error(`Account with id ${id} not found`);
-				}
-		
-				 // Hash the password before updating the account in the database
-				 if (body.password_utilisateur) {
-					const hashedPassword = await bcrypt.hash(body.password_utilisateur, 10);
-					body.password_utilisateur = hashedPassword;
-				}
-
-				let updatedUser = { ...account.toJSON(), ...body };
-				// Save changes to database
-				await account.update(updatedUser);
-                return account.toJSON();
-
-			} else {
-				throw new Error(`You are not authorized to modify this account`);
-			}
-
-		} else {
+	} else {
 
             throw new Error(`You are not authorized to modify this account`);
 
@@ -256,6 +202,28 @@ class AccountManagmentService {
 		}
 	
 	};
+	//*************************  yassin last add---------------*/
+
+	static getEmployees = async (idAdm) => {
+		let accounts;
+         console.log("idAdm",idAdm);
+		 
+		try {
+
+			accounts = await user.findAll({
+				where: { supervisor_id: idAdm },
+				include: profil
+			  });
+			  return accounts;
+
+		} catch (error) {
+			
+		}
+	
+	};
+
+	//*************************  yassin last add---------------*/
+
       
 	
 
@@ -305,7 +273,8 @@ static async createAccount(body: any, role: string, createrId: string, createrRo
             // Set the hashed password in the body before creating the account
             body.password_utilisateur = hashedPassword;
 
-            await user.create({ ...body });
+            const newUser=   await user.create({ ...body ,supervisor_id :createrId ,id_client:account.id_client});
+			await profil.create({ ...body , id_utilisateur : newUser.id_utilisateur });
             return { message: `Account created successfully` };
 
         } else {
@@ -399,7 +368,16 @@ static getAllClients = async () => {
 		],
 		group: ['client.id_client'],
 	  });
-  
+      const clients2 =  clients.map (client =>{
+		return {...client ,distributor_count : client?.distributeurs[0]?.dataValues?.distributor_count || 0   }
+        console.log('---------------------------');
+		//console.log(client);
+		
+        console.log('---------------------------');
+		console.log();
+        console.log('---------------------------');
+			 
+ 	});
 	  return clients;
 	} catch (error) {
 	  return {

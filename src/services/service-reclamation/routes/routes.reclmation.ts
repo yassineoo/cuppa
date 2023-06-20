@@ -14,7 +14,7 @@ router.get('/getAllReclamations',Authorization(['AC']), getAllReclamations);
 
 
 // Get by ID 
-router.get('/:id/getReclamation', getReclamation);
+router.get('/:id/getReclamation',Authorization(['AC']), getReclamation);
 
 
 // Create a new reclamation
@@ -23,7 +23,5 @@ router.post('/createReclamation', createReclamation);
 // Update a reclamation
 router.post('/reclamations/:id', valider);
 
-// Delete a reclamation
-router.post('/reclamations/:id', deleteReclamation);
 
 export default router;

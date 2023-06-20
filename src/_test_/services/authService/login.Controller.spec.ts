@@ -29,7 +29,7 @@ describe('login', () => {
 		await LoginController.login(req as Request, res as Response);
   
 		expect(res.status).toHaveBeenCalledWith(200);
-		expect(res.json).toHaveBeenCalledWith({token:'testtoken',role:'sadm'});
+		expect(res.json).toHaveBeenCalledWith({token:'testtoken',role:'sadm',name:"testuser"});
 	});
 
 	it('should return a 401 status code for invalid credentials', async () => {

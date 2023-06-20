@@ -1,5 +1,5 @@
 import express from 'express';
-import { createAccount, deleteAccount, modifyAccount,getAccounts,getProfil,createClientAccount, createConsommateurAccount, getAllClients, getClientByID, getUtilisateurByClientID, getProfilWithClient } from '../controllers/account.controller';
+import { createAccount, deleteAccount,getEmployees, modifyAccount,getAccounts,getProfil,createClientAccount, createConsommateurAccount, getAllClients, getClientByID, getUtilisateurByClientID, getProfilWithClient } from '../controllers/account.controller';
 import Authorization from './../middlewares/auth';
 
 const router = express.Router();
@@ -63,7 +63,7 @@ router.post('/createConsommateurAccount/', createConsommateurAccount);
 @desc Get all clients
 @access AC
 */
-router.get('/getAllClients', Authorization(['AC']), getAllClients);
+router.get('/getAllClients', getAllClients);
 
 /**
 @route GET api/getClientByID/:id
@@ -86,5 +86,14 @@ router.get('/getUtilisateurByClientID/:clientID', Authorization(['AC']), getUtil
  * @access SADM, ADM, AC, AM, decideur
  */
 router.get('/getProfileWithClient', Authorization(['SADM', 'ADM', 'AC', 'AM', 'decideur']), getProfilWithClient);
+
+
+/**
+ * @route GET api/getProfilWithClient/:userID
+ * @desc Get the profile with client information
+ * @access SADM, ADM, AC, AM, decideur
+ */
+router.get('/getEmployees', Authorization([ 'ADM']), getEmployees);
+
 
 export default router;
