@@ -14,9 +14,8 @@ const ClientModel = models.client;
 const utilisateurModel = models.utilisateur;
 class ReclamationService {
   // Get all reclamations
-    async getAllReclamations() {
+  async getAllReclamations() {
     try {
-
 
       const reclamations = await ReclamationModel.findAll();
       return reclamations;
@@ -81,22 +80,14 @@ class ReclamationService {
           }
         ]
       });
-      let reclamationUpdated = 
-        {...reclamation.dataValues, 
-          ... reclamation.dataValues.id_cmd_commande.dataValues , 
-            ...reclamation.dataValues.id_cmd_commande.dataValues.id_consommateur_consommateur.dataValues ,id_cmd_commande:null ,id_consommateur_consommateur :null,  } ;
-            console.log(`----------------------------------------\n------------------`);
-          
-            console.log({ ... reclamationUpdated });
-            console.log(`----------------------------------------------------------`);
-
-            console.log({ ... reclamation });
-            console.log(`----------------------------------------------------------`);
-      
-                   
+       reclamation = 
+        {...reclamation.dataValues,id_cmd_commande:null , 
+          ... reclamation.dataValues.id_cmd_commande.dataValues , id_consommateur_consommateur :null,
+            ...reclamation.dataValues.id_cmd_commande.dataValues.id_consommateur_consommateur.dataValues   } ;
+       
        
       const result = await ConsommateurModel.findOne({
-        where: { id_consommateur: reclamationUpdated.id_consommateur },
+        where: { id_consommateur: reclamation.id_consommateur },
         attributes: [
           [sequelize.fn('COUNT', sequelize.col('commandes.id_cmd')), 'numberOfCommande'],
           [sequelize.fn('COUNT', sequelize.col('commandes->reclamation.id_reclamation')), 'numberOfReclamation']
@@ -120,19 +111,13 @@ class ReclamationService {
       
       const numberOfCommande =  result.get('numberOfCommande');
       const numberOfReclamation = result.get('numberOfReclamation');
-      console.log(`----------------------------------------\n------------------`);
-      console.log(`{ ... reclamationUpdated,numberOfCommande,numberOfReclamation }`);
 
-      console.log({ ... reclamationUpdated,numberOfCommande,numberOfReclamation });
-      console.log(`----------------------------------------------------------`);
-
-      
-      return { ... reclamationUpdated,numberOfCommande,numberOfReclamation };
+      return { ... reclamation,numberOfCommande,numberOfReclamation };
     } catch (error) {
       
       console.log(error);
       
-      throw new Error('Failed to retrieve the reclamation' +error);
+      throw new Error('Failed to retrieve the reclamation');
     }
   }
 
@@ -175,49 +160,52 @@ class ReclamationService {
   async valider (id,data) {
     try {
       const reclamation = await ReclamationModel.findByPk(id);
+      console.log(data);
+      
       if (reclamation) {
         let description :String;
-        let status :String ="";
+        let status :String ="avant23";
 
-        if (( reclamation.type == 'one' ) || ( reclamation.type == 'two' )) {
+        if (( reclamation.type_reclamation == 'Commande non reçue' ) || ( reclamation.type_reclamation== 'Commande non complete' )) {
          
           if (data.validate){
-            await axios.post(`${process.env.URL}/payment/refund`, {
+        /*    await axios.post(`${process.env.URL}/payment/refund`, {
               paymentId : reclamation.description , amount : data.amount ,reason: reclamation.description
             })
+            */
           description = `Bonjour Monsieur/Madame ${data.name} \n votre réclamation a été validée et vous avez récu un remboursement de ${data.amount} DZ`
-          status = 'remboursee';
+          status = 'Remboursée';
           }
           else {
           description = `Bonjour Monsieur/Madame ${data.name} \n votre réclamatione n'a pas été validée  `
-          status = 'non_remboursee';
+          status = 'Non-Remboursée';
             
           }
 
           // send email to the consumer 
-          await axios.post(`${process.env.URL}api/notification.management/consumer`,
+        /*  await axios.post(`${process.env.URL}api/notification.management/consumer`,
 					{
 						email :data.email,
             description:description
 
 					}
-				);
+				);*/
        
       } 
-        else if ( reclamation.type == 'autre' ) {
+        else if ( reclamation.type_reclamation == 'Commande insatisfaisante' ) {
           // send email to the consumer 
-          await axios.post(`${process.env.URL}api/notification.management/consumer`,{
+          /*await axios.post(`${process.env.URL}api/notification.management/consumer`,{
             email :data.email,
             description: data.description
-          });
-           status = 'traitee';
+          });*/
+           status = 'Traitée Email-Envoyé';
 
         }
 
-        await reclamation.update({ status: status });
+        await reclamation.update({ etat_reclamation: status });
         return reclamation;
       }
-      return null;
+      return reclamation;
     }
     catch (error) {
       throw new Error('Failed to validate the reclamation');
