@@ -67,7 +67,7 @@ const commandesService = {
               ingredients.forEach((ingredient : any) => {
                 const quantity = ingredient.quantite_preparation;
                 console.log(ingredient);
-                const toolLabel = ingredient?.outils_preparation_boisson?.libelle_ingredient;
+                const toolLabel = ingredient?. id_ingredient_outils_preparation_boisson?.libelle_ingredient;
                 instructions.set(toolLabel, quantity);
                 
               });
