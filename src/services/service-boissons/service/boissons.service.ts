@@ -10,6 +10,32 @@ export class BoissonsService {
     const drinks : BoissonModel[] = await models.boisson.findAll();
     return drinks;
   }
+
+  static async getAllWithIng(): Promise<BoissonModel[]> {
+    const drinks: BoissonModel[] = await models.boisson.findAll();
+  
+    // Fetching ingredients for each boisson
+    for (const drink of drinks) {
+      const ingredients: BoissonModel[] = await models.outils_preparation_boisson.findAll({
+        include: [
+          {
+            model: models.preperer_avec,
+            where: { id_boisson: drink.id_boisson },
+            
+          }
+        ]
+      });
+  
+      // Extracting ingredient names
+      const ingredientNames: string[] = ingredients.map(ingredient => ingredient.preparer_avec.ingredient.nom);
+  
+      // Adding ingredient names as a new attribute to the boisson
+      drink.ingredients = ingredientNames;
+    }
+  
+    return drinks;
+  }
+  
   static async getAllIngrediants(): Promise<BoissonModel[]> {
     const ingrediants : BoissonModel[] = await models.outils_preparation_boisson.findAll();
     return ingrediants;

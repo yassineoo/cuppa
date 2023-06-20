@@ -28,7 +28,9 @@ const commandesService = {
             as : "id_boisson_boisson"
           }
         })
-        return commande
+        
+        const y = {...commande.toJSON(),libelle_boisson:commande.id_boisson_boisson.libelle_boisson,path_image_boisson:commande.id_boisson_boisson.path_image_boisson}    
+        return y ;
       } catch(err) {
         throw err
       }

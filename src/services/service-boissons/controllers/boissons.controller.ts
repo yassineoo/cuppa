@@ -24,6 +24,15 @@ export class BoissonsController {
       
     }
   }
+  static async getAllWithIng(req: Request, res: Response) {
+    try {
+      const boissons = await BoissonsService.getAllWithIng();
+      res.status(200).json( boissons);
+    } catch (err) {
+      console.error(err);
+      
+    }
+  }
   static async getAllIngrediants(req: Request, res: Response) {
     try {
       const boissons = await BoissonsService.getAllIngrediants();
