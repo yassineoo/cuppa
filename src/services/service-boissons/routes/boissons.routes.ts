@@ -5,6 +5,7 @@ import { BoissonsController } from '../controllers/boissons.controller';
 const router = Router();
 
 router.get('/', BoissonsController.getAll);
+router.get('/ing', BoissonsController.getAllIngrediants);
 router.delete('/:id', BoissonsController.deleteById);
 router.post('/', BoissonsController.upload,BoissonsController.add);
 router.put('/:id', BoissonsController.upload, BoissonsController.edit);

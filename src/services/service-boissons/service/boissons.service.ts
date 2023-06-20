@@ -10,6 +10,10 @@ export class BoissonsService {
     const drinks : BoissonModel[] = await models.boisson.findAll();
     return drinks;
   }
+  static async getAllIngrediants(): Promise<BoissonModel[]> {
+    const ingrediants : BoissonModel[] = await models.outils_preparation_boisson.findAll();
+    return ingrediants;
+  }
 
   static async getById(id: number) {
     return models.boisson.findByPk(id);

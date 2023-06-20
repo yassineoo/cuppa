@@ -89,7 +89,13 @@ const commandesService = {
           throw new Error(`La commande identifiée par ${id} is not found`)
         }
 
-        commande = await models.commande.update(info)
+      /*  commande = await models.commande.update(info)
+        let commandes = commandes.map(commande => {
+          return {...commande , 
+
+          }
+        })
+        */
         return commande
 
       } catch(err) {
