@@ -61,15 +61,19 @@ const commandesService = {
                 }], 
                 attributes : ['quantite_preparation']
             })
-
+            
             if(ingredients.length !== 0) {
               let instructions = new Map<string, string>()
               ingredients.forEach((ingredient : any) => {
                 const quantity = ingredient.quantite_preparation;
-                const toolLabel = ingredient.outils_preparation_boisson.libelle_ingredient;
+                console.log(ingredient);
+                const toolLabel = ingredient?.outils_preparation_boisson?.libelle_ingredient;
                 instructions.set(toolLabel, quantity);
                 
               });
+             // console.log(ingrediants);
+              
+
 
               return commandesLogic.translate(instructions, sucre, size)
   
