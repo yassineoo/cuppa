@@ -3,7 +3,8 @@ import boisson from "../../../models/boisson";
 import models from "../../../models/sequelize";
 import commandesLogic from "./commandes.logic";
 
-  type CommandeModel = typeof models.commande
+  type CommandeModel = typeof models.commande;
+  type BoissonModel = typeof models.boisson;
 
 
 const commandesService = {
@@ -20,7 +21,13 @@ const commandesService = {
 
     getByID : async(id : string) : Promise<CommandeModel | null> => {
       try {
-        const commande = await models.commande.findByPk(Number(id))
+        const commande = await models.commande.findOne({
+          where : {id_cmd :Number(id)} ,
+          include : { 
+            model : models.boisson ,
+            as : "id_boisson_boisson"
+          }
+        })
         return commande
       } catch(err) {
         throw err
@@ -49,6 +56,7 @@ const commandesService = {
               }, 
               include : [{
                   model : models.outils_preparation_boisson,
+                  as : "id_ingredient_outils_preparation_boisson"
                   attributes: ['libelle_ingredient']
                 }], 
                 attributes : ['quantite_preparation']

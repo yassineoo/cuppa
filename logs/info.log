@@ -46,3 +46,7 @@
 {"level":"info","message":"Hello distributed log files!","metadata":{"date":"someRandom","timestamp":"2023-06-20T10:00:30.008Z"}}
 {"level":"info","message":"Hello distributed log files!","metadata":{"date":"someRandom","timestamp":"2023-06-20T10:03:52.592Z"}}
 {"level":"info","message":"Hello distributed log files!","metadata":{"date":"someRandom","timestamp":"2023-06-20T10:15:46.196Z"}}
+{"level":"info","message":"Hello distributed log files!","metadata":{"date":"someRandom","timestamp":"2023-06-20T11:12:06.044Z"}}
+{"level":"info","message":"Hello distributed log files!","metadata":{"date":"someRandom","timestamp":"2023-06-20T11:13:59.669Z"}}
+{"level":"info","message":"Hello distributed log files!","metadata":{"date":"someRandom","timestamp":"2023-06-20T11:15:50.691Z"}}
+{"level":"info","message":"Hello distributed log files!","metadata":{"date":"someRandom","timestamp":"2023-06-20T11:16:27.599Z"}}
