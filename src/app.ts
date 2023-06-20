@@ -61,7 +61,7 @@ app.use('/api/notification.management', notificationRoutes);
 
 
 app.use('/distributeurs', distributeursRouter);
-app.use('boissons',boissonRouter)
+app.use('/boissons',boissonRouter)
 app.use('/commandes', commandesRouter);
 app.use('/maintenance', maintenanceRouter);
 
