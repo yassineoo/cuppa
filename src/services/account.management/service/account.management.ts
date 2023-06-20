@@ -349,8 +349,8 @@ static async createConsommateurAccount(body: any) {
  
 			 // Set the hashed password in the body before creating the account
 			 body.password_consommateur = hashedPassword;
-            await consommateur.create({ ...body });
-            return { message: `Account created successfully` };
+            const consumer  = await consommateur.create({ ...body });
+            return consumer;
 	
 };
 

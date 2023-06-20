@@ -34,7 +34,7 @@ router.get('/getAdvertiserById/:id',Authorization(['AC']),getAdvertiserById);
 router.post('/updateAdvertiser/:id',Authorization(['AC']),updateAdvertiser);
 
 // Delete an advertiser by ID
-router.get('/deleteAdvertiser/:id',Authorization(['AC']),deleteAdvertiser);
+router.post('/deleteAdvertiser/:id',Authorization(['AC']),deleteAdvertiser);
 
 // Create a new advertisement
 router.post('/createAdvertisement/',Authorization(['AC']),createAdvertisement);

@@ -21,7 +21,7 @@ module.exports = function(sequelize, DataTypes) {
     },
     path_video: {
       type: DataTypes.STRING(50),
-      allowNull: false
+      allowNull: true
     },
     tarif_annonce: {
       type: DataTypes.DOUBLE,

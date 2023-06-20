@@ -29,6 +29,11 @@ class AdvertisementManagmentService {
 // create an advertiser
 async createAdvertiser(data, image, idAC) {
 	try {
+		console.log(`-----------------------------------`);
+		console.log(`data: ${JSON.stringify(data)}`);		
+		console.log(`image: ${image}`);		
+		console.log(`idAC: ${idAC}`);	
+		console.log(`-----------------------------------`);
 	  const { ...rest } = data; // destructure the data
   
 	  const advertiser = await Annonceur.create(rest);
@@ -46,6 +51,7 @@ async createAdvertiser(data, image, idAC) {
   
 		await fs.promises.rename(image, imagePath);
         console.log(imageName);
+		console.log(imagePath);
 		
 		await advertiser.update({ path_annonceur: imageName });
 	  }
@@ -61,9 +67,8 @@ async createAdvertiser(data, image, idAC) {
   }
   
   
-	  
-		// get all advertisers
-		async getAllAdvertisers() {
+// get all advertisers
+async getAllAdvertisers() {
 			try {
 
 
@@ -197,22 +202,44 @@ async createAdvertisement(data) {
 	  if (!advertiser) {
 		throw new Error(`Advertiser with id ${id_annonceur} not found`);
 	  }
+
+
+	    // save the uploaded video file to the uploads directory
+		const uploadsPath = path.join(__dirname, '..', '..', '..', 'uploads');
+		if (!fs.existsSync(uploadsPath)) {
+		  fs.mkdirSync(uploadsPath);
+		}
   
-	  const advertisement = await Annonce.create({
-		id_annonceur,
-		duree_affichage,
-		ageMin,
-		ageMax,
-		sexe_cible,
-		tarif_annonce,
-		nom_annonce,
-		type,
-		etat_annonce,
-		date_debut,
-		nombre_affichage,
-		path_video
-	  });
+		// generate the new video file name using the auto-incremented ID of the Annonce instance
+		const advertisement = await Annonce.create({
+			id_annonceur,
+			duree_affichage,
+			ageMin,
+			ageMax,
+			sexe_cible,
+			tarif_annonce,
+			nom_annonce,
+			type,
+			etat_annonce,
+			date_debut,
+			nombre_affichage,
+			path_video
+		  });
+	
+		const videoName = `advertisement${advertisement.id_annonce}.mp4`;
   
+		const videoPath = path.join(uploadsPath, videoName);
+		console.log(videoName);
+  
+		// Saving the video to the server
+		await createReadStream(data.videoFile.filepath).pipe(createWriteStream(videoPath));
+  
+		// add the video path to the advertisement data
+		//const dataWithVideo = { id_annonceur, duree_affichage, ageMin, ageMax, sexeCible, prix_annonce, path_video: videoName };
+  
+	
+
+  	  await advertisement.update({...advertisement.toJSON() ,path_video: videoName});
 	  return advertisement;
 	} catch (error) {
 	  console.error(error);
