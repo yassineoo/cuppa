@@ -70,7 +70,8 @@ class AccountManagmentService {
 				if (!account) {
 					throw new Error(`Account with id ${id} not found`);
 				}
-		
+				let profil = await  Models.profil.findOne({ where: { id_utilisateur:id } });
+				await profil.destroy();
 				await account.destroy();
 		
 				return { message: `Account with id ${id} deleted successfully` };
@@ -114,7 +115,7 @@ class AccountManagmentService {
 				 // Hash the password before updating the account in the database
 				 if (body.password_utilisateur) {
 					const hashedPassword = await bcrypt.hash(body.password_utilisateur, 10);
-					body.password_utilisateur = hashedPassword;
+					body.password_utilisateur = hashedPassword || account.password_utilisateur;
 				}
 				
 				let updatedUser = { ...account.toJSON(), ...body };
@@ -140,9 +141,14 @@ class AccountManagmentService {
 				 // Hash the password before updating the account in the database
 				 if (body.password_utilisateur) {
 					const hashedPassword = await bcrypt.hash(body.password_utilisateur, 10);
-					body.password_utilisateur = hashedPassword;
+					body.password_utilisateur = hashedPassword || account.password_utilisateur;
 				}
+				console.log('--body--');
+				
+				console.log(body);
+				console.log('--body--');
 
+				
 				let updatedUser = { ...account.toJSON(), ...body };
 				// Save changes to database
 				await account.update(updatedUser);

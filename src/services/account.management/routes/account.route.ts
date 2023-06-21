@@ -26,7 +26,7 @@ router.post('/createAccount/:role',Authorization(['ADM','SADM']), createAccount)
 @desc Delete a Account by id
 @access Admin
 */
-router.delete('/deleteAccount/:role/:id',Authorization(['ADM','SADM']), deleteAccount);
+router.post('/deleteAccount/:role/:id',Authorization(['ADM','SADM']), deleteAccount);
 /**
 
 @route PUT api/modifyAccount/:id
