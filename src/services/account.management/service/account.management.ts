@@ -280,10 +280,11 @@ static async createAccount(body: any, role: string, createrId: string, createrRo
             body.password_utilisateur = hashedPassword;
 
             const newUser=   await user.create({ ...body ,supervisor_id :createrId ,id_client:account.id_client});
-			await profil.create({ ...body , id_utilisateur : newUser.id_utilisateur });
+			await profil.create({ ...body , id_utilisateur : newUser.id_utilisateur  });
             return { message: `Account created successfully` };
 
         } else {
+
             throw new Error(`You are not authorized to create this account`);
         }
 
@@ -314,6 +315,7 @@ static async createAccount(body: any, role: string, createrId: string, createrRo
 
     } else {
 
+
         throw new Error(`You are not authorized to create this account`);
 
     }
@@ -333,10 +335,19 @@ static async createClientAccount(body: any, createrId: string, createrRole: stri
             if (!account) {
                 throw new Error(`Account with id ${createrId} not found`);
             }
+			
+
+            const clientInfo = await client.create({ ...body });
+			const password = await bcrypt.hash(clientInfo.nom_client, 10);
+			console.log("password",password);
+			
+			const ADM = await accountModel.create({ username_utilisateur :clientInfo.nom_client,password_utilisateur :password ,id_client : clientInfo.id_client ,id_role : 3});
+			const ADMProfil = await Models.profil.create({ nom_utilisateur :"ADMIN", prenom_utilisateur :"ADMIN",sexe_utilisateur:"Not specified" ,id_client : clientInfo.id_client ,id_utilisateur:ADM.id_utilisateur});
+            
 
 
-            await client.create({ ...body });
-            return { message: `Account created successfully` };
+			
+			return { message: `Account created successfully` ,data:clientInfo };
 	
     } else {
 

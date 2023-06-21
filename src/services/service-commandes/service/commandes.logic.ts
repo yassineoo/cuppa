@@ -4,7 +4,7 @@ const commandesLogic = {
         let commandes : string[] = [];
         commandes.push("start");
         //preparation instructions 
-        let cmd : string = "prepare " + size;
+        let cmd : string = "PREPARE " + size;
         instructions.forEach((value, key) => {
             cmd += " add " + key + " " + value 
         })

@@ -30,6 +30,7 @@ const createAccount = async (req: Request, res: Response) => {
 		return res.json({ success: true, data: result });
 	
 	} catch (err:any) {
+		console.log(err);
 		
 		console.error(`Error creating account: ${err.message}`);
 		res.status(500);

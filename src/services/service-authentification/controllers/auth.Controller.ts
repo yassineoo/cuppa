@@ -66,7 +66,7 @@ class LoginController {
 
 				//	console.log(error);
 				res.status(500);
-				res.json({ error:error.message });
+				res.json({ error });
 			
 			}
 		

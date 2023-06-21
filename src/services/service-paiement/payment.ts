@@ -184,37 +184,52 @@ class PaymentService {
 
 	static  handleWebhook = async (event,signature) => {
 		try {
+			console.log('********************');
+
      
 			// Verify the webhook signature to ensure it was sent by Stripe
 			const verifiedEvent = stripe.webhooks.constructEvent(event, signature, 'whsec_VIrLM1dRxjhLMM95LzEocepX1zaEeH48');
 			const jsonString = event.toString();
 			const objEvent = JSON.parse(jsonString);
+			console.log('--------------------------*');
+
 			let facturePath;
 			
 			// Handle the event based on its type
 			switch (verifiedEvent.type) {
 			case 'payment_intent.succeeded':
 
-
+               console.log('Payment succeeded');
+               console.log('Payment succeeded');
+               console.log('Payment succeeded');
+               console.log('Payment succeeded');
+               console.log('Payment succeeded');
+			   
 						
 				// Payment succeeded, update your database and send notification to cammand service
 				Paiement.update({ status: 'succeeded' },
 					{ where: { id_paiement: objEvent.data.object.metadata.paymentId} });
+				const consm = await Consommateur.findByPk(objEvent.data.object.metadata.customerId);
 				// get the customer Info 
 				//Consommateur.findByPk(objEvent.data.object.metadata.customerId);
-				//Facture.create('sda','asd','asda','asd');
-				facturePath = Facture.create(Consommateur.nom_consommateur ,'Facture for coffee',objEvent.data.object.metadata.amount,'DA');
+				//facturePath =  Facture.create('sda','asd','asda','asd');
+				console.log(`objEvent.data.object.metadata.amount -------------------------------`);
+				console.log(objEvent.data.object.metadata.amount);
+				
+				facturePath = Facture.create(consm.nom_consommateur ,'Facture for coffee',objEvent.data.object.metadata.amount,'DA');
 				//send it to the user via notif 
 				// notif.send(facturePath)
-				await axios.post(`${process.env.URL}api/notification.management/sendBill`,
+			
+				
+				await axios.post(`http://localhost:5000/api/notification.management/sendBill`,
 					{
-						name :Consommateur.nom_consommateur,
+						name :consm.nom_consommateur,
 						path:facturePath,
-						email :Consommateur.mail_consommateur
+						email :consm.mail_consommateur
 					}
 				);
-				await axios.post(`${process.env.URL}/confirme/${objEvent.data.object.metadata.orderId}`,
-			);
+				//await axios.post(`${process.env.URL}/confirme/${objEvent.data.object.metadata.orderId}`,
+		//	);
 
 				break;
 			case 'payment_intent.payment_failed':
