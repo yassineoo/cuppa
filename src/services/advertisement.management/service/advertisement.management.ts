@@ -28,14 +28,13 @@ const client = Models.client;
 class AdvertisementManagmentService {
 
 // create an advertiser
-async  createAdvertiser(data, image, idAC) {
+async createAdvertiser(data, image, idAC) {
 	try {
-	  console.log(`-----------------------------------`);
-	  console.log(`data: ${JSON.stringify(data)}`);
-	  console.log(`image: ${image}`);
-	  console.log(`idAC: ${idAC}`);
-	  console.log(`-----------------------------------`);
-  
+		console.log(`-----------------------------------`);
+		console.log(`data: ${JSON.stringify(data)}`);		
+		console.log(`image: ${image}`);		
+		console.log(`idAC: ${idAC}`);	
+		console.log(`-----------------------------------`);
 	  const { ...rest } = data; // destructure the data
   
 	  const advertiser = await Annonceur.create(rest);
@@ -51,22 +50,10 @@ async  createAdvertiser(data, image, idAC) {
 		const imageName = `advertiser${advertiser.id_annonceur}.png`; // use the advertiser ID as the image name
 		const imagePath = path.join(uploadsPath, imageName); // specify the path to save the image
   
-		// Check if the source and destination paths are on the same device
-		const isSameDevice = path.parse(image).root === path.parse(imagePath).root;
-  
-		if (isSameDevice) {
-		  // Rename the file directly since it's on the same device
-		  await fs.promises.rename(image, imagePath);
-		} else {
-		  // Copy the file to the destination path instead of renaming
-		  await fs.promises.copyFile(image, imagePath);
-		  // Delete the source file if needed
-		  await fs.promises.unlink(image);
-		}
-  
-		console.log(imageName);
+		await fs.promises.rename(image, imagePath);
+        console.log(imageName);
 		console.log(imagePath);
-  
+		
 		await advertiser.update({ path_annonceur: imageName });
 	  }
   
@@ -78,7 +65,8 @@ async  createAdvertiser(data, image, idAC) {
 	  console.log(error);
 	  throw error;
 	}
-  } 
+  }
+  
   
 // get all advertisers
 async getAllAdvertisers() {
