@@ -50,11 +50,11 @@ async createAdvertiser(data, image, idAC) {
 		const imageName = `advertiser${advertiser.id_annonceur}.png`; // use the advertiser ID as the image name
 		const imagePath = path.join(uploadsPath, imageName); // specify the path to save the image
   
-		await fs.promises.rename(image, imagePath);
+	//	await fs.promises.rename(image, imagePath);
         console.log(imageName);
 		console.log(imagePath);
 		
-		await advertiser.update({ path_annonceur: imageName });
+		await advertiser.update({ path_annonceur: imagePath });
 	  }
   
 	  // Update the utilisateur with idAC
