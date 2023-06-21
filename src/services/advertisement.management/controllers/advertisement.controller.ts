@@ -102,6 +102,9 @@ export const getAllAdvertisers = async (req: Request, res: Response) => {
 		  console.error(err);
 		  throw err;
 		}
+  console.log(`req.body ---********---------------------------------`);
+  console.log(fields)
+  console.log(`req.body -------**********-----------------------------`);
   
 		const { ...data } = fields; // destructure the fields
 		const image = files.image ? files.image.filepath : null; // get the path to the image file
@@ -111,7 +114,23 @@ export const getAllAdvertisers = async (req: Request, res: Response) => {
 		res.status(200).json(advertiser);
 	  });
 	} catch (error) {
-	  //console.error(error);
+	  console.error(error);
+	  res.status(500).send({ error: 'Internal server error' });
+	}
+  };
+  
+  export const updateAdvertiserWithoutTheFile = async (req: Request, res: Response) => {
+	try {
+	  const { id } = req.params;
+	  console.log(`req.body ---********---------------------------------`,id);
+	  console.log(req.body)
+	  console.log(`req.body -------**********-----------------------------`);
+
+	  
+      const updatedAdvertisement = await advertisementService.updateAdvertiserWithoutTheFile(id, req.body);
+	  res.status(200).json(updatedAdvertisement);
+	} catch (error) {
+	  console.error(error);
 	  res.status(500).send({ error: 'Internal server error' });
 	}
   };

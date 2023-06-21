@@ -10,6 +10,7 @@ import { createAdvertisement,
     getAllAdvertisers,
     getAdvertiserById,
     updateAdvertiser,
+    updateAdvertiserWithoutTheFile,
     deleteAdvertiser,
     handleImageUpload, 
     getAllAdvertisementsByUser,
@@ -53,6 +54,9 @@ router.put('/updateAdvertisement/:id',updateAdvertisement);
 
 // Update an advertisement by ID
 router.post('/updateAdvertisementWithoutTheFile/:id',updateAdvertisementWithoutTheFile);
+// Update an advertisement by ID
+router.post('/updateAdvertiserWithoutTheFile/:id',updateAdvertiserWithoutTheFile);
+
 
 
 // Delete an advertisement by ID

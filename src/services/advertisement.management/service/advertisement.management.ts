@@ -11,6 +11,7 @@ import fetch from 'isomorphic-fetch';
 //import http from 'http';
 import FormData from 'form-data';
 import * as faceapi from 'face-api.js';
+import { log } from 'console';
 
 // Set fetch implementation to node-fetch
 faceapi.env.monkeyPatch({ fetch: fetch});
@@ -118,38 +119,76 @@ async getAllAdvertisers() {
 		
 	
 		
-	// update an advertiser by id
-async updateAdvertiser(id, data, image) {
+		  async updateAdvertiser(id, data, image) {
+			try {
+				log(`-----------------------------------`);
+				log(`data: ${JSON.stringify(data)}`);
+				log(`image: ${image}`);
+				log(`-----------------------------------`);
+				
+			  const { ...rest } = data;
+			  const advertiser = await Annonceur.findOne({ where: { id_annonceur: id } });
+			  if (!advertiser) {
+				throw new Error(`Advertiser with id ${id} not found`);
+			  }
+			
+			  await advertiser.update(rest);
+			
+			  // save the image to disk
+			  if (image) {
+				const imageName = `advertiser${advertiser.id_annonceur}.png`; // use the advertiser ID as the image name
+				const imagePath = path.join(__dirname, '..', '..', '..', 'uploads', imageName); // specify the path to save the image
+			
+				// create a writable stream to write the image to disk
+				const imageStream = fs.createWriteStream(imagePath);
+			
+				// create a readable stream from the image data and pipe it to the writable stream
+				const readableImageStream = fs.createReadStream(image);
+				readableImageStream.pipe(imageStream);
+			
+				await new Promise((resolve, reject) => {
+				  imageStream.on('finish', resolve);
+				  imageStream.on('error', reject);
+				});
+			console.log('-------------------------------------');
+
+			 console.log(imageName);
+
+			console.log('-------------------------------------');
+			
+				await advertiser.update({ path_annonceur: imageName });
+			  }
+			
+			  return advertiser.toJSON();
+			} catch (error) {
+			  console.log(error);
+			  throw error;
+			}
+		  }
+		  
+
+  async updateAdvertiserWithoutTheFile (id, data) {
 	try {
-	  const { ...rest } = data;
-	  const advertiser = await Annonceur.findOne({ where: { id_annonceur: id } });
-	  if (!advertiser) {
+	  const advertisement = await Annonceur.findOne({ where: { id_annonceur: id } });
+	  if (!advertisement) {
+		console.log('not found');
 		throw new Error(`Advertiser with id ${id} not found`);
+		
 	  }
+	  console.log(data);
+	  
+	  const advertisement2 = await Annonceur.update(data,{ where: { id_annonceur: id } });
+  
+
+	  // Update the advertisement
+	//  const updatedAdvertisement = { ...advertisement.toJSON(), ...data };
+	  // Update the advertisement
+	  const updatedAdvertisement = { ...advertisement.toJSON(), ...data };
+	  await advertisement.update(updatedAdvertisement);
+  
+	  return advertisement.toJSON();
+  
 	
-	  await advertiser.update(rest);
-	
-	  // save the image to disk
-	  if (image) {
-		const imageName = `advertiser${advertiser.id_annonceur}.png`; // use the advertiser ID as the image name
-		const imagePath = path.join(__dirname, '..', '..', '..', 'uploads', imageName); // specify the path to save the image
-	
-		// create a writable stream to write the image to disk
-		const imageStream = fs.createWriteStream(imagePath);
-	
-		// create a readable stream from the image data and pipe it to the writable stream
-		const readableImageStream = fs.createReadStream(image);
-		readableImageStream.pipe(imageStream);
-	
-		await new Promise((resolve, reject) => {
-		  imageStream.on('finish', resolve);
-		  imageStream.on('error', reject);
-		});
-	
-		await advertiser.update({ path_annonceur: imageName });
-	  }
-	
-	  return advertiser.toJSON();
 	} catch (error) {
 	  console.log(error);
 	  throw error;
@@ -365,6 +404,7 @@ async createAdvertisement(data) {
 		  throw error;
 		}
 	  }
+
 
   // Delete an advertisement by ID
   async deleteAdvertisement(id) {
