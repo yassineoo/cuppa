@@ -6,7 +6,7 @@ const commandesLogic = {
         //preparation instructions 
         let cmd : string = "prepare " + size;
         instructions.forEach((value, key) => {
-            cmd += " add " + key + " " + value + "g"
+            cmd += " add " + key + " " + value 
         })
 
         cmd += " dispense sugar " + sucre;
