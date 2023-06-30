@@ -16,7 +16,11 @@ module.exports = function(sequelize, DataTypes) {
     },
     id_wilaya: {
       type: DataTypes.INTEGER,
-      allowNull: false
+      allowNull: false,
+      references: {
+        model: 'wilaya',
+        key: 'id_wilaya'
+      }
     }
   }, {
     sequelize,

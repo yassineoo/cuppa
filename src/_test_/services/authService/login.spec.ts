@@ -1,7 +1,7 @@
 /* eslint-disable no-mixed-spaces-and-tabs */
-import  Authentication from '../../../services/authService/auth';
+import  Authentication from '../../../services/service-authentification/auth';
 import jwt from 'jsonwebtoken';
-import models from '../../../models/sequilize';
+import models from '../../../models/sequelize';
 import bcrypt from 'bcryptjs';
 
 const utilisateur = models.utilisateur;
@@ -14,21 +14,22 @@ describe('Authentication',async () => {
   interface LoginData {
 	username: string;
 	password: string;
-	userRole: string;
-	email:string
+	email:string,
+	consumer:string
   } 
   const mockUser = {
 
   		id_utilisateur: 1,
   		id_role: 1,
   		password_utilisateur: 'hashed-password',
+  	id_role_role: {libelle_role:'SADM'}
 	
   };
   const mockLoginData: LoginData = {
   	username: 'testuser',
   	password: 'testpassword',
-  	userRole: 'admin',
   	email: 'testuser@example.com',
+  	consumer:'',
   };
 
 
@@ -37,7 +38,7 @@ describe('Authentication',async () => {
   	it('should return a JWT token on successful login', async () => {
 
   		// Mock the Sequelize `findAll` method to return the mock user object
-  		spyOn(utilisateur, 'findAll').and.returnValue(Promise.resolve([mockUser]));
+  		spyOn(utilisateur, 'findAll').and.returnValue(Promise.resolve(mockUser));
 
   		// Mock the `compare` method of the `bcrypt` library to always return `true`
   		spyOn(bcrypt, 'compare').and.returnValue(Promise.resolve(true) as any);
@@ -47,7 +48,7 @@ describe('Authentication',async () => {
 
   		const token = await Authentication.login(mockLoginData);
 
-  		expect(token).toEqual('mock-token');
+  		expect(token).toEqual({token:'mock-token',role:'SADM',name:'testuser'});
   		expect(utilisateur.findAll).toHaveBeenCalled();
   		expect(bcrypt.compare).toHaveBeenCalled();
   		expect(jwt.sign).toHaveBeenCalled();
@@ -88,7 +89,7 @@ describe('Authentication',async () => {
   		
   		} catch (error) {
 
-  			expect(error.message).toEqual('Invalid credentials: password');
+  			expect(error.message).toEqual('Invalid credentials:password');
   			expect(utilisateur.findAll).toHaveBeenCalled();
   			expect(bcrypt.compare).toHaveBeenCalled();
   		

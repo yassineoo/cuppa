@@ -10,13 +10,17 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.INTEGER,
       allowNull: false
     },
-    nom_willaya: {
+    nom_wilaya: {
       type: DataTypes.STRING(50),
       allowNull: false
     },
     id_pays: {
-      type: DataTypes.STRING(50),
-      allowNull: false
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      references: {
+        model: 'pays',
+        key: 'id_pays'
+      }
     }
   }, {
     sequelize,

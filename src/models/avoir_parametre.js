@@ -4,12 +4,20 @@ module.exports = function(sequelize, DataTypes) {
     numero_serie_distributeur: {
       type: DataTypes.STRING(50),
       allowNull: false,
-      primaryKey: true
+      primaryKey: true,
+      references: {
+        model: 'distributeur',
+        key: 'numero_serie_distributeur'
+      }
     },
     localisation_dynamique_distributeur: {
       type: DataTypes.STRING(50),
       allowNull: false,
-      primaryKey: true
+      primaryKey: true,
+      references: {
+        model: 'parametre',
+        key: 'localisation_dynamique_distributeur'
+      }
     }
   }, {
     sequelize,

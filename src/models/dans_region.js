@@ -4,12 +4,20 @@ module.exports = function(sequelize, DataTypes) {
     id_region: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      primaryKey: true
+      primaryKey: true,
+      references: {
+        model: 'region',
+        key: 'id_region'
+      }
     },
     id_annonce: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      primaryKey: true
+      primaryKey: true,
+      references: {
+        model: 'annonce',
+        key: 'id_annonce'
+      }
     }
   }, {
     sequelize,

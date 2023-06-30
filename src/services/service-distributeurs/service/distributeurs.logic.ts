@@ -39,6 +39,19 @@ const distributeursLogic= {
            const distributeurs = await distributeursService.getAllByClientID(user_client)
            return distributeurs
         } catch (error) {
+
+            throw error
+        }
+        
+    },
+      getAllByClient2 :async (user_client : string) : Promise<DistributeurModel[]> => {
+        
+        try {
+         
+           //distributeurs du client
+           const distributeurs = await distributeursService.getAllByClientID(user_client)
+           return distributeurs
+        } catch (error) {
             console.error(error)
             return []
         }

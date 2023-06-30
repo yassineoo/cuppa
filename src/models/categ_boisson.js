@@ -4,12 +4,20 @@ module.exports = function(sequelize, DataTypes) {
     id_boisson: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      primaryKey: true
+      primaryKey: true,
+      references: {
+        model: 'boisson',
+        key: 'id_boisson'
+      }
     },
     id_categorie: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      primaryKey: true
+      primaryKey: true,
+      references: {
+        model: 'categorie',
+        key: 'id_categorie'
+      }
     }
   }, {
     sequelize,

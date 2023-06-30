@@ -1,6 +1,6 @@
-import stripe from '../../../services/paymentService/paymentConfig';
-import PaymentService from '../../../services/paymentService/payment';
-import modles from '../../../models/sequilize';
+import stripe from '../../../services/service-paiement/paymentConfig';
+import PaymentService from '../../../services/service-paiement/payment';
+import modles from '../../../models/sequelize';
 
 const Consommateur = modles.consommateur;
 const Paiement = modles.paiement;

@@ -30,6 +30,7 @@ const createAccount = async (req: Request, res: Response) => {
 		return res.json({ success: true, data: result });
 	
 	} catch (err:any) {
+		console.log(err);
 		
 		console.error(`Error creating account: ${err.message}`);
 		res.status(500);
@@ -111,11 +112,118 @@ const getProfil = async (req: Request, res: Response) => {
 };
   
 
+const createClientAccount = async (req: Request, res: Response) => {
 
-export {
+	try {
+		const createrId = req.user.id;
+		const createrRole = req.user.role;
+		// call the servise function to create the client account
+		const result = await AccountManagmentService.createClientAccount(req.body,createrId,createrRole);
+		// send the response back to the client
+		res.status(200);
+		return res.json({ success: true, data: result });
+	
+	} catch (err:any) {
+		
+		console.error(`Error creating account: ${err.message}`);
+		res.status(500);
+		return res.json({ success: false, error: err.message });
+	
+	}
+
+};
+
+const createConsommateurAccount = async (req: Request, res: Response) => {
+
+	try {
+		
+		// call the servise function to create the consommateur account
+		const result = await AccountManagmentService.createConsommateurAccount(req.body);
+		// send the response
+		res.status(200);
+		return res.json({ success: true, data: result });
+	
+	} catch (err:any) {
+		
+		console.error(`Error creating account: ${err.message}`);
+		res.status(500);
+		return res.json({ success: false, error: err.message });
+	
+	}
+
+};
+
+
+
+const getAllClients = async (req: Request, res: Response) => {
+	try {
+	  const clients = await AccountManagmentService.getAllClients();
+	  res.status(200).json({ success: true, data: clients });
+	} catch (err) {
+	  console.error(`Error getting all clients: ${err.message}`);
+	  res.status(500).json({ success: false, error: err.message });
+	}
+  };
+  
+  const getClientByID = async (req: Request, res: Response) => {
+	try {
+	  const { id } = req.params;
+	  const clientData = await AccountManagmentService.getClientByID(id);
+	  res.status(200).json({ success: true, data: clientData });
+	} catch (err) {
+	  console.error(`Error getting client by ID: ${err.message}`);
+	  res.status(500).json({ success: false, error: err.message });
+	}
+  };
+  
+  const getUtilisateurByClientID = async (req: Request, res: Response) => {
+	try {
+	  const { clientID } = req.params;
+	  const utilisateurs = await AccountManagmentService.getUtilisateurByClientID(clientID);
+	  res.status(200).json({ success: true, data: utilisateurs });
+	} catch (err) {
+	  console.error(`Error getting utilisateurs by client ID: ${err.message}`);
+	  res.status(500).json({ success: false, error: err.message });
+	}
+  };
+  
+
+  const getProfilWithClient = async (req: Request, res: Response) => {
+	try {
+	  const  userID  = req.user.id;
+	  const account = await AccountManagmentService.getProfilWithClient(userID);
+	  res.status(200).json({ success: true, data: account });
+	} catch (err) {
+	  console.error(`Error getting account: ${err.message}`);
+	  res.status(500).json({ success: false, error: err.message });
+	}
+  };
+
+  
+  const getEmployees = async (req: Request, res: Response) => {
+	try {
+	  const  userID  = req.user.id;
+	  console.log(req.user);
+	  
+	  const accounts = await AccountManagmentService.getEmployees(userID);
+	  res.status(200).json(accounts);
+	} catch (err) {
+	  console.error(`Error getting account: ${err.message}`);
+	  res.status(500).json({ success: false, error: err.message });
+	}
+  };
+  
+  export {
 	createAccount,
 	deleteAccount,
 	modifyAccount,
 	getAccounts,
-	getProfil
-};
+	getEmployees,
+	getProfil,
+	createClientAccount,
+	createConsommateurAccount,
+	getAllClients,
+	getClientByID,
+	getUtilisateurByClientID,
+	getProfilWithClient,
+  };

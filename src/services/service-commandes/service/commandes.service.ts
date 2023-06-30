@@ -1,8 +1,10 @@
-import { Sequelize } from "sequelize";
+
+import boisson from "../../../models/boisson";
 import models from "../../../models/sequelize";
 import commandesLogic from "./commandes.logic";
 
-  type CommandeModel = typeof models.commande
+  type CommandeModel = typeof models.commande;
+  type BoissonModel = typeof models.boisson;
 
 
 const commandesService = {
@@ -14,19 +16,28 @@ const commandesService = {
         } catch(err : any) {
             throw err
         }
+        
     },
 
     getByID : async(id : string) : Promise<CommandeModel | null> => {
       try {
-        const commande = await models.commande.findByPk(Number(id))
-        return commande
+        const commande = await models.commande.findOne({
+          where : {id_cmd :Number(id)} ,
+          include : { 
+            model : models.boisson ,
+            as : "id_boisson_boisson"
+          }
+        })
+        
+        const y = {...commande.toJSON(),libelle_boisson:commande.id_boisson_boisson.libelle_boisson,path_image_boisson:commande.id_boisson_boisson.path_image_boisson}    
+        return y ;
       } catch(err) {
         throw err
       }
     },
 
 
-    getInstructions : async function(id : string) : Promise<string> {
+    getInstructions : async function(id : string) : Promise<string[]> {
         
         try {
             //Get commande 
@@ -35,32 +46,42 @@ const commandesService = {
             if(!commande) {
               throw new Error(`La commande identifiée par ${id} is not found`)
             }
+
+            const sucre = commande.quantite_sucre;
+            const size = commande.taille_goblet;
             
-              //to test only, later we will be making requests + maybe keep some sort of cache? 
-              //join boisson_ing (where id_boisson = commande.id_boisson) and ingredient (outil)
-            const boisson = await models.boisson.findByPk(commande.id_boisson, {
-                include: [{
-                  model: models.outil,
-                  attributes: ['libelle_outil']
-                }]
+            
+
+            const ingredients : any[] = await models.preparer_avec.findAll({
+              where : {
+                id_boisson : commande.id_boisson
+              }, 
+              include : [{
+                  model : models.outils_preparation_boisson,
+                  as : "id_ingredient_outils_preparation_boisson",
+                  attributes: ['libelle_ingredient']
+                }], 
+                attributes : ['quantite_preparation']
             })
+            
+            if(ingredients.length !== 0) {
+              let instructions = new Map<string, string>()
+              ingredients.forEach((ingredient : any) => {
+                const quantity = ingredient.quantite_preparation;
+                console.log(ingredient);
+                const toolLabel = ingredient?. id_ingredient_outils_preparation_boisson?.libelle_ingredient;
+                instructions.set(toolLabel, quantity);
+                
+              });
+             // console.log(ingrediants);
+              
 
-            if(!boisson) {
-              throw new Error(`La boisson identifiée par ${commande.id_boisson} is not found`)
+
+              return commandesLogic.translate(instructions, sucre, size)
+  
+            } else {
+              throw new Error(`empty instructions for boisson ${commande.id_boisson}`)
             }
-              
-            //map the name of the ingredient to the quantite_preparation
-            let ingredients = new Map<string, string>()
-            boisson.outils.forEach((outil: any) => {
-              ingredients.set(outil.libelle_outil, outil.boisson_ing.quantite_preparation);
-            });
-
-            ingredients.set("sucre", commande.quantite_sucre)
-            ingredients.set("taille", commande.taille_goblet)
-                
-                
-            return commandesLogic.translate(ingredients)
-              
         } catch (err : any){
             throw err
         }
@@ -74,11 +95,17 @@ const commandesService = {
           throw new Error(`La commande identifiée par ${id} is not found`)
         }
 
-        commande = await commande.update(info)
+      /*  commande = await models.commande.update(info)
+        let commandes = commandes.map(commande => {
+          return {...commande , 
+
+          }
+        })
+        */
         return commande
 
       } catch(err) {
-
+        throw err
       }
     },
 

@@ -7,6 +7,7 @@ import distributeursLogic from "../service/distributeurs.logic";
 
 
 const distributeursController = {
+    
     getAll : async(req : Request, res : Response) => {
         try {
             let distributeurs;
@@ -22,7 +23,21 @@ const distributeursController = {
 
             res.status(200).json(distributeurs)
         } catch (err : any){
-            res.status(500).send('Internal server error')
+            res.status(500).json(err)
+        }
+    },
+
+    getAllByClient : async(req : Request, res : Response) => {
+        try {
+            let distributeurs;
+                 const id = req.params.id
+                //console.log(req.user)
+                distributeurs = await distributeursLogic.getAllByClient2(id)
+            
+
+            res.status(200).json(distributeurs)
+        } catch (err : any){
+            res.status(500).json(err)
         }
     },
     
@@ -44,10 +59,11 @@ const distributeursController = {
             }
 
         } catch (err : any){
-            console.log(err) 
-            res.status(500).send('Internal server error')
+            res.status(500).send(err.message)
         }
     },
+
+
 
     create : async(req : Request, res : Response) => {
         try {
@@ -55,7 +71,7 @@ const distributeursController = {
             const distributeur = await distributeursService.add(req.body)
             res.status(201).json(distributeur)
         } catch (err : any){
-            res.status(500).send('Internal server error')
+            res.status(500).send(err.message)
         }
     },
 

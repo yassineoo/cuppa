@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-namespace */
 import { Request, Response, NextFunction } from 'express';
-import Authentication from '../services/authService/auth';
+import Authentication from '../services/service-authentification/auth';
 interface User {
   id: string;
   role: string;
@@ -12,12 +12,11 @@ interface User {
 
 const Authorization = (allowedRoles: string[]) => {
 
-	return async (req: Request, res: Response, next: NextFunction) => {
+	return async (req: any, res: Response, next: NextFunction) => {
 
 		try {
      
 			const token = req.header('Authorization')?.replace('Bearer ', '');
-
 
 			
 			if (!token) {
@@ -43,8 +42,8 @@ const Authorization = (allowedRoles: string[]) => {
 		
 		} catch (error) {
 
-			if (error.message === 'Token expired') {
-
+			if (error.message === 'jwt expired') {
+					
 				res.status(401).json({ error: 'Token expired' });
 			
 			} else if (error.name === 'JsonWebTokenError') {

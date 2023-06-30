@@ -12,7 +12,11 @@ module.exports = function(sequelize, DataTypes) {
     },
     id_commune: {
       type: DataTypes.INTEGER,
-      allowNull: false
+      allowNull: false,
+      references: {
+        model: 'commune',
+        key: 'id_commune'
+      }
     }
   }, {
     sequelize,

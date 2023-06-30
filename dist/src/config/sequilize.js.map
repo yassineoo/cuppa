@@ -1,1 +1,0 @@
-{"version":3,"file":"sequilize.js","sourceRoot":"","sources":["../../../src/config/sequilize.ts"],"names":[],"mappings":";;AAAA,QAAQ;AACR,yCAAuC;AAEvC,MAAM,SAAS,GAAG,IAAI,qBAAS,CAAC;IAC/B,OAAO,EAAE,OAAO;IAChB,QAAQ,EAAE,UAAU;IACpB,QAAQ,EAAE,MAAM;IAChB,QAAQ,EAAE,UAAU;CACpB,CAAC,CAAC;AAIH,kBAAe,SAAS,CAAC"}

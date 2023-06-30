@@ -101,7 +101,7 @@ class NotificationManagementService {
       await this.sendNotification(message);
     }
 
-    await this.saveInterventionTask(numero_serie_distributeur,etat,description);
+    //await this.saveInterventionTask(numero_serie_distributeur,etat,description);
   }
 
   async sendNotification(message: any): Promise<void> {
@@ -198,6 +198,33 @@ class NotificationManagementService {
   }
   
 
+  async notifyReclamationAnswer(email: string, description: string): Promise<void> {
+    // create reusable transporter object using the default SMTP transport
+    const transporter = nodemailer.createTransport({
+      host: 'smtp.gmail.com',
+      port:587,
+      secure:false,
+		  auth:{
+			  user:'aissanyris84',
+			  pass:'fluccvroupxcmrdv',
+		  },
+		  tls: {
+		  	rejectUnauthorized: true
+		  }
+    });
+  
+    // send mail with defined transport object
+    const info = await transporter.sendMail({
+      from: 'aissanyris84',// sender mail
+      to: email, // list of receivers
+      subject: "Reclamation response", // Subject line
+      html: `
+        <p>${description}</p>
+      `, // HTML body
+    });
+  
+    console.log(`Message sent: ${info.messageId}`);
+  }
 }
   
 export default NotificationManagementService;
